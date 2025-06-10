@@ -48,7 +48,7 @@ export default class demoOpportunityOperativas extends LightningElement {
 
 	abrirModal({currentTarget: {dataset: {modal: nombreModal}}}) {
 		this.modalesVisibles = {[nombreModal]: true};
-		setTimeout(() => this.refs[nombreModal].abrirModal(), 20);
+		setTimeout(() => this.template.querySelector(`.${nombreModal}`).abrirModal(), 20);
 	}
 
 	modalAbierto({detail: {nombreModal}}) {
