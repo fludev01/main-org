@@ -1,0 +1,6 @@
+<design:component>
+    <design:attribute name="selCustomSetting" label="Select a Custom Setting" datasource="Journeys, Individual Email Results"/>
+    <design:attribute name="tableHeader" label="Table Header"/>
+    <design:attribute name="iconName" Label="Icon(Optional)" description="(Syntax- category:iconname Eg: action:add_contact)"/>
+    <design:attribute name="hyperlink" Label="Url for Hyperlink" description="Url for hyperlink"/>
+</design:component>

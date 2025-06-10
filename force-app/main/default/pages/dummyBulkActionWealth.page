@@ -1,0 +1,116 @@
+<apex:page controller="einsteinBulkAction_JC" action="{!init}" showheader="false" sidebar="false" standardStylesheets="false" title="Send Email"  >
+    <apex:includeScript value="https://code.jquery.com/jquery-3.4.1.min.js"/>
+    <apex:includeLightning />    
+    <style>
+        #theToast{
+        position: sticky;
+        left:0; right:0;bottom:0;margin:auto;
+        top:20px; 
+        z-index:999999;
+        }
+        .theHeader{
+        border-collapse: separate;
+        border-top: 1px solid #dddbda;
+        border-bottom: 1px solid #dddbda;
+        }
+        .theEntireContainer{
+        padding: 2rem;
+        }
+        .slds-form-element{
+        max-width: 70%;
+        }
+        
+    </style>
+    <apex:slds />
+    <div class="slds-scope theEntireContainer">
+        <br/>
+        <div class="slds-text-heading_large slds-align_absolute-center">Send Email to Clients</div>
+        <br/><br/>
+        <div id="lightning" class="slds-align_absolute-center" />
+        <br/><br/>
+        <button onclick="sendEmail();" class="slds-align_absolute-center slds-button slds-button_brand">Send Email to Clients</button>
+        <br/><br/>
+        <div id="theToast" class=" slds-hide" style="height: 4rem;">
+            <div class="slds-notify_container slds-is-relative">
+                <div class="slds-notify slds-notify_toast slds-theme_success" role="alert">                    
+                    <div class="slds-notify__content">
+                        <h2 class="slds-text-heading_small">Success! Email has been sent!</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slds-text-heading_medium slds-align_absolute-center">Email will be sent to the following Clients:</div>
+        <table name="results" id="results" data-role="table" class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr clas="theHeader slds-line-height_reset">
+                    <th scope="col">
+                        <div class="slds-truncate">
+                            Clients
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <br/><br/>
+        
+    </div>
+    
+    <script>    
+    
+    $Lightning.use("c:AooRichTextJC", function() {
+          $Lightning.createComponent("lightning:inputRichText",
+              { value : "We understand you have a lot of options so we wanted to send a message of appreciation to thank you for choosing our company. We also want to congratulate you on the upcoming completion of your financial goal and are happy to talk with you about achieving your next goal." },
+              "lightning",
+              function(cmp) {
+                console.log("here");
+              }
+          );        
+        });
+    
+    $(function() {
+        $.ajaxSetup({
+            headers: {"Authorization": 'Bearer {!$Api.Session_ID}'}
+        });
+        
+        setTimeout(executeQuery, 100);
+    });
+    
+    function executeQuery() {
+        var query = {};
+        query.statements = "{!JSENCODE(query)}";
+        var queryObj = {query: query.statements};
+        var derivedURL = 'https://' + window.location.hostname + '/services/data/v46.0/wave/query';
+        $.ajax({
+            type: 'POST',
+            url: derivedURL, 
+            data: JSON.stringify(queryObj),
+            contentType: 'application/json',
+            success: function(data) {
+                var row = null;
+                $('#results tbody').empty();
+                console.log('data:',data.results.records);
+                
+                for (var i = 0; i < data.results.records.length; i++) {
+                    var record = data.results.records[i];
+                    row = $('<tr>');
+                    row.append($('<td>').html(record['ACCOUNTNAME']));
+                    $('#results tbody').append(row);
+                }
+                
+            }
+        });
+        
+    }
+    function sendEmail(){
+        var thisIsToast = $("#theToast");
+        thisIsToast.removeClass('slds-hide');
+        console.log('toast');
+        setTimeout(function() {
+            console.log('toast');
+            thisIsToast.addClass('slds-hide');
+        }, 5000);
+        
+    };
+    </script>
+</apex:page>

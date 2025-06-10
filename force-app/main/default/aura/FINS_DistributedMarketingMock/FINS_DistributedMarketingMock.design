@@ -1,0 +1,6 @@
+<design:component>
+	<design:attribute name="selectedView" label="Choose the view of your component" datasource="Button,Layout" default="Button" description="Button: Require someone to click a button to fire the component. Layout: Display the full component by default." />
+    
+    <design:attribute name="ButtonText" label="Initial Button Label" default="View Pending Member" description="Change the button text to what you would like it to be." />
+    
+</design:component>

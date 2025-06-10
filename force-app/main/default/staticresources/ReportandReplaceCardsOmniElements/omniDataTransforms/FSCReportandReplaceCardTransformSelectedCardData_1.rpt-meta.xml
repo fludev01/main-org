@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;selectedCardData&quot; : [ {
+    &quot;SourceSystemId&quot; : &quot;3765476354632323&quot;,
+    &quot;CardId&quot; : &quot;a06B0000002HZYNIA4&quot;,
+    &quot;Selected&quot; : true,
+    &quot;CardSourceSystemId&quot; : &quot;3765476354632323&quot;,
+    &quot;CardValidDate&quot; : &quot;5/2024&quot;,
+    &quot;CardType&quot; : &quot;Debit Card&quot;,
+    &quot;RecordTypeName&quot; : &quot;Checking Account&quot;,
+    &quot;CardNumberLast4&quot; : &quot;6382&quot;,
+    &quot;CardName&quot; : &quot;Star Wars&quot;,
+    &quot;CardNumber&quot; : 547295473756382,
+    &quot;Role&quot; : &quot;Primary Owner&quot;,
+    &quot;Reissue&quot; : true
+  }, {
+    &quot;SourceSystemId&quot; : &quot;2343534545646451&quot;,
+    &quot;CardId&quot; : &quot;a06B0000002HZYSIA4&quot;,
+    &quot;Selected&quot; : true,
+    &quot;CardSourceSystemId&quot; : &quot;2343534545646451&quot;,
+    &quot;CardValidDate&quot; : &quot;4/2026&quot;,
+    &quot;CardType&quot; : &quot;Debit Card&quot;,
+    &quot;RecordTypeName&quot; : &quot;Savings Account&quot;,
+    &quot;CardNumberLast4&quot; : &quot;4543&quot;,
+    &quot;CardName&quot; : &quot;Amex&quot;,
+    &quot;CardNumber&quot; : 4532424534244543,
+    &quot;Role&quot; : &quot;Primary Owner&quot;,
+    &quot;Reissue&quot; : true
+  } ],
+  &quot;ReplaceCard&quot; : &quot;Yes&quot;,
+  &quot;Reason&quot; : &quot;Stolen&quot;,
+  &quot;Remarks&quot; : &quot;yuyuy&quot;,
+  &quot;ShippingPreference&quot; : &quot;Standard Shipping&quot;,
+  &quot;ShippingAddress&quot; : &quot;5396, North Reese Avenue, Fresno, CA, US, 93722&quot;
+}</expectedInputJson>
+    <expectedOutputJson>{
+  &quot;selectedCardData&quot; : [ {
+    &quot;SourceSystemId&quot; : &quot;3765476354632323&quot;,
+    &quot;CardId&quot; : &quot;a06B0000002HZYNIA4&quot;,
+    &quot;Selected&quot; : true,
+    &quot;CardSourceSystemId&quot; : &quot;3765476354632323&quot;,
+    &quot;CardValidDate&quot; : &quot;5/2024&quot;,
+    &quot;CardType&quot; : &quot;Debit Card&quot;,
+    &quot;RecordTypeName&quot; : &quot;Checking Account&quot;,
+    &quot;CardNumberLast4&quot; : &quot;6382&quot;,
+    &quot;CardName&quot; : &quot;Star Wars&quot;,
+    &quot;CardNumber&quot; : 547295473756382,
+    &quot;Role&quot; : &quot;Primary Owner&quot;,
+    &quot;Reissue&quot; : true
+  }, {
+    &quot;SourceSystemId&quot; : &quot;2343534545646451&quot;,
+    &quot;CardId&quot; : &quot;a06B0000002HZYSIA4&quot;,
+    &quot;Selected&quot; : true,
+    &quot;CardSourceSystemId&quot; : &quot;2343534545646451&quot;,
+    &quot;CardValidDate&quot; : &quot;4/2026&quot;,
+    &quot;CardType&quot; : &quot;Debit Card&quot;,
+    &quot;RecordTypeName&quot; : &quot;Savings Account&quot;,
+    &quot;CardNumberLast4&quot; : &quot;4543&quot;,
+    &quot;CardName&quot; : &quot;Amex&quot;,
+    &quot;CardNumber&quot; : 4532424534244543,
+    &quot;Role&quot; : &quot;Primary Owner&quot;,
+    &quot;Reissue&quot; : true
+  } ],
+  &quot;ReplaceCard&quot; : &quot;Yes&quot;,
+  &quot;Reason&quot; : &quot;Stolen&quot;,
+  &quot;Remarks&quot; : &quot;yuyuy&quot;,
+  &quot;ShippingPreference&quot; : &quot;Standard Shipping&quot;,
+  &quot;ShippingAddress&quot; : &quot;5396, North Reese Avenue, Fresno, CA, US, 93722&quot;
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>FSCReportandReplaceCardTransformSelectedCardData</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardTransformSelectedCardDataCustom1523</globalKey>
+        <inputFieldName>selectedCardData:CardType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardTransformSelectedCardData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>selectedCardData:CardType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardTransformSelectedCardDataCustom3557</globalKey>
+        <inputFieldName>selectedCardData:CardId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardTransformSelectedCardData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>selectedCardData:CardId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardTransformSelectedCardDataCustom3954</globalKey>
+        <inputFieldName>ReplaceCard</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardTransformSelectedCardData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ReplaceCard</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardTransformSelectedCardDataCustom7429</globalKey>
+        <inputFieldName>selectedCardData:CardSourceSystemId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardTransformSelectedCardData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>selectedCardData:CardSourceSystemId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardTransformSelectedCardDataCustom8545</globalKey>
+        <inputFieldName>isDebitCardExists</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardTransformSelectedCardData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>isDebitCardExists</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardTransformSelectedCardDataCustom7463</globalKey>
+        <inputFieldName>isCreditCardExists</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardTransformSelectedCardData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>isCreditCardExists</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardTransformSelectedCardDataCustom5656</globalKey>
+        <inputFieldName>selectedCardData:CardNumberLast4</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardTransformSelectedCardData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>selectedCardData:CardNumberLast4</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardTransformSelectedCardDataCustom2432</globalKey>
+        <inputFieldName>Remarks</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardTransformSelectedCardData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Remarks</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardTransformSelectedCardDataCustom4597</globalKey>
+        <inputFieldName>selectedCardData:RecordTypeName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardTransformSelectedCardData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>selectedCardData:RecordTypeName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardTransformSelectedCardDataCustom5428</globalKey>
+        <inputFieldName>selectedCardData:CardName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardTransformSelectedCardData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>selectedCardData:CardName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardTransformSelectedCardDataCustom3902</globalKey>
+        <inputFieldName>selectedCardData:Selected</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardTransformSelectedCardData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>selectedCardData:Selected</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardTransformSelectedCardDataCustom2028</globalKey>
+        <inputFieldName>Reason</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardTransformSelectedCardData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Reason</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardTransformSelectedCardDataCustom5187</globalKey>
+        <inputFieldName>ShippingPreference</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardTransformSelectedCardData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ShippingPreference</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardTransformSelectedCardDataCustom579</globalKey>
+        <inputFieldName>selectedCardData:Reissue</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardTransformSelectedCardData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>selectedCardData:Reissue</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardTransformSelectedCardDataCustom5495</globalKey>
+        <inputFieldName>ShippingAddress</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardTransformSelectedCardData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ShippingAddress</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;Reason&quot; : &quot;Stolen&quot;,
+  &quot;selectedCardData&quot; : [ {
+    &quot;SourceSystemId&quot; : &quot;3765476354632323&quot;,
+    &quot;CardId&quot; : &quot;a06B0000002HZYNIA4&quot;,
+    &quot;Selected&quot; : true,
+    &quot;CardSourceSystemId&quot; : &quot;3765476354632323&quot;,
+    &quot;CardValidDate&quot; : &quot;5/2024&quot;,
+    &quot;CardType&quot; : &quot;Debit Card&quot;,
+    &quot;RecordTypeName&quot; : &quot;Checking Account&quot;,
+    &quot;CardNumberLast4&quot; : &quot;6382&quot;,
+    &quot;CardName&quot; : &quot;Star Wars&quot;,
+    &quot;CardNumber&quot; : 547295473756382,
+    &quot;Role&quot; : &quot;Primary Owner&quot;,
+    &quot;Reissue&quot; : true
+  }, {
+    &quot;SourceSystemId&quot; : &quot;2343534545646451&quot;,
+    &quot;CardId&quot; : &quot;a06B0000002HZYSIA4&quot;,
+    &quot;Selected&quot; : true,
+    &quot;CardSourceSystemId&quot; : &quot;2343534545646451&quot;,
+    &quot;CardValidDate&quot; : &quot;4/2026&quot;,
+    &quot;CardType&quot; : &quot;Debit Card&quot;,
+    &quot;RecordTypeName&quot; : &quot;Savings Account&quot;,
+    &quot;CardNumberLast4&quot; : &quot;4543&quot;,
+    &quot;CardName&quot; : &quot;Amex&quot;,
+    &quot;CardNumber&quot; : 4532424534244543,
+    &quot;Role&quot; : &quot;Primary Owner&quot;,
+    &quot;Reissue&quot; : false
+  } ],
+  &quot;error&quot; : &quot;OK&quot;,
+  &quot;errorCode&quot; : &quot;INVOKE-200&quot;,
+  &quot;ShippingAddress&quot; : &quot;5396, North Reese Avenue, Fresno, CA, US, 93722&quot;,
+  &quot;ShippingPreference&quot; : &quot;Standard Shipping&quot;,
+  &quot;Remarks&quot; : &quot;yuyuy&quot;,
+  &quot;ReplaceCard&quot; : &quot;Yes&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>FSCReportandReplaceCardTransformSelectedCardData_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

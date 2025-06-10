@@ -1,0 +1,129 @@
+<template>
+    <div class="slds-grid slds-wrap  card-container">
+        <div class="slds-size_1-of-1">
+            <div class="slds-grid slds-wrap slds-p-around_medium">
+                <template if:true={caseRecord}>
+                    <div class="slds-size_1-of-1">
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-size_1-of-1">
+                                <div class="slds-grid slds-wrap">
+                                    <div class="slds-size_1-of-1">
+                                        <div class="slds-form-element slds-form-element_stacked"><span class="slds-form-element__label">Subject</span>
+                                            <div class="slds-form-element__control">{caseRecord.Subject}</div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-size_1-of-1">
+                                        <div class="slds-form-element slds-form-element_stacked"><span class="slds-form-element__label">Description</span>
+                                            <div class="slds-form-element__control">{caseRecord.Description}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+<template if:true={config}>
+                    <div class="slds-size_1-of-1">
+                        <div class="slds-size_1-of-1">
+                            <div class={showDetailsSection}>
+                                <h3 class="slds-section__title">
+                                    <button aria-expanded="true" class="slds-button slds-section__title-action">
+                                        <lightning-icon icon-name={sectionIcon} size="x-small"></lightning-icon>
+                                        <span class="slds-truncate slds-p-left_small" title="Contact Details">Contact Details</span>
+                                    </button>
+                                </h3>
+                                <div class="slds-grid slds-wrap">
+                                    <div class="slds-size_1-of-1">
+                                        <template if:true={caseOpen}>
+                                            <div class="slds-grid slds-wrap">
+                                                <div class="slds-size_1-of-1">
+                                                    <div class="slds-form-element slds-form-element_stacked"><span class="slds-form-element__label">Name</span>
+                                                        <div class="slds-form-element__control">
+                                                            <a>{config.ServiceContactName__c}</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-size_1-of-1">
+                                                    <div class="slds-form-element slds-form-element_stacked"><span class="slds-form-element__label">Email</span>
+                                                        <div class="slds-form-element__control">
+                                                            <a>{config.ServiceContactEmail__c}</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-size_1-of-1">
+                                                    <div class="slds-form-element slds-form-element_stacked"><span class="slds-form-element__label">Phone Number</span>
+                                                        <div class="slds-form-element__control">
+                                                            <a>{config.ServiceContactPhone__c}</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </template>
+</div>
+</div>
+</div>
+</div>
+</div>
+</template>
+<div class="slds-size_1-of-1">
+    <div class="slds-size_1-of-1">
+        <div class="slds-section slds-is-open">
+            <h3 class="slds-section__title">
+                <button aria-expanded="true" class="slds-button slds-section__title-action">
+                                    <lightning-icon icon-name="utility:chevrondown" size="x-small"></lightning-icon>
+                                    <span class="slds-truncate slds-p-left_small" title="Contact Details">Case Details</span>
+                                </button>
+            </h3>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-size_1-of-1">
+                    <div class="slds-grid slds-wrap">
+                        <template if:true={loading}>
+                                            <div class="slds-size_1-of-1">
+                                                <div class="spinner-container">
+                                                    <lightning-spinner size="medium"></lightning-spinner>
+                                                </div>
+                                            </div>
+                                        </template>
+                        <template if:false={loading}>
+						
+                                            <div class="slds-size_1-of-1">
+                                                <div class="slds-form-element slds-form-element_stacked"><span class="slds-form-element__label">Case Status</span>
+                                                    <div class="slds-form-element__control"> Open </div>
+                                                </div>
+                                            </div>
+                                            <div class="slds-size_1-of-1">
+                                                <div class="slds-form-element slds-form-element_stacked"><span class="slds-form-element__label">Issue</span>
+                                                    <div class="slds-form-element__control">
+                                                        <template if:true={caseOpen}>
+                                                            <div class="slds-p-bottom_small"></div>
+                                                        </template>
+                        <template if:false={caseOpen}> Client reached out to our live agent chat to assist with a fee reversal on an overdraft fee.
+                                                        </template>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-size_1-of-1">
+                <div class="slds-form-element slds-form-element_stacked"><span class="slds-form-element__label">Case Summary</span>
+                    <template if:true={caseOpen}>
+                                                        <div class="slds-p-bottom_small">                                                       </div>
+                                                    </template>
+                    <template if:false={caseOpen}>
+                                                        <div>{caseSummary}
+                                                        </div>
+                                                    </template>
+                </div>
+            </div>
+            </template>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class={showDetailsSection}>
+
+</div>
+</template>

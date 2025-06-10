@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;Status&quot; : &quot;Text&quot;,
+  &quot;Name&quot; : &quot;Text&quot;,
+  &quot;dciId&quot; : &quot;Text&quot;,
+  &quot;ContentDocumentId&quot; : &quot;Text&quot;
+}</expectedInputJson>
+    <expectedOutputJson>{
+  &quot;Status&quot; : &quot;Text&quot;,
+  &quot;Name&quot; : &quot;Text&quot;,
+  &quot;dciId&quot; : &quot;Text&quot;,
+  &quot;ContentDocumentId&quot; : &quot;Text&quot;
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>FSCWlthManageStandingInstructionTransformDCI</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageStandingInstructionTransformDCICustom172</globalKey>
+        <inputFieldName>Timestamp</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageStandingInstructionTransformDCI</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Timestamp</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:Name 0 &quot;/\/\/-&quot; SUBSTRING</formulaConverted>
+        <formulaExpression>SUBSTRING(Name,0,&quot; -&quot;)</formulaExpression>
+        <formulaResultPath>NewName</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>FSCWlthManageStandingInstructionTransformDCI30993969724612946</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageStandingInstructionTransformDCI</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageStandingInstructionTransformDCI5716942167175945</globalKey>
+        <inputFieldName>Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageStandingInstructionTransformDCI</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageStandingInstructionTransformDCI6991203605718186</globalKey>
+        <inputFieldName>dciId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageStandingInstructionTransformDCI</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>dciId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageStandingInstructionTransformDCI5573384052734416</globalKey>
+        <inputFieldName>DocumentType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageStandingInstructionTransformDCI</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>DocumentType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageStandingInstructionTransformDCICustom9371</globalKey>
+        <inputFieldName>Remarks</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageStandingInstructionTransformDCI</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Remarks</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:ReviewedOn MONTH &apos;/&apos; | var:ReviewedOn DAY &apos;/&apos; | var:ReviewedOn YEAR &apos;/\/\/&apos; | var:ReviewedOn HOUR &apos;:&apos; | var:ReviewedOn MINUTE CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(MONTH(%ReviewedOn%),&apos;/&apos;,DAY(%ReviewedOn%),&apos;/&apos;,YEAR(%ReviewedOn%),&apos; &apos;,HOUR(%ReviewedOn%),&apos;:&apos;,MINUTE(%ReviewedOn%))</formulaExpression>
+        <formulaResultPath>Timestamp</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>FSCWlthManageStandingInstructionTransformDCICustom464</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageStandingInstructionTransformDCI</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageStandingInstructionTransformDCI7580544794780226</globalKey>
+        <inputFieldName>NewName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageStandingInstructionTransformDCI</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccNumber</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageStandingInstructionTransformDCI3591064922692786</globalKey>
+        <inputFieldName>Status</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageStandingInstructionTransformDCI</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Status</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>[ {
+  &quot;Name&quot; : &quot;353454654645 - FSCWlthManageStandingInstructionUploadDocumentCSS.css&quot;,
+  &quot;dciId&quot; : &quot;0dd1Q0000008vAPQAY&quot;,
+  &quot;DocumentType&quot; : &quot;Void Check&quot;,
+  &quot;Remarks&quot; : &quot;Not a valid document.&quot;,
+  &quot;ReviewedOn&quot; : &quot;2023-11-24T07:18:31.000Z&quot;,
+  &quot;Status&quot; : &quot;Accepted&quot;
+}, {
+  &quot;Name&quot; : &quot;4545464 - CommonPackage.xml&quot;,
+  &quot;dciId&quot; : &quot;0dd1Q0000008vAQQAY&quot;,
+  &quot;DocumentType&quot; : &quot;Deposit Slip&quot;,
+  &quot;ReviewedOn&quot; : &quot;2023-11-24T07:18:38.000Z&quot;,
+  &quot;Status&quot; : &quot;Rejected&quot;
+}, {
+  &quot;Name&quot; : &quot;353454654645 - image&quot;,
+  &quot;dciId&quot; : &quot;0dd1Q0000008vAeQAI&quot;,
+  &quot;DocumentType&quot; : &quot;Void Check&quot;,
+  &quot;ReviewedOn&quot; : &quot;2023-11-24T06:20:49.000Z&quot;,
+  &quot;Status&quot; : &quot;Rejected&quot;
+} ]</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>FSCWlthManageStandingInstructionTransformDCI_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

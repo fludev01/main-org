@@ -1,0 +1,5 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+<!--<lightning:workspaceAPI aura:id="workspace"/>
+    <a onclick="{!c.openTab}"><img id="UnitedPartnersInsight" src="/resource/UnitedPartnersInsight"  /></a>-->
+	<a href="/articles/en_US/Prevent-Fraud-with-Positive-Pay-Services"><img id="UnitedPartnersInsight" src="/resource/UnitedPartnersInsight"  /></a>
+</aura:component>

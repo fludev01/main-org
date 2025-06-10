@@ -1,0 +1,34 @@
+.THIS.addbutton,.THIS .addbutton {
+    text-align:center;
+    margin:10px 0;
+}
+.THIS.contentblock,.THIS .contentblock{
+    width:100%;
+    padding:80px;
+    text-align:center;
+    color:#fff;
+    margin:10px 0;
+    background-size:cover;
+    background-position:center center;
+}
+.THIS .full,.THIS .full .padding img{
+    width:100%;
+    text-align:center;
+}
+.THIS.contentblock .h2,.THIS .contentblock .h2{
+    color:#fff;
+    font-size:16px;
+    font-weight:bold;
+}
+.THIS .h2{
+    font-size:16px;
+    font-weight:bold;
+}
+.THIS .half{
+    width:50%;
+    float:left;
+}
+.THIS .clear{clear:both;}
+.THIS .padding{
+    padding:20px;
+}

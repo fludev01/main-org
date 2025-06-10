@@ -1,0 +1,77 @@
+.screenshot { 
+  position:absolute;
+  z-index:1;
+  
+}
+.draw {
+  position:absolute;
+  z-index:2;
+  /*pointer-events:none;*/
+}
+.draw .boxes {
+  fill:#BAD8F1;
+  stroke:white;
+  stroke-width:1;
+  fill-opacity:0.5;
+  stroke-opacity:0.9;
+
+}
+
+.draw .added-boxes{
+  fill:red;
+  stroke:white;
+  stroke-width:1;
+  fill-opacity:0.5;
+  stroke-opacity:0.9;
+}
+
+.draw .marquee {
+  fill:white;
+  stroke:blue;
+  stroke-width:1;
+  stroke-dasharray:5,5;
+  stroke-opacity:0.9;
+  fill-opacity:0.2;
+}
+
+.draw .marqueered {
+  fill:lightblue;
+  stroke:rgb(1, 118, 211);
+  stroke-width:1;
+  stroke-opacity:0.9;
+  fill-opacity:0.2;
+}
+ .marquee.hide {
+  display:none;
+}
+
+.hide_modal{
+  display:none;
+}
+
+.hideIt {
+  display:none;
+}
+
+.showIt {
+  display:block;
+}
+
+.parentDiv {
+  min-height: 100%;/* width: 1655px; background-color: rgb(195, 195, 195);*/ position: relative; 
+}
+
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 65;
+  
+  margin: -76px 0 0 -76px;
+  
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,20 @@
+.THIS .greyback{
+    background-color: #f5f5f5;
+}
+.THIS .right{
+    float: right;
+}
+.THIS .table{
+    max-height: 200px;
+    
+}
+.THIS lightning-primitive-cell-wrapper.slds-grid.slds-grid_align-end{
+    float: left;
+}
+.THIS .btn{
+    font-size:13px;
+}
+
+.THIS #marty, .THIS .marty{
+    min-height: 32rem !important;
+}

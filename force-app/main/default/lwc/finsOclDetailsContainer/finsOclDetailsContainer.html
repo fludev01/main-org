@@ -1,0 +1,57 @@
+<template>
+    <lightning-card>
+        <!-- HEADER -->
+        <div class="ocl-details-container-bg" slot="title">
+            <h3 class="slds-text-title_caps slds-m-left_medium slds-m-top_small">
+                <lightning-avatar src="/bad/image/url.jpg" initials="L" fallback-icon-name="standard:account"
+                    alternative-text={OppyName} class="slds-m-right_small">
+                </lightning-avatar>
+                {name}
+            </h3>
+        </div>
+        <div class="ocl-details-container-bg" slot="actions">
+            <img style="height: 45px;" src={nCinoLogo} height="45" ></img>
+            <lightning-button-icon-stateful class="slds-m-right_medium slds-m-left_medium slds-m-top_small" icon-name="utility:magicwand"
+             onclick={handleLikeButtonClick} alternative-text="Like">
+            </lightning-button-icon-stateful>
+            <lightning-button class="slds-m-right_medium slds-m-left_medium slds-m-top_small" label="Edit" variant="brand"></lightning-button>
+            <lightning-button class="slds-m-right_medium slds-m-left_medium slds-m-top_small" label="Continue" onclick={onContinue} ></lightning-button>
+        </div>
+        <!-- MAIN LAYOUT -->
+        <div class="ocl-details-container-bg">
+            <lightning-layout>
+                <!-- SIDEBAR TABS -->
+                <lightning-layout-item size="2" padding="around-small">
+                    <c-fins-ocl-sidebar-menu onsidebarclick={handleSidebarClick} tabs={sidebarTabs} borrow-or-loan={borrowingOrDetails}></c-fins-ocl-sidebar-menu>
+                </lightning-layout-item>
+
+                <!-- BORROWIG STRUCTURE -->
+                <lightning-layout-item size="10" padding="around-small">
+                    <template if:true={borrowingOrDetails}>
+                        <lightning-tabset>
+
+                            <lightning-tab label="BORROWING STRUCTURE">
+                                <c-fins-ocl-borrowing-structure loanname={account} ></c-fins-ocl-borrowing-structure>
+                            </lightning-tab>
+
+                        </lightning-tabset>
+                    </template>
+                    <!-- LOAN DETAIL -->
+                    <template if:false={borrowingOrDetails}>
+                        <lightning-tabset>
+                            <lightning-tab label="LOAN DETAILS">
+                                <c-fins-ocl-loan-details recordid={recordId}></c-fins-ocl-loan-details>
+                            </lightning-tab>
+                            <!-- EMPTY TABS -->
+                            <template for:each={detailTabs} for:item="tab">
+                                <lightning-tab key={tab.label} label={tab.label} title="2nd tab extended title">
+                                    {tab.label}
+                                </lightning-tab>
+                            </template>
+                        </lightning-tabset>
+                    </template>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

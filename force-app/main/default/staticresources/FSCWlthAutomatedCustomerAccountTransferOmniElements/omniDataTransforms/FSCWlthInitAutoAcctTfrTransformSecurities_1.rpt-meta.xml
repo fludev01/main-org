@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>FSCWlthInitAutoAcctTfrTransformSecurities</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:Symbol &quot;-&quot; var:Name CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(Symbol,&quot;-&quot;,Name)</formulaExpression>
+        <formulaResultPath>FullSecurityName</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>FSCWlthInitAutoAcctTfrTransformSecurities2730563268410293</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthInitAutoAcctTfrTransformSecurities</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthInitAutoAcctTfrTransformSecurities42794761630772316</globalKey>
+        <inputFieldName>Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthInitAutoAcctTfrTransformSecurities</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthInitAutoAcctTfrTransformSecurities5457588305329533</globalKey>
+        <inputFieldName>FullSecurityName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthInitAutoAcctTfrTransformSecurities</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>FullSecurityName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthInitAutoAcctTfrTransformSecurities15601942026785887</globalKey>
+        <inputFieldName>Symbol</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthInitAutoAcctTfrTransformSecurities</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Symbol</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthInitAutoAcctTfrTransformSecurities16412152285239867</globalKey>
+        <inputFieldName>AvailableShares</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthInitAutoAcctTfrTransformSecurities</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AvailableShares</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>[ {
+  &quot;Name&quot; : &quot;Vanguard 500 Index Fund&quot;,
+  &quot;AvailableShares&quot; : 0,
+  &quot;Symbol&quot; : &quot;VFIAX&quot;
+}, {
+  &quot;Name&quot; : &quot;Fidelity 500 Index Fund&quot;,
+  &quot;AvailableShares&quot; : 200,
+  &quot;Symbol&quot; : &quot;FXAIX&quot;
+} ]</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>FSCWlthInitAutoAcctTfrTransformSecurities_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

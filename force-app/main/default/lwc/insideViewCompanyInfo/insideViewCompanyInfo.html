@@ -1,0 +1,11 @@
+<template>
+    <img src={_companyInfoURL} class="imageClass" if:true={showOverview}/>
+    <img src={_companyInfoIndustryURL} class="imageClass" if:true={showIndustry}/>
+    <img src={_companyInfoFinancialsURL} class="imageClass" if:true={showFinancials}/>
+    <img src={_companyInfoFamilyTreeURL} class="imageClass" if:true={showFamilyTree}/>
+
+    <div class="selectOverview" onclick={selectOverview}></div>
+    <div class="selectIndustry" onclick={selectIndustry}></div>
+    <div class="selectFinancials" onclick={selectFinancials}></div>
+    <div class="selectFamilyTree" onclick={selectFamilyTree}></div>
+</template>

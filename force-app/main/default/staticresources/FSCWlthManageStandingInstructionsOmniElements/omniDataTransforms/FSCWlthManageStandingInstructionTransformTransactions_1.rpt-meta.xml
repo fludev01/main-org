@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ResponseForExternalTransactionsStatus&quot; : true,
+  &quot;GetTransactions&quot; : {
+    &quot;hasErrors&quot; : &quot;false&quot;,
+    &quot;AdditionalAttributes&quot; : { },
+    &quot;Transactions&quot; : [ {
+      &quot;TransactionId&quot; : &quot;1&quot;,
+      &quot;TransactionType&quot; : &quot;Fee&quot;,
+      &quot;TransactionAmount&quot; : 10,
+      &quot;TransactionFormattedAmount&quot; : &quot;USD 10.00&quot;,
+      &quot;TransactionAmountCurrency&quot; : &quot;USD&quot;,
+      &quot;TransactionPostedDate&quot; : &quot;2022-09-01T16:41:41.090Z&quot;,
+      &quot;TransactionDescription&quot; : &quot;Overdraft charge&quot;,
+      &quot;AdditionalAttributes&quot; : {
+        &quot;Subtype&quot; : &quot;Overdraft fee&quot;
+      }
+    }, {
+      &quot;TransactionId&quot; : &quot;10&quot;,
+      &quot;TransactionType&quot; : &quot;Withdrawal&quot;,
+      &quot;TransactionAmount&quot; : 0.04,
+      &quot;TransactionFormattedAmount&quot; : &quot;USD 0.04&quot;,
+      &quot;TransactionAmountCurrency&quot; : &quot;USD&quot;,
+      &quot;TransactionCode&quot; : &quot;Transfer&quot;,
+      &quot;TransactionPostedDate&quot; : &quot;2022-03-09T16:41:41.090Z&quot;,
+      &quot;TransactionDescription&quot; : &quot;Wire transfer&quot;
+    }, {
+      &quot;TransactionId&quot; : &quot;2&quot;,
+      &quot;TransactionType&quot; : &quot;Withdrawal&quot;,
+      &quot;TransactionAmount&quot; : 20,
+      &quot;TransactionFormattedAmount&quot; : &quot;USD 20.00&quot;,
+      &quot;TransactionAmountCurrency&quot; : &quot;USD&quot;,
+      &quot;TransactionPostedDate&quot; : &quot;2022-03-02T16:41:41.090Z&quot;,
+      &quot;TransactionDescription&quot; : &quot;ATM machine withdrawal&quot;
+    } ],
+    &quot;AccountType&quot; : &quot;CurrentAccount&quot;,
+    &quot;AccountCurrency&quot; : &quot;USD&quot;,
+    &quot;AccountName&quot; : &quot;Salesforce.com&quot;,
+    &quot;AccountId&quot; : &quot;01axx000003MLytAAGabc&quot;,
+    &quot;errorCode&quot; : &quot;INVOKE-200&quot;,
+    &quot;error&quot; : &quot;OK&quot;
+  },
+  &quot;GetTransactionsStatus&quot; : true,
+  &quot;Id&quot; : &quot;a0Fxx000000fVJ3EAM&quot;,
+  &quot;currentOffset&quot; : &quot;0&quot;,
+  &quot;TransactionType&quot; : &quot;{Session.transactionType}&quot;,
+  &quot;getExternalTransactions&quot; : &quot;true&quot;,
+  &quot;sourceSystemId&quot; : &quot;abc&quot;,
+  &quot;options&quot; : {
+    &quot;useContinuation&quot; : true
+  },
+  &quot;IfOnlyInternalTransactionsStatus&quot; : false
+}</expectedInputJson>
+    <expectedOutputJson>{
+  &quot;ResponseForExternalTransactionsStatus&quot; : true,
+  &quot;GetTransactions&quot; : {
+    &quot;hasErrors&quot; : &quot;false&quot;,
+    &quot;AdditionalAttributes&quot; : { },
+    &quot;Transactions&quot; : [ {
+      &quot;TransactionId&quot; : &quot;1&quot;,
+      &quot;TransactionType&quot; : &quot;Fee&quot;,
+      &quot;TransactionAmount&quot; : 10,
+      &quot;TransactionAmountCurrency&quot; : &quot;USD&quot;,
+      &quot;TransactionPostedDate&quot; : &quot;2022-09-01T16:41:41.090Z&quot;,
+      &quot;TransactionDescription&quot; : &quot;Overdraft charge&quot;,
+      &quot;AdditionalAttributes&quot; : {
+        &quot;Subtype&quot; : &quot;Overdraft fee&quot;
+      }
+    }, {
+      &quot;TransactionId&quot; : &quot;10&quot;,
+      &quot;TransactionType&quot; : &quot;Withdrawal&quot;,
+      &quot;TransactionAmount&quot; : 0.04,
+      &quot;TransactionAmountCurrency&quot; : &quot;USD&quot;,
+      &quot;TransactionCode&quot; : &quot;Transfer&quot;,
+      &quot;TransactionPostedDate&quot; : &quot;2022-03-09T16:41:41.090Z&quot;,
+      &quot;TransactionDescription&quot; : &quot;Wire transfer&quot;
+    }, {
+      &quot;TransactionId&quot; : &quot;2&quot;,
+      &quot;TransactionType&quot; : &quot;Withdrawal&quot;,
+      &quot;TransactionAmount&quot; : 20,
+      &quot;TransactionAmountCurrency&quot; : &quot;USD&quot;,
+      &quot;TransactionPostedDate&quot; : &quot;2022-03-02T16:41:41.090Z&quot;,
+      &quot;TransactionDescription&quot; : &quot;ATM machine withdrawal&quot;
+    } ],
+    &quot;AccountType&quot; : &quot;CurrentAccount&quot;,
+    &quot;AccountCurrency&quot; : &quot;USD&quot;,
+    &quot;AccountName&quot; : &quot;Salesforce.com&quot;,
+    &quot;AccountId&quot; : &quot;01axx000003MLytAAGabc&quot;,
+    &quot;errorCode&quot; : &quot;INVOKE-200&quot;,
+    &quot;error&quot; : &quot;OK&quot;
+  },
+  &quot;GetTransactionsStatus&quot; : true,
+  &quot;Id&quot; : &quot;a0Fxx000000fVJ3EAM&quot;,
+  &quot;currentOffset&quot; : &quot;0&quot;,
+  &quot;TransactionType&quot; : &quot;{Session.transactionType}&quot;,
+  &quot;getExternalTransactions&quot; : &quot;true&quot;,
+  &quot;sourceSystemId&quot; : &quot;abc&quot;,
+  &quot;options&quot; : {
+    &quot;useContinuation&quot; : true
+  },
+  &quot;IfOnlyInternalTransactionsStatus&quot; : false
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>FSCWlthManageStandingInstructionTransformTransactions</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:Payments:PaymentMode &quot;Journal&quot; == var:Payments:PayeeJournalReference:PayeeAccountNumbers var:Payments:PayeeAccountReference:PayeeAccountNumber IF</formulaConverted>
+        <formulaExpression>IF(%Payments:PaymentMode%==&quot;Journal&quot;,%Payments:PayeeJournalReference:PayeeAccountNumbers%,%Payments:PayeeAccountReference:PayeeAccountNumber%)</formulaExpression>
+        <formulaResultPath>AccountNumber</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>FSCWlthManageStandingInstructionTransformTransactions8237547756893036</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageStandingInstructionTransformTransactions</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageStandingInstructionTransformTransactions19773444875241108</globalKey>
+        <inputFieldName>Payments:PaymentMode</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageStandingInstructionTransformTransactions</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PaymentMode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Payments:PayeeReference:PayeeAddress:AddressLine1 var:Payments:PayeeReference:PayeeAddress:AddressLine1 &apos;&apos; IF | var:Payments:PayeeReference:PayeeAddress:AddressLine2 | var:Payments:PayeeReference:PayeeAddress:AddressLine1 | &apos;,/\/\/&apos; var:Payments:PayeeReference:PayeeAddress:AddressLine2 CONCAT var:Payments:PayeeReference:PayeeAddress:AddressLine2 IF &apos;&apos; IF | var:Payments:PayeeReference:PayeeAddress:City | var:Payments:PayeeReference:PayeeAddress:AddressLine1 var:Payments:PayeeReference:PayeeAddress:AddressLine2 OR | &apos;,/\/\/&apos; var:Payments:PayeeReference:PayeeAddress:City CONCAT var:Payments:PayeeReference:PayeeAddress:City IF &apos;&apos; IF | var:Payments:PayeeReference:PayeeAddress:State | var:Payments:PayeeReference:PayeeAddress:AddressLine1 var:Payments:PayeeReference:PayeeAddress:AddressLine2 OR var:Payments:PayeeReference:PayeeAddress:City OR | &apos;,/\/\/&apos; var:Payments:PayeeReference:PayeeAddress:State CONCAT var:Payments:PayeeReference:PayeeAddress:State IF &apos;&apos; IF | var:Payments:PayeeReference:PayeeAddress:CountryCode | var:Payments:PayeeReference:PayeeAddress:AddressLine1 var:Payments:PayeeReference:PayeeAddress:AddressLine2 OR var:Payments:PayeeReference:PayeeAddress:City var:Payments:PayeeReference:PayeeAddress:State OR OR | &apos;,/\/\/&apos; var:Payments:PayeeReference:PayeeAddress:CountryCode CONCAT var:Payments:PayeeReference:PayeeAddress:CountryCode IF &apos;&apos; IF | var:Payments:PayeeReference:PayeeAddress:PostalCode | var:Payments:PayeeReference:PayeeAddress:AddressLine1 var:Payments:PayeeReference:PayeeAddress:AddressLine2 OR var:Payments:PayeeReference:PayeeAddress:City var:Payments:PayeeReference:PayeeAddress:State OR OR var:Payments:PayeeReference:PayeeAddress:CountryCode OR | &apos;,/\/\/&apos; var:Payments:PayeeReference:PayeeAddress:PostalCode CONCAT var:Payments:PayeeReference:PayeeAddress:PostalCode IF &apos;&apos; IF CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(IF(%Payments:PayeeReference:PayeeAddress:AddressLine1%,%Payments:PayeeReference:PayeeAddress:AddressLine1%,&apos;&apos;),IF(%Payments:PayeeReference:PayeeAddress:AddressLine2%,IF(%Payments:PayeeReference:PayeeAddress:AddressLine1%,CONCAT(&apos;, &apos;,%Payments:PayeeReference:PayeeAddress:AddressLine2%),%Payments:PayeeReference:PayeeAddress:AddressLine2%),&apos;&apos;),IF(%Payments:PayeeReference:PayeeAddress:City%,IF(OR(%Payments:PayeeReference:PayeeAddress:AddressLine1%,%Payments:PayeeReference:PayeeAddress:AddressLine2%),CONCAT(&apos;, &apos;,%Payments:PayeeReference:PayeeAddress:City%),%Payments:PayeeReference:PayeeAddress:City%),&apos;&apos;),IF(%Payments:PayeeReference:PayeeAddress:State%,IF(OR(OR(%Payments:PayeeReference:PayeeAddress:AddressLine1%,%Payments:PayeeReference:PayeeAddress:AddressLine2%),%Payments:PayeeReference:PayeeAddress:City%),CONCAT(&apos;, &apos;,%Payments:PayeeReference:PayeeAddress:State%),%Payments:PayeeReference:PayeeAddress:State%),&apos;&apos;),IF(%Payments:PayeeReference:PayeeAddress:CountryCode%,IF(OR(OR(%Payments:PayeeReference:PayeeAddress:AddressLine1%,%Payments:PayeeReference:PayeeAddress:AddressLine2%),OR(%Payments:PayeeReference:PayeeAddress:City%,%Payments:PayeeReference:PayeeAddress:State%)),CONCAT(&apos;, &apos;,%Payments:PayeeReference:PayeeAddress:CountryCode%),%Payments:PayeeReference:PayeeAddress:CountryCode%),&apos;&apos;),IF(%Payments:PayeeReference:PayeeAddress:PostalCode%,IF(OR(OR(OR(%Payments:PayeeReference:PayeeAddress:AddressLine1%,%Payments:PayeeReference:PayeeAddress:AddressLine2%),OR(%Payments:PayeeReference:PayeeAddress:City%,%Payments:PayeeReference:PayeeAddress:State%)),%Payments:PayeeReference:PayeeAddress:CountryCode%),CONCAT(&apos;, &apos;,%Payments:PayeeReference:PayeeAddress:PostalCode%),%Payments:PayeeReference:PayeeAddress:PostalCode%),&apos;&apos;))</formulaExpression>
+        <formulaResultPath>PayeeAddress</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>FSCWlthManageStandingInstructionTransformTransactions2674057479899099</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageStandingInstructionTransformTransactions</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageStandingInstructionTransformTransactions32466253895923725</globalKey>
+        <inputFieldName>PayeeAddress</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageStandingInstructionTransformTransactions</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Address</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>-</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageStandingInstructionTransformTransactions9725616793943228</globalKey>
+        <inputFieldName>AccountNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageStandingInstructionTransformTransactions</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Bank Account Number</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageStandingInstructionTransformTransactions3957049776915733</globalKey>
+        <inputFieldName>Payments:PayeeBankReference:RoutingNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageStandingInstructionTransformTransactions</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Bank Routing Number</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageStandingInstructionTransformTransactions4217565205606575</globalKey>
+        <inputFieldName>Payments:PaymentSchedule:PaymentEndDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageStandingInstructionTransformTransactions</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>EndDate</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageStandingInstructionTransformTransactions5481976353981286</globalKey>
+        <inputFieldName>Payments:PaymentDefinition:PaymentAmount:Currency</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageStandingInstructionTransformTransactions</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>CurrencyCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageStandingInstructionTransformTransactions17743244027853566</globalKey>
+        <inputFieldName>Payments:PaymentSchedule:NumberOfPayments</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageStandingInstructionTransformTransactions</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>String</outputFieldFormat>
+        <outputFieldName>Instalment</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageStandingInstructionTransformTransactions46306521498912145</globalKey>
+        <inputFieldName>Payments:PaymentSchedule:PaymentFrequency</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageStandingInstructionTransformTransactions</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Frequency</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageStandingInstructionTransformTransactions1975286868931292</globalKey>
+        <inputFieldName>PaymentId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageStandingInstructionTransformTransactions</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>StandingOrderId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageStandingInstructionTransformTransactions6518616662488999</globalKey>
+        <inputFieldName>Payments:PaymentDefinition:PaymentAmount:Amount</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageStandingInstructionTransformTransactions</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Amount</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageStandingInstructionTransformTransactions04764253058246215</globalKey>
+        <inputFieldName>Payments:PayeeReference:PayeeName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageStandingInstructionTransformTransactions</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PayeeName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageStandingInstructionTransformTransactions741260309562086</globalKey>
+        <inputFieldName>Payments:PaymentSchedule:PaymentStartDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageStandingInstructionTransformTransactions</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>StartDate</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageStandingInstructionTransformTransactions6516764991645849</globalKey>
+        <inputFieldName>Payments:PayeeBankReference:BankName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageStandingInstructionTransformTransactions</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Bank Name</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>[ {
+  &quot;CreationDateTime&quot; : &quot;2023-10-09T16:34:19.993+05:30&quot;,
+  &quot;PaymentId&quot; : &quot;PMT3564864&quot;,
+  &quot;Payments&quot; : {
+    &quot;PaymentType&quot; : &quot;standing order&quot;,
+    &quot;PaymentMode&quot; : &quot;Bank Wire&quot;,
+    &quot;PaymentMechanism&quot; : &quot;recurring&quot;,
+    &quot;PaymentPurpose&quot; : &quot;Standing instruction for phone bill 1000 USD&quot;,
+    &quot;PaymentDefinition&quot; : {
+      &quot;PaymentAmount&quot; : {
+        &quot;Amount&quot; : &quot;1000&quot;,
+        &quot;Currency&quot; : &quot;USD&quot;
+      }
+    },
+    &quot;PayeeBankReference&quot; : {
+      &quot;BankName&quot; : &quot;ABC&quot;,
+      &quot;RoutingNumber&quot; : &quot;2000123008&quot;
+    },
+    &quot;PayeeAccountReference&quot; : {
+      &quot;PayeeAccountNumber&quot; : &quot;AMZ10012&quot;,
+      &quot;PayeeAccountType&quot; : &quot;savings&quot;,
+      &quot;PayeeAccountDetails&quot; : &quot;accountDetails&quot;
+    },
+    &quot;PaymentTransferType&quot; : &quot;1st Party Transfer&quot;,
+    &quot;PaymentSchedule&quot; : {
+      &quot;PaymentStartDate&quot; : &quot;10/25/2023&quot;,
+      &quot;PaymentEndDate&quot; : &quot;10/25/2024&quot;,
+      &quot;PaymentFrequency&quot; : &quot;MONTHLY&quot;,
+      &quot;NumberOfPayments&quot; : &quot;12&quot;
+    },
+    &quot;PayeeReference&quot; : {
+      &quot;PayeeName&quot; : &quot;Amazon&quot;,
+      &quot;PayeeAddress&quot; : {
+        &quot;AddressType&quot; : &quot;Mailing Address&quot;,
+        &quot;AddressLine1&quot; : &quot;415 Mission St&quot;,
+        &quot;AddressLine2&quot; : &quot;Floor 61&quot;,
+        &quot;City&quot; : &quot;San Francisco&quot;,
+        &quot;State&quot; : &quot;CA&quot;,
+        &quot;PostalCode&quot; : &quot;94105&quot;,
+        &quot;CountryCode&quot; : &quot;USA&quot;
+      }
+    }
+  }
+}, {
+  &quot;CreationDateTime&quot; : &quot;2023-10-09T16:38:47.975+05:30&quot;,
+  &quot;PaymentId&quot; : &quot;PMT0228286&quot;,
+  &quot;Payments&quot; : {
+    &quot;PaymentType&quot; : &quot;standing order&quot;,
+    &quot;PaymentMode&quot; : &quot;Check Disbursement&quot;,
+    &quot;PaymentMechanism&quot; : &quot;recurring&quot;,
+    &quot;PaymentPurpose&quot; : &quot;Standing instruction for phone bill 1000 USD&quot;,
+    &quot;PaymentDefinition&quot; : {
+      &quot;PaymentAmount&quot; : {
+        &quot;Amount&quot; : &quot;1000&quot;,
+        &quot;Currency&quot; : &quot;USD&quot;
+      }
+    },
+    &quot;PayeeCheckReference&quot; : {
+      &quot;PayeeCheckMode&quot; : &quot;AMZ10012&quot;,
+      &quot;PayeeCheckMemo&quot; : &quot;savings&quot;,
+      &quot;PayeeCheckStubInformation&quot; : &quot;savings&quot;
+    },
+    &quot;PaymentTransferType&quot; : &quot;1st Party Transfer&quot;,
+    &quot;PaymentSchedule&quot; : {
+      &quot;PaymentStartDate&quot; : &quot;10/25/2023&quot;,
+      &quot;PaymentEndDate&quot; : &quot;10/25/2024&quot;,
+      &quot;PaymentFrequency&quot; : &quot;MONTHLY&quot;,
+      &quot;NumberOfPayments&quot; : &quot;12&quot;
+    },
+    &quot;PayeeReference&quot; : {
+      &quot;PayeeName&quot; : &quot;Misho&quot;,
+      &quot;PayeeAddress&quot; : {
+        &quot;AddressType&quot; : &quot;Mailing Address&quot;,
+        &quot;AddressLine1&quot; : &quot;415 Mission St&quot;,
+        &quot;AddressLine2&quot; : &quot;Floor 61&quot;,
+        &quot;City&quot; : &quot;San Francisco&quot;,
+        &quot;State&quot; : &quot;CA&quot;,
+        &quot;PostalCode&quot; : &quot;94105&quot;,
+        &quot;CountryCode&quot; : &quot;USA&quot;
+      }
+    }
+  }
+}, {
+  &quot;CreationDateTime&quot; : &quot;2023-10-09T16:40:11.313+05:30&quot;,
+  &quot;PaymentId&quot; : &quot;PMT4251280&quot;,
+  &quot;Payments&quot; : {
+    &quot;PaymentType&quot; : &quot;standing order&quot;,
+    &quot;PaymentMode&quot; : &quot;Journal&quot;,
+    &quot;PaymentMechanism&quot; : &quot;recurring&quot;,
+    &quot;PaymentPurpose&quot; : &quot;Standing instruction for phone bill 1000 USD&quot;,
+    &quot;PaymentDefinition&quot; : {
+      &quot;PaymentAmount&quot; : {
+        &quot;Amount&quot; : &quot;1000&quot;,
+        &quot;Currency&quot; : &quot;USD&quot;
+      }
+    },
+    &quot;PayeeJournalReference&quot; : {
+      &quot;PayeeAccountNumbers&quot; : [ &quot;AMZ10012&quot; ]
+    },
+    &quot;PaymentTransferType&quot; : &quot;1st Party Transfer&quot;,
+    &quot;PaymentSchedule&quot; : {
+      &quot;PaymentStartDate&quot; : &quot;10/25/2023&quot;,
+      &quot;PaymentEndDate&quot; : &quot;10/25/2024&quot;,
+      &quot;PaymentFrequency&quot; : &quot;MONTHLY&quot;,
+      &quot;NumberOfPayments&quot; : &quot;12&quot;
+    },
+    &quot;PayeeReference&quot; : {
+      &quot;PayeeName&quot; : &quot;Netflix&quot;,
+      &quot;PayeeAddress&quot; : {
+        &quot;AddressType&quot; : &quot;Mailing Address&quot;,
+        &quot;AddressLine1&quot; : &quot;415 Mission St&quot;,
+        &quot;AddressLine2&quot; : &quot;Floor 61&quot;,
+        &quot;City&quot; : &quot;San Francisco&quot;,
+        &quot;State&quot; : &quot;CA&quot;,
+        &quot;PostalCode&quot; : &quot;94105&quot;,
+        &quot;CountryCode&quot; : &quot;USA&quot;
+      }
+    }
+  }
+}, {
+  &quot;CreationDateTime&quot; : &quot;2023-10-09T16:41:19.296+05:30&quot;,
+  &quot;PaymentId&quot; : &quot;PMT0372052&quot;,
+  &quot;Payments&quot; : {
+    &quot;PaymentType&quot; : &quot;standing order&quot;,
+    &quot;PaymentMode&quot; : &quot;EFT&quot;,
+    &quot;PaymentMechanism&quot; : &quot;recurring&quot;,
+    &quot;PaymentPurpose&quot; : &quot;Standing instruction for phone bill 1000 USD&quot;,
+    &quot;PaymentDefinition&quot; : {
+      &quot;PaymentAmount&quot; : {
+        &quot;Amount&quot; : &quot;1000&quot;,
+        &quot;Currency&quot; : &quot;USD&quot;
+      }
+    },
+    &quot;PayeeBankReference&quot; : {
+      &quot;BankName&quot; : &quot;ABC&quot;,
+      &quot;RoutingNumber&quot; : &quot;2000123008&quot;
+    },
+    &quot;PayeeAccountReference&quot; : {
+      &quot;PayeeAccountNumber&quot; : &quot;AMZ10012&quot;,
+      &quot;PayeeAccountType&quot; : &quot;savings&quot;,
+      &quot;PayeeAccountDetails&quot; : &quot;accountDetails&quot;
+    },
+    &quot;PaymentTransferType&quot; : &quot;1st Party Transfer&quot;,
+    &quot;PaymentSchedule&quot; : {
+      &quot;PaymentStartDate&quot; : &quot;10/25/2023&quot;,
+      &quot;PaymentEndDate&quot; : &quot;10/25/2024&quot;,
+      &quot;PaymentFrequency&quot; : &quot;MONTHLY&quot;,
+      &quot;NumberOfPayments&quot; : &quot;12&quot;
+    },
+    &quot;PayeeReference&quot; : {
+      &quot;PayeeName&quot; : &quot;Flipkart&quot;,
+      &quot;PayeeAddress&quot; : {
+        &quot;AddressType&quot; : &quot;Mailing Address&quot;,
+        &quot;AddressLine1&quot; : &quot;415 Mission St&quot;,
+        &quot;AddressLine2&quot; : &quot;Floor 61&quot;,
+        &quot;City&quot; : &quot;San Francisco&quot;,
+        &quot;State&quot; : &quot;CA&quot;,
+        &quot;PostalCode&quot; : &quot;94105&quot;,
+        &quot;CountryCode&quot; : &quot;USA&quot;
+      }
+    }
+  }
+} ]</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>FSCWlthManageStandingInstructionTransformTransactions_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

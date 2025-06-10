@@ -1,0 +1,20 @@
+<aura:component
+  access="global"
+  implements="force:hasRecordId,flexipage:availableForRecordHome"
+>
+  <!-- Interface Aura Attrs -->
+  <aura:attribute name="recordId" type="Id" />
+  <aura:attribute name="cardTitle" type="String" />
+  <aura:attribute name="confirmationButtonLabel" type="String" />
+  <aura:attribute name="recProductId" type="String" />
+  <aura:attribute name="currencyIso" type="String" />
+  <!-- Pass into LWC -->
+  <c:cpqbMockNbq
+    recordId="{!v.recordId}"
+    cardTitle="{!v.cardTitle}"
+    currencyIso="{!v.currencyIso}"
+    confirmationButtonLabel="{!v.confirmationButtonLabel}"
+    recProductId="{!v.recProductId}"
+    onquotecreated="{!c.handleQleNav}"
+  />
+</aura:component>

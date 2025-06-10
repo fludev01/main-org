@@ -1,0 +1,32 @@
+<template>
+ <div class="panel panel-default">
+    <div>{Title}</div>
+    <table class="table slds-table slds-table--bordered slds-table--cell-buffer" style="table-layout: auto;">
+      <thead>
+        <tr>
+          <th class="slds-cell-shrink">Select</th>
+            <th>Date</th><th>Description</th><th>Source</th><th style='text-align:right;'>Withdrawals</th><th style='text-align:right;'>Deposits</th><th style='text-align:right;'>Balance</th>
+        </tr>
+      </thead>
+    <tbody class="ins">
+    <template for:each={displayRows} for:item="displayrow">
+       <tr key={displayrow.index}>
+            <td class="slds-cell-shrink">
+                <lightning-input type="radio" variant="label-hidden"
+                  checked={displayrow.checked} name={displayrow.tagname}
+                  data-key={displayrow.index} label="dataCheckbox" onchange={handleSelection}>
+                </lightning-input>
+            </td>
+            <!-- convert the map to a list, and then display it -->
+            <td>{displayrow.trxdate}</td>
+            <td>{displayrow.trxdescription}</td>
+            <td>{displayrow.trxsourcecode}</td>
+            <td style='text-align:right;'><lightning-formatted-number if:true={displayrow.trxwithdrawals} value={displayrow.trxwithdrawals} format-style="currency" minimum-fraction-digits="2" maximum-fraction-digits="2"></lightning-formatted-number></td>
+            <td style='text-align:right;'><lightning-formatted-number if:true={displayrow.trxdeposits} value={displayrow.trxdeposits} format-style="currency" minimum-fraction-digits="2" maximum-fraction-digits="2"></lightning-formatted-number></td>
+            <td style='text-align:right;'><lightning-formatted-number value={displayrow.trxbalance} format-style="currency" minimum-fraction-digits="2" maximum-fraction-digits="2"></lightning-formatted-number></td>
+        </tr>
+    </template>
+    </tbody>
+    </table>
+ </div>
+ </template>

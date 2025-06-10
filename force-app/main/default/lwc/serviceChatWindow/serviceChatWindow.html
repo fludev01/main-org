@@ -1,0 +1,45 @@
+<template>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size_1-of-1 slds-card container">
+            <div class="slds-size_1-of-1 slds-size_1-of-1">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-size_1-of-1 slds-scrollable_y scroller" style="height:402px">
+                        <section role="log">
+                            <ul>
+                                <template if:true={messages}>
+                                    <template for:each={messages} for:item="message" for:index="i">
+                                        <c-service-chat-message key={message.i} message={message} case-summary={caseSummary} knowledge-title={config.ServiceKnowledgeArticleTitle__c} knowledge-content={config.ServiceKnowledgeArticleContent__c} onposted={handleNewMessagePost} ></c-service-chat-message>
+                                    </template>    
+                                </template>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="slds-size_1-of-1">
+                        <div class="slds-grid slds-wrap slds-grid_aligin-spread action-bar slds-p-around_small">
+                            <div class="slds-col">
+                                <lightning-button-icon icon-name="utility:share_file" alternative-text="Add user" class="slds-m-right_xx-small" title="Add user"></lightning-button-icon>
+                                <lightning-button-group>
+                                    <lightning-button-icon icon-name="utility:change_owner" alternative-text="Settings" title="Settings"></lightning-button-icon>
+                                    <lightning-button-icon icon-name="utility:people" alternative-text="Delete" title="Delete"></lightning-button-icon>
+                                    <lightning-button-icon icon-name="utility:block_visitor" alternative-text="Save" title="Save"></lightning-button-icon>
+                                </lightning-button-group>
+                                <lightning-button-icon icon-name="utility:priority" alternative-text="Bookmark" class="slds-m-left_xx-small" title="Bookmark"></lightning-button-icon>
+                            </div>
+                            <div class="slds-col slds-text-align_right">
+                                <lightning-button label='End Chat' variant='destructive' disabled={endChatButton}></lightning-button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-size_1-of-1">
+                        <span onkeypress={handleKeystroke}>
+                            <lightning-textarea name="input" value={recievedMessage} label="Ask Einstein" variant="label-hidden" placeholder="Type a message..." onchange={handleInputChange}></lightning-textarea>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <template if:true={showServiceChatModal}>
+        <c-service-chat-modal onclosemodal={saveKnowledgeArticle} messages={messages} use-gateway={useLLMGateway}></c-service-chat-modal>
+    </template>
+</template>

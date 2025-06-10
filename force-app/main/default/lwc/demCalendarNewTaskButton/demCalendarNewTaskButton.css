@@ -1,0 +1,16 @@
+.wrapper {
+    width: 100%;
+    font-size: 10px;
+    height: 18px;
+    line-height: 18px;
+    padding-left: 4px;
+    cursor: pointer;
+    color: rgba(201,199,197,.6);
+    transition-duration: .4s;
+}
+.wrapper:hover {
+    color: #1589ee;
+}
+.wrapper * {
+    pointer-events: none;
+}

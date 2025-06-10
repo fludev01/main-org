@@ -1,0 +1,22 @@
+.title {
+    font-weight: 500;
+    display: flex;
+}
+
+.message-card {
+    background: #ffffff;
+    border: 1px solid #c9c9c9;
+    border-radius: 4px;
+  }
+
+  .slds-border_top{
+    border-bottom:1px solid rgb(183 182 182) !important;
+  }
+
+  .slds-border_bottom{
+    border-bottom:1px solid rgb(183 182 182) !important;
+  }
+
+.text-weak{
+    color:#444444;
+}

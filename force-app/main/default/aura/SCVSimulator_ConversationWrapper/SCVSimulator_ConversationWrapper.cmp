@@ -1,0 +1,47 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" controller="SCVSimulator_CT" access="global" >
+    <aura:attribute name="conversation" type="String" default="" /> 
+    <aura:attribute name="initialMessage" type="Map" default="" /> 
+    <aura:attribute name="height" type="Integer" default="450"/> 
+    <aura:attribute name="textBubbleColor" type="String" />
+    <aura:attribute name="updateType" type="String" default="Update with Platform Event" />
+    
+    <aura:attribute name="voiceCallRecord" type="Object"/>
+    <aura:attribute name="recordLoadError" type="String"/>
+    <force:recordData aura:id="recordLoader" 
+                      recordId="{!v.recordId}"
+                      fields="Contact__r.Name, Assigned_To__r.Name"
+        			  targetFields="{!v.voiceCallRecord}"
+        			  targetError="{!v.recordLoadError}" />
+    
+    <!-- App state -->
+    <aura:attribute name="state" type="Map" default="" /> 
+    <!-- Holds the streaming event subscription -->
+    <aura:attribute name="subscription" type="Map" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    
+    <aura:html tag="style">
+       :root {
+           --backgroundColor: {!v.textBubbleColor};
+       }
+    </aura:html>
+    
+    <lightning:card>
+        <aura:set attribute="title">
+            <lightning:icon iconName="standard:messaging_conversation" variant="inverse"  size="small" class="slds-m-right_x-small card-icon"/>
+            Conversation
+        </aura:set>
+        <lightning:input aura:id="focusInput" class="hidden" label="focus"/>
+        <div class="scv-conversation-wrapper slds-p-bottom_small" >
+            <div id="chatArea" class="scrollArea" style="{! 'height: ' + v.height + 'px;' }">
+                <section role="log" class="slds-chat">
+                    <ul class="slds-chat-list" >
+                        <aura:iteration items="{! v.state.messagesToShow }" var="message">   
+                            <c:SCVSimulator_ConversationMessage message="{! message }" caller="{! v.voiceCallRecord.Contact__r.Name }" agent="{! v.voiceCallRecord.Assigned_To__r.Name }"/>                 
+                        </aura:iteration>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </lightning:card>
+    
+</aura:component>

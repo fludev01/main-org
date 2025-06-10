@@ -1,0 +1,27 @@
+{
+	"mcpServers": {
+		"salesforce-mcp": {
+			"command": "node",
+			"args": [
+				"/Users/marcpla/Documents/Feina/Projectes/mcp/mcp_salesforce/index.js"
+			],
+			"env": {
+
+			}
+		},
+		"github": {
+			"command": "docker",
+			"args": [
+				"run",
+				"-i",
+				"--rm",
+				"-e",
+				"GITHUB_PERSONAL_ACCESS_TOKEN",
+				"ghcr.io/github/github-mcp-server"
+			],
+			"env": {
+				"GITHUB_PERSONAL_ACCESS_TOKEN": "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"
+			}
+		}
+	}
+}

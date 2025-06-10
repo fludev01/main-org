@@ -1,0 +1,5 @@
+<design:component>
+	<design:attribute name="recordId" label="Related Record ID" />
+    <design:attribute name="label" label="Label" />
+    <design:attribute name="allowMultiple" label="Allow Multiple" />
+</design:component>

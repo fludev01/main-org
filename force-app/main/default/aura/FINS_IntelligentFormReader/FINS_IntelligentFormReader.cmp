@@ -1,0 +1,92 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName" access="global" >
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="sObjectName" type="String" />
+    <aura:attribute name="openmodel" type="boolean"/>
+    <aura:attribute name="Path" type="Integer" default="1" />
+    
+	 <lightning:card footer="" title="">
+        <p class="slds-p-horizontal_small centertext">
+            <div class="slds-text-heading_small">Review Documents</div>
+            <div class="slds-m-top_small slds-align_absolute-center">
+            	<lightning:button label="Review" title="Review" onclick="{! c.handleClick }"/>
+            </div>
+        </p>
+    </lightning:card>
+    
+    
+    <aura:If isTrue="{!v.openmodel}">
+        <div aura:id="editDialog" role="dialog" tabindex="-1" aria-labelledby="header43" class="slds-modal slds-fade-in-open slds-modal_small slds-backdrop ">
+            <div class="slds-modal__container ">
+                <div class="slds-modal__header">
+                    <h2 class="slds-text-heading--medium">Review Uploaded Document Files</h2>
+                </div>
+                <div class="slds-modal__content slds-p-around--medium slds-grid slds-wrap " style="height:400px;" >
+                    <aura:if isTrue="{!v.Path == 1}">
+                        <fieldset class="slds-form-element marginauto">
+                            <div class="centertext">
+                                <h2 class="slds-align_absolute-center slds-theme_default slds-text-heading_medium slds-p-bottom_medium">Select a file to review</h2>
+                            </div>
+                        	<legend class="slds-form-element__legend slds-form-element__label">Uploaded</legend>
+                            <div class="slds-form-element__control slds-m-bottom_medium">
+                            	<div class="slds-visual-picker slds-visual-picker_vertical">
+                                	<lightning:button label="W2 - 2 Years Prior" title="W2 - 2 Years Prior" onclick="{!c.setTo2}" class="padding20"/>
+                                </div>
+                                <div class="slds-visual-picker slds-visual-picker_vertical">
+                                	<lightning:button label="Tax Statement - Prior Year" title="Tax Statement - Prior Year" class="padding20"/>
+                                </div>
+                                <div class="slds-visual-picker slds-visual-picker_vertical">
+                                	<lightning:button label="Pay Stubs" title="Pay Stubs" class="padding20"/>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </aura:if>
+                    <aura:if isTrue="{!v.Path == 2}">
+                        <fieldset class="slds-form-element marginauto">
+                            <div class="centertext">
+                                <h2 class="slds-align_absolute-center slds-theme_default slds-text-heading_medium slds-p-bottom_medium">Select the object to copy information to</h2>
+                            </div>
+                            <div class="slds-form-element__control slds-m-bottom_medium">
+                            	<div class="slds-visual-picker slds-visual-picker_vertical">
+                                	<lightning:button label="Loan Applicant Employment" title="Loan Applicant Employment" onclick="{!c.setTo3}" class="padding20"/>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </aura:if>
+                    <aura:if isTrue="{!v.Path == 3}">
+                        <fieldset class="slds-form-element marginauto">
+                            <div class="centertext">
+                                <h2 class="slds-align_absolute-center slds-theme_default slds-text-heading_medium slds-p-bottom_medium">Select the record to copy information to</h2>
+                            </div>
+                            <div class="slds-form-element__control slds-m-bottom_medium">
+                            	<div class="slds-visual-picker slds-visual-picker_vertical">
+                                	<lightning:button label="Ohana Inc" title="Ohana Inc" onclick="{!c.setTo4}" class="padding20"/>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </aura:if>
+                    <aura:if isTrue="{!v.Path == 4}">
+                        <img src="https://sfdc-ckz-b2b.s3.amazonaws.com/FINS/IntelligentFormReader/formreader1.png" class="fullwidth" /><br/>
+                        <img src="https://sfdc-ckz-b2b.s3.amazonaws.com/FINS/IntelligentFormReader/formreader2.png" class="fullwidth" /><br/>
+                    </aura:if>
+                </div>
+                <div class="slds-col modal-footer slds-modal__footer"> 
+                    <aura:if isTrue="{!v.Path == 1}">
+                    	<lightning:button variant="brand" label="Next" onclick="{! c.setTo2 }" />
+                    </aura:if>
+                    <aura:if isTrue="{!v.Path == 2}">
+                        <lightning:button variant="brand" label="Back" onclick="{! c.setTo1 }" />
+                    	<lightning:button variant="brand" label="Next" onclick="{! c.setTo3 }" />
+                    </aura:if>
+                    <aura:if isTrue="{!v.Path == 3}">
+                        <lightning:button variant="brand" label="Back" onclick="{! c.setTo2 }" />
+                    	<lightning:button variant="brand" label="Next" onclick="{! c.setTo4 }" />
+                    </aura:if>
+                    <aura:if isTrue="{!v.Path == 4}">
+                        <lightning:button variant="brand" label="Back" onclick="{! c.setTo3 }" />
+                    	<lightning:button variant="brand" label="Finish" onclick="{! c.closeModal }" />
+                    </aura:if>
+                </div>
+            </div>
+        </div>
+    </aura:If>
+</aura:component>

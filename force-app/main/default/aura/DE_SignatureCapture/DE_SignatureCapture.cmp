@@ -1,0 +1,21 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,lightning:availableForFlowScreens" controller="DE_SignatureCaptureCont">
+    
+    <ltng:require scripts="{!join(',',$Resource.SignatureCapture + '/JavaScript/jQuery1.7.2.js', 
+                           $Resource.DE_SigPad + '/signature_pad-1.5.3/signature_pad.js',
+                           $Resource.DE_SigPad + '/signature_pad-1.5.3/signature_pad.min.js')}" 
+                  	afterScriptsLoaded="{!c.doInit}"/>
+    
+    <aura:attribute name="recordId" type="String" />
+    
+    <div class="CSWrap">
+        <div class="wrapper">
+            <canvas id="signature-pad" class="signature-pad" width="500" height="200"></canvas>
+        </div>
+        <div class="butts">
+            <button class="slds-button slds-button--brand" onclick="{!c.saveThis}">Save</button>
+        </div>
+    </div>
+    
+    
+	
+</aura:component>

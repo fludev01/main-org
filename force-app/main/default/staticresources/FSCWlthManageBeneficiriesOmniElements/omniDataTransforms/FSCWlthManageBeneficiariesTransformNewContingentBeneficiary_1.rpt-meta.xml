@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>FSCWlthManageBeneficiariesTransformNewContingentBeneficiary</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:perStirpes &apos;true&apos; == &apos;Yes&apos; &apos;No&apos; IF</formulaConverted>
+        <formulaExpression>IF(%perStirpes%==&apos;true&apos;,&apos;Yes&apos;,&apos;No&apos;)</formulaExpression>
+        <formulaResultPath>PerStirpesValue</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>FSCWlthManageBeneficiariesTransformNewContingentBeneficiary16847459447138147</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformNewContingentBeneficiary</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformNewContingentBeneficiary6946297100358068</globalKey>
+        <inputFieldName>NewShare</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformNewContingentBeneficiary</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>NewShare</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformNewContingentBeneficiary8018427035135753</globalKey>
+        <inputFieldName>PerStirpesValue</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformNewContingentBeneficiary</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PerStirpes</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformNewContingentBeneficiary9202538750374274</globalKey>
+        <inputFieldName>ContingentBeneficiaryType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformNewContingentBeneficiary</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BeneficiaryType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformNewContingentBeneficiary37060906107730807</globalKey>
+        <inputFieldName>ContingentInstitutionOrRelationshipType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformNewContingentBeneficiary</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>InstitutionOrRelationshipType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformNewContingentBeneficiary6871254567864822</globalKey>
+        <inputFieldName>ContingentBeneficiaryName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformNewContingentBeneficiary</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BeneficiaryName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>[ {
+  &quot;Id&quot; : &quot;REC0&quot;,
+  &quot;ContingentBeneficiaryRelationshipType&quot; : &quot;Aunt&quot;,
+  &quot;ContingentBeneficiaryInstitutionType&quot; : null,
+  &quot;ContingentBeneficiaryBirthDate&quot; : &quot;2023-09-04&quot;,
+  &quot;ContingentBeneficiaryDateOfIncorporation&quot; : null,
+  &quot;ContingentInstitutionOrRelationshipType&quot; : &quot;Aunt&quot;,
+  &quot;ContingentBeneficiaryType&quot; : &quot;Individual&quot;,
+  &quot;ContingentBeneficiaryName&quot; : &quot;con1&quot;,
+  &quot;ContingentBeneficiaryMobile&quot; : &quot;5445678&quot;,
+  &quot;ContingentBeneficiaryAddressLine1&quot; : &quot;sdf&quot;,
+  &quot;ContingentBeneficiaryCountry&quot; : &quot;Afghanistan&quot;,
+  &quot;ContingentBeneficiaryCity&quot; : &quot;sdf&quot;,
+  &quot;ContingentBeneficiaryAddressLine2&quot; : &quot;wer&quot;,
+  &quot;ContingentBeneficiaryState&quot; : &quot;ert&quot;,
+  &quot;ContingentBeneficiaryPostalCode&quot; : &quot;r23456&quot;,
+  &quot;uniqueKey&quot; : &quot;REC0&quot;,
+  &quot;_flex&quot; : {
+    &quot;uniqueKey&quot; : &quot;REC0&quot;,
+    &quot;state0element0block_element1&quot; : false,
+    &quot;state0element0block_element1_child&quot; : false,
+    &quot;state0element0block_element2&quot; : true,
+    &quot;state0element0block_element2_child&quot; : true
+  },
+  &quot;NewShare&quot; : &quot;50&quot;,
+  &quot;perStirpes&quot; : &quot;true&quot;
+}, {
+  &quot;Id&quot; : &quot;REC1&quot;,
+  &quot;ContingentBeneficiaryRelationshipType&quot; : null,
+  &quot;ContingentBeneficiaryInstitutionType&quot; : &quot;Trust&quot;,
+  &quot;ContingentBeneficiaryBirthDate&quot; : null,
+  &quot;ContingentInstitutionOrRelationshipType&quot; : &quot;Trust&quot;,
+  &quot;ContingentBeneficiaryType&quot; : &quot;Institution&quot;,
+  &quot;ContingentBeneficiaryName&quot; : &quot;conTrust2&quot;,
+  &quot;ContingentBeneficiaryMobile&quot; : &quot;43234567&quot;,
+  &quot;ContingentBeneficiaryAddressLine1&quot; : &quot;sdfg&quot;,
+  &quot;ContingentBeneficiaryCountry&quot; : &quot;Aland Islands&quot;,
+  &quot;ContingentBeneficiaryCity&quot; : &quot;dfg&quot;,
+  &quot;ContingentBeneficiaryAddressLine2&quot; : &quot;rtyu&quot;,
+  &quot;ContingentBeneficiaryState&quot; : &quot;fghj&quot;,
+  &quot;ContingentBeneficiaryPostalCode&quot; : &quot;fgh&quot;,
+  &quot;ContingentBeneficiarySSN&quot; : null,
+  &quot;uniqueKey&quot; : &quot;REC1&quot;,
+  &quot;_flex&quot; : {
+    &quot;uniqueKey&quot; : &quot;REC1&quot;,
+    &quot;state0element0block_element1&quot; : true,
+    &quot;state0element0block_element1_child&quot; : true,
+    &quot;state0element0block_element2&quot; : false,
+    &quot;state0element0block_element2_child&quot; : false
+  },
+  &quot;NewShare&quot; : &quot;50&quot;
+} ]</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>FSCWlthManageBeneficiariesTransformNewContingentBeneficiary_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

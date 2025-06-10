@@ -1,0 +1,10 @@
+<aura:component controller="DE_GetRecordData" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,force:hasSObjectName" access="global" >
+	    <lightning:workspaceAPI aura:id="workspace" />
+    <aura:attribute name="childRecordId" type="String"/>
+    <aura:attribute name="childObject" type="String"/>
+    <aura:attribute name="recValue" type="String"/>
+
+
+		<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+</aura:component>

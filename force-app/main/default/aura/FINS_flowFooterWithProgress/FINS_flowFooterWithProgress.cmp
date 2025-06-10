@@ -1,0 +1,52 @@
+<aura:component access="global" implements="lightning:availableForFlowScreens">
+    
+    <aura:attribute name="canPause" type="Boolean" access="global"/>
+    <aura:attribute name="canBack" type="Boolean" access="global"/>
+    <aura:attribute name="canNext" type="Boolean" access="global"/>
+    <aura:attribute name="canFinish" type="Boolean" access="global"/>
+    
+    <aura:attribute name="stages" type="String[]" access="global"/>
+    <aura:attribute name="currentStage" type="String" access="global"/>
+    <aura:attribute name="type" type="String" default="path" access="global"/>
+    
+    <aura:attribute name="navToId" type="String" access="global"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <div aura:id="actionButtonBar" class="slds-clearfix slds-p-top_medium">
+        	
+        <lightning:layout horizontalAlign="spread">
+            <lightning:layoutItem size="2">
+                <div class="slds-float_left">
+                    <aura:if isTrue="{!v.canBack}">
+                        <lightning:button aura:id="BACK" label="Previous" variant="neutral" onclick="{!c.onButtonPressed}" />
+                    </aura:if>
+                </div>
+            </lightning:layoutItem>
+            
+            <lightning:layoutItem size="8">
+                <div class="{!v.type == 'path' ? 'progress-wrap' : 'progress-wrap paddingTop10'}">
+                    <lightning:progressIndicator aura:id="progressIndicator" currentStep="{!v.currentStage}" type="{!v.type}"/>
+                </div>
+            </lightning:layoutItem>
+            
+            <lightning:layoutItem size="2">
+                <div class="slds-float_right">
+                    <aura:if isTrue="{!v.canPause}">
+                        <lightning:button aura:id="PAUSE" label="Pause" variant="neutral" onclick="{!c.onButtonPressed}" />
+                    </aura:if>
+                    <aura:if isTrue="{!v.canNext}">
+                        <lightning:button aura:id="NEXT" label="Next" variant="brand" onclick="{!c.onButtonPressed}" />
+                    </aura:if>
+                    <aura:if isTrue="{!v.canFinish}">
+                        <lightning:button aura:id="FINISH" label="View Application" variant="brand" onclick="{!c.navigateToSObj}" />
+                    </aura:if>
+                </div>
+            </lightning:layoutItem>
+        </lightning:layout>
+        
+        
+
+    </div>
+    
+</aura:component>

@@ -1,0 +1,61 @@
+<!--**************************************
+    * *
+    *
+    * Component Name:- fscWlthShowFinancialAccounts
+    *
+    * @Description:- Displays the list of Financial accounts grouped by Financial account type
+    *
+    * @Author:- Salesforce
+    *
+    * *
+******************************************-->
+<template>
+    <!--label-->
+    <template if:true={listType}>
+        <label class="slds-form-element__label"><abbr title="required" class="slds-required">*</abbr>{listType}</label>
+    </template>
+    <!--Picklist Container-->
+    <lightning-layout class="slds-grid slds-wrap">
+        <lightning-layout-item class="slds-combobox_container slds-col" size="12" small-device-size="12"
+            medium-device-size="12" large-device-size="12">
+            <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open"
+                aria-expanded="true" aria-haspopup="listbox" role="combobox">
+                <!-- Input -->
+                <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                    <lightning-input data-name="inp" class="inputBox" placeholder={placeholder} onblur={blurEvent}
+                        onclick={showOptions} value={selectedAccount} variant="label-hidden" onkeydown={inputChange}></lightning-input>
+                    <lightning-icon class="slds-input__icon" icon-name="utility:down" size="x-small"
+                        alternative-text="search"></lightning-icon>
+                </div>
+                <template if:true={showAccounts}>
+                    <div id="listbox-id-1" class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid">
+                        <ul class="slds-listbox slds-listbox_vertical recordListBox" role="presentation">
+                            <template for:each={listData} for:item="accList">
+                                <!--Account Type-->
+                                <li key={accList.AccountType} role="presentation" class="slds-listbox__item">
+                                    <div class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small slds-p-bottom_none"
+                                        role="presentation">
+                                        <h3 class="slds-listbox__option-header" role="presentation">
+                                            {accList.AccountType}</h3>
+                                    </div>
+                                </li>
+                                <!--Accounts list-->
+                                <template for:each={accList.Accounts} for:item="acc">
+                                    <li key={acc.FinancialAccountLabel} data-id={acc.Id} data-label={acc.FinancialAccountLabel} data-name="Account" class="slds-listbox__item eachItem" onmousedown={selectEvent}>
+                                        <div class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small slds-p-vertical_xx-small"
+                                            role="option">
+                                            <span class="slds-media__figure slds-listbox__option-icon"></span>
+                                            <span class="slds-media__body">
+                                                <span class="slds-truncate" title={acc.FinancialAccountLabel}>{acc.FinancialAccountLabel}</span>
+                                            </span>
+                                        </div>
+                                    </li>
+                                </template>                        
+                            </template>
+                        </ul>   
+                    </div>
+                </template>
+            </div>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

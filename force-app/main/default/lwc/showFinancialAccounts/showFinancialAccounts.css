@@ -1,0 +1,22 @@
+.inputBox{
+    caret-color: transparent !important;
+}
+.eachItem:hover {
+    background-color: var(--lwc-colorBackgroundRowActive);
+    cursor: pointer;
+}
+.recordListBox {
+	overflow-y: scroll;
+}
+/* For Scrolling */
+::-webkit-scrollbar {
+    width: var(--lwc-spacingXSmall);
+    height: var(--lwc-spacingXSmall);
+}
+::-webkit-scrollbar-track {
+   display: none !important;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: var(--lwc-spacingSmall);
+    background: var(--lwc-colorBackgroundScrollbarTrack);
+}

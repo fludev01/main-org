@@ -1,0 +1,23 @@
+<apex:page >
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        .figma-embed {
+            height: 100vh;
+            display: flex;
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+    <div class="figma-embed">
+        <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FdQBLrnJIiEQxgwMpeJFHG9%2FALL-%257C-Demo-Studio-Figma-File-Template-FY25-(Copy)%3Fpage-id%3D29%253A10%26node-id%3D2001-7715%26viewport%3D1471%252C458%252C0.46%26t%3DeJPRdlrQd5op6UAP-1%26scaling%3Dmin-zoom%26content-scaling%3Dresponsive26starting-point-node-id%3D2001%253A7715%26hide-ui%3D1" 
+            allowfullscreen="true">
+        </iframe>
+    </div>
+</apex:page>

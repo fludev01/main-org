@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct7959158231418393</globalKey>
+        <inputFieldName>SavingAccountsLabel</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>String</outputFieldFormat>
+        <outputFieldName>SavingAccounts:AccountType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct24227860677518165</globalKey>
+        <inputFieldName>CreditAccountsLabel</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>String</outputFieldFormat>
+        <outputFieldName>CreditAccounts:AccountType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:FinancialAccounts LIST &apos;ISBLANK(Status)/\/\/OR/\/\/Status==&quot;Active&quot;/\/\/OR/\/\/Status==&quot;Open&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(FinancialAccounts),&apos;ISBLANK(Status) OR Status==&quot;Active&quot; OR Status==&quot;Open&quot;&apos;)</formulaExpression>
+        <formulaResultPath>ActiveFinancialAccounts</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct6930150468640133</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:ActiveFinancialAccounts LIST &apos;RecordTypeName==&quot;Checking/\/\/Account&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(ActiveFinancialAccounts),&apos;RecordTypeName==&quot;Checking Account&quot;&apos;)</formulaExpression>
+        <formulaResultPath>CheckingAccounts</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct5868645081869233</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:ActiveFinancialAccounts LIST &apos;RecordTypeName==&quot;Auto/\/\/Loan&quot;/\/\/OR/\/\/RecordTypeName==&quot;Loan/\/\/Account&quot;/\/\/OR/\/\/RecordTypeName==&quot;Mortgage&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(ActiveFinancialAccounts),&apos;RecordTypeName==&quot;Auto Loan&quot; OR RecordTypeName==&quot;Loan Account&quot; OR RecordTypeName==&quot;Mortgage&quot;&apos;)</formulaExpression>
+        <formulaResultPath>LoanAccounts</formulaResultPath>
+        <formulaSequence>4.0</formulaSequence>
+        <globalKey>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct878629878350476</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:ActiveFinancialAccounts LIST &apos;RecordTypeName==&quot;Savings/\/\/Account&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(ActiveFinancialAccounts),&apos;RecordTypeName==&quot;Savings Account&quot;&apos;)</formulaExpression>
+        <formulaResultPath>SavingAccounts</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct04802256272667904</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct1353373888232765</globalKey>
+        <inputFieldName>LoanAccounts</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>List&lt;Map&gt;</outputFieldFormat>
+        <outputFieldName>LoanAccounts:Accounts</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct19978390289574133</globalKey>
+        <inputFieldName>CheckingAccountsLabel</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>String</outputFieldFormat>
+        <outputFieldName>CheckingAccounts:AccountType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct3435907059204111</globalKey>
+        <inputFieldName>CreditAccounts</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>List&lt;Map&gt;</outputFieldFormat>
+        <outputFieldName>CreditAccounts:Accounts</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct09582764130899912</globalKey>
+        <inputFieldName>CheckingAccounts</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>List&lt;Map&gt;</outputFieldFormat>
+        <outputFieldName>CheckingAccounts:Accounts</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:CreditAccounts ISBLANK $Vlocity.NULL &quot;Line/\/\/of/\/\/credits&quot; IF</formulaConverted>
+        <formulaExpression>IF(ISBLANK(CreditAccounts),$Vlocity.NULL,&quot;Line of credits&quot;)</formulaExpression>
+        <formulaResultPath>CreditAccountsLabel</formulaResultPath>
+        <formulaSequence>9.0</formulaSequence>
+        <globalKey>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct17816365178985594</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct12814884618976707</globalKey>
+        <inputFieldName>SavingAccounts</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>List&lt;Map&gt;</outputFieldFormat>
+        <outputFieldName>SavingAccounts:Accounts</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:LoanAccounts ISBLANK $Vlocity.NULL &quot;Loan/\/\/Accounts&quot; IF</formulaConverted>
+        <formulaExpression>IF(ISBLANK(LoanAccounts),$Vlocity.NULL,&quot;Loan Accounts&quot;)</formulaExpression>
+        <formulaResultPath>LoanAccountsLabel</formulaResultPath>
+        <formulaSequence>8.0</formulaSequence>
+        <globalKey>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct4715293373813052</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:ActiveFinancialAccounts LIST &apos;RecordTypeName==&quot;HELOC&quot;/\/\/OR/\/\/RecordTypeName==&quot;Credit/\/\/Card&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(ActiveFinancialAccounts),&apos;RecordTypeName==&quot;HELOC&quot; OR RecordTypeName==&quot;Credit Card&quot;&apos;)</formulaExpression>
+        <formulaResultPath>CreditAccounts</formulaResultPath>
+        <formulaSequence>5.0</formulaSequence>
+        <globalKey>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct3196823368940853</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct7946937024669445</globalKey>
+        <inputFieldName>LoanAccountsLabel</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>String</outputFieldFormat>
+        <outputFieldName>LoanAccounts:AccountType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:CheckingAccounts ISBLANK $Vlocity.NULL &quot;Checking/\/\/Accounts&quot; IF</formulaConverted>
+        <formulaExpression>IF(ISBLANK(CheckingAccounts),$Vlocity.NULL,&quot;Checking Accounts&quot;)</formulaExpression>
+        <formulaResultPath>CheckingAccountsLabel</formulaResultPath>
+        <formulaSequence>7.0</formulaSequence>
+        <globalKey>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct21968125639643943</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:SavingAccounts ISBLANK $Vlocity.NULL &quot;Saving/\/\/Accounts&quot; IF</formulaConverted>
+        <formulaExpression>IF(ISBLANK(SavingAccounts),$Vlocity.NULL,&quot;Saving Accounts&quot;)</formulaExpression>
+        <formulaResultPath>SavingAccountsLabel</formulaResultPath>
+        <formulaSequence>6.0</formulaSequence>
+        <globalKey>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct7002266373366772</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;FinancialAccounts&quot; : [ {
+    &quot;AccountName&quot; : &quot;Saurabh Khurana&quot;,
+    &quot;Managed&quot; : &quot;false&quot;,
+    &quot;Balance&quot; : 10000,
+    &quot;Id&quot; : &quot;a0FB00000060AG7MAM&quot;,
+    &quot;FinancialAccountLabel&quot; : &quot;XXXX-4245 - Robert Fin2&quot;,
+    &quot;OverdraftAllowed&quot; : false,
+    &quot;PaperlessDelivery&quot; : false,
+    &quot;Name&quot; : &quot;Robert Fin2&quot;,
+    &quot;MinimumPayment&quot; : 0,
+    &quot;AccountType&quot; : &quot;Savings&quot;,
+    &quot;OverDraftProtection&quot; : false,
+    &quot;PaymentAmount&quot; : 0,
+    &quot;SourceSystemId&quot; : &quot;2343534545646451&quot;,
+    &quot;AccountNumberLast4&quot; : &quot;4245&quot;,
+    &quot;BalanceLastStatement&quot; : 0,
+    &quot;RecordTypeName&quot; : &quot;Savings Account&quot;,
+    &quot;FinancialAccountNumber&quot; : &quot;647389274245&quot;
+  }, {
+    &quot;AccountName&quot; : &quot;Saurabh Khurana&quot;,
+    &quot;Managed&quot; : &quot;false&quot;,
+    &quot;Balance&quot; : 10000,
+    &quot;Id&quot; : &quot;a0FB00000060AG7MAK&quot;,
+    &quot;FinancialAccountLabel&quot; : &quot;XXXX-4246 - Robert Fin4&quot;,
+    &quot;OverdraftAllowed&quot; : false,
+    &quot;PaperlessDelivery&quot; : false,
+    &quot;Name&quot; : &quot;Robert Fin4&quot;,
+    &quot;MinimumPayment&quot; : 0,
+    &quot;AccountType&quot; : &quot;Savings&quot;,
+    &quot;OverDraftProtection&quot; : false,
+    &quot;PaymentAmount&quot; : 0,
+    &quot;SourceSystemId&quot; : &quot;2343534545646551&quot;,
+    &quot;AccountNumberLast4&quot; : &quot;4245&quot;,
+    &quot;BalanceLastStatement&quot; : 0,
+    &quot;RecordTypeName&quot; : &quot;Savings Account&quot;,
+    &quot;FinancialAccountNumber&quot; : &quot;647389274246&quot;
+  }, {
+    &quot;AccountName&quot; : &quot;Saurabh Khurana&quot;,
+    &quot;Managed&quot; : &quot;false&quot;,
+    &quot;Id&quot; : &quot;a0FB00000060AFiMAM&quot;,
+    &quot;FinancialAccountLabel&quot; : &quot;XXXX-7432 - Robert Fin1&quot;,
+    &quot;OverdraftAllowed&quot; : false,
+    &quot;PaperlessDelivery&quot; : false,
+    &quot;Name&quot; : &quot;Robert Fin1&quot;,
+    &quot;MinimumPayment&quot; : 0,
+    &quot;AccountType&quot; : &quot;Checking&quot;,
+    &quot;OverDraftProtection&quot; : false,
+    &quot;PaymentAmount&quot; : 0,
+    &quot;SourceSystemId&quot; : &quot;3765476354632323&quot;,
+    &quot;AccountNumberLast4&quot; : &quot;7432&quot;,
+    &quot;BalanceLastStatement&quot; : 0,
+    &quot;RecordTypeName&quot; : &quot;Checking Account&quot;,
+    &quot;FinancialAccountNumber&quot; : &quot;573756387432&quot;
+  }, {
+    &quot;AccountName&quot; : &quot;Saurabh Khurana&quot;,
+    &quot;Managed&quot; : &quot;false&quot;,
+    &quot;Id&quot; : &quot;a0FB00000060AGCMA2&quot;,
+    &quot;FinancialAccountLabel&quot; : &quot;XXXX-4827 - Robert Fin3&quot;,
+    &quot;OverdraftAllowed&quot; : false,
+    &quot;PaperlessDelivery&quot; : false,
+    &quot;Name&quot; : &quot;Robert Fin3&quot;,
+    &quot;MinimumPayment&quot; : 0,
+    &quot;AccountType&quot; : &quot;Credit Card&quot;,
+    &quot;OverDraftProtection&quot; : false,
+    &quot;PaymentAmount&quot; : 0,
+    &quot;SourceSystemId&quot; : &quot;3453454343534543&quot;,
+    &quot;AccountNumberLast4&quot; : &quot;4827&quot;,
+    &quot;BalanceLastStatement&quot; : 0,
+    &quot;RecordTypeName&quot; : &quot;Credit Card&quot;,
+    &quot;FinancialAccountNumber&quot; : &quot;6758378274827&quot;
+  } ]
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>FSCTransferFundsToOwnAccountFilterTfrToFinclAcct_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

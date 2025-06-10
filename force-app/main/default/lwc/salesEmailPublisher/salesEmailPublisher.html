@@ -1,0 +1,35 @@
+<template>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size_1-of-1">
+            <div class="slds-grid slds-wrap">
+            <!--  <div class="slds-size_1-of-1">
+                    <c-page-header subtitle="Contact" title="Mya Williams" icon-name="standard:contact" icon-type="slds" show-button=false button-label="View Contact"></c-page-header>
+                </div>-->
+                <div class="slds-size_1-of-1">
+                    <lightning-card>
+                        <div class="slds-p-horizontal_medium container">
+                            <template if:true={loading}>
+                                <div class="spinner-container">
+                                    <lightning-spinner size="medium"></lightning-spinner>
+                                </div>            
+                            </template>
+<template if:false={loading}>
+                                <lightning-combobox class="slds-m-vertical_x-small" name="progress" label="From" value={fromValue} options={fromOptions} required="true">
+                                </lightning-combobox>
+                                <div class="slds-m-vertical_x-small slds-form-element__label"> To <div class="slds-pill_container">
+                                        <lightning-pill-container label="To" items={toItems}></lightning-pill-container>
+                                    </div>
+                                </div>
+                                <lightning-input type="text" class="slds-m-vertical_x-small" label="Subject" value={subjectValue}>
+                                </lightning-input>
+                                <lightning-input-rich-text class="slds-m-bottom_small slds-m-top_small slds-size_1-of-1 slds-input-rich-text-scrollable" value={text}>
+                                </lightning-input-rich-text>
+                                <lightning-button variant="brand" label="Send" onclick={handleClick}></lightning-button>
+                            </template>
+</div>
+</lightning-card>
+</div>
+</div>
+</div>
+</div>
+</template>

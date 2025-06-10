@@ -1,0 +1,28 @@
+:host {
+  --sds-c-textarea-sizing-min-height: 100px;
+}
+
+.button-icon{
+    --sds-c-icon-color-foreground-default:var(--slds-c-button-outline-brand-color-border);
+  }
+  
+  .einstein-icon {
+    --sds-c-icon-color-foreground-default: #1b96ff;
+  }
+  
+
+  .eq-button{
+    min-height:31.11px;
+    min-width:123.29px;
+  }
+  
+  .help-icon{
+    margin-top: -1px !important;
+  }
+
+  .spinner-container{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 329px;
+  }

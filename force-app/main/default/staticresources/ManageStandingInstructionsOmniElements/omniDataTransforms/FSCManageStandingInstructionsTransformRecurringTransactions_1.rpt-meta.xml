@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ResponseForExternalTransactionsStatus&quot; : true,
+  &quot;GetTransactions&quot; : {
+    &quot;hasErrors&quot; : &quot;false&quot;,
+    &quot;AdditionalAttributes&quot; : { },
+    &quot;Transactions&quot; : [ {
+      &quot;TransactionId&quot; : &quot;1&quot;,
+      &quot;TransactionType&quot; : &quot;Fee&quot;,
+      &quot;TransactionAmount&quot; : 10,
+      &quot;TransactionFormattedAmount&quot; : &quot;USD 10.00&quot;,
+      &quot;TransactionAmountCurrency&quot; : &quot;USD&quot;,
+      &quot;TransactionPostedDate&quot; : &quot;2022-09-01T16:41:41.090Z&quot;,
+      &quot;TransactionDescription&quot; : &quot;Overdraft charge&quot;,
+      &quot;AdditionalAttributes&quot; : {
+        &quot;Subtype&quot; : &quot;Overdraft fee&quot;
+      }
+    }, {
+      &quot;TransactionId&quot; : &quot;10&quot;,
+      &quot;TransactionType&quot; : &quot;Withdrawal&quot;,
+      &quot;TransactionAmount&quot; : 0.04,
+      &quot;TransactionFormattedAmount&quot; : &quot;USD 0.04&quot;,
+      &quot;TransactionAmountCurrency&quot; : &quot;USD&quot;,
+      &quot;TransactionCode&quot; : &quot;Transfer&quot;,
+      &quot;TransactionPostedDate&quot; : &quot;2022-03-09T16:41:41.090Z&quot;,
+      &quot;TransactionDescription&quot; : &quot;Wire transfer&quot;
+    }, {
+      &quot;TransactionId&quot; : &quot;2&quot;,
+      &quot;TransactionType&quot; : &quot;Withdrawal&quot;,
+      &quot;TransactionAmount&quot; : 20,
+      &quot;TransactionFormattedAmount&quot; : &quot;USD 20.00&quot;,
+      &quot;TransactionAmountCurrency&quot; : &quot;USD&quot;,
+      &quot;TransactionPostedDate&quot; : &quot;2022-03-02T16:41:41.090Z&quot;,
+      &quot;TransactionDescription&quot; : &quot;ATM machine withdrawal&quot;
+    } ],
+    &quot;AccountType&quot; : &quot;CurrentAccount&quot;,
+    &quot;AccountCurrency&quot; : &quot;USD&quot;,
+    &quot;AccountName&quot; : &quot;Salesforce.com&quot;,
+    &quot;AccountId&quot; : &quot;01axx000003MLytAAGabc&quot;,
+    &quot;errorCode&quot; : &quot;INVOKE-200&quot;,
+    &quot;error&quot; : &quot;OK&quot;
+  },
+  &quot;GetTransactionsStatus&quot; : true,
+  &quot;Id&quot; : &quot;a0Fxx000000fVJ3EAM&quot;,
+  &quot;currentOffset&quot; : &quot;0&quot;,
+  &quot;TransactionType&quot; : &quot;{Session.transactionType}&quot;,
+  &quot;getExternalTransactions&quot; : &quot;true&quot;,
+  &quot;sourceSystemId&quot; : &quot;abc&quot;,
+  &quot;options&quot; : {
+    &quot;useContinuation&quot; : true
+  },
+  &quot;IfOnlyInternalTransactionsStatus&quot; : false
+}</expectedInputJson>
+    <expectedOutputJson>{
+  &quot;ResponseForExternalTransactionsStatus&quot; : true,
+  &quot;GetTransactions&quot; : {
+    &quot;hasErrors&quot; : &quot;false&quot;,
+    &quot;AdditionalAttributes&quot; : { },
+    &quot;Transactions&quot; : [ {
+      &quot;TransactionId&quot; : &quot;1&quot;,
+      &quot;TransactionType&quot; : &quot;Fee&quot;,
+      &quot;TransactionAmount&quot; : 10,
+      &quot;TransactionAmountCurrency&quot; : &quot;USD&quot;,
+      &quot;TransactionPostedDate&quot; : &quot;2022-09-01T16:41:41.090Z&quot;,
+      &quot;TransactionDescription&quot; : &quot;Overdraft charge&quot;,
+      &quot;AdditionalAttributes&quot; : {
+        &quot;Subtype&quot; : &quot;Overdraft fee&quot;
+      }
+    }, {
+      &quot;TransactionId&quot; : &quot;10&quot;,
+      &quot;TransactionType&quot; : &quot;Withdrawal&quot;,
+      &quot;TransactionAmount&quot; : 0.04,
+      &quot;TransactionAmountCurrency&quot; : &quot;USD&quot;,
+      &quot;TransactionCode&quot; : &quot;Transfer&quot;,
+      &quot;TransactionPostedDate&quot; : &quot;2022-03-09T16:41:41.090Z&quot;,
+      &quot;TransactionDescription&quot; : &quot;Wire transfer&quot;
+    }, {
+      &quot;TransactionId&quot; : &quot;2&quot;,
+      &quot;TransactionType&quot; : &quot;Withdrawal&quot;,
+      &quot;TransactionAmount&quot; : 20,
+      &quot;TransactionAmountCurrency&quot; : &quot;USD&quot;,
+      &quot;TransactionPostedDate&quot; : &quot;2022-03-02T16:41:41.090Z&quot;,
+      &quot;TransactionDescription&quot; : &quot;ATM machine withdrawal&quot;
+    } ],
+    &quot;AccountType&quot; : &quot;CurrentAccount&quot;,
+    &quot;AccountCurrency&quot; : &quot;USD&quot;,
+    &quot;AccountName&quot; : &quot;Salesforce.com&quot;,
+    &quot;AccountId&quot; : &quot;01axx000003MLytAAGabc&quot;,
+    &quot;errorCode&quot; : &quot;INVOKE-200&quot;,
+    &quot;error&quot; : &quot;OK&quot;
+  },
+  &quot;GetTransactionsStatus&quot; : true,
+  &quot;Id&quot; : &quot;a0Fxx000000fVJ3EAM&quot;,
+  &quot;currentOffset&quot; : &quot;0&quot;,
+  &quot;TransactionType&quot; : &quot;{Session.transactionType}&quot;,
+  &quot;getExternalTransactions&quot; : &quot;true&quot;,
+  &quot;sourceSystemId&quot; : &quot;abc&quot;,
+  &quot;options&quot; : {
+    &quot;useContinuation&quot; : true
+  },
+  &quot;IfOnlyInternalTransactionsStatus&quot; : false
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>FSCManageStandingInstructionsTransformRecurringTransactions</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCManageStandingInstructionsTransformRecurringTransactions6397568877609736</globalKey>
+        <inputFieldName>PaymentOrders:Payments:PaymentSchedule:NumberOfPayments</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCManageStandingInstructionsTransformRecurringTransactions</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>String</outputFieldFormat>
+        <outputFieldName>Instalment</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCManageStandingInstructionsTransformRecurringTransactions14199436016512057</globalKey>
+        <inputFieldName>PaymentOrders:Payments:PaymentSchedule:PaymentStartDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCManageStandingInstructionsTransformRecurringTransactions</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>StartDate</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCManageStandingInstructionsTransformRecurringTransactions8095009240693214</globalKey>
+        <inputFieldName>PaymentOrders:Payments:PaymentSchedule:PaymentFrequency</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCManageStandingInstructionsTransformRecurringTransactions</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Frequency</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCManageStandingInstructionsTransformRecurringTransactions9436746626806409</globalKey>
+        <inputFieldName>PaymentOrders:Payments:PayeeReference:PayeeName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCManageStandingInstructionsTransformRecurringTransactions</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PayeeName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCManageStandingInstructionsTransformRecurringTransactions027076495285225155</globalKey>
+        <inputFieldName>PaymentOrders:PaymentId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCManageStandingInstructionsTransformRecurringTransactions</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>StandingOrderId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCManageStandingInstructionsTransformRecurringTransactions14123199688152832</globalKey>
+        <inputFieldName>PaymentOrders:Payments:PaymentDefinition:PaymentAmount:Amount</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCManageStandingInstructionsTransformRecurringTransactions</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Amount</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCManageStandingInstructionsTransformRecurringTransactions16210440058047815</globalKey>
+        <inputFieldName>PaymentOrders:Payments:PayeeBankReference:RoutingNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCManageStandingInstructionsTransformRecurringTransactions</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RoutingNumber</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCManageStandingInstructionsTransformRecurringTransactions03362883192975219</globalKey>
+        <inputFieldName>PaymentOrders:Payments:PaymentDefinition:PaymentAmount:Currency</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCManageStandingInstructionsTransformRecurringTransactions</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>CurrencyCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCManageStandingInstructionsTransformRecurringTransactions21606263423578187</globalKey>
+        <inputFieldName>PaymentOrders:Payments:PayeeAccountReference:PayeeAccountNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCManageStandingInstructionsTransformRecurringTransactions</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PayeeAccountNumber</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCManageStandingInstructionsTransformRecurringTransactions8274704246294353</globalKey>
+        <inputFieldName>PaymentOrders:Payments:PaymentSchedule:PaymentEndDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCManageStandingInstructionsTransformRecurringTransactions</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>EndDate</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;StandingOrders&quot; : [ {
+    &quot;standingOrderId&quot; : &quot;SOTY00010000&quot;,
+    &quot;creationDateTime&quot; : &quot;2023-06-30T13:01:50Z&quot;,
+    &quot;Payments&quot; : {
+      &quot;PaymentDefinition&quot; : {
+        &quot;PaymentAmount&quot; : {
+          &quot;Amount&quot; : &quot;600&quot;,
+          &quot;Currency&quot; : &quot;USD&quot;
+        }
+      },
+      &quot;PaymentSchedule&quot; : {
+        &quot;PaymentStartDate&quot; : &quot;2023-08-12&quot;,
+        &quot;PaymentEndDate&quot; : &quot;2024-08-12&quot;,
+        &quot;PaymentFrequency&quot; : &quot;Monthly&quot;
+      },
+      &quot;PayeeReference&quot; : {
+        &quot;PayeeName&quot; : &quot;Netflix&quot;
+      },
+      &quot;PayeeBankReference&quot; : {
+        &quot;RoutingNumber&quot; : &quot;2000123008&quot;
+      },
+      &quot;PayeeAccountReference&quot; : {
+        &quot;PayeeAccountNumber&quot; : &quot;P1238&quot;
+      }
+    }
+  }, {
+    &quot;standingOrderId&quot; : &quot;SOTY00010001&quot;,
+    &quot;creationDateTime&quot; : &quot;2023-06-30T13:01:50Z&quot;,
+    &quot;Payments&quot; : {
+      &quot;PaymentDefinition&quot; : {
+        &quot;PaymentAmount&quot; : {
+          &quot;Amount&quot; : &quot;300.50&quot;,
+          &quot;Currency&quot; : &quot;USD&quot;
+        }
+      },
+      &quot;PaymentSchedule&quot; : {
+        &quot;PaymentStartDate&quot; : &quot;2023-08-12&quot;,
+        &quot;PaymentEndDate&quot; : &quot;2030-08-12&quot;,
+        &quot;PaymentFrequency&quot; : &quot;Yearly&quot;
+      },
+      &quot;PayeeReference&quot; : {
+        &quot;PayeeName&quot; : &quot;Ebay&quot;
+      },
+      &quot;PayeeBankReference&quot; : {
+        &quot;RoutingNumber&quot; : &quot;2000123009&quot;
+      },
+      &quot;PayeeAccountReference&quot; : {
+        &quot;PayeeAccountNumber&quot; : &quot;P1237&quot;
+      }
+    }
+  }, {
+    &quot;standingOrderId&quot; : &quot;SOTY00010002&quot;,
+    &quot;creationDateTime&quot; : &quot;2023-06-30T13:01:50Z&quot;,
+    &quot;Payments&quot; : {
+      &quot;PaymentDefinition&quot; : {
+        &quot;PaymentAmount&quot; : {
+          &quot;Amount&quot; : &quot;300&quot;,
+          &quot;Currency&quot; : &quot;USD&quot;
+        }
+      },
+      &quot;PaymentSchedule&quot; : {
+        &quot;PaymentStartDate&quot; : &quot;2023-08-12&quot;,
+        &quot;PaymentFrequency&quot; : &quot;Quarterly&quot;,
+        &quot;NumberOfPayments&quot; : &quot;12&quot;
+      },
+      &quot;PayeeReference&quot; : {
+        &quot;PayeeName&quot; : &quot;Myntra&quot;
+      },
+      &quot;PayeeBankReference&quot; : {
+        &quot;RoutingNumber&quot; : &quot;2000123010&quot;
+      },
+      &quot;PayeeAccountReference&quot; : {
+        &quot;PayeeAccountNumber&quot; : &quot;P1236&quot;
+      }
+    }
+  }, {
+    &quot;standingOrderId&quot; : &quot;SOTY00010003&quot;,
+    &quot;creationDateTime&quot; : &quot;2023-06-30T13:01:50Z&quot;,
+    &quot;Payments&quot; : {
+      &quot;PaymentDefinition&quot; : {
+        &quot;PaymentAmount&quot; : {
+          &quot;Amount&quot; : &quot;1000.50&quot;,
+          &quot;Currency&quot; : &quot;USD&quot;
+        }
+      },
+      &quot;PaymentSchedule&quot; : {
+        &quot;PaymentStartDate&quot; : &quot;2023-08-12&quot;,
+        &quot;PaymentFrequency&quot; : &quot;Half-yearly&quot;,
+        &quot;NumberOfPayments&quot; : &quot;12&quot;
+      },
+      &quot;PayeeReference&quot; : {
+        &quot;PayeeName&quot; : &quot;Flipkart&quot;
+      },
+      &quot;PayeeBankReference&quot; : {
+        &quot;RoutingNumber&quot; : &quot;2000123011&quot;
+      },
+      &quot;PayeeAccountReference&quot; : {
+        &quot;PayeeAccountNumber&quot; : &quot;P1235&quot;
+      }
+    }
+  }, {
+    &quot;standingOrderId&quot; : &quot;SOTY00010004&quot;,
+    &quot;creationDateTime&quot; : &quot;2023-06-30T13:01:50Z&quot;,
+    &quot;Payments&quot; : {
+      &quot;PaymentDefinition&quot; : {
+        &quot;PaymentAmount&quot; : {
+          &quot;Amount&quot; : &quot;1000&quot;,
+          &quot;Currency&quot; : &quot;USD&quot;
+        }
+      },
+      &quot;PaymentSchedule&quot; : {
+        &quot;PaymentStartDate&quot; : &quot;2023-08-12&quot;,
+        &quot;PaymentEndDate&quot; : &quot;2024-08-12&quot;,
+        &quot;PaymentFrequency&quot; : &quot;Monthly&quot;
+      },
+      &quot;PayeeReference&quot; : {
+        &quot;PayeeName&quot; : &quot;Amazon&quot;
+      },
+      &quot;PayeeBankReference&quot; : {
+        &quot;RoutingNumber&quot; : &quot;2000123012&quot;
+      },
+      &quot;PayeeAccountReference&quot; : {
+        &quot;PayeeAccountNumber&quot; : &quot;P1234&quot;
+      }
+    }
+  }, {
+    &quot;standingOrderId&quot; : &quot;SOTY00010005&quot;,
+    &quot;creationDateTime&quot; : &quot;2023-06-30T13:01:50Z&quot;,
+    &quot;Payments&quot; : {
+      &quot;PaymentDefinition&quot; : {
+        &quot;PaymentAmount&quot; : {
+          &quot;Amount&quot; : &quot;100.50&quot;,
+          &quot;Currency&quot; : &quot;USD&quot;
+        }
+      },
+      &quot;PaymentSchedule&quot; : {
+        &quot;PaymentStartDate&quot; : &quot;2023-08-12&quot;,
+        &quot;PaymentFrequency&quot; : &quot;Yearly&quot;,
+        &quot;NumberOfPayments&quot; : &quot;12&quot;
+      },
+      &quot;PayeeReference&quot; : {
+        &quot;PayeeName&quot; : &quot;Amazon&quot;
+      },
+      &quot;PayeeBankReference&quot; : {
+        &quot;RoutingNumber&quot; : &quot;2000123012&quot;
+      },
+      &quot;PayeeAccountReference&quot; : {
+        &quot;PayeeAccountNumber&quot; : &quot;P1234&quot;
+      }
+    }
+  } ]
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>FSCManageStandingInstructionsTransformRecurringTransactions_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

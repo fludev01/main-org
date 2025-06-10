@@ -1,0 +1,74 @@
+<!--**************************************
+    * *
+    *
+    * Component Name:-multiSelectCombobox
+    *
+    * @Description:- Generic Multi Select Combobox with search and multi select and removable selected values as pills features
+    *
+    * @date:- April 12th 2023
+    *
+    * @Author:- PwC Team
+    *
+    * *
+******************************************-->
+<template>
+    <!--Label-->
+    <div class="combobox-spacing">
+        <template if:true={listType}>
+            <label class="slds-form-element__label">{listType}</label>   
+        </template>
+        <!--Combobox Container-->
+        <lightning-layout class="slds-grid slds-wrap">
+            <lightning-layout-item class="slds-combobox_container slds-col" size="12" small-device-size="12" medium-device-size="12" large-device-size="6">
+                <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open" aria-expanded="true" aria-haspopup="listbox" role="combobox">
+                    <!-- Search Input -->
+                    <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                        <lightning-input class="inputBox" placeholder={placeholder} onblur={blurEvent} onclick={showOptions} onkeyup={filterOptions} value={searchString} auto-complete="off" variant="label-hidden" id="combobox-id-1"></lightning-input>
+                        <lightning-icon class="slds-input__icon" icon-name="utility:search" size="x-small" alternative-text="search"></lightning-icon>
+                    </div>
+                    <!-- Dropdown List -->
+                    <template if:true={showDropdown}>
+                        <div id="listbox-id-1" class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid">
+                            <ul class="slds-listbox slds-listbox_vertical recordListBox" role="presentation">
+                                <template if:false={message} >
+                                    <template for:each={optionData} for:item="option">
+                                        <template if:true={option.isVisible}>
+                                            <li key={option.value} data-id={option.value} onmousedown={selectItem} class="slds-listbox__item eachItem">
+                                                <template if:true={option.selected}>
+                                                    <lightning-icon icon-name="utility:check" size="x-small" alternative-text="icon" ></lightning-icon>
+                                                </template>
+                                                <span class="slds-media slds-listbox__option_entity verticalAlign slds-p-vertical_none slds-truncate">{option.label}</span>
+                                            </li>
+                                        </template>
+                                    </template>
+                                </template>
+                                <!--Show message if there are no search results for user input-->
+                                <template if:true={message} >
+                                    <li class="slds-listbox__item">
+                                        <span class="slds-media slds-listbox__option_entity verticalAlign slds-p-vertical_none slds-truncate">{message}</span>
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
+                    </template>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+        <!-- Multi Select Pills -->
+        <template for:each={optionData} for:item="option">
+            <template if:true={option.selected}>
+                <span class="slds-pill slds-pill_link slds-m-top_xx-small slds-m-right_xx-small slds-p-left_xx-small" key={option.value} >
+                    <a href="#" class="slds-pill__action" title={option.value}>
+                        <span class="slds-pill__label">{option.label} </span>
+                    </a>
+                    <button class="slds-button slds-button_icon slds-pill__remove" name={option.value} onclick={removePill}>
+                        <svg class="slds-button__icon" aria-hidden="true">
+                        <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#close"></use>
+                        </svg>
+                        <span class="slds-assistive-text">Remove</span>
+                    </button>
+                    </span>
+            </template>
+        </template>
+    </div>
+</template>

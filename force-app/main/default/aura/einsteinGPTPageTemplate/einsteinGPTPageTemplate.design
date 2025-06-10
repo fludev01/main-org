@@ -1,0 +1,5 @@
+<design:component label="Einstein GPT Page Template">
+    <flexipage:template >
+        <flexipage:region name="one" defaultWidth="LARGE" />
+    </flexipage:template>
+</design:component>

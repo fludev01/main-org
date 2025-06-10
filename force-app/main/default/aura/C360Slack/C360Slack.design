@@ -1,0 +1,4 @@
+<design:component >
+    <design:attribute name="channel" label="Channel to Send Message"/>
+    <design:attribute name="message" label="Message to Send"/>
+</design:component>

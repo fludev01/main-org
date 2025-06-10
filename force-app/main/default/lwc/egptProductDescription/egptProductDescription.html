@@ -1,0 +1,85 @@
+<template>
+    <lightning-card>
+        <h3 slot="title">
+            <lightning-icon class="einstein-icon slds-m-right_small" icon-name="utility:einstein" size="small"></lightning-icon> Einstein GPT Recomendations
+        </h3>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-size_1-of-1 slds-p-right_medium slds-p-left_medium slds-p-bottom_xx-small">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-size_1-of-1 slds-p-bottom_small">
+                        <div><strong>Product Description</strong></div>
+                    </div>
+                    <template if:true={loading}>
+                        <div class="spinner-container">
+                            <lightning-spinner size="medium"></lightning-spinner>
+                        </div>    
+                    </template>
+                    <template if:false={loading}>
+                        <div class="slds-size_1-of-1">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-size_1-of-1 slds-p-bottom_small">
+                                    <div class="slds-grid slds-wrap">
+                                        <div class="slds-p-right_x-small help-icon">
+                                            <lightning-icon icon-name={toggleIcon} size="xx-small" onclick={togglePrompt}></lightning-icon>
+                                        </div>
+                                        <div class="slds-p-right_x-small">
+                                            <p class="slds-item_label slds-text-color_weak">Prompt</p>
+                                        </div>
+                                        <div class="help-icon">
+                                            <lightning-icon icon-name="utility:info" size="xx-small"></lightning-icon>
+                                        </div>
+                                    </div>
+                                </div>
+                                <template if:true={showPrompt}>
+                                    <div class="slds-size_1-of-1  slds-p-bottom_small">
+                                        <lightning-textarea name="Prompt" label="Prompt" variant="label-hidden" value={prompt} onchange={handleChange}></lightning-textarea>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                        <div class="slds-size_1-of-1">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-size_1-of-1 slds-p-bottom_small">
+                                    <div class="slds-grid slds-wrap">
+                                        <div class="slds-p-right_x-small">
+                                            <p class="slds-item_label slds-text-color_weak">Current</p>
+                                        </div>
+                                        <div class="help-icon">
+                                            <lightning-icon icon-name="utility:info" size="xx-small"></lightning-icon>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slds-size_1-of-1  slds-p-bottom_small">
+                                    <lightning-textarea name="Current" label="Current" variant="label-hidden" value={current} onchange={handleChange}></lightning-textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-size_1-of-1">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-size_1-of-1 slds-p-bottom_small">
+                                    <div class="slds-grid slds-wrap">
+                                        <div class="slds-p-right_x-small">
+                                            <p class="slds-item_label slds-text-color_weak">Recommendation</p>
+                                        </div>
+                                        <div class="help-icon">
+                                            <lightning-icon icon-name="utility:info" size="xx-small"></lightning-icon>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slds-size_1-of-1  slds-p-bottom_small">
+                                    <lightning-textarea name="Recommendation" label="Recommendation" variant="label-hidden" value={recommendation} onchange={handleChange}></lightning-textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                    <div class="slds-size_1-of-1">
+                        <div class="slds-text-align_right">
+                            <lightning-button class="slds-m-right_small" icon-name="utility:refresh" label="Regenerate" onclick={regenerate}></lightning-button>
+                            <lightning-button label="Apply" variant="brand" onclick={apply}></lightning-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

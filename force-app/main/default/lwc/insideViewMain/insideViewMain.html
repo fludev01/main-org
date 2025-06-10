@@ -1,0 +1,15 @@
+<template>
+    <c-inside-view-modal if:true={updateCRM} show-update-c-r-m="true" onclosemodalevent={closeModal}></c-inside-view-modal>
+    <c-inside-view-modal if:true={downloadPDF} show-p-d-f="true" onclosemodalevent={closeModal}></c-inside-view-modal>
+    <div class="imageContainerClass">
+        <c-inside-view-company-info if:true={showCompanyInfo}></c-inside-view-company-info>
+        <img src={_insideSalesPeopleURL} class="imageClass" if:true={showPeople}/>
+        <img src={_insideSalesInsightsURL} class="imageClass" if:true={showInsights}/>
+
+        <div class="selectCompanyInfo" onclick={selectCompanyInfo}></div>
+        <div class="selectPeople" onclick={selectPeople}></div>
+        <div class="selectInsights" onclick={selectInsights}></div>
+        <div class="updateCRM" onclick={showUpdateCRM}></div>
+        <div class="downloadPDF" onclick={showDownloadPDF}></div>
+    </div>	    
+</template>

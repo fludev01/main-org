@@ -1,0 +1,29 @@
+::host {
+    --slds-c-textarea-sizing-min-height: 515px;
+    width: 100%;
+}
+
+.container {
+    height: 515px;
+    width: 100%;
+}
+
+.slds-grid {
+    width: 100%;
+}
+
+.slds-size_1-of-1 {
+    width: 100%;
+}
+
+.spinner-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 515px;
+}
+
+.slds-input-rich-text-scrollable {
+    height: 250px; /* adjust the height according to your requirement */
+    overflow-y: auto;
+}

@@ -1,0 +1,14 @@
+<design:component>
+    <design:attribute name="url" label="URL" description="Enter the Url of the image that you are using" />	
+    <design:attribute name="height" label="Height" description="Enter the height of the image" />
+    <design:attribute name="width" label="Width" description="Enter the width of the component" />
+    <design:attribute name="title" label="Title" description="Enter the title of the component" />
+    <design:attribute name="panel" label="Panel" description="Should this component be a panel?" />
+    <design:attribute name="fontSize" label="Font Size for Title (ie: 16px)" description="Change the font size of the title" />
+    <design:attribute name="showIcon" label="Would you like an icon to the left of the title?" />
+    <design:attribute name="sldsRes" label="Name of SLDS Static Resource (ie. SLDS0120)" />
+    <design:attribute name="iconType" label="Please select the corresponding icon type" description="When looking at icons on the lightningdesignsystem.com, icons are categorized by types: action, utility, etc." datasource="action, custom, doctype, standard, utility" />
+	<design:attribute name="iconName" label="Name of icon you'd like to use (see description)" description="Find the icon you want at: lightningdesignsystem.com/icons/ - then enter the name under the icon here"/>
+    <design:attribute name="iconColor" label="Enter a color or hex value for icon background (ie. blue or #000000)" description="If the color isn't working, then you either have a malformed hex value or that specific color isn't a default color" />
+    <design:attribute name="circleIcon" label="Would you like the icon to be a circle?" />
+</design:component>

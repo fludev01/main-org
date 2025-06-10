@@ -1,0 +1,11 @@
+<design:component label="SCV Simulator Call Transcript">
+	<design:attribute name="conversation" label="Select a Conversation" 
+                      datasource="apex://SCVSimulator_ConversationPicklist" required="true"/>
+    
+    <design:attribute name="height" label="Component Height:" 
+                      description="" default="450px"/>
+    
+    <design:attribute name="textBubbleColor" label="Conversation Bubble Background Color (Agent):" 
+                      description="Enter hexidecimal or rgb value color choice" default="rgb(1, 68, 134)"/>
+                    
+</design:component>

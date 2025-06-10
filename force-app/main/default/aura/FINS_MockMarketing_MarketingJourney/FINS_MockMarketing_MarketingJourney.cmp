@@ -1,0 +1,40 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="Journey1Title" default="Lending Options" type="string"/>
+    <aura:attribute name="Journey2Title" default="Ways to Pre-Qualify" type="string"/>
+    
+    <aura:attribute name="Journey1ButtonIcon" default="utility:stop" type="string"/>
+    <aura:attribute name="Journey1ButtonText" default="Stop" type="string"/>
+    
+    <aura:attribute name="Journey2ButtonIcon" default="utility:stop" type="string"/>
+    <aura:attribute name="Journey2ButtonText" default="Stop" type="string"/>
+    
+	<div class="box">
+    	<div class="padding">
+            <lightning:card variant="Base" title="Marketing Journeys" iconName="standard:location" footer="">
+                <aura:set attribute="actions">
+                    <lightning:helptext content="{!v.text}" iconName="utility:down" class="popover"/>
+                </aura:set>
+                <div class="journeywrapper">
+                    <div class="left">
+                        {!v.Journey1Title}
+                    	<lightning:badge label="v9"/>
+                    </div> 
+                    <div class="right">
+                        <lightning:button label="{!v.Journey1ButtonText}" iconName="{!v.Journey1ButtonIcon}" title="{!v.Journey1ButtonText}" onclick="{! c.clickJourney1 }"/>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="journeywrapper">
+                    <div class="left">
+                        {!v.Journey2Title} 
+                        <lightning:badge label="v14"/>
+                    </div>
+                    <div class="right">
+                        <lightning:button label="{!v.Journey2ButtonText}" iconName="{!v.Journey2ButtonIcon}" title="Stop" onclick="{! c.clickJourney2 }"/>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </lightning:card>
+    	</div>
+    </div>
+</aura:component>

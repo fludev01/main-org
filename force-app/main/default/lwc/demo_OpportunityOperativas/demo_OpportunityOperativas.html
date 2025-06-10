@@ -1,0 +1,20 @@
+<template>
+
+	<article class="slds-card" style="box-shadow: none;">
+		<div class="slds-card__body" align="center" style="min-height: 32px; padding: 0;">
+
+			<div class="divBotones">
+
+				<!--Copiar NIF-->
+				<lightning-button label="NIF" icon-name="utility:identity" onclick={copiarNifAlPortapapeles} title="Copiar NIF al portapapeles"></lightning-button>
+
+				<!--Programar cita-->
+				<lightning-button label="Programar cita" icon-name="utility:date_input" onclick={abrirModal} data-modal="modalProgramarCita"></lightning-button>
+
+				<!--Derivar a gestor-->
+				<lightning-button label="Derivar" icon-name="utility:workforce_engagement" onclick={abrirModal} data-modal="modalDerivarGestor" title="Derivar a gestor"></lightning-button>
+
+			</div>
+		</div>
+	</article>
+</template>

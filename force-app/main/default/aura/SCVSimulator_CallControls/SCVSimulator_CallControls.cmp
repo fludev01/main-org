@@ -1,0 +1,70 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <lightning:workspaceAPI aura:id="workspace"/>    
+    <aura:attribute name="minutes" type="Integer" default="0"/>    
+    <aura:attribute name="seconds" type="Integer" default="0"/>  
+    <aura:attribute name="totalSeconds" type="Integer" default="0"/>
+    <aura:attribute name="voiceCallRecord" type="Object"/>
+    <aura:attribute name="recordLoadError" type="String"/>
+    <aura:attribute name="setIntervalId" type="Integer"/>
+    <force:recordData aura:id="recordLoader" 
+                      recordId="{!v.recordId}"
+                      fields="Contact__c, Contact__r.Name, Contact__r.Phone"
+        			  targetFields="{!v.voiceCallRecord}"
+        			  targetError="{!v.recordLoadError}" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    
+    <lightning:card>
+        <aura:set attribute="title">
+            <lightning:icon iconName="standard:voice_call" variant="inverse" size="small" class="slds-m-right_x-small card-icon"/>
+            Phone
+        </aura:set>
+        
+        <aura:set attribute="actions">
+           		<lightning:input type="toggle" label="Recording" name="recordCallToggle" checked="true" />
+        </aura:set>
+        
+        <div class="slds-p-horizontal_medium slds-box">
+            <div class="slds-clearfix">
+                <div class="slds-float_left">
+                    <lightning:badge label="Connected" class="active" />
+                </div>
+                <div class="slds-float_right">
+                    
+                    <div id="variants" class="slds-grid slds-grid_vertical-align-center">                                
+                        <lightning:icon iconName="utility:record" variant="error" class="slds-col" title="recording" size="xx-small"/>
+                        <p class="timer slds-form-element__label slds-col" >
+                        	<span>
+                                00:<lightning:formattedNumber value="{! v.minutes }" minimumIntegerDigits="2" />
+                                :<lightning:formattedNumber value="{! v.seconds }" minimumIntegerDigits="2" />
+                        	</span>
+                        </p>
+                     </div>
+                </div>
+            </div>
+            <div class="slds-clearfix slds-p-top_small">
+                <div class="slds-float_left">
+                    <p><lightning:formattedPhone class="contactPhone" style="color: black;" value="{! v.voiceCallRecord.Contact__r.Phone }"></lightning:formattedPhone></p>
+                    <p>{! v.voiceCallRecord.Contact__r.Name }</p>
+                </div>
+                <div class="slds-float_right">
+                    <div class="inline-divs">
+                        <div class="">
+                            <fieldset class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <lightning:buttonIcon iconName="utility:priority" alternativeText="Raise flag" class="slds-m-left_xx-small" title="Raise flag" />                        
+                                    <lightning:buttonGroup>
+                                    	<lightning:buttonIcon iconName="utility:muted" alternativeText="Mute" class="slds-m-left_xx-small" title="Mute" />
+										<lightning:buttonIcon iconName="utility:pause" alternativeText="Place on hold" class="slds-m-left_xx-small" title="Place on hold" />
+                                    </lightning:buttonGroup>                 
+                                </div>
+                            </fieldset>
+                        </div> 
+                        <div class="slds-m-left_small">
+                            <lightning:button variant="destructive" label="End Call" class="relative-button" onclick="{! c.endCall }" />      
+                        </div> 
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </lightning:card>   
+</aura:component>

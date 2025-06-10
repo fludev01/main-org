@@ -1,0 +1,227 @@
+<aura:component controller="FINS_DistributedMarketingMock" implements="flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="options" type="List" default="[
+    {'label': 'Frank Levin', 'value': 'Frank Levin'},
+    {'label': 'Rachel Morris', 'value': 'Rachel Morris'},
+    {'label': 'George Mazzotta', 'value': 'George Mazzotta'},                                                    
+    {'label': 'Andy Young', 'value': 'Andy Young'}                                                    
+    ]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    <aura:attribute name="Page" type="String" default="Start" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="ButtonText" type="String" default="View Pending Member" />
+    <aura:attribute name="RecordValue" type="sObject[]" />
+    
+    <aura:attribute name="selectedView" type="String" default="Button"/>
+    <aura:attribute name="Templates" type="FINS_Distributed_Marketing_Template__c[]"/>
+    <aura:attribute name="selectedContent" type="String" default=""/>
+    <aura:attribute name="Content" type="FINS_Distributed_Marketing_Content__c[]"/>
+    <aura:attribute name="SelectedTemplate" type="String" default="" />
+    <aura:handler name="change" value="{!v.SelectedTemplate}" action="{!c.templateSelection}"/>
+    
+    <aura:attribute name="RichTextIntro" type="String" default=""/>
+    <aura:attribute name="RichTextPlaceholder" type="String" default="Add Your Personalized Content Here. Use Alt/Option + Space to add spaces."/>
+    <aura:attribute name="RichTextConclusion" type="String" default=""/>
+    <aura:attribute name="RichTextConclusionPlaceholder" type="String" default="Add Your Conclusion Here. Use Alt/Option + Space to add spaces."/>
+
+    <aura:attribute name="value" type="List" default="option1"/>
+    <aura:attribute name="disabled" type="Boolean" default="true" />
+    
+    <aura:if isTrue="{!v.selectedView == 'Button'}">
+        <button onclick="{!c.openmodal}" class="slds-button slds-button_brand">
+            {!v.ButtonText}
+        </button>
+    </aura:if>
+    <aura:if isTrue="{!v.selectedView != 'Button'}">
+        <div class="">
+                <div class="relative">
+                    <div aura:id="PersonalizedMessage" class=""> 
+                        <aura:if isTrue="{!not(empty(v.RecordValue))}">
+                            <aura:iteration items="{!v.RecordValue}" var="info">
+                                <div class="namepadding">
+                                    <aura:if isTrue="{!info.Name == ''}">
+                                        <strong>Send a personalized message. </strong>
+                                    	<aura:set attribute="else">
+                                            <strong>Send {!info.Name} a personalized message. </strong>
+                                        </aura:set>
+                                    </aura:if>
+                                </div>
+                            </aura:iteration>
+                        </aura:if>
+                        <div class="half">
+                            <div class="padding">
+                                <h2>Personalize Messages</h2>
+                                <lightning:select name="select1" label="Select a Template" value="{!v.SelectedTemplate}" >
+                                    <option value="">Choose one...</option>
+                                    <aura:iteration var="temp" items="{!v.Templates}" indexVar="index"> 
+                                        <option value="{!temp.Name}">
+                                            {!temp.Name} - {!temp.Industry__c}
+                                        </option>
+                                    </aura:iteration>
+                                </lightning:select>
+                            </div>
+                            <div class="padding">   
+                                <label>Introduction</label><br/>
+                                <lightning:inputRichText value="{!v.RichTextIntro}" placeholder="{!v.RichTextPlaceholder}"/>
+                            </div>
+                            <c:FINS_DistributedMarketingMockAddContent SelectedTemplate="{!v.SelectedTemplate}" Content="{!v.Content}" selectedContent="{!v.selectedContent}" />
+                            <div class="padding">
+                                <label>Conclusion</label><br/>
+                                <lightning:inputRichText value="{!v.RichTextConclusion}" placeholder="{!v.RichTextConclusionPlaceholder}"/>
+                            </div>
+                        </div>
+                        <div class="half">
+                            <div class="padding">
+                                <aura:if isTrue="{!v.SelectedTemplate != ''}" >
+                                    <aura:iteration var="temp" items="{!v.Templates}" indexVar="index"> 
+                                        <aura:if isTrue="{!temp.Name == v.SelectedTemplate}" >
+                                            <img src="{!temp.Logo_URL__c}" class="BrandingLogo" />
+                                                <img src="{!temp.Header_Image_URL__c}" class="templatebanner"/>
+                                                <div class="setContent">
+                                                    <h3>{!temp.Primary_Header__c}</h3>
+                                                    <lightning:formattedRichText value="{!temp.Primary_Description__c}"/>
+                                                </div>
+                                                <div aura:id="output" class="output highlighted">
+                                                    <p><lightning:formattedRichText value="{!v.RichTextIntro}" /></p>
+                                            </div>
+                                            
+                                            <c:FINS_DistributedMarketingShowContent selectedContent="{!v.selectedContent}" Content="{!v.Content}" />
+                                            
+                                            <div aura:id="output" class="output highlighted">
+                                                <p><lightning:formattedRichText value="{!v.RichTextConclusion}" /></p>
+                                            </div>
+                                    </aura:if>
+                                </aura:iteration>
+                            </aura:if>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <footer class="slds-modal__footer">
+                <button onclick="{!c.closeModal}" class="slds-button slds-button_neutral">Cancel</button>
+                <aura:if isTrue="{!v.Page == 'EmailTemplate'}">
+                	<button onclick="{!c.reset}" class="slds-button slds-button_neutral">Back</button>
+                </aura:if>
+                <button onclick="{!c.saveModal}" class="slds-button slds-button_brand">Send</button>
+            </footer> 
+        </div>
+    </aura:if>
+    
+        <section role="dialog" tabindex="-1" aura:id="Modalbox" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-close">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button onclick="{!c.closeModal}" class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+                         <lightning:icon iconName="utility:close" alternativeText="Close" />
+                    </button>
+                    <aura:if isTrue="{!v.Page == 'Start'}">
+                        <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Pending Approvals</h2>
+                        <aura:set attribute="else">
+                           <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Personalized Messages</h2> 
+                        </aura:set>
+                    </aura:if>
+                    
+                </header>
+                <div class="slds-modal__content slds-p-around_medium relative" id="modal-content-id-1">
+                    <div aura:id="Pendings">
+                        <aura:if isTrue="{!not(empty(v.RecordValue))}">
+                            <aura:iteration items="{!v.RecordValue}" var="info">
+                                <div class="namepadding">
+                                    Send {!info.Name} a message. 
+                                </div>
+                            </aura:iteration>
+                            <div class="actionList">
+                                <button onclick="{!c.accept}" class="slds-button slds-button_neutral" >
+                                    Approve
+                                </button>
+                                <button onclick="{!c.reject}" class="slds-button slds-button_neutral" >
+                                    Reject
+                                </button>
+                                <button onclick="{!c.personalize}" class="slds-button slds-button_neutral">
+                                    Personalize Message
+                                </button>
+                            </div>
+                        </aura:if>
+                        <aura:if isTrue="{!empty(v.RecordValue)}">
+                            <h3>Pending Approvals</h3>
+                            <div class="checkList">
+                                <lightning:checkboxGroup name="Checkbox Group"
+                                         label="Name"
+                                         options="{! v.options }"
+                                         value="{! v.value }"
+                                         onchange="{! c.checkboxChange }"/>
+                            </div>
+                            <div class="actionList">
+                                <button onclick="{!c.accept}" class="slds-button slds-button_neutral" disabled="{!v.disabled}">
+                                    Approve
+                                </button>
+                                <button onclick="{!c.reject}" class="slds-button slds-button_neutral" disabled="{!v.disabled}">
+                                    Reject
+                                </button>
+                                <button onclick="{!c.personalize}" class="slds-button slds-button_neutral" disabled="{!v.disabled}">
+                                    Personalize Message
+                                </button>
+                            </div>
+                        </aura:if>
+                    </div>
+                    <div aura:id="PersonalizedMessage" class="slds-hidden"> 
+                        <div class="half">
+                            <div class="padding">
+                                <h2>Personalize Messages</h2>
+                                <lightning:select name="select1" label="Select a Template" value="{!v.SelectedTemplate}" >
+                                    <option value="">Choose one...</option>
+                                    <aura:iteration var="temp" items="{!v.Templates}" indexVar="index"> 
+                                        <option value="{!temp.Name}">
+                                            {!temp.Name} - {!temp.Industry__c}
+                                        </option>
+                                    </aura:iteration>
+                                </lightning:select>
+                            </div>
+                            <div class="padding">   
+                                <label>Introduction</label><br/>
+                                <lightning:inputRichText value="{!v.RichTextIntro}" placeholder=""/>
+                            </div>
+                            <c:FINS_DistributedMarketingMockAddContent SelectedTemplate="{!v.SelectedTemplate}" Content="{!v.Content}" selectedContent="{!v.selectedContent}" />
+                            <div class="padding">
+                                <label>Conclusion</label><br/>
+                                <lightning:inputRichText value="{!v.RichTextConclusion}" placeholder=""/>
+                            </div>
+                        </div>
+                        <div class="half">
+                            <div class="padding">
+                                <aura:if isTrue="{!v.SelectedTemplate != ''}" >
+                                    <aura:iteration var="temp" items="{!v.Templates}" indexVar="index"> 
+                                        <aura:if isTrue="{!temp.Name == v.SelectedTemplate}" >
+                                            <img src="{!temp.Logo_URL__c}" class="BrandingLogo" />
+                                                <img src="{!temp.Header_Image_URL__c}" class="templatebanner"/>
+                                                <div class="setContent">
+                                                    <h3>{!temp.Primary_Header__c}</h3>
+                                                    <lightning:formattedRichText value="{!temp.Primary_Description__c}"/>
+                                                </div>
+                                                <div aura:id="output" class="output highlighted">
+                                                    <p><lightning:formattedRichText value="{!v.RichTextIntro}" /></p>
+                                            </div>
+                                            
+                                            <c:FINS_DistributedMarketingShowContent selectedContent="{!v.selectedContent}" Content="{!v.Content}" />
+                                            
+                                            <div aura:id="output" class="output highlighted">
+                                                <p><lightning:formattedRichText value="{!v.RichTextConclusion}" /></p>
+                                            </div>
+                                    </aura:if>
+                                </aura:iteration>
+                            </aura:if>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <footer class="slds-modal__footer">
+                <button onclick="{!c.closeModal}" class="slds-button slds-button_neutral">Cancel</button>
+                <aura:if isTrue="{!v.Page == 'EmailTemplate'}">
+                	<button onclick="{!c.reset}" class="slds-button slds-button_neutral">Back</button>
+                </aura:if>
+                <button onclick="{!c.saveModal}" class="slds-button slds-button_brand">Save</button>
+            </footer> 
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_close" aura:id="Modalbackdrop"></div>
+    </aura:component>

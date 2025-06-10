@@ -1,0 +1,19 @@
+.ocl-details-container-bg {
+    background: #f0f4f7;
+    border-top: solid lightgrey 0.5px;
+    margin: unset!important;
+    border-top: 10px solid #f0f4f7!important;
+    border-bottom: 10px solid #f0f4f7!important;
+    height: 100%;
+}
+
+lightning-card > article {
+    background: grey!important;
+}
+header.slds-card__header.slds-grid {
+    margin: unset!important;
+}
+
+div.slds-card__body {
+    margin: unset!important;
+}

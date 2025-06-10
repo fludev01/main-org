@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ResponseForExternalTransactionsStatus&quot; : true,
+  &quot;GetTransactions&quot; : {
+    &quot;hasErrors&quot; : &quot;false&quot;,
+    &quot;AdditionalAttributes&quot; : { },
+    &quot;Transactions&quot; : [ {
+      &quot;TransactionId&quot; : &quot;1&quot;,
+      &quot;TransactionType&quot; : &quot;Fee&quot;,
+      &quot;TransactionAmount&quot; : 10,
+      &quot;TransactionFormattedAmount&quot; : &quot;USD 10.00&quot;,
+      &quot;TransactionAmountCurrency&quot; : &quot;USD&quot;,
+      &quot;TransactionPostedDate&quot; : &quot;2022-09-01T16:41:41.090Z&quot;,
+      &quot;TransactionDescription&quot; : &quot;Overdraft charge&quot;,
+      &quot;AdditionalAttributes&quot; : {
+        &quot;Subtype&quot; : &quot;Overdraft fee&quot;
+      }
+    }, {
+      &quot;TransactionId&quot; : &quot;10&quot;,
+      &quot;TransactionType&quot; : &quot;Withdrawal&quot;,
+      &quot;TransactionAmount&quot; : 0.04,
+      &quot;TransactionFormattedAmount&quot; : &quot;USD 0.04&quot;,
+      &quot;TransactionAmountCurrency&quot; : &quot;USD&quot;,
+      &quot;TransactionCode&quot; : &quot;Transfer&quot;,
+      &quot;TransactionPostedDate&quot; : &quot;2022-03-09T16:41:41.090Z&quot;,
+      &quot;TransactionDescription&quot; : &quot;Wire transfer&quot;
+    }, {
+      &quot;TransactionId&quot; : &quot;2&quot;,
+      &quot;TransactionType&quot; : &quot;Withdrawal&quot;,
+      &quot;TransactionAmount&quot; : 20,
+      &quot;TransactionFormattedAmount&quot; : &quot;USD 20.00&quot;,
+      &quot;TransactionAmountCurrency&quot; : &quot;USD&quot;,
+      &quot;TransactionPostedDate&quot; : &quot;2022-03-02T16:41:41.090Z&quot;,
+      &quot;TransactionDescription&quot; : &quot;ATM machine withdrawal&quot;
+    } ],
+    &quot;AccountType&quot; : &quot;CurrentAccount&quot;,
+    &quot;AccountCurrency&quot; : &quot;USD&quot;,
+    &quot;AccountName&quot; : &quot;Salesforce.com&quot;,
+    &quot;AccountId&quot; : &quot;01axx000003MLytAAGabc&quot;,
+    &quot;errorCode&quot; : &quot;INVOKE-200&quot;,
+    &quot;error&quot; : &quot;OK&quot;
+  },
+  &quot;GetTransactionsStatus&quot; : true,
+  &quot;Id&quot; : &quot;a0Fxx000000fVJ3EAM&quot;,
+  &quot;currentOffset&quot; : &quot;0&quot;,
+  &quot;TransactionType&quot; : &quot;{Session.transactionType}&quot;,
+  &quot;getExternalTransactions&quot; : &quot;true&quot;,
+  &quot;sourceSystemId&quot; : &quot;abc&quot;,
+  &quot;options&quot; : {
+    &quot;useContinuation&quot; : true
+  },
+  &quot;IfOnlyInternalTransactionsStatus&quot; : false
+}</expectedInputJson>
+    <expectedOutputJson>{
+  &quot;ResponseForExternalTransactionsStatus&quot; : true,
+  &quot;GetTransactions&quot; : {
+    &quot;hasErrors&quot; : &quot;false&quot;,
+    &quot;AdditionalAttributes&quot; : { },
+    &quot;Transactions&quot; : [ {
+      &quot;TransactionId&quot; : &quot;1&quot;,
+      &quot;TransactionType&quot; : &quot;Fee&quot;,
+      &quot;TransactionAmount&quot; : 10,
+      &quot;TransactionAmountCurrency&quot; : &quot;USD&quot;,
+      &quot;TransactionPostedDate&quot; : &quot;2022-09-01T16:41:41.090Z&quot;,
+      &quot;TransactionDescription&quot; : &quot;Overdraft charge&quot;,
+      &quot;AdditionalAttributes&quot; : {
+        &quot;Subtype&quot; : &quot;Overdraft fee&quot;
+      }
+    }, {
+      &quot;TransactionId&quot; : &quot;10&quot;,
+      &quot;TransactionType&quot; : &quot;Withdrawal&quot;,
+      &quot;TransactionAmount&quot; : 0.04,
+      &quot;TransactionAmountCurrency&quot; : &quot;USD&quot;,
+      &quot;TransactionCode&quot; : &quot;Transfer&quot;,
+      &quot;TransactionPostedDate&quot; : &quot;2022-03-09T16:41:41.090Z&quot;,
+      &quot;TransactionDescription&quot; : &quot;Wire transfer&quot;
+    }, {
+      &quot;TransactionId&quot; : &quot;2&quot;,
+      &quot;TransactionType&quot; : &quot;Withdrawal&quot;,
+      &quot;TransactionAmount&quot; : 20,
+      &quot;TransactionAmountCurrency&quot; : &quot;USD&quot;,
+      &quot;TransactionPostedDate&quot; : &quot;2022-03-02T16:41:41.090Z&quot;,
+      &quot;TransactionDescription&quot; : &quot;ATM machine withdrawal&quot;
+    } ],
+    &quot;AccountType&quot; : &quot;CurrentAccount&quot;,
+    &quot;AccountCurrency&quot; : &quot;USD&quot;,
+    &quot;AccountName&quot; : &quot;Salesforce.com&quot;,
+    &quot;AccountId&quot; : &quot;01axx000003MLytAAGabc&quot;,
+    &quot;errorCode&quot; : &quot;INVOKE-200&quot;,
+    &quot;error&quot; : &quot;OK&quot;
+  },
+  &quot;GetTransactionsStatus&quot; : true,
+  &quot;Id&quot; : &quot;a0Fxx000000fVJ3EAM&quot;,
+  &quot;currentOffset&quot; : &quot;0&quot;,
+  &quot;TransactionType&quot; : &quot;{Session.transactionType}&quot;,
+  &quot;getExternalTransactions&quot; : &quot;true&quot;,
+  &quot;sourceSystemId&quot; : &quot;abc&quot;,
+  &quot;options&quot; : {
+    &quot;useContinuation&quot; : true
+  },
+  &quot;IfOnlyInternalTransactionsStatus&quot; : false
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformBeneficiaryDetails5504220912110707</globalKey>
+        <inputFieldName>MobileNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Mobile Number</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformBeneficiaryDetails48238790567460277</globalKey>
+        <inputFieldName>BeneficiaryName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BeneficiaryName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformBeneficiaryDetails7341932151478696</globalKey>
+        <inputFieldName>BeneficiaryType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BeneficiaryType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformBeneficiaryDetails13715539338834049</globalKey>
+        <inputFieldName>SSN</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>FullSSN</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:SSN var:SSNLength 4 - var:SSNLength SUBSTRING</formulaConverted>
+        <formulaExpression>SUBSTRING(%SSN%,SSNLength-4,SSNLength)</formulaExpression>
+        <formulaResultPath>SSNLast4</formulaResultPath>
+        <formulaSequence>4.0</formulaSequence>
+        <globalKey>FSCWlthManageBeneficiariesTransformBeneficiaryDetails05739813758093959</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformBeneficiaryDetails8379788518431486</globalKey>
+        <inputFieldName>Address:City</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>City</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformBeneficiaryDetails4560899642138452</globalKey>
+        <inputFieldName>Address:AddressLine2</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AddressLine2</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformBeneficiaryDetails21605350937792944</globalKey>
+        <inputFieldName>EmailAddress</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Email</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformBeneficiaryDetails8269337946371145</globalKey>
+        <inputFieldName>Address:AddressLine1</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AddressLine1</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformBeneficiaryDetails41653898205491147</globalKey>
+        <inputFieldName>MaskedSSN</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>SSN</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformBeneficiaryDetails8116202757274267</globalKey>
+        <inputFieldName>Address:State</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>State</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformBeneficiaryDetails6798680177689702</globalKey>
+        <inputFieldName>SharePercentage</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ExistingShare</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformBeneficiaryDetails8971610466630604</globalKey>
+        <inputFieldName>Address:AddressType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AddressType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| &quot;XXXX-&quot; var:SSNLast4 CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(&quot;XXXX-&quot;,SSNLast4)</formulaExpression>
+        <formulaResultPath>MaskedSSN</formulaResultPath>
+        <formulaSequence>5.0</formulaSequence>
+        <globalKey>FSCWlthManageBeneficiariesTransformBeneficiaryDetails34625904548399955</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformBeneficiaryDetails4970476771472421</globalKey>
+        <inputFieldName>RelationshipType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RelationshipType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformBeneficiaryDetails9366115632338832</globalKey>
+        <inputFieldName>FullAddress</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Address</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformBeneficiaryDetails29289672542988576</globalKey>
+        <inputFieldName>PerStirpes</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PerStirpes</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:RelationshipType var:RelationshipType var:InstituionType IF</formulaConverted>
+        <formulaExpression>IF(%RelationshipType%,%RelationshipType%,%InstituionType%)</formulaExpression>
+        <formulaResultPath>InstitutionOrRelationshipType</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>FSCWlthManageBeneficiariesTransformBeneficiaryDetails06821944612099684</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformBeneficiaryDetails708677382224429</globalKey>
+        <inputFieldName>BeneficiaryId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BeneficiaryId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformBeneficiaryDetails5962955046416167</globalKey>
+        <inputFieldName>Address:PostalCode</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PostalCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:SSN &quot;&lt;EOS&gt;&quot; + &quot;&lt;EOS&gt;&quot; STRINGINDEXOF</formulaConverted>
+        <formulaExpression>STRINGINDEXOF(%SSN%+&quot;&lt;EOS&gt;&quot;,&quot;&lt;EOS&gt;&quot;)</formulaExpression>
+        <formulaResultPath>SSNLength</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>FSCWlthManageBeneficiariesTransformBeneficiaryDetails49756241593025186</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformBeneficiaryDetails9556874710619192</globalKey>
+        <inputFieldName>InstituionType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>InstitutionType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Address:AddressLine1 var:Address:AddressLine1 &apos;&apos; IF | var:Address:AddressLine2 | var:Address:AddressLine1 | &apos;,/\/\/&apos; var:Address:AddressLine2 CONCAT var:Address:AddressLine2 IF &apos;&apos; IF | var:Address:City | var:Address:AddressLine1 var:Address:AddressLine2 OR | &apos;,/\/\/&apos; var:Address:City CONCAT var:Address:City IF &apos;&apos; IF | var:Address:State | var:Address:AddressLine1 var:Address:AddressLine2 OR var:Address:City OR | &apos;,/\/\/&apos; var:Address:State CONCAT var:Address:State IF &apos;&apos; IF | var:Address:Country | var:Address:AddressLine1 var:Address:AddressLine2 OR var:Address:City var:Address:State OR OR | &apos;,/\/\/&apos; var:Address:Country CONCAT var:Address:Country IF &apos;&apos; IF | var:Address:PostalCode | var:Address:AddressLine1 var:Address:AddressLine2 OR var:Address:City var:Address:State OR OR var:Address:Country OR | &apos;,/\/\/&apos; var:Address:PostalCode CONCAT var:Address:PostalCode IF &apos;&apos; IF CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(IF(%Address:AddressLine1%,%Address:AddressLine1%,&apos;&apos;),IF(%Address:AddressLine2%,IF(%Address:AddressLine1%,CONCAT(&apos;, &apos;,%Address:AddressLine2%),%Address:AddressLine2%),&apos;&apos;),IF(%Address:City%,IF(OR(%Address:AddressLine1%,%Address:AddressLine2%),CONCAT(&apos;, &apos;,%Address:City%),%Address:City%),&apos;&apos;),IF(%Address:State%,IF(OR(OR(%Address:AddressLine1%,%Address:AddressLine2%),%Address:City%),CONCAT(&apos;, &apos;,%Address:State%),%Address:State%),&apos;&apos;),IF(%Address:Country%,IF(OR(OR(%Address:AddressLine1%,%Address:AddressLine2%),OR(%Address:City%,%Address:State%)),CONCAT(&apos;, &apos;,%Address:Country%),%Address:Country%),&apos;&apos;),IF(%Address:PostalCode%,IF(OR(OR(OR(%Address:AddressLine1%,%Address:AddressLine2%),OR(%Address:City%,%Address:State%)),%Address:Country%),CONCAT(&apos;, &apos;,%Address:PostalCode%),%Address:PostalCode%),&apos;&apos;))</formulaExpression>
+        <formulaResultPath>FullAddress</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>FSCWlthManageBeneficiariesTransformBeneficiaryDetails18732491223299363</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformBeneficiaryDetails8741807562447026</globalKey>
+        <inputFieldName>Address:Country</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>CountryCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformBeneficiaryDetails6869267839993358</globalKey>
+        <inputFieldName>BeneficiaryDob</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Birth Date</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformBeneficiaryDetails8730249709833293</globalKey>
+        <inputFieldName>IncorporationDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Incorporation Date</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformBeneficiaryDetails7234665849104978</globalKey>
+        <inputFieldName>InstitutionOrRelationshipType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformBeneficiaryDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>String</outputFieldFormat>
+        <outputFieldName>InstitutionOrRelationshipType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>[ {
+  &quot;SharePercentage&quot; : &quot;40&quot;,
+  &quot;SSN&quot; : &quot;569-94-7726&quot;,
+  &quot;MobileNumber&quot; : &quot;9876541234&quot;,
+  &quot;RelationshipType&quot; : &quot;Grandson&quot;,
+  &quot;EmailAddress&quot; : &quot;gabriel.bosso@gmail.com&quot;,
+  &quot;BeneficiaryId&quot; : &quot;BFR-6065226&quot;,
+  &quot;BeneficiaryType&quot; : &quot;Individual&quot;,
+  &quot;Address&quot; : {
+    &quot;Country&quot; : &quot;USA&quot;,
+    &quot;AddressLine2&quot; : &quot;Floor 61&quot;,
+    &quot;AddressType&quot; : &quot;Mailing Address&quot;,
+    &quot;State&quot; : &quot;CA&quot;,
+    &quot;AddressLine1&quot; : &quot;415 Mission St&quot;,
+    &quot;PostalCode&quot; : &quot;94105&quot;,
+    &quot;City&quot; : &quot;San Francisco&quot;
+  },
+  &quot;BeneficiaryDob&quot; : &quot;04/06/1990&quot;,
+  &quot;PerStirpes&quot; : &quot;yes&quot;,
+  &quot;BeneficiaryName&quot; : &quot;Gabriel Basso&quot;
+}, {
+  &quot;SharePercentage&quot; : &quot;60&quot;,
+  &quot;MobileNumber&quot; : &quot;9807671486&quot;,
+  &quot;InstituionType&quot; : &quot;Trust&quot;,
+  &quot;EmailAddress&quot; : &quot;canute.gomes@gmail.com&quot;,
+  &quot;BeneficiaryId&quot; : &quot;BFR-6065227&quot;,
+  &quot;BeneficiaryType&quot; : &quot;Institution&quot;,
+  &quot;Address&quot; : {
+    &quot;Country&quot; : &quot;USA&quot;,
+    &quot;AddressLine2&quot; : &quot;Floor 67&quot;,
+    &quot;AddressType&quot; : &quot;Mailing Address&quot;,
+    &quot;State&quot; : &quot;CA&quot;,
+    &quot;AddressLine1&quot; : &quot;467 Mission St&quot;,
+    &quot;PostalCode&quot; : &quot;94105&quot;,
+    &quot;City&quot; : &quot;San Francisco&quot;
+  },
+  &quot;BeneficiaryDob&quot; : &quot;04/06/1990&quot;,
+  &quot;PerStirpes&quot; : &quot;yes&quot;,
+  &quot;BeneficiaryName&quot; : &quot;Canute Gomes&quot;
+} ]</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>FSCWlthManageBeneficiariesTransformBeneficiaryDetails_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

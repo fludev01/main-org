@@ -1,0 +1,45 @@
+<template>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size--1-of-1 slds-p-bottom_small">
+            <div class="slds-page-header slds-page-header_record-home">
+                <div class="slds-page-header__row">
+                    <div class="slds-page-header__col-title slds-align-middle">
+                        <div class="slds-media">
+                            <div class="slds-media__figure slds-align-middle">
+                                <span class="slds-icon_container">
+                                    <template if:true={showStandardIcon}>
+                                        <lightning-icon icon-name={iconName} alternative-text="code icon" size="medium"> </lightning-icon>
+                                    </template>
+                                    <template if:false={showStandardIcon}>
+                                        <img src={iconSrc} />
+                                    </template>
+                                </span>
+                            </div>
+                            <div class="slds-media__body">
+                                <div class="slds-page-header__name">
+                                    <div class="slds-page-header__name-title">
+                                        <h1>
+                                            <span>{subtitle}</span>
+                                            <span class="slds-page-header__title slds-truncate" title={title}>{title}</span>
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <template if:true={showButton}>
+                        <div class="slds-page-header__col-actions slds-align-middle">
+                            <div class="slds-page-header__controls">
+                                <div class="slds-page-header__control slds-align_middle">
+                                    <lightning-button-group>
+                                        <lightning-button label={buttonLabel}></lightning-button>
+                                    </lightning-button-group>
+                                </div>
+                            </div>
+                        </div>    
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

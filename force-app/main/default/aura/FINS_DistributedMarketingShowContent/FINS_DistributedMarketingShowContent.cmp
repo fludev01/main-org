@@ -1,0 +1,49 @@
+<aura:component controller="FINS_DistributedMarketingMock" >
+    <aura:attribute name="ShowContent1" type="Boolean" default="false" />
+    <aura:attribute name="Content" type="FINS_Distributed_Marketing_Content__c[]"/>
+    <aura:attribute name="selectedContent" type="String" />
+    <aura:attribute name="SelectedTemplate" type="String" />
+    <aura:handler name="change" value="{!v.SelectedTemplate}" action="{!c.templateSelection}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    <aura:if isTrue="{!v.selectedContent != ''}">
+        <aura:iteration var="con" items="{!v.Content}" indexVar="index"> 
+            <aura:if isTrue="{!v.selectedContent == con.Name}">
+                <aura:if isTrue="{!con.Layout__c == 'Image Right'}">
+                    <div class="half">
+                        <div class="padding">
+                            <img src="{!con.Image_URL__c}" />
+                        </div>
+                    </div>
+                    <div class="half">
+                        <div class="padding">
+                            <h2 class="h2">{!con.Name}</h2>
+                            <div class="desc">{!con.Description__c}</div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </aura:if>
+                <aura:if isTrue="{!con.Layout__c == 'Image Right'}">
+                    <div class="half">
+                        <div class="padding">
+                            <h2 class="h2">{!con.Name}</h2>
+                            <div class="desc">{!con.Description__c}</div>
+                        </div>
+                    </div>
+                    <div class="half">
+                        <div class="padding">
+                            <img src="{!con.Image_URL__c}" />
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </aura:if>
+                <aura:if isTrue="{!con.Layout__c == 'Image Only'}">
+                    <div class="full">
+                        <div class="padding">
+                            <img src="{!con.Image_URL__c}" />
+                        </div>
+                    </div>
+                </aura:if>
+            </aura:if>
+        </aura:iteration>
+    </aura:if>
+</aura:component>

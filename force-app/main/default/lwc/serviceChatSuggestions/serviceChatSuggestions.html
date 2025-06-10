@@ -1,0 +1,89 @@
+<template>
+    <lightning-card>
+        <h3 slot="title">
+            <lightning-icon class="einstein-icon slds-m-right_small" icon-name="utility:einstein" size="small"></lightning-icon> Einstein Replies
+        </h3>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-size_1-of-1 slds-p-right_medium slds-p-left_medium slds-p-bottom_xx-small">
+                <!-- Card Content -->
+                <div class={containerClass} style={containerStyle}>
+                    <!-- Conditional Cards-->
+                    <template lwc:if={showEmptyState}>
+                        <div class="slds-size_1-of-1">
+                            <div class="slds-grid slds-wrap slds-p-around_medium">
+                                <div class="slds-size_1-of-1 slds-align_absolute-center">
+                                    <img style="max-width:60%" src="https://res.cloudinary.com/btahub/image/upload/v1676350809/l4sodx4l2pkorexhbw17.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                    <template lwc:elseif={showActiveState}>
+                        <div class="slds-size_1-of-1 slds-p-bottom_small slds-col">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-size_1-of-1 slds-col slds-p-bottom_small">
+                                    <div class={messageContainer}>
+                                        <div class={messageStyle}>{suggestedMessage}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-size_1-of-1 slds-col slds-align-bottom">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-size_1-of-1 slds-p-bottom_small slds-border_bottom">
+                                    <template if:true={showSources}>
+                                        <div class="slds-grid slds-wrap">
+                                            <div class="slds-text-color_weak slds-p-right_small slds-align-middle">Sourced from</div>
+                                            <template for:each={sources} for:item="source" for:index="i">
+                                                <span key={source.i} class="slds-badge">{source.Name}</span>
+                                            </template>
+                                        </div>
+                                    </template>
+                                </div>
+                                <div class="slds-size_1-of-1 slds-p-top_small">
+                                    <div class="slds-grid slds-wrap slds-grid_align-spread">
+                                        <div class="slds-col">
+                                            <lightning-button disabled={thinking} class="slds-m-right_small" label="Adjust" onclick={pushMessage} variant="brand-outline" data-type="Edit"></lightning-button>
+                                            <lightning-button disabled={thinking} label="Edit" onclick={pushMessage} variant="brand-outline" data-type="Edit"></lightning-button>
+                                        </div>
+                                        <div class="slds-col slds-text-align_right">
+                                            <button class="slds-button slds-button_outline-brand eq-button" disabled={thinking} data-type="Post" onclick={pushMessage}>
+                                                <template if:true={thinking}>
+                                                    <div class="slds-align_absolute-center">
+                                                        <div class="slds-icon-eq slds-is-animated" title="Description of the icon when needed">
+                                                            <div class="slds-icon-eq__bar"></div>
+                                                            <div class="slds-icon-eq__bar"></div>
+                                                            <div class="slds-icon-eq__bar"></div>
+                                                            <span class="slds-assistive-text">Text alternative when needed</span>
+                                                        </div>
+                                                    </div>
+                                                </template>
+                                                <template if:false={thinking}> Send Reply <lightning-icon class="slds-button__icon slds-button__icon_right button-icon" icon-name="utility:send" size="xx-small"></lightning-icon>
+                                                </template>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                    <template lwc:else>
+                        <div class="slds-size_1-of-1">
+                            <div class="slds-box">
+                                <p class="slds-p-around_small slds-text-align_center">This chat has now ended. How did you find this interaction?</p>
+                                <div class="slds-grid slds-wrap slds-grid_align-spread">
+                                    <div class="slds-col">
+                                        <lightning-button-icon class="slds-m-right_small" variant="border-filled" icon-name="utility:like"></lightning-button-icon>
+                                        <lightning-button-icon icon-name="utility:dislike" variant="border-filled"></lightning-button-icon>
+                                    </div>
+                                    <div class="slds-col slds-text-align_right">
+                                        <lightning-button label="Feedback"></lightning-button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

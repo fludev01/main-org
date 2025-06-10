@@ -1,0 +1,32 @@
+<aura:component access="global" implements="lightning:availableForFlowScreens">
+    
+    <aura:attribute name="icon" type="String" default="standard:default" access="global" />
+    <aura:attribute name="iconSize" type="String" default="medium" access="global" />
+    <aura:attribute name="heading" type="String" default="Heading" access="global" />
+    <aura:attribute name="subHeading" type="String" access="global" />
+    <aura:attribute name="screenHelpText" type="string" default="Help text" access="global" />
+    
+    <div class="slds-page-header">
+        <lightning:layout horizontalAlign="spread">
+        	<lightning:layoutItem size="3">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <lightning:icon iconName="{!v.icon}" size="{!v.iconSize}" />
+                    </div>
+                    <div class="slds-media__body">
+                        <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="{!v.heading}"> {!v.heading} </h1>
+                        <p class="slds-text-body_small slds-line-height_reset"> {!v.subHeading} </p>
+                    </div>
+                </div>
+            </lightning:layoutItem>
+            <lightning:layoutItem size="1">
+                <div class="slds-float_right">
+                    <aura:if isTrue="{!v.screenHelpText != null}">
+                        <!-- If the screen has help text, display an info icon in the header. On hover, display the screen's help text -->
+                        <lightning:helptext content="{!v.screenHelpText}" />
+                    </aura:if>
+                </div>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+</aura:component>

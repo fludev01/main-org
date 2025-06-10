@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniIntegrationProcedure xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customJavaScript>{
+    &quot;ReplaceCard&quot;: &quot;No&quot;,
+    &quot;FinalListofSelectedCard&quot;: [
+        {
+            &quot;SourceSystemId&quot;: &quot;3765476354632323&quot;,
+            &quot;CardId&quot;: &quot;a06B0000002HZYNIA4&quot;,
+            &quot;Selected&quot;: true,
+            &quot;CardSourceSystemId&quot;: &quot;3765476354632323&quot;,
+            &quot;CardValidDate&quot;: &quot;5/2024&quot;,
+            &quot;CardType&quot;: &quot;Debit Card&quot;,
+            &quot;RecordTypeName&quot;: &quot;Checking Account&quot;,
+            &quot;CardNumberLast4&quot;: &quot;6382&quot;,
+            &quot;CardName&quot;: &quot;Star Wars&quot;,
+            &quot;CardNumber&quot;: 547295473756382,
+            &quot;Role&quot;: &quot;Primary Owner&quot;,
+            &quot;Reissue&quot;: true
+        },
+        {
+            &quot;SourceSystemId&quot;: &quot;2343534545646451&quot;,
+            &quot;CardId&quot;: &quot;a06B0000002HZYSIA4&quot;,
+            &quot;Selected&quot;: true,
+            &quot;CardSourceSystemId&quot;: &quot;2343534545646451&quot;,
+            &quot;CardValidDate&quot;: &quot;4/2026&quot;,
+            &quot;CardType&quot;: &quot;Debit Card&quot;,
+            &quot;RecordTypeName&quot;: &quot;Savings Account&quot;,
+            &quot;CardNumberLast4&quot;: &quot;4543&quot;,
+            &quot;CardName&quot;: &quot;Amex&quot;,
+            &quot;CardNumber&quot;: 4532424534244543,
+            &quot;Role&quot;: &quot;Primary Owner&quot;,
+            &quot;Reissue&quot;: false
+        }
+    ],
+    &quot;SelectedCardData&quot;: [
+        {
+            &quot;Selected&quot;: true,
+            &quot;Id&quot;: &quot;REC0&quot;,
+            &quot;CardValidDate&quot;: &quot;5/2024&quot;,
+            &quot;CardType&quot;: &quot;Debit Card&quot;,
+            &quot;_flex&quot;: {
+                &quot;state0element0_child&quot;: true,
+                &quot;uniqueKey&quot;: &quot;REC0&quot;,
+                &quot;state0element0&quot;: true
+            },
+            &quot;Role&quot;: &quot;Primary Owner&quot;,
+            &quot;Reissue&quot;: false,
+            &quot;SourceSystemId&quot;: &quot;3765476354632323&quot;,
+            &quot;CardId&quot;: &quot;a06B0000002HZYNIA4&quot;,
+            &quot;CardSourceSystemId&quot;: &quot;3765476354632323&quot;,
+            &quot;uniqueKey&quot;: &quot;REC0&quot;,
+            &quot;CardNumberLast4&quot;: &quot;6382&quot;,
+            &quot;CardActive&quot;: true,
+            &quot;RecordTypeName&quot;: &quot;Checking Account&quot;,
+            &quot;CardName&quot;: &quot;Star Wars&quot;,
+            &quot;CardNumber&quot;: 547295473756382
+        },
+        {
+            &quot;Selected&quot;: true,
+            &quot;Id&quot;: &quot;REC1&quot;,
+            &quot;CardValidDate&quot;: &quot;4/2026&quot;,
+            &quot;CardType&quot;: &quot;Debit Card&quot;,
+            &quot;_flex&quot;: {
+                &quot;state0element0_child&quot;: true,
+                &quot;uniqueKey&quot;: &quot;REC1&quot;,
+                &quot;state0element0&quot;: true
+            },
+            &quot;Role&quot;: &quot;Primary Owner&quot;,
+            &quot;Reissue&quot;: false,
+            &quot;SourceSystemId&quot;: &quot;2343534545646451&quot;,
+            &quot;CardId&quot;: &quot;a06B0000002HZYSIA4&quot;,
+            &quot;CardSourceSystemId&quot;: &quot;2343534545646451&quot;,
+            &quot;uniqueKey&quot;: &quot;REC1&quot;,
+            &quot;CardNumberLast4&quot;: &quot;4543&quot;,
+            &quot;CardActive&quot;: true,
+            &quot;RecordTypeName&quot;: &quot;Savings Account&quot;,
+            &quot;CardName&quot;: &quot;Amex&quot;,
+            &quot;CardNumber&quot;: 4532424534244543
+        }
+    ],
+    &quot;Reason&quot;: &quot;Stolen&quot;,
+    &quot;Remarks&quot;: &quot;yuyuy&quot;,
+    &quot;ShippingPreference&quot;: &quot;Standard Shipping&quot;,
+    &quot;ShippingAddress&quot;: &quot;5396, North Reese Avenue, Fresno, CA, US, 93722&quot;,
+    &quot;omniScriptId&quot;: &quot;0jNB0000000CtQFMA0&quot;,
+    &quot;elementName&quot;: &quot;TransformSelectedCardData&quot;
+}</customJavaScript>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>true</isActive>
+    <isIntegrationProcedure>true</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>Procedure</language>
+    <name>ReportandReplaceCards_TransformSelectedCardDetails</name>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>FSC_ReportandReplaceCardsTransformSelectedCardDetails</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;useFormulas&quot; : true,
+  &quot;additionalInput&quot; : {
+    &quot;ShippingPreference&quot; : &quot;%ShippingPreference%&quot;,
+    &quot;ShippingAddress&quot; : &quot;%ShippingAddress%&quot;,
+    &quot;ReplaceCard&quot; : &quot;%ReplaceCard%&quot;,
+    &quot;Remarks&quot; : &quot;%Remarks%&quot;,
+    &quot;Reason&quot; : &quot;%Reason%&quot;,
+    &quot;isDebitCardExists&quot; : &quot;%isDebitCardExists%&quot;,
+    &quot;isCreditCardExists&quot; : &quot;%isCreditCardExists%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;failureResponse&quot; : { },
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;FSC_ReportandReplaceCardTransformReplaceCards&quot;,
+  &quot;sendJSONNode&quot; : &quot;selectedCardData&quot;,
+  &quot;bundle&quot; : &quot;FSCReportandReplaceCardTransformSelectedCardData&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;ignoreCache&quot; : false,
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;DataRaptorTransformAction1&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>DataRaptor Transform Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>FSC_ReportandReplaceCardTransformReplaceCards</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;useFormulas&quot; : true,
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;failureResponse&quot; : { },
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;GetCardDetails:selectedCardData&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;bundle&quot; : &quot;FSCReportandReplaceCardTransformReplaceCards&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;ignoreCache&quot; : false,
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;DataRaptorTransformAction2&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>DataRaptor Transform Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>GetCardDetails</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;useFormulas&quot; : true,
+  &quot;additionalInput&quot; : {
+    &quot;replaceCard&quot; : &quot;%ReplaceCard%&quot;,
+    &quot;finalListofSelectedCard&quot; : &quot;%FinalListofSelectedCard%&quot;,
+    &quot;selectedCardData&quot; : &quot;%SelectedCardData%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;failureResponse&quot; : { },
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;remoteClass&quot; : &quot;ReportandReplaceCardsHelperFunctions&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;remoteMethod&quot; : &quot;getCardsData&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;RemoteAction1&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SendSelectedCardDetails</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;useFormulas&quot; : true,
+  &quot;additionalOutput&quot; : { },
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnFullDataJSON&quot; : false,
+  &quot;responseFormat&quot; : &quot;JSON&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;FSC_ReportandReplaceCardsTransformSelectedCardDetails&quot;,
+  &quot;sendJSONNode&quot; : &quot;MainData&quot;,
+  &quot;responseDefaultData&quot; : { },
+  &quot;vlcResponseHeaders&quot; : { },
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;ResponseAction1&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>4.0</sequenceNumber>
+        <type>Response Action</type>
+    </omniProcessElements>
+    <omniProcessKey>ReportandReplaceCards_TransformSelectedCardDetails</omniProcessKey>
+    <omniProcessType>Integration Procedure</omniProcessType>
+    <propertySetConfig>{
+  &quot;linkToExternalObject&quot; : &quot;&quot;,
+  &quot;trackingCustomData&quot; : { },
+  &quot;includeAllActionsInResponse&quot; : false,
+  &quot;columnsPropertyMap&quot; : [ ],
+  &quot;relationshipFieldsMap&quot; : [ ],
+  &quot;labelSingular&quot; : &quot;&quot;,
+  &quot;labelPlural&quot; : &quot;&quot;,
+  &quot;description&quot; : &quot;&quot;,
+  &quot;nameColumn&quot; : &quot;&quot;,
+  &quot;rollbackOnError&quot; : false,
+  &quot;chainableQueriesLimit&quot; : 50,
+  &quot;chainableDMLStatementsLimit&quot; : null,
+  &quot;chainableCpuLimit&quot; : 2000,
+  &quot;chainableHeapSizeLimit&quot; : null,
+  &quot;chainableDMLRowsLimit&quot; : null,
+  &quot;chainableQueryRowsLimit&quot; : null,
+  &quot;chainableSoslQueriesLimit&quot; : null,
+  &quot;chainableActualTimeLimit&quot; : null,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;queueableChainableQueriesLimit&quot; : 120,
+  &quot;queueableChainableCpuLimit&quot; : 40000,
+  &quot;queueableChainableHeapSizeLimit&quot; : 6,
+  &quot;ttlMinutes&quot; : 5,
+  &quot;mockResponseMap&quot; : { }
+}</propertySetConfig>
+    <subType>TransformSelectedCardDetails</subType>
+    <type>ReportandReplaceCards</type>
+    <uniqueName>ReportandReplaceCards_TransformSelectedCardDetails_Procedure_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <webComponentKey>55060d5e-daad-b9f3-817a-941c4e7e2a0e</webComponentKey>
+</OmniIntegrationProcedure>

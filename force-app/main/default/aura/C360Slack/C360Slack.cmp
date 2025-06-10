@@ -1,0 +1,72 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute name="channel" type="String" default="sales-marketing"/>
+    <aura:attribute name="message" type="String" default="Hello, @channel. We will be pushing out our new marketing nurture program today."/>
+
+    <lightning:card title="Salesforce Slack" iconName="standard:live_chat" variant="base">
+    <aura:set attribute="actions">
+        <img src="https://i.imgur.com/B74nE61.png" width="26"></img>
+    </aura:set>
+    <lightning:tabset variant="scoped" class="slds-p-around_x-small">
+        <lightning:tab id="-L0zT6UEw4_gvenItYYN" label="Post to Slack">
+            <lightning:layout class="slds-m-bottom_small">
+                <lightning:layoutItem size="12">
+                    <lightning:input class="slds-m-top_x-small slds-p-right_x-small" label="Input" placeholder="{!'To: #'+v.channel}" type="text" variant="label-hidden"></lightning:input>
+                </lightning:layoutItem>
+            </lightning:layout>
+            <lightning:textarea label="Input label" placeholder="{!v.message}" variant="label-hidden">
+            </lightning:textarea>
+            <lightning:layout class="slds-p-around_xx-small slds-p-top_xx-small slds-p-right_xx-small slds-p-bottom_xx-small slds-p-left_xx-small" horizontalAlign="spread">
+                <lightning:buttonGroup>
+                    <lightning:buttonIcon alternativeText="" iconClass="" variant="border-filled" type="button" iconName="utility:salesforce1" size="medium"></lightning:buttonIcon>
+                    <lightning:buttonIcon alternativeText="" iconClass="" variant="border-filled" type="button" iconName="utility:adduser" size="medium"></lightning:buttonIcon>
+                    <lightning:buttonIcon alternativeText="" iconClass="" variant="border-filled" type="button" iconName="utility:link" size="medium"></lightning:buttonIcon>
+                    <lightning:buttonIcon alternativeText="" iconClass="" variant="border-filled" type="button" iconName="utility:einstein" size="medium"></lightning:buttonIcon>
+                </lightning:buttonGroup>
+                <lightning:buttonGroup>
+                    <lightning:button class="slds-theme_neutral" iconPosition="left" variant="neutral" type="button" label="Upload" iconName="utility:upload"></lightning:button>
+                    <lightning:button class="slds-theme_brand" iconPosition="left" variant="brand" type="button" label="Share"></lightning:button>
+                </lightning:buttonGroup>
+            </lightning:layout>
+        </lightning:tab>
+        <lightning:tab id="-L0zT88yi3GDKtddMw9K" label="Link to Slack">
+            <ul class="slds-list_vertical-space">
+                <li class="slds-item">
+                    <lightning:combobox class="slds-m-bottom_small" label="Search Salesforce" options="" placeholder="Search Salesforce" dropdownAlignment="left" variant="standard"></lightning:combobox>
+                </li>
+            </ul>
+            <lightning:layout class="slds-m-top_small" horizontalAlign="end" verticalAlign="end">
+                <lightning:button class="slds-theme_brand" variant="brand" label="Submit Link"></lightning:button>
+            </lightning:layout>
+        </lightning:tab>
+        <lightning:tab id="-L0zT8qMEeX-sh2GWHzT" label="Recent Messages">
+            <ul>
+                <li class="slds-item">
+                    <section role="log" class="slds-chat  ">
+                        <ul class="slds-chat-list">
+                            <li class="slds-chat-listitem slds-chat-listitem_inbound">
+                                <div class="slds-chat-message">
+                                    <div class="slds-chat-message__body">
+                                        <div class="slds-chat-message__text slds-chat-message__text_inbound"><span>Thank you, @Tim Marketing!</span></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="slds-chat-listitem slds-chat-listitem_inbound">
+                                <div class="slds-chat-message">
+                                    <div class="slds-chat-message__body">
+                                        <div class="slds-chat-message__text slds-chat-message__text_inbound"><span>I'm having trouble changing that.</span></div>
+                                        <div class="slds-chat-message__meta">Sue Marketing • 4:59 PM</div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </li>
+            </ul>
+            <lightning:layout class="slds-m-top_small" horizontalAlign="end" verticalAlign="end">
+                <lightning:button class="slds-theme_brand" variant="brand" label="Open in Slack"></lightning:button>
+            </lightning:layout>
+        </lightning:tab>
+    </lightning:tabset>
+</lightning:card>
+    
+</aura:component>

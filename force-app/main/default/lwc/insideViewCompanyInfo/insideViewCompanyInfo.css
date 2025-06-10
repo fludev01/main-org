@@ -1,0 +1,45 @@
+.imageClass{
+    display: block;
+    width: 100%;
+}
+
+.selectOverview{
+    position: absolute;
+    top: 22%;
+    left: 18.1%;
+    height: 6%;
+    width: 4.4%;
+    /*background-color: rgba(255,0,0,0.3);*/
+
+    /*
+    top: 27.3%;
+    height: 6.6%;
+    */
+}
+
+.selectIndustry{
+    position: absolute;
+    top: 30%;
+    left: 18.5%;
+    height: 5.3%;
+    width: 3.6%;
+    /*background-color: rgba(144,238,144,0.3);*/
+}
+
+.selectFinancials{
+    position: absolute;
+    top: 37.4%;
+    left: 18.1%;
+    height: 5.5%;
+    width: 4.4%;
+    /*background-color: rgba(0,0,255,0.3);*/
+}
+
+.selectFamilyTree{
+    position: absolute;
+    top: 44.7%;
+    left: 17.9%;
+    height: 6%;
+    width: 4.8%;
+    /*background-color: rgba(255,165,0,0.3);*/
+}

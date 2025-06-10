@@ -1,0 +1,48 @@
+.THIS.highlight_wrap {
+    position: relative;
+}
+.THIS .slds-card {
+	/* margin: 1.25rem; */
+}
+.THIS .slds-text-heading--small {
+    padding-bottom: 1em;
+}
+
+.THIS .slds-grid--align-spread {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 5px !important;
+}
+
+.THIS td {
+    height: 3.5em;
+    width: 5%;
+}
+
+.THIS .slds-border--bottom {
+    height: 1.5em;
+}
+
+.THIS .icon {
+    margin-right: 0.8em;
+}
+
+
+
+
+.THIS .Platnium {
+    background-color :#e5e4e2;
+}
+
+.THIS .Gold {
+	background-color: #ffd700;
+}
+
+.THIS .Silver{
+    background-color: #c0c0c0;
+}
+.THIS .Bronze {
+	background-color: #ffd700;
+}

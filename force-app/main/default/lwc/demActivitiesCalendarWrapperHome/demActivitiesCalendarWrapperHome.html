@@ -1,0 +1,47 @@
+<template>
+
+    <lightning-card title={showTitle}>
+
+        <!-- Header Actions-->
+        <lightning-button-group slot="actions" style="font-size:13px;">
+            <lightning-button 
+                label={labelToday}
+                onclick={clickedThisMonth}
+            ></lightning-button>
+        </lightning-button-group>
+        <lightning-button-group slot="actions">
+            <lightning-button-icon 
+                icon-name="utility:left" 
+                onclick={clickedPreviousMonth}
+            ></lightning-button-icon>
+            <lightning-button-icon 
+                icon-name="utility:right"
+                onclick={clickedNextMonth}
+            ></lightning-button-icon>
+        </lightning-button-group>
+        <!-- Header Actions-->
+
+        <!-- Calendar -->
+        <div class="slds-card__body slds-card__body--inner calendar-wrapper" data-size={size}>
+            <div class="calendar" key={target.key} for:each={targetMonths} for:item="target">
+                <c-dem-activity-calendar 
+                    has-title={isSize3}
+                    is-strict={isSize3}
+                    record-id={recordId}
+                    this-month={target.month}
+                    format-month={formatMonth}
+                    action-on-click={actionOnClick}
+                    activities={activities}
+                    day-of-weeks={dayOfWeeks}
+                    label-task={labelTask}
+                    label-event={labelEvent}
+                    onnewtask={clickedNewTask}
+                    onnewevent={clickedNewEvent}
+                ></c-dem-activity-calendar>
+            </div>
+        </div>
+        <!-- Calendar -->
+
+    </lightning-card>
+
+</template>

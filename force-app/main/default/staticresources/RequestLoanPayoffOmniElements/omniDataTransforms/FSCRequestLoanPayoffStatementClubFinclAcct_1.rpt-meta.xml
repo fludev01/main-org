@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>FSCRequestLoanPayoffStatementClubFinclAcct</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCRequestLoanPayoffStatementClubFinclAcct05550238243377903</globalKey>
+        <inputFieldName>AllAccounts</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCRequestLoanPayoffStatementClubFinclAcct</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>List&lt;Map&gt;</outputFieldFormat>
+        <outputFieldName>AllAccounts</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:AutoLoanAccounts ISNOTBLANK var:AutoLoanAccounts $Vlocity.NULL IF</formulaConverted>
+        <formulaExpression>IF(ISNOTBLANK(AutoLoanAccounts),AutoLoanAccounts,$Vlocity.NULL)</formulaExpression>
+        <formulaResultPath>AutoLoanAccs</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>FSCRequestLoanPayoffStatementClubFinclAcct5823159832972604</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCRequestLoanPayoffStatementClubFinclAcct</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| $Vlocity.NULL | var:LoanAccs LIST | var:AutoLoanAccs LIST | var:MortgageAccs LIST LISTMERGE</formulaConverted>
+        <formulaExpression>LISTMERGE($Vlocity.NULL,LIST(LoanAccs),LIST(AutoLoanAccs),LIST(MortgageAccs))</formulaExpression>
+        <formulaResultPath>AllAccounts</formulaResultPath>
+        <formulaSequence>4.0</formulaSequence>
+        <globalKey>FSCRequestLoanPayoffStatementClubFinclAcct13116543165444927</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCRequestLoanPayoffStatementClubFinclAcct</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:LoanAccounts ISNOTBLANK var:LoanAccounts $Vlocity.NULL IF</formulaConverted>
+        <formulaExpression>IF(ISNOTBLANK(LoanAccounts),LoanAccounts,$Vlocity.NULL)</formulaExpression>
+        <formulaResultPath>LoanAccs</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>FSCRequestLoanPayoffStatementClubFinclAcct7739962030986431</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCRequestLoanPayoffStatementClubFinclAcct</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:MortgageAccounts ISNOTBLANK var:MortgageAccounts $Vlocity.NULL IF</formulaConverted>
+        <formulaExpression>IF(ISNOTBLANK(MortgageAccounts),MortgageAccounts,$Vlocity.NULL)</formulaExpression>
+        <formulaResultPath>MortgageAccs</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>FSCRequestLoanPayoffStatementClubFinclAcct840571363848472</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCRequestLoanPayoffStatementClubFinclAcct</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;AutoLoanAccounts&quot; : {
+    &quot;Accounts&quot; : [ {
+      &quot;AccountName&quot; : &quot;Saurabh Khurana&quot;,
+      &quot;Managed&quot; : &quot;false&quot;,
+      &quot;Balance&quot; : 10000,
+      &quot;Id&quot; : &quot;a0FB00000060AG7MAM&quot;,
+      &quot;FinancialAccountLabel&quot; : &quot;XXXX-4245 - Robert Fin2&quot;,
+      &quot;OverdraftAllowed&quot; : false,
+      &quot;PaperlessDelivery&quot; : false,
+      &quot;Name&quot; : &quot;Robert Fin2&quot;,
+      &quot;MinimumPayment&quot; : 0,
+      &quot;OverDraftProtection&quot; : false,
+      &quot;AccountType&quot; : &quot;Savings&quot;,
+      &quot;SourceSystemId&quot; : &quot;2343534545646451&quot;,
+      &quot;PaymentAmount&quot; : 0,
+      &quot;AccountNumberLast4&quot; : &quot;4245&quot;,
+      &quot;RecordTypeName&quot; : &quot;Auto Loan&quot;,
+      &quot;BalanceLastStatement&quot; : 0,
+      &quot;FinancialAccountNumber&quot; : &quot;647389274245&quot;
+    }, {
+      &quot;AccountName&quot; : &quot;Saurabh Khurana&quot;,
+      &quot;Managed&quot; : &quot;false&quot;,
+      &quot;Id&quot; : &quot;a0FB00000060AGCMA2&quot;,
+      &quot;FinancialAccountLabel&quot; : &quot;XXXX-4827 - Robert Fin3&quot;,
+      &quot;OverdraftAllowed&quot; : false,
+      &quot;PaperlessDelivery&quot; : false,
+      &quot;Name&quot; : &quot;Robert Fin3&quot;,
+      &quot;MinimumPayment&quot; : 0,
+      &quot;OverDraftProtection&quot; : false,
+      &quot;AccountType&quot; : &quot;Credit Card&quot;,
+      &quot;SourceSystemId&quot; : &quot;3453454343534543&quot;,
+      &quot;PaymentAmount&quot; : 0,
+      &quot;AccountNumberLast4&quot; : &quot;4827&quot;,
+      &quot;RecordTypeName&quot; : &quot;Auto Loan&quot;,
+      &quot;BalanceLastStatement&quot; : 0,
+      &quot;FinancialAccountNumber&quot; : &quot;6758378274827&quot;
+    } ],
+    &quot;AccountType&quot; : &quot;Auto Loan&quot;
+  },
+  &quot;LoanAccounts&quot; : {
+    &quot;Accounts&quot; : [ {
+      &quot;AccountName&quot; : &quot;Saurabh Khurana&quot;,
+      &quot;Managed&quot; : &quot;false&quot;,
+      &quot;Balance&quot; : 10000,
+      &quot;Id&quot; : &quot;a0FB00000060AG7MAK&quot;,
+      &quot;FinancialAccountLabel&quot; : &quot;XXXX-4246 - Robert Fin4&quot;,
+      &quot;OverdraftAllowed&quot; : false,
+      &quot;PaperlessDelivery&quot; : false,
+      &quot;Name&quot; : &quot;Robert Fin4&quot;,
+      &quot;MinimumPayment&quot; : 0,
+      &quot;OverDraftProtection&quot; : false,
+      &quot;AccountType&quot; : &quot;Savings&quot;,
+      &quot;SourceSystemId&quot; : &quot;2343534545646551&quot;,
+      &quot;PaymentAmount&quot; : 0,
+      &quot;AccountNumberLast4&quot; : &quot;4245&quot;,
+      &quot;RecordTypeName&quot; : &quot;Loan Account&quot;,
+      &quot;BalanceLastStatement&quot; : 0,
+      &quot;FinancialAccountNumber&quot; : &quot;647389274246&quot;
+    } ],
+    &quot;AccountType&quot; : &quot;Loan Account&quot;
+  },
+  &quot;MortgageAccounts&quot; : {
+    &quot;Accounts&quot; : [ {
+      &quot;AccountName&quot; : &quot;Saurabh Khurana&quot;,
+      &quot;Managed&quot; : &quot;false&quot;,
+      &quot;Id&quot; : &quot;a0FB00000060AFiMAM&quot;,
+      &quot;FinancialAccountLabel&quot; : &quot;XXXX-7432 - Robert Fin1&quot;,
+      &quot;OverdraftAllowed&quot; : false,
+      &quot;PaperlessDelivery&quot; : false,
+      &quot;Name&quot; : &quot;Robert Fin1&quot;,
+      &quot;MinimumPayment&quot; : 0,
+      &quot;OverDraftProtection&quot; : false,
+      &quot;AccountType&quot; : &quot;Checking&quot;,
+      &quot;SourceSystemId&quot; : &quot;3765476354632323&quot;,
+      &quot;PaymentAmount&quot; : 0,
+      &quot;AccountNumberLast4&quot; : &quot;7432&quot;,
+      &quot;RecordTypeName&quot; : &quot;Mortgage&quot;,
+      &quot;BalanceLastStatement&quot; : 0,
+      &quot;FinancialAccountNumber&quot; : &quot;573756387432&quot;
+    } ],
+    &quot;AccountType&quot; : &quot;Mortgage&quot;
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>FSCRequestLoanPayoffStatementClubFinclAcct_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

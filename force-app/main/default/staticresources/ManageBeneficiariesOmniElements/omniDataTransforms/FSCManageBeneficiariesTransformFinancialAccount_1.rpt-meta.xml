@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>FSCManageBeneficiariesTransformFinancialAccount</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:FinancialAccountNumber var:AccountNumberLength 4 - var:AccountNumberLength SUBSTRING</formulaConverted>
+        <formulaExpression>SUBSTRING(FinancialAccountNumber,AccountNumberLength-4,AccountNumberLength)</formulaExpression>
+        <formulaResultPath>AccountNumberLast4</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>FSCManageBeneficiariesTransformFinancialAccount7536587948936451</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCManageBeneficiariesTransformFinancialAccount</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:FinancialAccountNumber &quot;&lt;EOS&gt;&quot; + &quot;&lt;EOS&gt;&quot; STRINGINDEXOF</formulaConverted>
+        <formulaExpression>STRINGINDEXOF(FinancialAccountNumber+&quot;&lt;EOS&gt;&quot;,&quot;&lt;EOS&gt;&quot;)</formulaExpression>
+        <formulaResultPath>AccountNumberLength</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>FSCManageBeneficiariesTransformFinancialAccount5620236430735608</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCManageBeneficiariesTransformFinancialAccount</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| &quot;XXXX-&quot; var:AccountNumberLast4 CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(&quot;XXXX-&quot;,AccountNumberLast4)</formulaExpression>
+        <formulaResultPath>AccountNumber</formulaResultPath>
+        <formulaSequence>4.0</formulaSequence>
+        <globalKey>FSCManageBeneficiariesTransformFinancialAccount6990634821588286</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCManageBeneficiariesTransformFinancialAccount</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| &quot;XXXX-&quot; var:AccountNumberLast4 &quot;/\/\/-/\/\/&quot; var:Name CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(&quot;XXXX-&quot;,AccountNumberLast4,&quot; - &quot;,Name)</formulaExpression>
+        <formulaResultPath>FinancialAccountLabel</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>FSCManageBeneficiariesTransformFinancialAccount2507167445655607</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCManageBeneficiariesTransformFinancialAccount</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCManageBeneficiariesTransformFinancialAccount7260341391581651</globalKey>
+        <inputFieldName>Type</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCManageBeneficiariesTransformFinancialAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Type</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCManageBeneficiariesTransformFinancialAccount8726280282374164</globalKey>
+        <inputFieldName>FinancialAccountLabel</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCManageBeneficiariesTransformFinancialAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>FinancialAccountLabel</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCManageBeneficiariesTransformFinancialAccount6754556417124595</globalKey>
+        <inputFieldName>RecordTypeName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCManageBeneficiariesTransformFinancialAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecordTypeName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCManageBeneficiariesTransformFinancialAccount8779475393723812</globalKey>
+        <inputFieldName>AccountNumberLast4</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCManageBeneficiariesTransformFinancialAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountNumberLast4</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCManageBeneficiariesTransformFinancialAccount683635094610008</globalKey>
+        <inputFieldName>AccountType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCManageBeneficiariesTransformFinancialAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCManageBeneficiariesTransformFinancialAccount5495788948770997</globalKey>
+        <inputFieldName>SourceSystemId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCManageBeneficiariesTransformFinancialAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>SourceSystemId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCManageBeneficiariesTransformFinancialAccount4720226825923173</globalKey>
+        <inputFieldName>Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCManageBeneficiariesTransformFinancialAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCManageBeneficiariesTransformFinancialAccount019703410339377836</globalKey>
+        <inputFieldName>FinancialAccountNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCManageBeneficiariesTransformFinancialAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>FinancialAccountNumber</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCManageBeneficiariesTransformFinancialAccount4172686236332559</globalKey>
+        <inputFieldName>AccountNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCManageBeneficiariesTransformFinancialAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountNumber</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCManageBeneficiariesTransformFinancialAccount3217521870462381</globalKey>
+        <inputFieldName>Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCManageBeneficiariesTransformFinancialAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>[ {
+  &quot;AccountName&quot; : &quot;Saurabh Khurana&quot;,
+  &quot;Managed&quot; : &quot;false&quot;,
+  &quot;Balance&quot; : 10000,
+  &quot;Id&quot; : &quot;a0FB00000060AG7MAM&quot;,
+  &quot;OverdraftAllowed&quot; : false,
+  &quot;PaperlessDelivery&quot; : false,
+  &quot;Name&quot; : &quot;Robert Fin2&quot;,
+  &quot;MinimumPayment&quot; : 0,
+  &quot;AccountType&quot; : &quot;Savings&quot;,
+  &quot;OverDraftProtection&quot; : false,
+  &quot;SourceSystemId&quot; : &quot;2343534545646451&quot;,
+  &quot;PaymentAmount&quot; : 0,
+  &quot;BalanceLastStatement&quot; : 0,
+  &quot;RecordTypeName&quot; : &quot;Savings Account&quot;,
+  &quot;FinancialAccountNumber&quot; : &quot;647389274245&quot;,
+  &quot;AccountId&quot; : &quot;001B000001UZDhOIAX&quot;
+}, {
+  &quot;AccountName&quot; : &quot;Saurabh Khurana&quot;,
+  &quot;Managed&quot; : &quot;false&quot;,
+  &quot;Id&quot; : &quot;a0FB00000060AFiMAM&quot;,
+  &quot;OverdraftAllowed&quot; : false,
+  &quot;PaperlessDelivery&quot; : false,
+  &quot;Name&quot; : &quot;Robert Fin1&quot;,
+  &quot;MinimumPayment&quot; : 0,
+  &quot;AccountType&quot; : &quot;Checking&quot;,
+  &quot;OverDraftProtection&quot; : false,
+  &quot;SourceSystemId&quot; : &quot;3765476354632323&quot;,
+  &quot;PaymentAmount&quot; : 0,
+  &quot;BalanceLastStatement&quot; : 0,
+  &quot;RecordTypeName&quot; : &quot;Checking Account&quot;,
+  &quot;FinancialAccountNumber&quot; : &quot;573756387432&quot;,
+  &quot;AccountId&quot; : &quot;001B000001UZDhOIAX&quot;
+}, {
+  &quot;AccountName&quot; : &quot;Saurabh Khurana&quot;,
+  &quot;Managed&quot; : &quot;false&quot;,
+  &quot;Id&quot; : &quot;a0FB00000060AGCMA2&quot;,
+  &quot;OverdraftAllowed&quot; : false,
+  &quot;PaperlessDelivery&quot; : false,
+  &quot;Name&quot; : &quot;Robert Fin3&quot;,
+  &quot;MinimumPayment&quot; : 0,
+  &quot;AccountType&quot; : &quot;Credit Card&quot;,
+  &quot;OverDraftProtection&quot; : false,
+  &quot;SourceSystemId&quot; : &quot;3453454343534543&quot;,
+  &quot;PaymentAmount&quot; : 0,
+  &quot;BalanceLastStatement&quot; : 0,
+  &quot;RecordTypeName&quot; : &quot;Credit Card&quot;,
+  &quot;FinancialAccountNumber&quot; : &quot;6758378274827&quot;,
+  &quot;AccountId&quot; : &quot;001B000001UZDhOIAX&quot;
+} ]</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>FSCManageBeneficiariesTransformFinancialAccount_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

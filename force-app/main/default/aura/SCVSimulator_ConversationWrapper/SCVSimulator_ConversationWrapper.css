@@ -1,0 +1,20 @@
+.THIS .scrollArea {
+    display: flex;
+    flex-direction: column-reverse; /* 'column' for start, 'column-reverse' for end */
+    overflow-y: scroll;
+}
+.THIS .scrollArea > :first-child  {
+    margin-top: auto !important;
+}
+.THIS .scv-conversation-wrapper {
+    flex-grow: 1;
+    align-self: stretch;
+    background-color: #fff;
+}
+.THIS .hidden {
+    opacity:0;
+    filter:alpha(opacity=0);
+}
+.THIS .slds-chat-message__text_outbound-agent {
+    background-color: var(--backgroundColor);
+}

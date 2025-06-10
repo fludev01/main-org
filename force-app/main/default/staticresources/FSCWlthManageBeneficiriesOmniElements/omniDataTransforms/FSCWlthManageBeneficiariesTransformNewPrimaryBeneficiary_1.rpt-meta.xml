@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>FSCWlthManageBeneficiariesTransformNewPrimaryBeneficiary</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformNewPrimaryBeneficiary09083081725649889</globalKey>
+        <inputFieldName>PerStirpesValue</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformNewPrimaryBeneficiary</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PerStirpes</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformNewPrimaryBeneficiary8896403967054192</globalKey>
+        <inputFieldName>InstitutionOrRelationshipType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformNewPrimaryBeneficiary</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>InstitutionOrRelationshipType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:perStirpes &apos;true&apos; == &apos;Yes&apos; &apos;No&apos; IF</formulaConverted>
+        <formulaExpression>IF(%perStirpes%==&apos;true&apos;,&apos;Yes&apos;,&apos;No&apos;)</formulaExpression>
+        <formulaResultPath>PerStirpesValue</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>FSCWlthManageBeneficiariesTransformNewPrimaryBeneficiary08686602336953042</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformNewPrimaryBeneficiary</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformNewPrimaryBeneficiary47060495290130056</globalKey>
+        <inputFieldName>NewShare</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformNewPrimaryBeneficiary</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>NewShare</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformNewPrimaryBeneficiary7195892679161742</globalKey>
+        <inputFieldName>BeneficiaryName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformNewPrimaryBeneficiary</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BeneficiaryName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageBeneficiariesTransformNewPrimaryBeneficiary068974678606474</globalKey>
+        <inputFieldName>BeneficiaryType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageBeneficiariesTransformNewPrimaryBeneficiary</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BeneficiaryType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>[ {
+  &quot;Id&quot; : &quot;REC0&quot;,
+  &quot;RelationshipType&quot; : &quot;Aunt&quot;,
+  &quot;InstitutionType&quot; : null,
+  &quot;Incorporation Date&quot; : null,
+  &quot;InstitutionOrRelationshipType&quot; : &quot;Aunt&quot;,
+  &quot;BeneficiaryType&quot; : &quot;Individual&quot;,
+  &quot;BeneficiaryName&quot; : &quot;ben1&quot;,
+  &quot;Mobile Number&quot; : &quot;3456788&quot;,
+  &quot;AddressLine1&quot; : &quot;ertyu&quot;,
+  &quot;City&quot; : &quot;dfghj&quot;,
+  &quot;CountryCode&quot; : &quot;Afghanistan&quot;,
+  &quot;AddressLine2&quot; : &quot;dfgh&quot;,
+  &quot;State&quot; : &quot;fgh&quot;,
+  &quot;PostalCode&quot; : &quot;dfghj&quot;,
+  &quot;uniqueKey&quot; : &quot;REC0&quot;,
+  &quot;_flex&quot; : {
+    &quot;uniqueKey&quot; : &quot;REC0&quot;,
+    &quot;state0element0block_element1&quot; : false,
+    &quot;state0element0block_element1_child&quot; : false,
+    &quot;state0element0block_element2&quot; : true,
+    &quot;state0element0block_element2_child&quot; : true
+  },
+  &quot;NewShare&quot; : &quot;50&quot;,
+  &quot;perStirpes&quot; : &quot;true&quot;
+}, {
+  &quot;Id&quot; : &quot;REC1&quot;,
+  &quot;RelationshipType&quot; : null,
+  &quot;InstitutionType&quot; : &quot;Trust&quot;,
+  &quot;InstitutionOrRelationshipType&quot; : &quot;Trust&quot;,
+  &quot;BeneficiaryType&quot; : &quot;Institution&quot;,
+  &quot;BeneficiaryName&quot; : &quot;benTrust2&quot;,
+  &quot;Mobile Number&quot; : &quot;456789&quot;,
+  &quot;AddressLine1&quot; : &quot;dftyu&quot;,
+  &quot;City&quot; : &quot;dfghj&quot;,
+  &quot;CountryCode&quot; : &quot;Afghanistan&quot;,
+  &quot;AddressLine2&quot; : &quot;fghj&quot;,
+  &quot;State&quot; : &quot;fghj&quot;,
+  &quot;PostalCode&quot; : &quot;fghj&quot;,
+  &quot;Birth Date&quot; : null,
+  &quot;SSN&quot; : null,
+  &quot;uniqueKey&quot; : &quot;REC1&quot;,
+  &quot;_flex&quot; : {
+    &quot;uniqueKey&quot; : &quot;REC1&quot;,
+    &quot;state0element0block_element1&quot; : true,
+    &quot;state0element0block_element1_child&quot; : true,
+    &quot;state0element0block_element2&quot; : false,
+    &quot;state0element0block_element2_child&quot; : false
+  },
+  &quot;NewShare&quot; : &quot;50&quot;
+} ]</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>FSCWlthManageBeneficiariesTransformNewPrimaryBeneficiary_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

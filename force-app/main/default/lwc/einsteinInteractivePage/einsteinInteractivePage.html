@@ -1,0 +1,58 @@
+<template>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size_1-of-1 slds-p-bottom_medium">
+            <lightning-card title="Event Recieved">
+                <div class="slds-p-around_medium"> {responseBody} </div>
+            </lightning-card>
+        </div>
+        <template if:true={showPageHeader}>
+            <template if:true={loading}>
+                <div class="spinner-container">
+                    <lightning-spinner size="medium"></lightning-spinner>
+                </div>
+            </template>
+            <template if:false={loading}>
+                <div class="slds-size_1-of-1">
+                    <c-page-header subtitle={pageReference.targetSObjectType} title={recordName} icon-name={iconName} icon-type="slds" show-button=true button-label={buttonLabel}></c-page-header>
+                </div>
+            </template>
+        </template>
+        <template if:true={showEmailPublisher}>
+            <template if:true={loading}>
+                <div class="spinner-container">
+                    <lightning-spinner size="medium"></lightning-spinner>
+                </div>
+            </template>
+            <template if:false={loading}>
+                <div class="slds-size_1-of-1">
+                    <c-sales-email-publisher text={emailBody}></c-sales-email-publisher>
+                </div>
+            </template>
+        </template>
+        <template if:true={showRecordDetail}>
+            <div class="slds-size_1-of-1">
+                <div class="slds-card slds-p-right_medium slds-p-left_medium container">
+                    <template if:true={loading}>
+                        <div class="spinner-container">
+                            <lightning-spinner size="medium"></lightning-spinner>
+                        </div>
+                    </template>
+                    <template if:false={loading}>
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-size_1-of-1">
+                                <div class="slds-card slds-p-around_medium">
+                                    <div class="slds-grid slds-wrap">
+                                        <div class="slds-size_1-of-1">
+                                            <lightning-record-form record-id={pageReference.TargetRecordId} object-api-name={pageReference.targetSObjectType} layout-type="Full" columns="1" mode="view">
+                                            </lightning-record-form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

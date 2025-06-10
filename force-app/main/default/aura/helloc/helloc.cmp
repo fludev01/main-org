@@ -1,0 +1,4 @@
+<aura:component implements="flexipage:availableForAllPageTypes,lightning:availableForFlowScreens" access="global">
+    <aura:Attribute name="Image" type="Boolean"/>
+<img aura:id="Image" src="{!$Resource.HELOCOFFER1}"/>
+</aura:component>

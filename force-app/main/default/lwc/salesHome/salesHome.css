@@ -1,0 +1,89 @@
+:host {
+    flex: 1;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.card {
+    flex: 1;
+    margin-top: 0;
+}
+
+.stretch{
+    width:100%;
+    height:100%
+}
+
+.home-card{
+    border-right:1px solid rgb(229, 229, 229);
+}
+.home-card:last-child{
+    border: 0;
+}
+
+.task-card{
+    padding-bottom:7px;
+}
+
+.task{
+    border-bottom:1px solid rgb(229, 229, 229);
+}
+.task:last-child{
+    border: 0;
+}
+
+
+.spinner-container{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100px;
+}
+
+.activity-line{
+    width: 2px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.16);
+    margin-left: 50%;
+}
+
+.full-height{
+    height:100%;
+}
+
+.three-quarter-height{
+    height:75%;
+}
+
+.spinner-container{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 260px;
+}
+
+[data-icon="standard:voice_call"] {
+    --slds-c-icon-color-background: #0D9DDA;
+}
+
+[data-icon="custom:custom45"] {
+    --slds-c-icon-color-background: #0B827C;
+}
+
+[data-icon="standard:event"] {
+    --slds-c-icon-color-background: #7526E3;
+}
+
+.text-weak{
+    color:#444444;
+}

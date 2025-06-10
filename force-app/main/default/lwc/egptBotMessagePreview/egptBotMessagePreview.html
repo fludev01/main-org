@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Response Preview">
+        <lightning-button-icon icon-name="utility:refresh" onclick={refresh} slot="actions"></lightning-button-icon>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-size_1-of-1 slds-p-around_medium">
+                <template if:true={message}>
+                    <c-egpt-bot-message message={message}></c-egpt-bot-message>
+                </template>
+            </div>
+        </div>    
+    </lightning-card>
+</template>

@@ -1,0 +1,524 @@
+<apex:page docType="html-5.0" showHeader="false" sidebar="false" controller="WaveContactActions_ApexController" action="{!init}" >
+<!-- applyHtmlTag="false" applyBodyTag="false" -->
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title> Contact Bulk Actions </title>
+
+	<!-- Add this here for SLDS -->
+	<apex:slds />
+
+    <style type="text/css">
+	.cancelButton {
+		width: 120px;
+		height: 35px;
+		border-style: solid;
+		border-width: 1px;
+		padding: 7px;
+		float: right;
+		margin-right: 20px;
+		text-align: center;
+		margin-top: 14px;
+		font-size: 14px;
+		border-radius: 5px;
+		border-color: #d8dde6;
+		font-weight: 400;
+		cursor: pointer;
+	}
+
+	.okayButton {
+		width: 120px;
+		height: 35px;
+		border-style: solid;
+		border-width: 1px;
+		padding: 7px;
+		float: right;
+		margin-right: 20px;
+		text-align: center;
+		margin-top: 14px;
+		font-size: 14px;
+		border-radius: 5px;
+		border-color: #d8dde6;
+		background-color: #0070d2;
+		color: white;
+		font-weight: 400;
+		cursor: pointer;
+	}
+
+	.selectAll {
+		width: 120px;
+		height: 35px;
+		border-style: solid;
+		border-width: 1px;
+		padding: 7px;
+		float: Left;
+		margin-right: 20px;
+		text-align: center;
+		margin-top: 14px;
+		font-size: 14px;
+		border-radius: 5px;
+		border-color: #d8dde6;
+		background-color: #0070d2;
+		color: white;
+		font-weight: 400;
+		cursor: pointer;
+	}
+    </style>
+</head>
+
+<body>
+<div class="slds-scope">
+
+
+	<div class="slds-page-header">
+		<div class="slds-media">
+			<div class="slds-media__figure">
+				<img src="{!$Resource.contactIcon}" style="width: 75%;"></img>
+			</div>
+			<div class="slds-media__body">
+				<h1 class="slds-page-header__title slds-truncate slds-align-middle" title="Rohde Corp - 80,000 Widgets">Add Contacts to Campaigns</h1>
+				<p class="slds-text-body_small slds-line-height_reset">Search and select the Campaigns you would like to add these Contacts to</p>
+			</div>
+		</div>
+	</div>
+
+
+<div class="slds-grid" style="height: 88vh">
+	<div class="slds-col" style="width: 45%; padding: 20px;">
+		<div class="slds-box slds-box--small slds-theme--shade" style="width: 100%; height: 100%;">
+			<div class="slds-tabs--default" data-aljs="tabs">
+				<ul class="slds-tabs--default__nav" role="tablist">
+					<li class="slds-tabs--default__item slds-text-heading--label" title="Item One" role="presentation">
+						<a class="slds-tabs--default__link" href="#" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-default-1" data-aljs-show="tab-default-1">Contacts</a>
+					</li>
+				</ul>
+				<div id="tab-default-1" class="slds-tabs--default__content slds-hide" role="tabpanel">
+					<!-- Case Table -->
+					<div style="width: 100%; height: 65vh; overflow: scroll;">
+						<!-- height: 470px; -->
+						<table class="slds-table slds-table--bordered slds-table--cell-buffer" id="contactTable">
+							<thead>
+								<tr class="slds-text-title--caps">
+									<th scope="col">
+										<div class="slds-truncate" title="Opportunity Name">Full Name</div>
+									</th>
+									<th scope="col">
+										<div class="slds-truncate" title="Account Name">Email</div>
+									</th>
+									<th scope="col">
+										<div class="slds-truncate" title="Close Date">Title</div>
+									</th>
+								</tr>
+							</thead>
+							<tbody id="contactTableBody">
+								<!-- Cases will go here -->
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="slds-col" style="width: 55%; padding: 20px;">
+		<div class="slds-box slds-box--small slds-theme--shade" style="width: 97%; height: 100%;">
+			<div class="slds-tabs--default" data-aljs="tabs">
+				<ul class="slds-tabs--default__nav" role="tablist">
+					<li class="slds-tabs--default__item slds-text-heading--label" title="Item One" role="presentation">
+						<a class="slds-tabs--default__link" href="#" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-default-1" data-aljs-show="tab-default-1">Campaigns</a>
+					</li>
+				</ul>
+				<div id="tab-default-1" class="slds-tabs--default__content slds-hide" role="tabpanel">
+					<div id="mySearchArea">
+						<div class="slds-form-element">
+							<!-- <label class="slds-form-element__label" for="combobox-unique-id">Search</label> -->
+							<div class="slds-form-element__control">
+								<div class="slds-combobox_container slds-has-inline-listbox">
+									<div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-combobox-lookup" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+										<div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right">
+											<input type="text" class="slds-input slds-combobox__input" id="campaignSearch" aria-autocomplete="list" aria-controls="listbox-unique-id" autocomplete="off" role="textbox" placeholder="Search Campaigns" onkeyup="myFilterFunction()"/>
+											<span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right" title="Description of icon when needed">
+												<img src="{!$Resource.searchIcon}" style="width: 20px; height: 20px;"></img>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div style="width: 100%; height: 59vh; overflow: scroll; margin-top: 20px;">
+						<!-- height: 360px; -->
+						<table class="slds-table slds-table--bordered slds-table--cell-buffer" id="campaignTable">
+							<thead>
+								<tr class="slds-text-title--caps">
+									<th scope="col">
+										<div class="slds-truncate" title="Opportunity Name">
+											<div class="slds-form-element">
+												<div class="slds-form-element__control">
+													<span class="slds-checkbox">
+														<input type="checkbox" name="selectAllCampaigns" value="on" id="selectAllCampaigns" onclick="selectAllCampaigns()"/>
+														<label class="slds-checkbox__label" for="selectAllCampaigns">
+															<span class="slds-checkbox_faux"></span>
+															<span class="slds-form-element__label"></span>
+														</label>
+													</span>
+												</div>
+											</div>
+										</div>
+									</th>
+									<th scope="col">
+										<div class="slds-truncate" title="Account Name">Campaign</div>
+									</th>
+									<th scope="col">
+										<div class="slds-truncate" title="Close Date">Status</div>
+									</th>
+									<th scope="col">
+										<div class="slds-truncate" title="Close Date">Owner</div>
+									</th>
+									<th scope="col">
+										<div class="slds-truncate" title="Close Date">Type</div>
+									</th>
+								</tr>
+							</thead>
+							<tbody id="campaignTableBody">
+								<!-- Campaigns will go here -->
+							</tbody>
+						</table>
+					</div>
+					<div style="width: 100%; height: 50px;">
+						<div class="okayButton" onclick="submitClicked()">Submit</div>
+						<div class="cancelButton" onclick="clearClicked()">Clear</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+<!-- POPUP -->
+<div id="myModal" style="height: 640px; display: none;">
+	<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+		<div class="slds-modal__container">
+			<header class="slds-modal__header">
+				<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+					<svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+					</svg>
+					<span class="slds-assistive-text">Close</span>
+				</button>
+				<h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">New Campaign Members</h2>
+			</header>
+			<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1" style="overflow-y: scroll;">
+			<table class="slds-table slds-table--bordered slds-table--cell-buffer" id="resultsTable">
+				<thead>
+					<tr class="slds-text-title--caps">
+						<th scope="col">
+							<div class="slds-truncate" title="Opportunity Name">Campaign Member</div>
+						</th>
+						<th scope="col">
+							<div class="slds-truncate" title="Account Name">Campaign</div>
+						</th>
+					</tr>
+				</thead>
+				<tbody id="resultsTableBody">
+					<!-- Cases will go here -->
+				</tbody>
+			</table>
+			</div>
+			<footer class="slds-modal__footer">
+				<button class="slds-button slds-button_brand" onclick="closeModal()">Close</button>
+			</footer>
+		</div>
+	</section>
+	<div class="slds-backdrop slds-backdrop_open"></div>
+</div>
+
+
+
+
+
+
+
+<!-- TOAST -->
+<div class="slds-notify_container" id="normalToast" style="display: none; margin-top: 200px;">
+	<div class="slds-notify slds-notify--toast" role="alert">
+		<span class="slds-assistive-text">Info</span>
+		<button class="slds-button slds-button--icon-inverse slds-notify__close">
+			<svg aria-hidden="true" class="slds-button__icon slds-button__icon--large">
+				<use xmlns:xlink="/assets/icons/utility-sprite/svg/symbols.svg#close" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+			</svg>
+			<span class="slds-assistive-text">Close</span>
+		</button>
+		<div class="notify__content">
+			<h2 class="slds-text-heading--small" id="normalToastText"></h2>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="{!$Resource.aljs}"></script>
+
+    <script>
+	var contacts = [];
+	var contactEmails = [];
+	var campaigns = [];
+
+
+	$(document).ready(function() {
+		$('[data-aljs="tabs"]').tabs();
+	});
+
+	$(function() {
+		$.ajaxSetup({
+			headers: {"Authorization": 'Bearer {!$Api.Session_ID}'}
+		});
+		setTimeout(getContactEmailsFromQuery, 1000);
+	});
+
+	function getContactEmailsFromQuery() {
+		var query = {};
+		query.statements = "{!JSENCODE(query)}";
+		var queryObj = {query: query.statements};
+		$.ajax({
+			type: 'POST',
+			url: '/services/data/v39.0/wave/query',
+			data: JSON.stringify(queryObj),
+			contentType: 'application/json',
+			success: function(data) {
+				var tmpCases = data.results.records;
+				for(var i = 0; i < tmpCases.length; i++) {
+					var record = data.results.records[i];
+					console.log('Contact Email : ' + record.Email);
+					contactEmails.push(record.Email);
+				}
+				getMyContacts();
+				getMyCampaigns();
+			},
+		});
+	}
+
+	// ********************************************************* GET CONTACTS AND BUILD TABLE *******************************************************************
+
+	function getMyContacts() {
+		console.log('getMyContacts called');
+		WaveContactActions_ApexController.getMyContacts(contactEmails, function(result) {
+			contacts = [];
+			for(var i = 0; i < result.length; i++) {
+				console.log('Record ID : ' + result[i].Id);
+				if(result[i].Title == null ||  result[i].Title.length < 1) {
+					result[i].Title = ' ';
+				}
+				contacts.push(result[i])
+			}
+			buildTheContactsTable(contacts);
+		});
+	}
+
+	function buildTheContactsTable(myContacts) {
+		var contactsTableBody = $('#contactTableBody');
+		contactsTableBody.html('');
+		var tableBody = '';
+
+		for(var i = 0; i < myContacts.length; i++) {
+			var tableRow = '<tr>' +
+			'<td>' +
+			'<a href="/' + myContacts[i].Id + '" target="_blank"><div class="slds-truncate">' + myContacts[i].Name + '</div></a>' +
+			'</td>' +
+			'<td>' +
+			'<div class="slds-truncate">' + myContacts[i].Email + '</div>' +
+			'</td>' +
+			'<td>' +
+			'<div class="slds-truncate">' + myContacts[i].Title + '</div>' +
+			'</td>' +
+			'</tr>';
+			tableBody = tableBody + tableRow;
+		}
+		contactsTableBody.html(tableBody);
+	}
+
+	// ********************************************************* GET CAMPAIGNS AND BUILD TABLE *******************************************************************
+
+	function getMyCampaigns() {
+		console.log('getMyContacts called');
+		WaveContactActions_ApexController.getMyCampaigns(function(result) {
+			campaigns = [];
+			for(var i = 0; i < result.length; i++) {
+				campaigns.push(result[i])
+			}
+			buildTheCampaignTable(campaigns);
+		});
+	}
+
+	function buildTheCampaignTable(myCampaigns) {
+		var campaignTableBody = $('#campaignTableBody');
+		campaignTableBody.html('');
+		var tableBody = '';
+
+		for(var i = 0; i < myCampaigns.length; i++) {
+			var tableRow = '<tr>' +
+			'<td>' +
+			// '<div class="slds-truncate"><input type="checkbox"><label class="slds-checkbox__label"><span class="slds-checkbox_faux"></span><span class="slds-form-element__label"></span></label></div></a>' +
+			'<div class="slds-truncate"><div class="slds-form-element"><div class="slds-form-element__control"><span class="slds-checkbox"><input class="campaignCheckbox" type="checkbox" name="' + myCampaigns[i].Id + '" id="' + myCampaigns[i].Id + '" value="on"><label class="slds-checkbox__label" for="' + myCampaigns[i].Id + '"><span class="slds-checkbox_faux"></span><span class="slds-form-element__label"></span></label></span></div></div></div>' +
+			'</td>' +
+			'<td>' +
+			'<a href="/' + myCampaigns[i].Id + '" target="_blank"><div class="slds-truncate">' + myCampaigns[i].Name + '</div></a>' +
+			'</td>' +
+			'<td>' +
+			'<div class="slds-truncate">' + myCampaigns[i].Status + '</div>' +
+			'</td>' +
+			'<td>' +
+			'<a href="/' + myCampaigns[i].OwnerId + '" target="_blank"><div class="slds-truncate">' + myCampaigns[i].Owner.Name + '</div></a>' +
+			'</td>' +
+			'<td>' +
+			'<div class="slds-truncate">' + myCampaigns[i].Type + '</div>' +
+			'</td>' +
+			'</tr>';
+			tableBody = tableBody + tableRow;
+		}
+		campaignTableBody.html(tableBody);
+	}
+
+	// ********************************************************* FILTER THE CAMPAIGN TABLE *******************************************************************
+
+	function myFilterFunction() {
+		if($('#campaignSearch').val() == 'RESET') {
+			resetDemo();
+		} else {
+			var input, filter, table, tr, td, i;
+			input = document.getElementById("campaignSearch");
+			filter = input.value.toUpperCase();
+			table = document.getElementById("campaignTable");
+			tr = table.getElementsByTagName("tr");
+			for (i = 0; i < tr.length; i++) {
+				td = tr[i].getElementsByTagName("td")[1];
+				if (td) {
+					if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+						tr[i].style.display = "table-row";
+					} else {
+						tr[i].style.display = "none";
+					}
+				}
+			}
+		}
+	}
+
+	// ********************************************************* SELECT ALL CAMPAIGNS *******************************************************************
+
+	function selectAllCampaigns() {
+		if ($('#selectAllCampaigns').is(":checked")) {
+			console.log('checked');
+			$('.campaignCheckbox').prop('checked', true);
+		} else {
+			console.log('unchecked');
+			$('.campaignCheckbox').prop('checked', false);
+		}
+	}
+
+	// ********************************************************* GET SELECTED CAMPAIGNS *******************************************************************
+
+	function submitClicked() {
+		var selectedCampaigns = [];
+		$('.campaignCheckbox:input:checked').each(function() {
+    		selectedCampaigns.push($(this).attr('id'));
+		});
+
+		console.log('selectedCampaigns : ' + selectedCampaigns);
+
+		if(selectedCampaigns.length > 0) {
+			WaveContactActions_ApexController.createMyCampaignMembers(selectedCampaigns, contacts, function(result) {
+				for(var i = 0; i < result.length; i++) {
+					console.log('CampaignMember : ' , result[i].theCampaignMember);
+				}
+				showResults(result);
+			});
+		}
+	}
+
+	function showResults(results) {
+		var resultsTableBody = $('#resultsTableBody');
+		resultsTableBody.html('');
+		var tableBody = '';
+
+		for(var i = 0; i < results.length; i++) {
+			var tableRow = '<tr>' +
+			'<td>' +
+			'<a href="/' + results[i].theCampaignMember.Id + '" target="_blank"><div class="slds-truncate">' + results[i].theCampaignMember.Name + '</div></a>' +
+			'</td>' +
+			'<td>' +
+			'<a href="/' + results[i].theCampaignId + '" target="_blank"><div class="slds-truncate">' + results[i].theCampaignName + '</div></a>' +
+			'</td>' +
+			'</tr>';
+			tableBody = tableBody + tableRow;
+		}
+		resultsTableBody.html(tableBody);
+		$('#myModal').css('display', 'block');
+	}
+
+	function clearClicked() {
+		$('#campaignSearch').val('');
+		$('#selectAllCampaigns').prop('checked', false);
+		getMyCampaigns();
+	}
+
+	function closeModal() {
+		$('#myModal').css('display', 'none');
+		clearClicked();
+	}
+
+
+	// ********************************************************* SHOW TOAST MESSAGE *******************************************************************
+
+	function showToastMessage(str) {
+		var toast = $('#normalToast');
+		var toastText = $('#normalToastText');
+
+		toastText.html(str);
+		toast.fadeIn( "slow", function() {
+			setTimeout(function() {
+				toast.fadeOut( "slow", function() {
+				});
+			}, 3000);
+		});
+	}
+
+	// ********************************************************* RESET DEMO ***********************************************************************
+
+	function resetDemo() {
+		showToastMessage('Deleting Campaign Members');
+		WaveContactActions_ApexController.resetMyDemo(function(result) {
+			if(result == 'worked') {
+				console.log('Delete worked');
+				showToastMessage('Campaign Members Deleted');
+			} else {
+				console.log('ERROR : ' + result);
+			}
+		});
+	}
+
+    </script>
+
+</body>
+
+</html>
+
+</apex:page>

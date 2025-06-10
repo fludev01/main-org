@@ -1,0 +1,124 @@
+<template>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size_1-of-1">
+            <div class="slds-grid slds-wrap">
+              <!--  <div class="slds-size_1-of-1">
+                    <c-page-header subtitle="Account" title="Verde" icon-name="standard:account" icon-type="slds" show-button=true button-label="View Account"></c-page-header>
+                </div>
+								 <div>
+                    <c-page-header></c-page-header>
+                </div>-->
+                <div class="slds-size_1-of-1">
+                    <div class="slds-card slds-p-right_medium slds-p-left_medium container">
+                        <template if:true={loading}>
+                            <div class="spinner-container">
+                                <lightning-spinner size="medium"></lightning-spinner>
+                            </div>
+                        </template>
+<template if:false={loading}>
+                            <lightning-tabset>
+                               <!-- <lightning-tab label="Details">-->
+                                    <lightning-record-view-form record-id={accountId} object-api-name="Account">
+                                        <div class="slds-grid slds-wrap slds-scrollable_y" style="height:541px">
+                                            <div class="slds-size_1-of-1">
+                                                <div class="slds-grid slds-wrap">
+                                                    <div class="slds-size_1-of-2">
+                                                        <lightning-output-field field-name="Name"> </lightning-output-field>
+                                                    </div>
+                                                    <div class="slds-size_1-of-2">
+                                                        <lightning-output-field field-name="AccountNumber"> </lightning-output-field>
+                                                    </div>
+                                                    <div class="slds-size_1-of-2">
+                                                        <lightning-output-field field-name="Website"> </lightning-output-field>
+                                                    </div>
+                                                    <div class="slds-size_1-of-2">
+                                                        <lightning-output-field field-name="Industry"> </lightning-output-field>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="slds-size_1-of-1">
+                                                <div class="slds-grid slds-wrap">
+                                                    <div class="slds-size_1-of-1">
+                                                        <div class="slds-form-element slds-form-element_stacked"><span class="slds-form-element__label">Customer Usage Summary</span>
+                                                            <div class="slds-form-element__control slds-p-bottom_small">
+                                                                <lightning-formatted-rich-text value={_description}></lightning-formatted-rich-text>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="slds-size_1-of-1">
+                                                <div class="slds-section slds-is-open">
+                                                    <h3 class="slds-section__title">
+                                                        <button aria-expanded="true" class="slds-button slds-section__title-action">
+                                                            <lightning-icon icon-name="utility:chevrondown" size="x-small"></lightning-icon>
+                                                            <span class="slds-truncate slds-p-left_small" title="Contact Details">Contact Details</span>
+                                                        </button>
+                                                    </h3>
+                                                    <div aria-hidden="false" class="slds-section__content">
+                                                        <div class="slds-grid slds-wrap">
+                                                            <div class="slds-size_1-of-2">
+                                                                <lightning-output-field field-name="Phone"> </lightning-output-field>
+                                                            </div>
+                                                            <div class="slds-size_1-of-2">
+                                                                <lightning-output-field field-name="Fax"> </lightning-output-field>
+                                                            </div>
+                                                            <div class="slds-size_1-of-2">
+                                                                <lightning-output-field field-name="BillingAddress"> </lightning-output-field>
+                                                            </div>
+                                                            <div class="slds-size_1-of-2">
+                                                                <lightning-output-field field-name="ShippingAddress"> </lightning-output-field>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="slds-size_1-of-1">
+                                                <div class="slds-section">
+                                                    <h3 class="slds-section__title">
+                                                        <button aria-expanded="true" class="slds-button slds-section__title-action">
+                                                            <lightning-icon icon-name="utility:chevronright" size="x-small"></lightning-icon>
+                                                            <span class="slds-truncate slds-p-left_small" title="Contact Details">Company Information</span>
+                                                        </button>
+                                                    </h3>
+                                                    <div aria-hidden="false" class="slds-section__content">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="slds-size_1-of-1">
+                                                <div class="slds-section">
+                                                    <h3 class="slds-section__title">
+                                                        <button aria-expanded="true" class="slds-button slds-section__title-action">
+                                                            <lightning-icon icon-name="utility:chevronright" size="x-small"></lightning-icon>
+                                                            <span class="slds-truncate slds-p-left_small" title="Contact Details">Sales Alignment</span>
+                                                        </button>
+                                                    </h3>
+                                                    <div aria-hidden="false" class="slds-section__content">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="slds-size_1-of-1 slds-p-bottom_medium">
+                                                <div class="slds-section">
+                                                    <h3 class="slds-section__title">
+                                                        <button aria-expanded="true" class="slds-button slds-section__title-action">
+                                                            <lightning-icon icon-name="utility:chevronright" size="x-small"></lightning-icon>
+                                                            <span class="slds-truncate slds-p-left_small" title="Contact Details">System Information</span>
+                                                        </button>
+                                                    </h3>
+                                                    <div aria-hidden="false" class="slds-section__content">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </lightning-record-view-form>
+                                <!--</lightning-tab>-->
+                               <!-- <lightning-tab label="Related" title="2nd tab extended title"> Two Content ! </lightning-tab>
+                                <lightning-tab label="News"> Three Content ! </lightning-tab>-->
+                            </lightning-tabset>    
+                        </template>
+</div>
+</div>
+</div>
+</div>
+</div>
+</template>

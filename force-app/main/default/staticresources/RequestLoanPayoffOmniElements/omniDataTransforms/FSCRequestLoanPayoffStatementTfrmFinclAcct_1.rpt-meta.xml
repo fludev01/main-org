@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>FSCRequestLoanPayoffStatementTfrmFinclAcct</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCRequestLoanPayoffStatementTfrmFinclAcct06524242888981924</globalKey>
+        <inputFieldName>FinancialAccountLabel</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCRequestLoanPayoffStatementTfrmFinclAcct</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>FinancialAccountLabel</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCRequestLoanPayoffStatementTfrmFinclAcct26021765255460005</globalKey>
+        <inputFieldName>Type</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCRequestLoanPayoffStatementTfrmFinclAcct</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Type</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCRequestLoanPayoffStatementTfrmFinclAcct5406439943841488</globalKey>
+        <inputFieldName>RecordTypeName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCRequestLoanPayoffStatementTfrmFinclAcct</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecordTypeName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCRequestLoanPayoffStatementTfrmFinclAcct7027336320238942</globalKey>
+        <inputFieldName>AccountNumberLast4</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCRequestLoanPayoffStatementTfrmFinclAcct</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountNumberLast4</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCRequestLoanPayoffStatementTfrmFinclAcct8011769807540954</globalKey>
+        <inputFieldName>AccountType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCRequestLoanPayoffStatementTfrmFinclAcct</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCRequestLoanPayoffStatementTfrmFinclAcct8053299676599897</globalKey>
+        <inputFieldName>SourceSystemId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCRequestLoanPayoffStatementTfrmFinclAcct</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>SourceSystemId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCRequestLoanPayoffStatementTfrmFinclAcct9702814718417605</globalKey>
+        <inputFieldName>Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCRequestLoanPayoffStatementTfrmFinclAcct</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCRequestLoanPayoffStatementTfrmFinclAcct42176763226106107</globalKey>
+        <inputFieldName>FinancialAccountNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCRequestLoanPayoffStatementTfrmFinclAcct</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>FinancialAccountNumber</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCRequestLoanPayoffStatementTfrmFinclAcct2256203448397769</globalKey>
+        <inputFieldName>AccountNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCRequestLoanPayoffStatementTfrmFinclAcct</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountNumber</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCRequestLoanPayoffStatementTfrmFinclAcct030088636132175495</globalKey>
+        <inputFieldName>Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCRequestLoanPayoffStatementTfrmFinclAcct</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:FinancialAccountNumber var:AccountNumberLength 4 - var:AccountNumberLength SUBSTRING</formulaConverted>
+        <formulaExpression>SUBSTRING(FinancialAccountNumber,AccountNumberLength-4,AccountNumberLength)</formulaExpression>
+        <formulaResultPath>AccountNumberLast4</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>FSCRequestLoanPayoffStatementTfrmFinclAcct446498932971376</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCRequestLoanPayoffStatementTfrmFinclAcct</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:FinancialAccountNumber &quot;&lt;EOS&gt;&quot; + &quot;&lt;EOS&gt;&quot; STRINGINDEXOF</formulaConverted>
+        <formulaExpression>STRINGINDEXOF(FinancialAccountNumber+&quot;&lt;EOS&gt;&quot;,&quot;&lt;EOS&gt;&quot;)</formulaExpression>
+        <formulaResultPath>AccountNumberLength</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>FSCRequestLoanPayoffStatementTfrmFinclAcct8755663958005211</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCRequestLoanPayoffStatementTfrmFinclAcct</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| &quot;XXXX-&quot; var:AccountNumberLast4 CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(&quot;XXXX-&quot;,AccountNumberLast4)</formulaExpression>
+        <formulaResultPath>AccountNumber</formulaResultPath>
+        <formulaSequence>4.0</formulaSequence>
+        <globalKey>FSCRequestLoanPayoffStatementTfrmFinclAcct09007890693279319</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCRequestLoanPayoffStatementTfrmFinclAcct</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| &quot;XXXX-&quot; var:AccountNumberLast4 &quot;/\/\/-/\/\/&quot; var:Name CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(&quot;XXXX-&quot;,AccountNumberLast4,&quot; - &quot;,Name)</formulaExpression>
+        <formulaResultPath>FinancialAccountLabel</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>FSCRequestLoanPayoffStatementTfrmFinclAcct3772777258378943</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCRequestLoanPayoffStatementTfrmFinclAcct</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>[ {
+  &quot;Name&quot; : &quot;Car Loan&quot;,
+  &quot;SourceSystemId&quot; : &quot;25728929f6778&quot;,
+  &quot;Id&quot; : &quot;a0FB00000060M1KMAU&quot;,
+  &quot;RecordTypeName&quot; : &quot;Auto Loan&quot;,
+  &quot;FinancialAccountNumber&quot; : &quot;3678633444&quot;,
+  &quot;Type&quot; : &quot;Owned&quot;
+}, {
+  &quot;Name&quot; : &quot;Advantage Plus&quot;,
+  &quot;SourceSystemId&quot; : &quot;3765476354632323&quot;,
+  &quot;Id&quot; : &quot;a0FB00000060AFiMAM&quot;,
+  &quot;RecordTypeName&quot; : &quot;Checking Account&quot;,
+  &quot;FinancialAccountNumber&quot; : &quot;573756387432&quot;
+}, {
+  &quot;Name&quot; : &quot;SmartEarn&quot;,
+  &quot;SourceSystemId&quot; : &quot;3453454343534543&quot;,
+  &quot;Id&quot; : &quot;a0FB00000060AGCMA2&quot;,
+  &quot;RecordTypeName&quot; : &quot;Credit Card&quot;,
+  &quot;FinancialAccountNumber&quot; : &quot;6758378274827&quot;
+}, {
+  &quot;Name&quot; : &quot;Loan Account 1&quot;,
+  &quot;SourceSystemId&quot; : &quot;455677888233i&quot;,
+  &quot;Id&quot; : &quot;a0FB00000060M1PMAU&quot;,
+  &quot;RecordTypeName&quot; : &quot;Loan Account&quot;,
+  &quot;FinancialAccountNumber&quot; : &quot;23456788898&quot;
+}, {
+  &quot;Name&quot; : &quot;Mortgage Account1&quot;,
+  &quot;SourceSystemId&quot; : &quot;5678hhy88i299ih&quot;,
+  &quot;Id&quot; : &quot;a0FB00000060M1UMAU&quot;,
+  &quot;RecordTypeName&quot; : &quot;Mortgage&quot;,
+  &quot;FinancialAccountNumber&quot; : &quot;67432427678&quot;
+}, {
+  &quot;Name&quot; : &quot;Premium Savings Account&quot;,
+  &quot;SourceSystemId&quot; : &quot;2343534545646453&quot;,
+  &quot;Id&quot; : &quot;a0FB00000060KvOMAU&quot;,
+  &quot;RecordTypeName&quot; : &quot;Savings Account&quot;,
+  &quot;FinancialAccountNumber&quot; : &quot;6473892742543&quot;
+}, {
+  &quot;Name&quot; : &quot;Safe Balance Account&quot;,
+  &quot;SourceSystemId&quot; : &quot;2343534545646451&quot;,
+  &quot;Id&quot; : &quot;a0FB00000060AG7MAM&quot;,
+  &quot;RecordTypeName&quot; : &quot;Savings Account&quot;,
+  &quot;FinancialAccountNumber&quot; : &quot;647389274245&quot;
+} ]</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>FSCRequestLoanPayoffStatementTfrmFinclAcct_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

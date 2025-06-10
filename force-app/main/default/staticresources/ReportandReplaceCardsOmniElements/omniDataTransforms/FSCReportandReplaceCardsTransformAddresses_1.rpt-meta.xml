@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedOutputJson>{
+  &quot;Accounts&quot; : [ {
+    &quot;Accounts&quot; : &quot;Text&quot;,
+    &quot;Address1&quot; : &quot;Text&quot;,
+    &quot;Address2&quot; : &quot;Text&quot;,
+    &quot;State&quot; : &quot;Text&quot;,
+    &quot;FullAddress&quot; : &quot;Text&quot;,
+    &quot;Country&quot; : &quot;Text&quot;,
+    &quot;PostalCode&quot; : &quot;Text&quot;,
+    &quot;City&quot; : &quot;Text&quot;
+  } ]
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>FSCReportandReplaceCardsTransformAddresses</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardsTransformAddresses5123262635737411</globalKey>
+        <inputFieldName>City</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformAddresses</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>City</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardsTransformAddresses2686173589957799</globalKey>
+        <inputFieldName>PostalCode</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformAddresses</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PostalCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardsTransformAddresses9632070188560602</globalKey>
+        <inputFieldName>Country</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformAddresses</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Country</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardsTransformAddresses03253099738295151</globalKey>
+        <inputFieldName>FinancialAddress</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformAddresses</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>FullAddress</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardsTransformAddresses8921948233761408</globalKey>
+        <inputFieldName>State</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformAddresses</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>State</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardsTransformAddresses3856604753108557</globalKey>
+        <inputFieldName>Address1</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformAddresses</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Address1</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardsTransformAddresses1439767430283303</globalKey>
+        <inputFieldName>Address2</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformAddresses</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Address2</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Address1 var:Address1 &apos;&apos; IF | var:Address2 | var:Address1 | &apos;,/\/\/&apos; var:Address2 CONCAT var:Address2 IF var:’’ IF | var:City | var:Address1 var:Address2 OR | &apos;,/\/\/&apos; var:City CONCAT var:City IF &apos;&apos; IF | var:State | var:Address1 var:Address2 OR var:City OR | &apos;,/\/\/&apos; var:State CONCAT var:State IF &apos;&apos; IF | var:Country | var:Address1 var:Address2 OR var:City var:State OR OR | &apos;,/\/\/&apos; var:Country CONCAT var:Country IF &apos;&apos; IF | var:PostalCode | var:Address1 var:Address2 OR var:City var:State OR OR var:Country OR | &apos;,/\/\/&apos; var:PostalCode CONCAT var:PostalCode IF &apos;&apos; IF CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(IF(%Address1%,%Address1%,&apos;&apos;),IF(%Address2%,IF(%Address1%,CONCAT(&apos;, &apos;,%Address2%),%Address2%),’’),IF(%City%,IF(OR(%Address1%,%Address2%),CONCAT(&apos;, &apos;,%City%),%City%),&apos;&apos;),IF(%State%,IF(OR(OR(%Address1%,%Address2%),%City%),CONCAT(&apos;, &apos;,%State%),%State%),&apos;&apos;),IF(%Country%,IF(OR(OR(%Address1%,%Address2%),OR(%City%,%State%)),CONCAT(&apos;, &apos;,%Country%),%Country%),&apos;&apos;),IF(%PostalCode%,IF(OR(OR(OR(%Address1%,%Address2%),OR(%City%,%State%)),%Country%),CONCAT(&apos;, &apos;,%PostalCode%),%PostalCode%),&apos;&apos;))</formulaExpression>
+        <formulaResultPath>FinancialAddress</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>FSCReportandReplaceCardsTransformAddresses8668746474834346</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformAddresses</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>AccountId</filterValue>
+        <globalKey>FSCReportandReplaceCardsTransformAddresses20009413921259966</globalKey>
+        <inputFieldName>Id</inputFieldName>
+        <inputObjectName>Account</inputObjectName>
+        <inputObjectQuerySequence>1.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformAddresses</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Account</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>1.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>AccountId</filterValue>
+        <globalKey>FSCReportandReplaceCardsTransformAddresses896154915225398</globalKey>
+        <inputFieldName>FinServ__JointOwner__c</inputFieldName>
+        <inputObjectName>FinServ__FinancialAccount__c</inputObjectName>
+        <inputObjectQuerySequence>2.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformAddresses</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>FinancialAccount</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>AccountId</filterValue>
+        <globalKey>FSCReportandReplaceCardsTransformAddresses6360943697942081</globalKey>
+        <inputFieldName>FinServ__PrimaryOwner__c</inputFieldName>
+        <inputObjectName>FinServ__FinancialAccount__c</inputObjectName>
+        <inputObjectQuerySequence>2.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformAddresses</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>FinancialAccount</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Account:ShippingStreet var:Account:ShippingStreet &apos;&apos; IF | var:Account:ShippingCity | var:Account:ShippingStreet | &apos;,/\/\/&apos; var:Account:ShippingCity CONCAT var:Account:ShippingCity IF &apos;&apos; IF | var:Account:ShippingState | var:Account:ShippingStreet var:Account:ShippingCity OR | &apos;,/\/\/&apos; var:Account:ShippingState CONCAT var:Account:ShippingState IF &apos;&apos; IF | var:Account:ShippingCountry | var:Account:ShippingStreet var:Account:ShippingCity var:Account:ShippingState OR OR | &apos;,/\/\/&apos; var:Account:ShippingCountry CONCAT var:Account:ShippingCountry IF &apos;&apos; IF | var:Account:ShippingPostalCode | var:Account:ShippingStreet var:Account:ShippingCity OR var:Account:ShippingState var:Account:ShippingCountry OR OR | &apos;,/\/\/&apos; var:Account:ShippingPostalCode CONCAT var:Account:ShippingPostalCode IF &apos;&apos; IF CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(IF(%Account:ShippingStreet%,%Account:ShippingStreet%,&apos;&apos;),IF(%Account:ShippingCity%,IF(%Account:ShippingStreet%,CONCAT(&apos;, &apos;,%Account:ShippingCity%),%Account:ShippingCity%),&apos;&apos;),IF(%Account:ShippingState%,IF(OR(%Account:ShippingStreet%,%Account:ShippingCity%),CONCAT(&apos;, &apos;,%Account:ShippingState%),%Account:ShippingState%),&apos;&apos;),IF(%Account:ShippingCountry%,IF(OR(%Account:ShippingStreet%,OR(%Account:ShippingCity%,%Account:ShippingState%)),CONCAT(&apos;, &apos;,%Account:ShippingCountry%),%Account:ShippingCountry%),&apos;&apos;),IF(%Account:ShippingPostalCode%,IF(OR(OR(%Account:ShippingStreet%,%Account:ShippingCity%),OR(%Account:ShippingState%,%Account:ShippingCountry%)),CONCAT(&apos;, &apos;,%Account:ShippingPostalCode%),%Account:ShippingPostalCode%),&apos;&apos;))</formulaExpression>
+        <formulaResultPath>PermanentAddress</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>FSCReportandReplaceCardsTransformAddresses7261586578661983</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformAddresses</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Account:BillingStreet var:Account:BillingStreet &apos;&apos; IF | var:Account:BillingCity | var:Account:BillingStreet | &apos;,/\/\/&apos; var:Account:BillingCity CONCAT var:Account:BillingCity IF &apos;&apos; IF | var:Account:BillingState | var:Account:BillingStreet var:Account:BillingCity OR | &apos;,/\/\/&apos; var:Account:BillingState CONCAT var:Account:BillingState IF &apos;&apos; IF | var:Account:BillingCountry | var:Account:BillingStreet var:Account:BillingCity var:Account:BillingState OR OR | &apos;,/\/\/&apos; var:Account:BillingCountry CONCAT var:Account:BillingCountry IF &apos;&apos; IF | var:Account:BillingPostalCode | var:Account:BillingStreet var:Account:BillingCity OR var:Account:BillingState var:Account:BillingCountry OR OR | &apos;,/\/\/&apos; var:Account:BillingPostalCode CONCAT var:Account:BillingPostalCode IF &apos;&apos; IF CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(IF(%Account:BillingStreet%,%Account:BillingStreet%,&apos;&apos;),IF(%Account:BillingCity%,IF(%Account:BillingStreet%,CONCAT(&apos;, &apos;,%Account:BillingCity%),%Account:BillingCity%),&apos;&apos;),IF(%Account:BillingState%,IF(OR(%Account:BillingStreet%,%Account:BillingCity%),CONCAT(&apos;, &apos;,%Account:BillingState%),%Account:BillingState%),&apos;&apos;),IF(%Account:BillingCountry%,IF(OR(%Account:BillingStreet%,OR(%Account:BillingCity%,%Account:BillingState%)),CONCAT(&apos;, &apos;,%Account:BillingCountry%),%Account:BillingCountry%),&apos;&apos;),IF(%Account:BillingPostalCode%,IF(OR(OR(%Account:BillingStreet%,%Account:BillingCity%),OR(%Account:BillingState%,%Account:BillingCountry%)),CONCAT(&apos;, &apos;,%Account:BillingPostalCode%),%Account:BillingPostalCode%),&apos;&apos;))</formulaExpression>
+        <formulaResultPath>CommunicationAddress</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>FSCReportandReplaceCardsTransformAddresses08610246686489864</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformAddresses</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>[ {
+  &quot;Address1&quot; : &quot;123,2 nd cross&quot;,
+  &quot;City&quot; : &quot;cityS&quot;,
+  &quot;PostalCode&quot; : &quot;344566&quot;,
+  &quot;Country&quot; : &quot;India&quot;,
+  &quot;Address2&quot; : &quot;2nd stage&quot;,
+  &quot;State&quot; : &quot;StateC&quot;
+}, {
+  &quot;Address1&quot; : &quot;B30&quot;,
+  &quot;City&quot; : &quot;Gurugram&quot;,
+  &quot;PostalCode&quot; : &quot;201301&quot;,
+  &quot;Country&quot; : &quot;India&quot;,
+  &quot;Address2&quot; : &quot;Sector 50&quot;,
+  &quot;State&quot; : &quot;Haryana&quot;
+} ]</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>FSCReportandReplaceCardsTransformAddresses_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

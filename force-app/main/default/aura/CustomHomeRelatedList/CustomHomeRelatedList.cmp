@@ -1,0 +1,108 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    
+    
+    
+    <aura:attribute name="Title" type="String" default="Upcoming Quarterly Reviews (3)"/>
+    <aura:attribute name="Icon" type="String" default="standard:event"/>
+    <aura:attribute name="ViewAllLink" type="String" default="/001/o"/>
+    
+    <aura:attribute name="Text1" type="String" default="Rachel Adams"/>
+    <aura:attribute name="Link1" type="String" default="/001Kj00002XswC9"/>
+    <aura:attribute name="Subtext1" type="String" default="Existing Client"/>
+    <aura:attribute name="SideText1" type="String" default="Mar 29, 2017"/>
+    
+    <aura:attribute name="Text2" type="String" default=""/>
+    <aura:attribute name="Link2" type="String"/>
+    <aura:attribute name="Subtext2" type="String"/>
+    <aura:attribute name="SideText2" type="String"/>
+    
+    <aura:attribute name="Text3" type="String" default=""/>
+    <aura:attribute name="Link3" type="String"/>
+    <aura:attribute name="Subtext3" type="String"/>
+    <aura:attribute name="SideText3" type="String"/>
+    
+    <aura:attribute name="Text4" type="String" default=""/>
+    <aura:attribute name="Link4" type="String"/>
+    <aura:attribute name="Subtext4" type="String"/>
+    <aura:attribute name="SideText4" type="String"/>
+    
+    <aura:attribute name="Text5" type="String" default=""/>
+    <aura:attribute name="Link5" type="String"/>
+    <aura:attribute name="Subtext5" type="String"/>
+    <aura:attribute name="SideText5" type="String"/>
+    
+    
+    <lightning:card title="{!v.Title}" iconName="{!v.Icon}" footer="View All">
+
+            <div class="slds-card__body">
+                <ul>
+                	<li class="{!v.Text1 == null ? 'slds-hide' : 'slds-tile slds-m-vertical--small slds-m-horizontal--large'}">
+                        <div class="slds-media__body">
+                        	<div class="slds-grid slds-grid--align-spread slds-has-flexi-truncate">
+                            	<p class="tile__title slds-truncate slds-tile__title"><a href="{!v.Link1}">{!v.Text1}</a></p>
+                                <div>
+                                	<p class="slds-truncate">{!v.SideText1}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-tile__detail slds-list--horizontal slds-has-dividers slds-text-body--small">
+                            <p class="slds-truncate">{!v.Subtext1}</p>
+                        </div>
+                    </li>
+                	<li class="{!v.Text2 == null ? 'slds-hide' : 'slds-tile slds-m-vertical--small slds-m-horizontal--large'}">
+                        <div class="slds-media__body">
+                        	<div class="slds-grid slds-grid--align-spread slds-has-flexi-truncate">
+                            	<p class="tile__title slds-truncate slds-tile__title"><a href="{!v.Link2}">{!v.Text2}</a></p>
+                                <div>
+                                	<p class="slds-truncate">{!v.SideText2}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-tile__detail slds-list--horizontal slds-has-dividers slds-text-body--small">
+                            <p class="slds-truncate">{!v.Subtext2}</p>
+                        </div>
+                    </li>
+                	<li class="{!v.Text3 == null ? 'slds-hide' : 'slds-tile slds-m-vertical--small slds-m-horizontal--large'}">
+                        <div class="slds-media__body">
+                        	<div class="slds-grid slds-grid--align-spread slds-has-flexi-truncate">
+                            	<p class="tile__title slds-truncate slds-tile__title"><a href="{!v.Link3}">{!v.Text3}</a></p>
+                                <div>
+                                	<p class="slds-truncate">{!v.SideText3}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-tile__detail slds-list--horizontal slds-has-dividers slds-text-body--small">
+                            <p class="slds-truncate">{!v.Subtext3}</p>
+                        </div>
+                    </li>
+                	<li class="{!v.Text4 == null ? 'slds-hide' : 'slds-tile slds-m-vertical--small slds-m-horizontal--large'}">
+                        <div class="slds-media__body">
+                        	<div class="slds-grid slds-grid--align-spread slds-has-flexi-truncate">
+                            	<p class="tile__title slds-truncate slds-tile__title"><a href="{!v.Link4}">{!v.Text4}</a></p>
+                                <div>
+                                	<p class="slds-truncate">{!v.SideText4}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-tile__detail slds-list--horizontal slds-has-dividers slds-text-body--small">
+                            <p class="slds-truncate">{!v.Subtext4}</p>
+                        </div>
+                    </li>
+                	<li class="{!v.Text5 == null ? 'slds-hide' : 'slds-tile slds-m-vertical--small slds-m-horizontal--large'}">
+                        <div class="slds-media__body">
+                        	<div class="slds-grid slds-grid--align-spread slds-has-flexi-truncate">
+                            	<p class="tile__title slds-truncate slds-tile__title"><a href="{!v.Link5}">{!v.Text5}</a></p>
+                                <div>
+                                	<p class="slds-truncate">{!v.SideText5}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-tile__detail slds-list--horizontal slds-has-dividers slds-text-body--small">
+                            <p class="slds-truncate">{!v.Subtext5}</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+    </lightning:card>
+    
+</aura:component>

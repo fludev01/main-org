@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+	<types>
+		<members>FSCWlthFilterDocumentChecklistItem_1</members>
+		<members>FSCWlthGetAccountId_1</members>
+		<members>FSCWlthGetDocumentChecklistItem_1</members>
+		<members>FSCWlthServiceProcessGetAccountDetails_1</members>
+		<members>FSCWlthTransformReviewedDCI_1</members>
+		<members>FSCWlthTransformSelectAllDeselectAll_1</members>
+		<name>OmniDataTransform</name>
+	</types>
+	<types>
+		<members>FSCWlthSelfService_SetServiceProcessAccountContext_Procedure_1</members>
+		<members>FSCWlthServiceProcess_GetDocumentTypes_Procedure_1</members>
+		<members>FSCWlthUploadDocument_GetDocumentChecklistItem_Procedure_1</members>
+		<name>OmniIntegrationProcedure</name>
+	</types>
+	<types>
+		<members>FSCWlth_ConfirmationScreen_English_1</members>
+		<members>FSCWlth_UploadDocument_English_1</members>
+		<name>OmniScript</name>
+	</types>
+	<types>
+		<members>FSCWlthServiceProcessShowAccountDetails_Salesforce_1</members>
+		<members>FSCWlthServiceProcessShowDisclaimer_Salesforce_1</members>
+		<members>FSCWlthServiceProcessShowNoFinancialAccounts_Salesforce_1</members>
+		<members>FSCWlthServiceProcessShowReviewedDocuments_Salesforce_1</members>
+		<members>FSCWlthServiceProcessShowUploadedDocuments_Salesforce_1</members>
+		<members>FSCWlthServiceProcessShowValidDocumentTypes_Salesforce_1</members>
+		<members>FSCWlthShowDocumentUploadConfirmationIcon_Salesforce_1</members>
+		<members>FSCWlthShowNewCaseConfirmationIcon_Salesforce_1</members>
+		<members>FSCWlthServiceProcessShowValidDocumentTypesList_Salesforce_1</members>
+		<name>OmniUiCard</name>
+	</types>
+	<version>58.0</version>
+</Package>

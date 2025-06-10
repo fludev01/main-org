@@ -1,0 +1,17 @@
+.THIS .active {
+    background-color: #0079bc;
+}
+
+.THIS .inactive {
+    background-color: #b8c3ce;
+    opacity: 0.5;
+}
+
+.THIS .text-active {
+    color: #0079bc;
+}
+
+.THIS .text-inactive {
+    color: #b8c3ce;
+    opacity: 0.5;
+}

@@ -1,0 +1,6 @@
+<design:component >
+	<design:attribute name="icon" label="SLDS Icon" default="standard:default" />
+    <design:attribute name="iconSize" label="Icon Size" default="medium" />
+    <design:attribute name="heading" label="Heading" default="Heading" />
+    <design:attribute name="subHeading" label="Sub Heading" default="Sub heading" />
+</design:component>

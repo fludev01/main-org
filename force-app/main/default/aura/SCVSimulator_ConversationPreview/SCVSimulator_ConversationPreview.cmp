@@ -1,0 +1,32 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" controller="SCVSimulator_CT" access="global" >
+    <aura:attribute name="recordId" type="String" default="" />  
+    <aura:attribute name="height" type="Integer" default="450"/> 
+    <aura:attribute name="textBubbleColor" type="String" />
+    
+    
+    <!-- App state -->
+    <aura:attribute name="state" type="Map" default="" /> 
+    <!-- Holds the streaming event subscription -->
+    <aura:attribute name="subscription" type="Map" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+
+    
+    <lightning:card>
+        <aura:set attribute="title">
+            <lightning:icon iconName="standard:messaging_conversation" variant="inverse"  size="small" class="slds-m-right_x-small card-icon"/>
+            Conversation Preview
+        </aura:set>
+        <div class="scv-conversation-wrapper slds-p-bottom_small" >
+            <div id="chatArea" class="scrollArea" style="{! 'height: ' + v.height + 'px;' }">
+                <section role="log" class="slds-chat">
+                    <ul class="slds-chat-list" >
+                        <aura:iteration items="{! v.state.messages }" var="message">   
+                            <c:SCVSimulator_ConversationMessage message="{! message }" caller="Caller" agent="Agent"/>                 
+                        </aura:iteration>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </lightning:card>
+    
+</aura:component>

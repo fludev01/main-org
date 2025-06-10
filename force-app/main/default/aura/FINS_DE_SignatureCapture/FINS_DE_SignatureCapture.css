@@ -1,0 +1,23 @@
+.THIS #signature-pad {
+    border: 1px dashed gainsboro;
+    background-color: #fff;
+}
+.THIS .butts {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+.THIS .wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 200px;
+}
+.THIS.CSWrap{
+    height: 260px;
+    width: 500px;
+    margin: 0 auto;
+    position: relative;
+}

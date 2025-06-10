@@ -1,0 +1,64 @@
+<aura:component implements="force:hasRecordId" access="global">
+    <aura:attribute name="message" type="Map" default="" />
+    <aura:attribute name="dateTime" type="String" default="" />
+    <aura:attribute name="caller" type="String" default="" /> 
+    <aura:attribute name="agent" type="String" default="" /> 
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    
+    <!--Call Started-->
+    <aura:if isTrue="{! v.message.Message_Type__c == 'Conversation Started' }">
+        <li class="slds-chat-listitem slds-chat-listitem_bookend">
+            <div class="slds-chat-bookend">
+                <lightning:icon iconName="utility:chat" size="x-small" class="slds-m-right_x-small card-icon"/>
+                <p>Call Started • <lightning:formattedDateTime hour="numeric" minute="2-digit" value="{!v.message.time}"/>
+                    <span style="position: relative; bottom: 4px; left: 10px;">
+                    	<lightning:helptext content="Use the right arrow key to move forward, left arrow key to move back and down arrow to reset."/>
+                    </span>
+                </p>
+            </div>
+        </li>
+    </aura:if>
+    
+    <!--Customer Initiated-->
+    <aura:if isTrue="{! v.message.Message_Type__c == 'Inbound' }">
+        <li class="slds-chat-listitem slds-chat-listitem_inbound">
+            <div class="slds-chat-message">
+                <div class="slds-chat-message__body">
+                    <div class="slds-chat-message__text slds-chat-message__text_inbound">
+                        <span>{! v.message.Message__c }</span>
+                    </div>
+                    <div class="messageTimestamp">
+                        {! v.caller } • <lightning:formattedDateTime hour="numeric" minute="2-digit" value="{!v.message.time}"/>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </aura:if>
+    
+    <!--Agent Initiated-->
+    <aura:if isTrue="{! v.message.Message_Type__c == 'Outbound' }">
+        <li class="slds-chat-listitem slds-chat-listitem_outbound">
+            <div class="slds-chat-message">
+                <div class="slds-chat-message__body">
+                    <div class="slds-chat-message__text slds-chat-message__text_outbound-agent">
+                        <span>{! v.message.Message__c }</span>
+                    </div>
+                    <div class="messageTimestamp">
+                        {! v.agent } • <lightning:formattedDateTime hour="numeric" minute="2-digit" value="{!v.message.time}"/>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </aura:if>
+    
+    <!--Call End-->
+    <aura:if isTrue="{! v.message.Message_Type__c == 'Conversation Ended' }">
+        <li class="slds-chat-listitem slds-chat-listitem_bookend">
+            <div class="slds-chat-bookend slds-chat-bookend_stop">
+                <lightning:icon iconName="utility:chat" size="x-small" class="slds-m-right_x-small card-icon"/>
+                <p>Call Ended • <lightning:formattedDateTime hour="numeric" minute="2-digit" value="{!v.message.time}"/></p>
+            </div>
+        </li>
+    </aura:if>
+</aura:component>

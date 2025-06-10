@@ -1,0 +1,125 @@
+<aura:component controller="FINS_HighlightsCT" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<aura:attribute name="recordId" type="Id" />
+    
+	<!-- <aura:handler name="init" value="{!this}" action="{!c.doInit}" /> -->
+    
+    <aura:attribute name="accDetails" type="Account"/>
+    <aura:attribute name="socialPersona" type="SocialPersona"/>
+    <aura:attribute name="accTransaction" type="Object"/>
+    <aura:attribute name="currentStatus" type="String" default="custom4"/>
+    <aura:attribute name="currentSegment" type="String" default="custom4"/>
+    <aura:attribute name="currentTransaction" type="String" default="custom4"/>
+    
+	<aura:attribute name="categoryColor" type="String" default=""/> 
+    <aura:attribute name="segmentTransaction" type="String" default=""/>
+    <aura:attribute name="typeTransaction" type="String" default=""/>
+    
+    <style></style>
+
+  	<div class="highlight_wrap">
+    	<lightning:spinner aura:id="highlightsSpinner" variant="brand" size="medium" class="slds-hide" />
+            <article class="slds-card">
+    
+          <div class="slds-card__header slds-grid">
+              <header class="slds-media slds-media--center slds-has-flexi-truncate">
+                  <div class="slds-media__figure" style="padding-right:20px;padding-left:20px;padding-top:10px; padding-bottom:10px;">
+                      <aura:if isTrue="{!v.socialPersona}">
+                          <span class="slds-icon_container" title="description of icon when needed">
+                            <img data-aura-rendered-by="173:c" style="border:1px;border-radius:10px;box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);" src="{!v.socialPersona.ExternalPictureURL}" class="socialPhoto" alt="Contact" title="Contact"/>
+                          </span>
+                          <aura:set attribute="else">
+                              <lightning:icon iconName="standard:person_account" size="large" />
+                          </aura:set>
+                      </aura:if> 
+                      
+                      
+                  </div>
+                  <div class="slds-media__body">
+                      <table> 
+                          <tr>
+                              <td class="slds-border--bottom"> 
+                                  <h2 class="slds-text-heading--small">Last Transaction</h2>
+                              </td>
+                              <td class="slds-border--bottom">  
+                                  <h2 class="slds-text-heading--small">Status</h2>
+                              </td>
+                              <td class="slds-border--bottom"> 
+                                  <h2 class="slds-text-heading--small">Category</h2>
+                              </td>
+                              
+                              <td class="slds-border--bottom">  
+                                  <h2 class="slds-text-heading--small">Marketing Segment</h2>
+                              </td>
+                              <td class="slds-border--bottom"> 
+                                  <h2 class="slds-text-heading--small">Tax ID</h2>
+                              </td>                  
+                          </tr>
+                          
+                          <tr>
+                              <td>
+                                  <h2>
+                                      <span id="transactionIconContainer" aura:id="transactionIconContainer"  class="icon">
+                                          <lightning:icon iconName="{!v.currentTransaction}" size="small" class="transactionIconContainer" />
+                                      </span>
+                                      <span class="slds-text-heading--x-small" >
+                                          <aura:if isTrue="{! !empty(v.accTransaction)}">
+                                              <ui:outputCurrency value="{!v.accTransaction.FinServ__Amount__c}"/>&nbsp;<ui:outputText value="{!v.accTransaction.FinServ__TransactionType__c}"/>&nbsp;(<ui:outputText value="{!v.accTransaction.FinServ__TransactionStatus__c}"/>)
+                                          	  <aura:set attribute="else"> No last transactions </aura:set>
+                                          </aura:if>
+                                          
+                                      </span>                              
+                                  </h2>
+                              </td>
+                              <td>
+                                  <h2>
+                                      <span id="statusIconContainer" aura:id="statusIconContainer" class="icon">
+                                          <lightning:icon iconName="{!'custom:' + v.currentStatus}" size="small"  class="{!v.accDetails.FinServ__Status__c}" />
+                                      </span>
+                                      <span class="slds-text-heading--x-small">
+                                          <ui:outputText value="{!v.accDetails.FinServ__Status__c}"/>
+                                      </span>
+                                  </h2>
+                              </td>
+                              <td>
+                                  <h2>
+                                      <span id="categoryIconContainer"  class="icon">
+                                          <lightning:icon iconName="standard:opportunity" size="small" aura:id="categoryIconContainer"  class="{!v.accDetails.FinServ__ClientCategory__c}" />
+                                      </span>
+                                      <span class="slds-text-heading--x-small">
+                                          <ui:outputText value="{!v.accDetails.FinServ__ClientCategory__c}"/>
+                                      </span>
+                                  </h2>   
+                              </td>
+                              
+                              <td>
+                                  <h2>
+                                      <span id="segmentIconContainer" aura:id="segmentIconContainer" class="icon">
+                                          <lightning:icon iconName="{!'custom:' + v.currentSegment}" size="small"  class="segmentIconContainer" />
+                                      </span>
+                                      <span class="slds-text-heading--x-small">
+                                          <ui:outputText value="{!v.accDetails.FinServ__MarketingSegment__c}"/>
+                                      </span>
+                                  </h2>
+                              </td>
+                              <td>
+                                  <h2>
+                                      <span id="taxIconContainer" aura:id="taxIconContainer" class="icon">
+                                          <lightning:icon iconName="standard:account " size="small"  class="taxIconContainer" />
+                                      </span>
+                                      <span class="slds-text-heading--x-small">  XXXXX-8888</span>
+                                  </h2>
+                              </td>
+                          </tr>
+                      </table>
+                  </div>
+              </header>
+          </div>
+    
+        </article>
+    </div>
+    
+    
+    
+    <ltng:require scripts="{!$Resource.FINS_jquery224}" afterScriptsLoaded="{!c.doInit}"/>
+    
+</aura:component>

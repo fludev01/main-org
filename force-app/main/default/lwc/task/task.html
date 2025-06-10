@@ -1,0 +1,59 @@
+<template>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size_1-of-1">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-size_1-of-12 slds-align-middle" onclick={showItemDetails}>
+                    <lightning-icon icon-name={toggleIcon} size="x-small"></lightning-icon>
+                </div>
+                <div class="slds-size_10-of-12 slds-align-middle">
+                    <div class="slds-grid slds-wrap slds-align-middle">
+                        <div class="slds-size_1-of-1 slds-align-middle">
+                            <div class="slds-text-heading_small">{item.title}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-size_1-of-12 slds-align_middle">
+                    <lightning-button-icon-stateful onclick={updateItemCompletion} icon-name="utility:check" alternative-text="complete item" selected={item.isCompleted}>
+                    </lightning-button-icon-stateful>
+                </div>
+                <template if:true={showDetails}>
+                    <div class="slds-size_1-of-1 slds-m-top_small slds-box">
+                        <p class="slds-p-bottom_x-small slds-text-align_center">{item.description}</p>
+                        <div aria-hidden="true" class="slds-summary-detail__content" id="step-0-summary-action">
+                            <div class="slds-setup-assistant__step-detail">
+                                <div class="slds-progress slds-progress_vertical slds-progress_success">
+                                    <ol class="slds-progress__list slds-progress__list-bordered">
+                                        <li class="slds-progress__item slds-is-active">
+                                            <div class="slds-progress__marker"></div>
+                                            <div class="slds-progress__item_content slds-grid slds-grid_align-spread">
+                                                <div class="slds-size_1-of-1">Update Account Details</div>
+                                            </div>
+                                        </li>
+                                        <li class="slds-progress__item">
+                                            <div class="slds-progress__marker"></div>
+                                            <div class="slds-progress__item_content slds-grid slds-grid_align-spread">
+                                                <div class="slds-size_1-of-1">Identify Key Contacts</div>
+                                            </div>
+                                        </li>
+                                        <li class="slds-progress__item">
+                                            <div class="slds-progress__marker"></div>
+                                            <div class="slds-progress__item_content slds-grid slds-grid_align-spread">
+                                                <div class="slds-size_1-of-1">Send Intro Email</div>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                    <div aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" role="progressbar">
+                                        <span class="slds-assistive-text">Progress: 0%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-text-align_center">
+                            <lightning-button icon-name="utility:einstein" label="Open Einstein Assistant" onclick={openEinsteinGPT} variant="brand"></lightning-button>
+                        </div>
+                        </div>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

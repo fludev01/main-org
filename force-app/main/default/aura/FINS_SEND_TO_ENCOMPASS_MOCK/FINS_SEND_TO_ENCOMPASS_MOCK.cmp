@@ -1,0 +1,3 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    <img src="https://sfdc-ckz-b2b.s3.amazonaws.com/fins/encompass-banner.png" width="1800"/>
+</aura:component>

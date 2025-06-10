@@ -1,0 +1,32 @@
+<design:component label="Einstein Next Best Quote">
+  <sfdc:objects>
+    <sfdc:object>Lead</sfdc:object>
+    <sfdc:object>Account</sfdc:object>
+    <sfdc:object>Opportunity</sfdc:object>
+  </sfdc:objects>
+  <design:attribute
+    name="cardTitle"
+    label="Card Title"
+    default="Next Best Quote"
+    description="Enter the string that should be displayed as the card title"
+  />
+  <design:attribute
+    name="confirmationButtonLabel"
+    label="Confirmation Button Text"
+    default="Get Quote"
+    description="Enter the string that should be displayed on the confirmation button"
+  />
+  <design:attribute
+    name="currencyIso"
+    label="Currency ISO code"
+    default="USD"
+    description="Currency ISO code for Product"
+  />
+  <design:attribute
+    name="recProductId"
+    label="Recommended Product"
+    required="true"
+    datasource="apex://CPQB_ProductPicklist"
+    description="Select the recommended product that should be added to the quote"
+  />
+</design:component>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+	<types>
+		<members>FSCWlthRqrMinDstrGetBankAccountDetailsTransform_1</members>
+		<members>FSCWlthRqrMinDstrTransformApexError_1</members>
+		<members>FSCWlthSetupRequiredMinDstrDocChecklistItemStatus_1</members>
+		<members>FSCWlthSetupRequiredMinimumDistributionFilterFinancialAccounts_1</members>
+		<members>FSCWlthSetupRequiredMinimumDistributionGetFinancialAccounts_1</members>
+		<members>FSCWlthSetupRequiredMinimumDistributionTransformFinancialAcct_1</members>
+		<name>OmniDataTransform</name>
+	</types>
+	<types>
+		<members>FSCWlthSetupRequiredMinDstrDocumentChecklistItem_UpdateStatus_Procedure_1</members>
+		<members>FSCWlthSetupRequiredMinimumDistribution_GetFinancialAccounts_Procedure_1</members>
+		<members>FSCWlth_RequiredMinimumDistributionGetBankAccountDetails_Procedure_1</members>
+		<name>OmniIntegrationProcedure</name>
+	</types>
+	<types>
+		<members>FSCWlth_SetupRequiredMinimumDistribution_English_1</members>
+		<name>OmniScript</name>
+	</types>
+	<types>
+		<members>FSCWlthSetupRequiredMinDistributionShowFinancialAccounts_Salesforce_1</members>
+		<members>FSCWlthSetupRequiredMinDstrDocumentCheckListItems_Salesforce_1</members>
+		<members>FSCWlthSetupRequiredMinimumDistributionOneTimeTaxYear_Salesforce_1</members>
+		<members>FSCWlthSetupRequiredMinimumDistributionShowPaymentSchedule_salesforce_1</members>
+		<members>FSCWlthSetupRequiredMinimumDistributionShowValidDocumentTypes_Salesforce_1</members>
+		<members>FSCWlthSetupRequiredMinimumDistributionSummaryScript_Salesforce_1</members>
+		<name>OmniUiCard</name>
+	</types>
+	<version>58.0</version>
+</Package>

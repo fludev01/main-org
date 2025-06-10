@@ -1,0 +1,42 @@
+.wrapper {
+    height: 12px;
+    line-height: 12px;
+    padding: 0 2px;
+    cursor: pointer;
+}
+
+.subject {
+    font-size: 9px;
+    pointer-events: none;
+}
+
+.wrapper[data-sobject="Event"] {
+    background: linear-gradient(to right, #dff0ff, #f7fbff);
+    color: #005fb2;
+}
+
+.wrapper[data-sobject="Task"] {
+    background-color: #fde5fd;
+    color: #b63877;
+}
+.wrapper[data-sobject="Task"][data-isclosed="true"] {
+    background-color: #f0f0f0;
+    color: #808080;
+}
+.wrapper[data-sobject="Opportunity"] {
+    background-color: #ff9a3c;
+    color: #fff;
+}
+.wrapper[data-sobject="Opportunity"][data-status="won"] {
+    background-color: #4bca81;
+    color: #fff;
+}
+.wrapper[data-sobject="Opportunity"][data-status="dead"] {
+    background-color: #c23934;
+    color: #fff;
+}
+
+.wrapper[data-sobject="Task"][data-isclosed="false"] .subject,
+.wrapper[data-sobject="Opportunity"][data-isclosed="false"] .subject{
+    font-weight: bolder;
+}

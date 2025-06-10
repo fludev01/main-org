@@ -1,0 +1,59 @@
+<template>
+    <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse">
+                <lightning-icon icon-name="utility:close" size="small"></lightning-icon>
+            </button>
+            <div class="slds-modal__header">
+                <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">New Knowledge Article</h1>
+            </div>
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <template if:true={loading}>
+                    <div class="spinner-container">
+                        <lightning-spinner size="medium"></lightning-spinner>
+                    </div>
+                </template>
+                <template if:false={loading}>
+                    <template if:true={useGateway}>
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-size_1-of-1 slds-m-bottom_small">
+                                <lightning-input label="Title" value={subject}></lightning-input>
+                            </div>
+                            <div class="slds-size_1-of-1 slds-m-bottom_small">
+                                <div class="slds-form-element slds-form-element_stacked"><span class="slds-form-element__label">Content</span>
+                                    <lightning-input-rich-text name="Content" label="Content" value={article}></lightning-input-rich-text>
+                                </div>
+                            </div>
+                        </div>    
+                    </template>
+                    <template if:false={useGateway}>
+                        <template if:true={config}>
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-size_1-of-1 slds-m-bottom_small">
+                                    <lightning-input label="Title" value={config.ServiceKnowledgeArticleTitle__c}></lightning-input>
+                                </div>
+                                <div class="slds-size_1-of-1 slds-m-bottom_small">
+                                    <div class="slds-form-element slds-form-element_stacked"><span class="slds-form-element__label">Content</span>
+                                        <lightning-input-rich-text name="Content" label="Content" value={config.ServiceKnowledgeArticleContent__c}></lightning-input-rich-text>
+                                    </div>
+                                </div>
+                            </div>        
+                        </template>
+                    </template>
+                </template>
+            </div>
+            <div class="slds-modal__footer">
+                <div class="slds-grid slds-wrap slds-grid_align-spread">
+                    <div class="slds-col">
+                        <lightning-button label="Cancel" onclick={handleClose}></lightning-button>
+                    </div>
+                    <div class="slds-col">
+                        <lightning-button label="Adjust" class="slds-m-right_small" onclick={handleClose}></lightning-button>
+                        <lightning-button label="Save as Draft" variant="brand" onclick={handleSave}></lightning-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+</template>

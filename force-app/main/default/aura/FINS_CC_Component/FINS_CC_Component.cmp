@@ -1,0 +1,24 @@
+<aura:component implements="lightning:availableForFlowScreens" access="global">
+    <aura:attribute name="selectedCard" type="String"/>
+    
+    <div class="card_wrapper">
+        <lightning:layout horizontalAlign="space" multipleRows="true">
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                <img aura:id="allyCC" src="{!$Resource.CC_Freedom}" onmouseover="{!c.onMouseOver}" onmouseout="{!c.onMouseOut}" onclick="{!c.onSelect}" data-value="allyCC"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                <img aura:id="allyPlatinumCC" src="{!$Resource.CC_Travel}" onmouseover="{!c.onMouseOver}" onmouseout="{!c.onMouseOut}" onclick="{!c.onSelect}" data-value="allyPlatinumCC"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                <img aura:id="allyUnitedCC" src="{!$Resource.CC_Plus}" onmouseover="{!c.onMouseOver}" onmouseout="{!c.onMouseOut}" onclick="{!c.onSelect}" data-value="allyUnitedCC"/>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+    <!--
+    <ul>
+    	<li><img aura:id="allyCC" src="{!$Resource.CC_Freedom}" onmouseover="{!c.onMouseOver}" onmouseout="{!c.onMouseOut}" onclick="{!c.onSelect}" data-value="allyCC"/></li>
+        <li><img aura:id="allyPlatinumCC" src="{!$Resource.CC_Travel}" onmouseover="{!c.onMouseOver}" onmouseout="{!c.onMouseOut}" onclick="{!c.onSelect}" data-value="allyPlatinumCC"/></li>
+        <li><img aura:id="allyUnitedCC" src="{!$Resource.CC_Plus}" onmouseover="{!c.onMouseOver}" onmouseout="{!c.onMouseOut}" onclick="{!c.onSelect}" data-value="allyUnitedCC"/></li>
+    </ul>
+	-->
+</aura:component>

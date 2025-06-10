@@ -1,0 +1,66 @@
+<aura:component controller="demCalendarController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global">
+	
+    <aura:attribute type="String" name="position" />
+    <aura:attribute type="String" name="size" />
+	<aura:attribute type="String" name="labelTitle" />
+	<aura:attribute type="String" name="labelToday" />
+	<aura:attribute type="String" name="labelDaysOfWeek" />
+	<aura:attribute type="String" name="labelsForTask" />
+	<aura:attribute type="String" name="labelsForEvent" />
+	<aura:attribute type="String" name="formatMonth" />
+	<aura:attribute type="String" name="actionOnClick" />
+
+    <aura:attribute name="showForHome" type="Boolean" default="false"/>
+    <aura:attribute name="showForRecord" type="Boolean" default="false"/>
+    <aura:attribute type="Integer" name="dummy" default="0"/>
+
+    <aura:attribute type="Boolean" name="hasError" default="false"/>
+    <aura:attribute type="String" name="errorMessage" default=""/>
+
+    <aura:attribute type="Object" name="defaultData" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="force:showToast" action="{!c.doInit}" />
+
+    <aura:if isTrue="{!v.showForHome}">
+        <c:demActivitiesCalendarWrapperHome
+            position="{!v.position}"
+            size="{!v.size}"
+            labelTitle="{!v.labelTitle}"
+            labelToday="{!v.labelToday}"
+            labelDaysOfWeek="{!v.labelDaysOfWeek}"
+            labelsForTask="{!v.labelsForTask}"
+            labelsForEvent="{!v.labelsForEvent}"
+            formatMonth="{!v.formatMonth}"
+            actionOnClick="{!v.actionOnClick}"
+            onnewtask="{!c.newTask}"
+            onnewevent="{!c.newEvent}"
+            dummy="{!v.dummy}"
+        ></c:demActivitiesCalendarWrapperHome>
+    </aura:if>
+
+    <aura:if isTrue="{!v.showForRecord}">
+        <c:demActivityCalendarWrapper
+            position="{!v.position}"
+            size="{!v.size}"
+            labelTitle="{!v.labelTitle}"
+            labelToday="{!v.labelToday}"
+            labelDaysOfWeek="{!v.labelDaysOfWeek}"
+            labelsForTask="{!v.labelsForTask}"
+            labelsForEvent="{!v.labelsForEvent}"
+            formatMonth="{!v.formatMonth}"
+            actionOnClick="{!v.actionOnClick}"
+            onnewtask="{!c.newTask}"
+            onnewevent="{!c.newEvent}"
+            dummy="{!v.dummy}"
+            recordId="{!v.recordId}"
+        ></c:demActivityCalendarWrapper>
+    </aura:if>
+
+    <aura:if isTrue="{!v.hasError}">
+        <div style="color:red;font-size:2rem;">
+            {!v.errorMessage}
+        </div>
+    </aura:if>
+
+</aura:component>

@@ -1,0 +1,186 @@
+<template>
+    <template if:true={isBookendStart}>
+        <li class="slds-chat-listitem slds-chat-listitem_bookend">
+            <div class="slds-chat-bookend">
+                <span aria-hidden="true" class="slds-avatar slds-avatar_circle slds-chat-avatar">
+                    <img src={_message.avatar} />
+                </span>
+                <p>Chat started by <b>{_message.name}</b> • {_message.time}</p>
+            </div>
+        </li>
+    </template>
+    <template if:true={isInbound}>
+        <li class="slds-chat-listitem slds-chat-listitem_inbound slds-chat-list slds-p-bottom_x-small">
+            <div class="slds-chat-message">
+                <span aria-hidden="true" class="slds-avatar slds-avatar_circle slds-chat-avatar">
+                    <img src={_message.avatar} />
+                </span>
+                <div class="slds-chat-message__body">
+                    <div class="slds-chat-message__text slds-chat-message__text_inbound">
+                        <template if:true={loading}>
+                            <span class="slds-icon-typing slds-is-animated" title="Customer is typing">
+                                <span class="slds-icon-typing__dot"></span>
+                                <span class="slds-icon-typing__dot"></span>
+                                <span class="slds-icon-typing__dot"></span>
+                                <span class="slds-assistive-text">Customer is typing</span>
+                            </span>
+                        </template>
+                        <template if:false={loading}>
+                            <span>{_message.text}</span>
+                        </template>
+                    </div>
+                    <template if:false={loading}>
+                        <div class="slds-chat-message__meta" aria-label="said Amanda Richardson at 4:59 PM">{_message.name} • {_message.time}</div>
+                    </template>
+                </div>
+            </div>
+        </li>
+        <template if:false={loading}>
+            <template if:true={hasActions}>
+                <li class="slds-chat-listitem slds-p-around_medium slds-theme_shade slds-border_bottom">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-size_1-of-1">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-text-align_right slds-align_middle slds-align-middle"><lightning-icon class="slds-p-right_small" icon-name="utility:einstein" size="x-small"></lightning-icon></div>
+                                <p class="einstein-description slds-text-body_regular slds-align_middle slds-align-middle">Einstein Recomendations</p>
+                            </div>
+                            <template for:each={_message.actions} for:item="action" for:index="i">
+                                <lightning-button key={action.i} class="slds-m-right_small" label={action.Name} data-icon={action.IconName__c}  disabled={action.Disabled__c} icon-name={action.IconName__c} data-name={action.Name} variant={action.Variant__c} onclick={handleAction}></lightning-button>
+                            </template>
+                        </div>
+                    </div>
+                </li>
+            </template>
+        </template>
+    </template>
+    <template if:true={isOutbound}>
+        <li class="slds-chat-listitem slds-chat-list slds-chat-listitem_outbound slds-p-bottom_x-small">
+            <div class="slds-chat-message">
+                <div class="slds-chat-message__body">
+                    <div class="slds-chat-message__text slds-chat-message__text_outbound">
+                        <span>{_message.text}</span>
+                    </div>
+                    <div class="slds-chat-message__meta" aria-label="said Javier Martinez at 5:23 PM">{_message.name} • {_message.time}</div>
+                </div>
+            </div>
+        </li>
+    </template>
+    <template if:true={isBookendEnd}>
+        <template if:false={loading}>
+            <li class="slds-chat-listitem slds-chat-listitem_bookend">
+                <div class="slds-chat-bookend slds-chat-bookend_stop">
+                    <span class="slds-icon_container slds-icon-utility-end_chat slds-chat-icon">
+                        <svg class="slds-icon slds-icon_x-small slds-icon-text-default" aria-hidden="true">
+                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#end_chat"></use>
+                        </svg>
+                    </span>
+                    <p>Chat ended by <b>{_message.name}</b> • {_message.time}</p>
+                </div>
+            </li>
+            <template if:true={hasActions}>
+                <li class="slds-chat-listitem slds-p-around_medium slds-border_top">
+                    <div class="slds-grid slds-wrap">
+                        <div class="avatar-column"><img class="avatar" src="https://res.cloudinary.com/btahub/image/upload/v1677187726/dtwcp8gof2srrat2yze7.png"></div>
+                        <div class="response-column slds-p-left_medium">
+                            <div class="slds-size_1-of-1 slds-p-bottom_small">
+                                <span>{_message.text}</span>
+                            </div>
+                            <div class="slds-size_1-of-1">
+                                <template for:each={_message.actions} for:item="action" for:index="i">
+                                    <lightning-button key={action.i} class="slds-m-right_small" label={action.Name} data-name={action.Name} data-icon={action.IconName__c} icon-name={action.IconName__c} variant={action.Variant__c} disabled={action.Disabled__c} onclick={handleAction}></lightning-button>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </template>
+        </template>
+    </template>
+    <template if:true={isSummary}>
+        <template if:true={loading}>
+            <div class="spinner-container">
+                <lightning-spinner size="medium"></lightning-spinner>
+            </div>
+        </template>
+        <template if:false={loading}>
+            <li class="slds-chat-listitem slds-p-around_medium slds-border_top">
+                <div class="slds-grid slds-wrap">
+                    <div class="avatar-column"></div>
+                    <div class="response-column slds-p-left_medium">
+                        <div class="slds-size_1-of-1 slds-p-bottom_small">
+                            <strong>Case Summary</strong>
+                        </div>
+                        <div class="slds-size_1-of-1 slds-p-bottom_medium slds-border_bottom">
+                            <div>{caseSummary}</div>
+                        </div>
+                        <div class="slds-size_1-of-1 slds-p-bottom_small slds-p-top_medium ">
+                            <div>Would you like to create a knowledge article about this case?</div>
+                        </div>
+                        <div class="slds-size_1-of-1">
+                            <template for:each={_message.actions} for:item="action" for:index="i">
+                                <lightning-button key={action.i} class="slds-m-right_small" label={action.Name} data-name={action.Name} data-icon={action.IconName__c} icon-name={action.IconName__c} disabled={action.Disabled__c} variant={action.Variant__c} onclick={handleAction}></lightning-button>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </template>
+    </template>
+    <template if:true={isKnowledge}>
+        <template if:true={loading}>
+            <div class="spinner-container">
+                <lightning-spinner size="medium"></lightning-spinner>
+            </div>
+        </template>
+        <template if:false={loading}>
+            <li class="slds-chat-listitem slds-p-around_medium slds-border_top">
+                <div class="slds-grid slds-wrap">
+                    <div class="avatar-column"></div>
+                    <div class="response-column slds-p-left_medium">
+                        <div class="slds-grid slds-wrap">
+                            <template if:true={loading}>
+                                <div class="spinner-container-knowledge">
+                                    <lightning-spinner size="medium"></lightning-spinner>
+                                </div>                    
+                            </template>
+                            <template if:false={loading}>
+                                <div class="slds-size_1-of-1 slds-p-bottom_small">
+                                    <strong>New Knowledge Article</strong>
+                                </div>
+                                <div class="slds-size_1-of-1 slds-m-bottom_small">
+                                    <template if:true={knowledgeFormEdit}>
+                                        <lightning-input label="Title" value="K3 Alpine Jacket - Temperature Rating"></lightning-input>
+                                    </template>
+                                    <template if:false={knowledgeFormEdit}>
+                                        <div class="slds-form-element slds-form-element_stacked"><span class="slds-form-element__label">Title</span>
+                                            <div class="slds-form-element__control">{knowledgeTitle}</div>
+                                        </div>
+                                    </template>
+                                </div>
+                                <div class="slds-size_1-of-1 slds-m-bottom_small">
+                                    <template if:true={knowledgeFormEdit}>
+                                        <div class="slds-form-element slds-form-element_stacked"><span class="slds-form-element__label">Content</span>
+                                            <lightning-input-rich-text name="Content" label="Content" value={knowledgeContent}></lightning-input-rich-text>
+                                        </div>
+                                    </template>
+                                    <template if:false={knowledgeFormEdit}>
+                                        <div class="slds-form-element slds-form-element_stacked"><span class="slds-form-element__label">Content</span>
+                                            <div class="slds-form-element__control">
+                                                <lightning-formatted-rich-text value={knowledgeContent}></lightning-formatted-rich-text> 
+                                            </div>
+                                        </div>
+                                    </template>
+                                </div>
+                                <div class="slds-size_1-of-1">
+                                    <template if:true={knowledgeFormEdit}>
+                                    <lightning-button class="slds-m-right_small" label="Save as Draft" data-name="Save" variant="brand-outline" onclick={handleAction}></lightning-button>
+                                    </template>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </template>
+    </template>
+</template>

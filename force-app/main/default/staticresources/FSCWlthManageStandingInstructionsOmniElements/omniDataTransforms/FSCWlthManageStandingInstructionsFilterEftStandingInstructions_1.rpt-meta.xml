@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>FSCWlthManageStandingInstructionsFilterEftStandingInstructions</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthManageStandingInstructionsFilterEftStandingInstructions0708158983250966</globalKey>
+        <inputFieldName>EFTStandingInstructions</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageStandingInstructionsFilterEftStandingInstructions</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>EFTStandingInstructions</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:NewStandingInstructions LIST &apos;Mode==&quot;EFT&quot;/\/\/&amp;&amp;/\/\/TransferType==&quot;1st/\/\/Party/\/\/Transfer&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(NewStandingInstructions),&apos;Mode==&quot;EFT&quot; &amp;&amp; TransferType==&quot;1st Party Transfer&quot;&apos;)</formulaExpression>
+        <formulaResultPath>EFTStandingInstructions</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>FSCWlthManageStandingInstructionsFilterEftStandingInstructions6771763852595323</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthManageStandingInstructionsFilterEftStandingInstructions</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;NewStandingInstructions&quot; : [ {
+    &quot;BankName&quot; : null,
+    &quot;AccountNumber&quot; : &quot;56543&quot;,
+    &quot;RoutingNumber&quot; : null,
+    &quot;Details&quot; : null,
+    &quot;Prefix&quot; : null,
+    &quot;Memo&quot; : null,
+    &quot;CheckStubInformation&quot; : null,
+    &quot;AccountType&quot; : null,
+    &quot;PayeeAddress&quot; : null,
+    &quot;PayeeCity&quot; : null,
+    &quot;PayeeState&quot; : null,
+    &quot;PayeeZipcode&quot; : null,
+    &quot;PayeeCountry&quot; : null,
+    &quot;TransferType&quot; : null,
+    &quot;Currency&quot; : null,
+    &quot;TransferAmount&quot; : null,
+    &quot;DisplayMode&quot; : &quot;Mode: Journal&quot;,
+    &quot;PayeeFullAddress&quot; : &quot;, , , , &quot;,
+    &quot;DocumentType-Block&quot; : null,
+    &quot;Files&quot; : null,
+    &quot;Mode&quot; : &quot;Journal&quot;,
+    &quot;PayeeName&quot; : &quot;6435&quot;
+  }, {
+    &quot;BankName&quot; : &quot;EFT1&quot;,
+    &quot;AccountNumber&quot; : &quot;56543&quot;,
+    &quot;RoutingNumber&quot; : &quot;fve5454&quot;,
+    &quot;Details&quot; : null,
+    &quot;Prefix&quot; : null,
+    &quot;Memo&quot; : null,
+    &quot;CheckStubInformation&quot; : null,
+    &quot;AccountType&quot; : &quot;Savings&quot;,
+    &quot;PayeeAddress&quot; : null,
+    &quot;PayeeCity&quot; : null,
+    &quot;PayeeState&quot; : null,
+    &quot;PayeeZipcode&quot; : null,
+    &quot;PayeeCountry&quot; : null,
+    &quot;TransferType&quot; : &quot;1st Party Transfer&quot;,
+    &quot;Currency&quot; : &quot;USD&quot;,
+    &quot;TransferAmount&quot; : 12,
+    &quot;DisplayMode&quot; : &quot;Mode: EFT&quot;,
+    &quot;PayeeFullAddress&quot; : &quot;, , , , &quot;,
+    &quot;DocumentType-Block&quot; : {
+      &quot;DocumentType&quot; : &quot;Driver&apos;s License&quot;
+    },
+    &quot;Files&quot; : [ {
+      &quot;data&quot; : &quot;0691Q00000Y1e6VQAR&quot;,
+      &quot;filename&quot; : &quot;GetAllRequiredDocumentTypes V1_2023-09-27 23-55-41.xml&quot;,
+      &quot;vId&quot; : &quot;0681Q00000cS7uSQAS&quot;,
+      &quot;size&quot; : 1120,
+      &quot;deleteLabel&quot; : &quot;Delete GetAllRequiredDocumentTypes V1_2023-09-27 23-55-41.xml&quot;
+    } ],
+    &quot;Mode&quot; : &quot;EFT&quot;,
+    &quot;PayeeName&quot; : &quot;EFT1&quot;
+  }, {
+    &quot;BankName&quot; : &quot;EFT2&quot;,
+    &quot;AccountNumber&quot; : &quot;5643234&quot;,
+    &quot;RoutingNumber&quot; : &quot;dfjhg543&quot;,
+    &quot;Details&quot; : null,
+    &quot;Prefix&quot; : null,
+    &quot;Memo&quot; : null,
+    &quot;CheckStubInformation&quot; : null,
+    &quot;AccountType&quot; : &quot;Checking&quot;,
+    &quot;PayeeAddress&quot; : null,
+    &quot;PayeeCity&quot; : null,
+    &quot;PayeeState&quot; : null,
+    &quot;PayeeZipcode&quot; : null,
+    &quot;PayeeCountry&quot; : null,
+    &quot;TransferType&quot; : &quot;3rd Party Transfer&quot;,
+    &quot;Currency&quot; : &quot;USD&quot;,
+    &quot;TransferAmount&quot; : 15,
+    &quot;DisplayMode&quot; : &quot;Mode: EFT&quot;,
+    &quot;PayeeFullAddress&quot; : &quot;, , , , &quot;,
+    &quot;DocumentType-Block&quot; : null,
+    &quot;Mode&quot; : &quot;EFT&quot;,
+    &quot;PayeeName&quot; : &quot;EFT2&quot;,
+    &quot;Files&quot; : null
+  } ]
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>FSCWlthManageStandingInstructionsFilterEftStandingInstructions_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

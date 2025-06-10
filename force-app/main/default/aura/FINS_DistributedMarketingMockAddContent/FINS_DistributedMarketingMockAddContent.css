@@ -1,0 +1,44 @@
+.THIS.addbutton,.THIS .addbutton {
+    text-align:center;
+    margin:10px 0;
+}
+.THIS.showinginfo,.THIS .showinginfo{
+    padding:10px 20px;
+    border:1px solid #ddd;
+    margin:20px;
+    border-radius:3px;
+}
+.THIS.contentblock,.THIS .contentblock{
+    width:100%;
+    padding:80px;
+    text-align:center;
+    color:#fff;
+    margin:10px 0;
+    background-size:cover;
+    background-position:center center;
+}
+.THIS.contentblock .h2,.THIS .contentblock .h2{
+    color:#fff;
+    font-size:16px;
+    font-weight:bold;
+}
+.THIS .h2{
+    font-size:16px;
+    font-weight:bold;
+}
+.THIS .half{
+    width:50%;
+    float:left;
+}
+.THIS .removebtn{
+    float:right;
+}
+.THIS .clear{clear:both;}
+.THIS .padding{
+    padding:20px 0px;
+}
+.THIS .showingtext{
+    position:relative;
+    top:3px;
+    margin-left:10px;
+}

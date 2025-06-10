@@ -1,0 +1,11 @@
+<design:component label="Activities Calendar LC">
+	<design:attribute name="size" label="Number of Calendars" datasource="1,3"/>
+    <design:attribute name="position" label="Position of This month (3 Calendars)" datasource="left,center,right" default="center"/>
+	<design:attribute name="labelTitle" label="Title (3 Calendars)" default="Schedule"/>
+	<design:attribute name="labelToday" label="Label for Today" default="Today"/>
+	<design:attribute name="labelDaysOfWeek" label="Labels for Days of week" default="Sun,Mon,Tue,Wed,Thu,Fri,Sat"/>
+	<design:attribute name="labelsForTask" label="Labels for Task" default="+Task,New Task,Subject,Due Date,Save,Cancel"/>
+	<design:attribute name="labelsForEvent" label="Labels for Event" default="+Event,New Event,Subject,Start,End,Save,Cancel"/>
+	<design:attribute name="formatMonth" label="Format for Month (Moment.js)" default="MMMM YYYY"/>
+	<design:attribute name="actionOnClick" label="Action on click item" datasource="view,edit" default="view"/>
+</design:component>

@@ -1,0 +1,20 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,lightning:availableForFlowScreens" access="global" >
+	
+    <aura:attribute name="icon" type="String" default="standard:default" access="public" />
+    <aura:attribute name="iconSize" type="String" default="medium" access="public" />
+    <aura:attribute name="heading" type="String" default="Heading" access="public" />
+    <aura:attribute name="subHeading" type="String" default="Sub heading" access="public" />
+    
+    <div class="slds-page-header">
+        <div class="slds-media">
+            <div class="slds-media__figure">
+                <lightning:icon iconName="{!v.icon}" size="medium" />
+            </div>
+            <div class="slds-media__body">
+                <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="{!v.heading}"> {!v.heading} </h1>
+                <!--p class="slds-text-body_small slds-line-height_reset"> {!v.subHeading} </p-->
+            </div>
+        </div>
+    </div>
+    
+</aura:component>

@@ -1,0 +1,40 @@
+<template>
+    <div class="slds-m-left_large">
+        <lightning-card title="Loan Details">
+            <!-- ACTION BUTTONS -->
+            <lightning-button class="slds-m-right_large" label="Edit Field Set" slot="actions"></lightning-button>
+            <!-- RECORD VIEW FORM -->
+            <lightning-record-view-form record-id={recordid} object-api-name="Loan__c">
+                <div class="slds-grid">
+                    <!-- COLUMN ONE -->
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input name="input1" label="Product Line" value="Commercial" read-only>
+                        </lightning-input>
+                        <lightning-output-field field-name="Product_Type__c"></lightning-output-field>
+                        <lightning-input name="input1" label="Product" value="Non-Real Estate" read-only>
+                        </lightning-input>
+                        <lightning-output-field field-name="Amount_Requested__c"></lightning-output-field>
+                        <lightning-output-field field-name="Stage__c"></lightning-output-field>
+                        <lightning-input name="input1" label="Structure Hierarchy" read-only>
+                        </lightning-input>
+                        <lightning-output-field field-name="Loan_officer__c"></lightning-output-field>
+
+                    </div>
+                    <!-- COLUMN ONE -->
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-output-field field-name="First_Payment_Date__c"></lightning-output-field>
+                        <lightning-output-field field-name="Days_Until_Anticipated_Closing__c"></lightning-output-field>
+                        <lightning-input name="input1" label="Default App" value="loan1.dashborad-loan" read-only>
+                        </lightning-input>
+                        <lightning-output-field field-name="Name"></lightning-output-field>
+                        <lightning-input name="input1" label="Structure" read-only>
+                        </lightning-input>
+                        <lightning-output-field field-name="Account__c"></lightning-output-field>
+                        <lightning-input name="input1" label="Loan Class" value="New Loan" read-only>
+                        </lightning-input>
+                    </div>
+                </div>
+            </lightning-record-view-form>
+        </lightning-card>
+    </div>
+</template>

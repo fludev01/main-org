@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+	<types>
+		<members>FSCNotifyTravelPlansFilterFinancialAccounts_1</members>
+		<members>FSCNotifyTravelPlansGetFinancialAccountsAndCards_1</members>
+		<members>FSCNotifyTravelPlansTransformCardDetails_1</members>
+		<members>FSCNotifyTravelPlansTransformSingleCardDetails_1</members>
+		<name>OmniDataTransform</name>
+	</types>
+	<types>
+		<members>NotifyTravelPlans_GetCardDetails_Procedure_1</members>
+		<members>NotifyTravelPlans_GetSelectedCards_Procedure_1</members>
+		<name>OmniIntegrationProcedure</name>
+	</types>
+	<types>
+		<members>FSC_NotifyTravelPlans_English_1</members>
+		<name>OmniScript</name>
+	</types>
+	<types>
+		<members>FSCNotifyTravelPlansShowCreditCards_Salesforce_1</members>
+		<members>FSCNotifyTravelPlansShowDebitCards_Salesforce_1</members>
+		<members>FSCNotifyTravelPlansShowNoActiveCards_Salesforce_1</members>
+		<members>FSCNotifyTravelPlansShowSelectedCards_Salesforce_1</members>
+		<name>OmniUiCard</name>
+	</types>
+	<version>58.0</version>
+</Package>

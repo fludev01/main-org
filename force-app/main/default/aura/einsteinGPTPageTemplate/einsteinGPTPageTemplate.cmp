@@ -1,0 +1,12 @@
+<aura:component implements="lightning:appHomeTemplate" description="Einstein GPT Collapsible Template" access="global">
+    <aura:attribute name="one" type="Aura.Component[]" access="global"/>
+    <ltng:require styles="{!$Resource.noheader}" />
+    <div>
+        <lightning:layout class="columns">
+            <lightning:layoutItem size="12" class="right">
+                {!v.one}
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+
+</aura:component>

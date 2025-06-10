@@ -1,0 +1,27 @@
+<!-- Dev Notes:
+* Date: September 6, 2019
+* Author: Jake Hendrix
+* Comments: Usually
+
+* Planned Revisions
+    - revise layout to enable side pannel for other stuff
+    - 
+    - 
+
+* Completed Revisions:
+    - Initial wireframe completed and launched within modal from submission toolkit
+
+-->
+
+<aura:component>
+
+    <div class="slds-grid slds-gutters slds-p-top_small">
+        <div class="slds-col slds-size_8-of-12">
+            <img src="https://sfdc-demo-images-jake.s3.amazonaws.com/Screen+Shot+2019-09-05+at+8.58.48+PM.png"/>
+        </div>
+        <div class="slds-col slds-size_4-of-12">
+
+        </div>
+    </div>
+
+</aura:component>

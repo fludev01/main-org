@@ -1,0 +1,19 @@
+<template>
+    <nav class="slds-nav-vertical ocl-nav-vertical-bg" aria-label="Sub page">
+        <div class="slds-nav-vertical__section">
+            <ul aria-describedby="entity-header">
+                <li class={borrowCss} onclick={handleClick}>
+                    <!-- slds-is-active -->
+                    <a class="slds-nav-vertical__action" aria-current="true">Borrowing Structure</a>
+                </li>
+                <li class={loanCss} onclick={handleClick}>
+                    <!-- slds-is-active -->
+                    <a class="slds-nav-vertical__action" aria-current="true">Loan Details</a>
+                </li>
+                <template for:each={tabs} for:item="tab">
+                    <c-fins-ocl-sidebar-menu-item key={tab.label} tab={tab}></c-fins-ocl-sidebar-menu-item>
+                </template>
+            </ul>
+        </div>
+    </nav>
+</template>

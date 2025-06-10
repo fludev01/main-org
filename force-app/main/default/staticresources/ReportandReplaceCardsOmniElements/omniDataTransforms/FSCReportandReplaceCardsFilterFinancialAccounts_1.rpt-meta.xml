@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>FSCReportandReplaceCardsFilterFinancialAccounts</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardsFilterFinancialAccountsCustom0jIB0000000CnPJMA0Item6</globalKey>
+        <inputFieldName>CreditCards</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsFilterFinancialAccounts</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>List&lt;Map&gt;</outputFieldFormat>
+        <outputFieldName>CreditCards</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:ActiveCards LISTSIZE</formulaConverted>
+        <formulaExpression>LISTSIZE(ActiveCards)</formulaExpression>
+        <formulaResultPath>CardSize</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>FSCReportandReplaceCardsFilterFinancialAccountsCustom0jIB0000000CnPJMA0Item5</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsFilterFinancialAccounts</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:MainCards ISBLANK 0 | var:MainCards LISTSIZE IF</formulaConverted>
+        <formulaExpression>IF(ISBLANK(MainCards),0,LISTSIZE(MainCards))</formulaExpression>
+        <formulaResultPath>CardSize</formulaResultPath>
+        <formulaSequence>6.0</formulaSequence>
+        <globalKey>FSCReportandReplaceCardsFilterFinancialAccountsCustom0jIB0000000CnPJMA0Item3</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsFilterFinancialAccounts</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Cards LIST &apos;CardActive/\/\/=/\/\/true&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(Cards),&apos;CardActive = true&apos;)</formulaExpression>
+        <formulaResultPath>MainCards</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>FSCReportandReplaceCardsFilterFinancialAccountsCustom0jIB0000000CnPJMA0Item4</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsFilterFinancialAccounts</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Cards LIST &apos;(RecordTypeName==&quot;Checking/\/\/Account&quot;/\/\/OR/\/\/RecordTypeName==&quot;Savings/\/\/Account&quot;/\/\/OR/\/\/RecordTypeName==&quot;Credit/\/\/Card&quot;/\/\/AND/\/\/(ISNOTBLANK(CardId))/\/\/AND/\/\/CardActive)&apos; FILTER</formulaConverted>
+        <formulaExpression>(FILTER(LIST(Cards),&apos;(RecordTypeName==&quot;Checking Account&quot; OR RecordTypeName==&quot;Savings Account&quot; OR RecordTypeName==&quot;Credit Card&quot; AND (ISNOTBLANK(CardId)) AND CardActive)&apos;))</formulaExpression>
+        <formulaResultPath>ActiveCards</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>FSCReportandReplaceCardsFilterFinancialAccountsCustom0jIB0000000CnPJMA0Item1</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsFilterFinancialAccounts</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:MainCards LIST &apos;RecordTypeName==&quot;Credit/\/\/Card&quot;/\/\/AND/\/\/(ISNOTBLANK(CardId))&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(MainCards),&apos;RecordTypeName==&quot;Credit Card&quot; AND (ISNOTBLANK(CardId))&apos;)</formulaExpression>
+        <formulaResultPath>CreditCards</formulaResultPath>
+        <formulaSequence>5.0</formulaSequence>
+        <globalKey>FSCReportandReplaceCardsFilterFinancialAccountsCustom0jIB0000000CnPJMA0Item2</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsFilterFinancialAccounts</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:MainCards LIST &apos;RecordTypeName==&quot;Checking/\/\/Account&quot;/\/\/OR/\/\/RecordTypeName==&quot;Savings/\/\/Account&quot;/\/\/AND/\/\/(ISNOTBLANK(CardId))&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(MainCards),&apos;RecordTypeName==&quot;Checking Account&quot; OR RecordTypeName==&quot;Savings Account&quot; AND (ISNOTBLANK(CardId))&apos;)</formulaExpression>
+        <formulaResultPath>DebitCards</formulaResultPath>
+        <formulaSequence>4.0</formulaSequence>
+        <globalKey>FSCReportandReplaceCardsFilterFinancialAccountsCustom0jIB0000000CnPJMA0Item0</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsFilterFinancialAccounts</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardsFilterFinancialAccountsCustom0jIB0000000CnPJMA0Item7</globalKey>
+        <inputFieldName>CardSize</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsFilterFinancialAccounts</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>CardSize</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardsFilterFinancialAccountsCustom0jIB0000000CnPJMA0Item8</globalKey>
+        <inputFieldName>DebitCards</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsFilterFinancialAccounts</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>List&lt;Map&gt;</outputFieldFormat>
+        <outputFieldName>DebitCards</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;Cards&quot; : [ {
+    &quot;CardValidDate&quot; : &quot;/&quot;,
+    &quot;RecordTypeName&quot; : &quot;Bank Account&quot;,
+    &quot;Reissue&quot; : false,
+    &quot;Role&quot; : &quot;Primary Owner&quot;
+  } ]
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>FSCReportandReplaceCardsFilterFinancialAccounts_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

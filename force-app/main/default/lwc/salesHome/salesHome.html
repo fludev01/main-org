@@ -1,0 +1,94 @@
+<template>
+    <div class="container">
+        <div class="card row slds-m-bottom_x-small">
+            <div class="slds-grid slds-wrap stretch">
+                <div class="slds-size_1-of-1 stretch">
+                    <lightning-card class="stretch" title="Performance" icon-name="custom:custom17">
+                        <lightning-button label="View Dashboard" slot="actions"></lightning-button>
+                        <div class="slds-grid slds-wrap slds-p-right_medium slds-p-left_medium">
+                            <div class="slds-size_1-of-1 slds-align-middle" style="height:260px">
+                                <template if:true={showSidebar}>
+                                    <img style="height:260px" src="https://res.cloudinary.com/btahub/image/upload/v1678119831/sk4nkagvrj7l5ssz0qjp.png"/>
+                                </template>
+                                <template if:false={showSidebar}>
+                                    <img style="height:260px" src="https://res.cloudinary.com/btahub/image/upload/v1678119831/wcg78jumfl7t66oolhix.png"/>
+                                </template>    
+                            </div>
+                        </div>
+                    </lightning-card>
+                </div>
+            </div>
+        </div>
+        <div class="row slds-m-top_x-small">
+            <div class="card slds-m-right_x-small">
+                <div class="slds-grid slds-wrap stretch">
+                    <div class="slds-size_1-of-1 stretch">
+                        <lightning-card class="stretch" title="Tasks">
+                            <div class="slds-p-right_small slds-p-left_small task-card">
+                                <template for:each={tasks} for:item="task" for:index="i">
+                                    <div key={task.i} class="slds-p-bottom_small slds-p-top_small task">
+                                        <c-task item={task}></c-task>
+                                    </div>
+                                </template>
+                            </div>
+                            <div slot="footer">
+                                <div class="slds-grid slds-wrap">
+                                    <div class="slds-size_1-of-1">
+                                        <a class="slds-text-align_center">View All</a>
+                                    </div>
+                                </div>
+                            </div>                        
+                        </lightning-card>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="slds-m-horizontal_x-small"></div> -->
+            <div class="card slds-m-left_x-small">
+                <div class="slds-grid slds-wrap stretch">
+                    <div class="slds-size_1-of-1 stretch">
+                        <lightning-card class="stretch" title="Schedule">
+                            <div class="slds-grid slds-wrap slds-p-right_medium slds-p-left_medium slds-p-top_small">
+                                <div class="slds-size_1-of-1">
+                                    <div class="slds-grid slds-wrap">
+                                        <template for:each={activities} for:item="item" for:index="i">
+                                            <div key={item.i} class="slds-size_1-of-1 slds-p-bottom_medium">
+                                                <lightning-layout vertical-align="stretch">
+                                                    <lightning-layout-item size="1">
+                                                        <div class="slds-grid slds-wrap full-height">
+                                                            <div class="slds-size_1-of-1 slds-text-align_center">
+                                                                <lightning-icon data-icon={item.icon} icon-name={item.icon} size="small"></lightning-icon>
+                                                            </div>
+                                                            <div class="slds-size_1-of-1 three-quarter-height">
+                                                                <div class="activity-line slds-p-top_x-small"></div>
+                                                            </div>
+                                                        </div>
+                                                    </lightning-layout-item>
+                                                    <lightning-layout-item size="9">
+                                                        <div class="slds-p-left_x-small">
+                                                            <div class="slds-text-body_regular"><strong>{item.label}</strong></div>
+                                                            <div class="slds-text-body_regular text-weak">{item.action}</div>
+                                                        </div>
+                                                    </lightning-layout-item>
+                                                    <lightning-layout-item size="2">
+                                                        <p class="text-weak">{item.time}</p>
+                                                    </lightning-layout-item>
+                                                </lightning-layout>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                            <div slot="footer">
+                                <div class="slds-grid slds-wrap">
+                                    <div class="slds-size_1-of-1">
+                                        <a class="slds-text-align_center">View All</a>
+                                    </div>
+                                </div>
+                            </div>                    
+                        </lightning-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

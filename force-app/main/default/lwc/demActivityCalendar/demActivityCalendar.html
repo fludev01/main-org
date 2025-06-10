@@ -1,0 +1,39 @@
+<template>	
+    <div class="wrapper" data-isstrict={isStrict}>
+        <template if:true={hasTitle}>
+            <div class="item title" >
+                <div class="month" data-thismonth={isThisMonth}>{showMonth}</div>
+            </div>
+        </template>
+        <template for:each={dayOfWeeks} for:item="dy">
+            <div key={dy} class="item " >
+                <div class="dayofweeks">{dy}</div>
+            </div>
+        </template>
+        <template for:each={days} for:item="day">			
+        <div key={day.text} class="item date" data-today={day.isToday} data-thismonth={day.isThisMonth} data-day={day.day} data-week={day.week}>
+            <div class="item-inner">					
+                <div key={activity.id} class="task-item" for:each={day.activities} for:item="activity">
+                    <c-dem-calendar-activity-item
+                        activity={activity}
+                        action-on-click={actionOnClick}
+                    ></c-dem-calendar-activity-item>
+                </div>
+                <div class="hover-show">
+                    <c-dem-calendar-new-task-button
+                        date={day.dateString}
+                        onnewtask={clickedNewTask}
+                    >{labelTask}</c-dem-calendar-new-task-button>
+                </div>
+                <div class="hover-show">
+                    <c-dem-calendar-new-event-button
+                        date={day.dateString}
+                        onnewevent={clickedNewEvent}
+                    >{labelEvent}</c-dem-calendar-new-event-button>
+                </div>
+            </div>
+            <div class="item-date">{day.date}</div>                
+        </div>
+        </template>
+    </div>
+</template>

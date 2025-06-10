@@ -1,0 +1,31 @@
+.THIS.box,.THIS .popover{
+    border:1px solid #ddd;
+    border-radius:5px;
+}
+.THIS .padding{
+    padding:20px;
+}
+.THIS .left{
+    display:inline-block;
+    float:left;
+    width:75%;
+    position:relative;
+    top:7px;
+}
+.THIS .right{
+    display:inline-block;
+    text-align:right;
+    width:25%;
+}
+.THIS .clear{
+    clear:both;
+}
+.THIS .journeywrapper{
+    margin-bottom:10px; 
+}
+.THIS.slds-text-heading_small,.THIS .slds-text-heading_small{
+    font-weight:bold;
+}
+.THIS .slds-badge{
+    margin-left:10px
+}

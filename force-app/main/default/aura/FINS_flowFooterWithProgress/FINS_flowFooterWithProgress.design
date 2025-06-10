@@ -1,0 +1,8 @@
+<design:component label="Flow Footer With Progress Indicator" >    
+	<design:attribute name="stages" label="Stages" description="What stages are active"/>
+    <design:attribute name="currentStage" label="Current Stage" description="What is the current stage?"/>
+    <design:attribute name="type" label="Progress Indicator Type" description="Show progress as a path or the base version" datasource="path,base"/>
+    
+    
+    <design:attribute name="navToId" label="Navigate to Id on Finish"/>
+</design:component>

@@ -1,0 +1,13 @@
+/*css file where you can add optional styling*/
+
+.si-header {
+	font-size:1em;
+}
+
+tr:nth-child(2n) {
+	background-color: ghostwhite;
+  }
+  
+  tr:nth-child(2n + 1) {
+	background-color: #fff;
+  }

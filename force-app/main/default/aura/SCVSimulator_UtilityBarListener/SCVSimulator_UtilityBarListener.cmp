@@ -1,0 +1,5 @@
+<aura:component implements="flexipage:availableForAllPageTypes" controller="SCVSimulator_CT" access="global" >
+    <lightning:omniToolkitAPI aura:id="omniToolkit" />
+    <aura:handler event="lightning:omniChannelStatusChanged" action="{! c.onStatusChanged }"/>
+    
+</aura:component>

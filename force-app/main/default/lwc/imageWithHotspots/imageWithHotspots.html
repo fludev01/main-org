@@ -1,0 +1,54 @@
+<template>
+
+   <div class="parentDiv">
+    <template if:true={showSpinner}>
+      <div style="position: fixed;" role="status" class="slds-spinner slds-spinner_medium">
+        <span class="slds-assistive-text">Loading</span>
+        <div class="slds-spinner__dot-a"></div>
+        <div class="slds-spinner__dot-b"></div>
+      </div>
+
+  </template>
+          <template if:true={imageHotspots} for:each={imageHotspots} for:item="dat">
+        <div  key={dat.contentVersionId} class="xyz hideIt" title={dat.prototypeScreenConfig.startFlag__c} id={dat.contentVersionId} >
+          <div  class="screenshot" >
+        <img
+        key={dat.contentVersionId}
+        style="width:100%; height:100%"
+        src={dat.docURL}
+        class="logo-lg"
+        id={dat.contentVersionId}
+        draggable=“false”
+        onload={handleLoad}
+      />
+
+      
+      </div>
+      
+     
+    
+    <svg
+    
+        viewBox={dat.viewBox}
+        class="draw"
+        xmlns="http://www.w3.org/2000/svg"
+        key={dat.contentVersionId}
+        id={dat.contentVersionId}
+      >
+
+      
+      
+      <g class="added-boxes">
+       <template if:true={dat.hotspots} for:each={dat.hotspots} for:item="hsp">
+          <rect key={hsp.Id} class="marqueered" x={hsp.X_cordinate__c} y={hsp.Y_cordinate__c} width={hsp.Width__c} height={hsp.Height__c} data-targetscreen={hsp.Target_Screen__c} data-targeturl={hsp.Target_URL__c} onclick={handleHotspotClicked}>
+        </template>
+      </g>
+  </svg>
+
+</div>
+</template>
+</div>
+
+
+
+</template>

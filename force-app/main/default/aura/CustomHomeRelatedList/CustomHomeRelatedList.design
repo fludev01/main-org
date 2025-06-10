@@ -1,0 +1,34 @@
+<design:component >
+    <!--<design:attribute name="" label="" description=""/>-->
+    <design:attribute name="Title" label="Component Title" description="e.g. Upcoming Quarterly Reviews (7), or Recently Updated Policies"/>
+	<design:attribute name="Icon" label="Component Icon (LDS format)" description="e.g. standard:file, custom:custom21, view https://lightningdesignsystem.com/icons/"/>
+    <design:attribute name="ViewAllLink" label="View All - Link"/>
+    
+    <design:attribute name="Text1" label="Text 1" description="Use your record name, or leave blank to hide"/>
+    <design:attribute name="Link1" label="Link 1" description="This field is not Trialforce compatible"/>
+    <design:attribute name="Subtext1" label="Subtext 1"/>
+    <design:attribute name="SideText1" label="Side Text 1"/>
+    
+    <design:attribute name="Text2" label="Text 2" description="Use your record name, or leave blank to hide"/>
+    <design:attribute name="Link2" label="Link 2"/>
+    <design:attribute name="Subtext2" label="Subtext 2"/>
+    <design:attribute name="SideText2" label="Side Text 2"/>
+    
+    <design:attribute name="Text3" label="Text 3" description="Use your record name, or leave blank to hide"/>
+    <design:attribute name="Link3" label="Link 3"/>
+    <design:attribute name="Subtext3" label="Subtext 3"/>
+    <design:attribute name="SideText3" label="Side Text 3"/>    
+    
+    <design:attribute name="Text4" label="Text 4" description="Use your record name, or leave blank to hide"/>
+    <design:attribute name="Link4" label="Link 4"/>
+    <design:attribute name="Subtext4" label="Subtext 4"/>
+    <design:attribute name="SideText4" label="Side Text 4"/>    
+    
+    <design:attribute name="Text5" label="Text 5" description="Use your record name, or leave blank to hide"/>
+    <design:attribute name="Link5" label="Link 5"/>
+    <design:attribute name="Subtext5" label="Subtext 5"/>
+    <design:attribute name="SideText5" label="Side Text 5"/>
+    <!-- Want 5 items, include (Text, Link, Subtext, Highlight Field[Date]) -->
+    
+    <!-- Want View All Link -->
+</design:component>

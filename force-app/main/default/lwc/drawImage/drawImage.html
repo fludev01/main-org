@@ -1,0 +1,310 @@
+<template>
+  
+  <div if:true={isLoaded}>
+        <lightning-spinner
+            alternative-text="Loading..." variant="brand">
+        </lightning-spinner>
+        </div>
+   
+  <div class="main-container" if:true={isStep1}>
+    <div class="sub-cointainer">
+      <div style="
+      float: right;
+      padding: 15px;
+  ">
+<a href="/lightning/o/PrototypeConfiguration__c/list?filterName=Recent" target="_blank">
+  <lightning-button variant="brand-outline" label="Edit Configurations" title="Primary action with lighter look" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+
+</a>
+</div>
+      
+      <div class="header">
+        Prototype Configuration
+      </div>
+      <div class="section-input" >
+       <div style="width:50%">
+        <lightning-input required="true" type="text" label="Prototype Name" onchange={nameChange}></lightning-input>
+      </div>
+      </div>
+      <div class="demo-only demo-only--sizing slds-grid slds-wrap section-type" >
+        <div class="slds-size_1-of-3">
+          <div
+            class=" slds-m-around_x-small"
+          >
+          <div style="height:100px;width:100px;">
+          <img src={desktop} style="height:80px;width:80px;" /> 
+        </div>
+          <lightning-input class="device-type" checked="true" data-value="Desktop" type="checkbox" label="Desktop" name="input-desktop" onchange={handleChangeEvent}>></lightning-input>
+          </div>
+        </div>
+        <div class="slds-size_1-of-3">
+          <div
+            class=" slds-m-around_x-small"
+          >
+          <div style="height:100px;width:100px;">
+          <img src={mobile}  style="height:70px;width:50px;opacity:20%;" />
+          </div>
+          <lightning-input class="device-type" data-value= "Mobile" type="checkbox" label="Mobile (Coming Soon)" disabled="true" name="input1" onchange={handleChangeEvent}>></lightning-input>
+          </div>
+        </div>
+        <div class="slds-size_1-of-3">
+          <div
+            class="slds-m-around_x-small"
+          >
+          <div style="height:100px;width:100px;">
+          <img src={ipad}  style="height:80px;width:80px;opacity:20%;" />
+          </div>
+          <lightning-input class="device-type" data-value="Ipad" type="checkbox" label="Ipad (Coming Soon)" disabled="true" name="input1" onchange={handleChangeEvent}>></lightning-input>
+          </div>
+        </div>
+      </div>
+      <div class="demo-only demo-only--sizing slds-grid slds-wrap frame-section" >
+        <div class="slds-size_1-of-3">
+          <lightning-input type="checkbox" checked="true" class="frame-type" data-value="withoutFrame" label="Without Frame" onchange={handleFrameChangeEvent} name="input-without"></lightning-input>
+          </div>
+          <div class="slds-size_1-of-3">
+            <lightning-input type="checkbox" class="frame-type" data-value="withFrame"  label="With Frame(Coming Soon)" disabled="true" onchange={handleFrameChangeEvent} name="input-with"></lightning-input>
+
+        </div>
+        <div class="slds-size_1-of-3">
+        </div>
+
+      </div>
+      <div class="section-button">
+        <lightning-button variant="brand"  disabled={checkStep1} label="Next" title="Next" onclick={handleStep1Click} class="slds-m-left_x-small"></lightning-button>
+      </div>
+    </div>
+  </div>
+  <div class="main-container" if:true={isStep2}>
+    <div class="sub-cointainer">
+      <div class="header">
+       Upload Images
+      </div>
+      <div class="section-input-upload" if:true={configId} style="height:300px;">
+    <c-file-upload  record-id={configId} onfileuploaded ={filesUploaded}></c-file-upload>
+   
+  </div>
+  <div style="margin-left: 30px;margin-top: 20px;">Supported Images: 1920 x 1080 pixels. </div>
+  <div class="section-button">
+    
+    <lightning-button variant="brand" label="Next" disabled={show2} title="Step 3" onclick={handleStep2Click} class="slds-m-left_x-small"></lightning-button>
+  </div>
+  </div>
+  </div>
+  <div class={isStep3} style="display: flex; min-height:800px; width: 100%; margin: 0 auto">
+    <div class="sub-cointainer" style="width:1680px;overflow-x:hidden;overflow-y:hidden;">
+     
+      <div class="header" style="text-align:left;padding:5px;" if:true={filesDetails}>
+        <div style="text-align:center">
+          Configure Image Hotspots
+         </div>
+        <div class="demo-only demo-only--sizing slds-grid slds-wrap" style="font-size:0.8125rem">
+          <div class="slds-size_2-of-3">
+            <div class="slds-m-around_x-small"> 
+              <lightning-combobox
+              name="progress"
+              label="Select Image"
+              value={value}
+              placeholder="Select Image"
+              options={options}
+              onchange={handleChange} ></lightning-combobox></div>
+          </div>
+          <div class="slds-size_1-of-3">
+            <div style="display:flex;justify-content:space-between;margin-top:8px;flex-wrap:wrap;">
+              <div>
+                <div class="" style="float: left; padding-top: 30px;" if:true={configScreenId}>
+                  <lightning-input class="homepage" type="checkbox" checked={isHome} label="Home Page" name="homepage" onchange={handleHomeChange}></lightning-input>
+                </div> 
+              </div>
+              <div style="display:flex;justify-content:center;align-items:center;padding-top:30px;">
+                <div class=""  if:true={isAppLink}>
+                  <lightning-button variant="brand" label="Create App Link" title="Create App Link" onclick={createAppLink} class="slds-m-left_x-small"></lightning-button>
+                </div>
+                <div class="" if:true={isDelHotspots}   >
+                  <lightning-button variant="brand" label="Delete Hotspots" title="Delete Screen Hotspots" onclick={openModal} class="slds-m-left_x-small"></lightning-button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div if:true={isDesktop} style="min-height: 600px;background-color: white;position: relative;overflow-x:auto;
+      overflow-y:auto;">
+      <c-image-hotspot  proto-type={protoType} all-files={filesDetails} version-id={selcvId} screen-hotspots={screenHotspots} image-url={trailheadLogoUrl} image-name={imageName} file-details={parsedFiledetails} screen-id={configScreenId} onhotspotspotadd={addHotspotDelList}> </c-image-hotspot>
+      </div>
+
+      <div if:true={isMobile} style="min-height: 800px;width:850px;background-color: #C3C3C3;position: relative;overflow-x:auto;
+      overflow-y:auto;">
+      <c-mobile-hotspot  proto-type={protoType} all-files={filesDetails} version-id={selcvId} screen-hotspots={screenHotspots} image-url={trailheadLogoUrl} image-name={imageName} file-details={parsedFiledetails} screen-id={configScreenId} onhotspotspotadd={addHotspotDelList}> </c-mobile-hotspot>
+      </div>
+     
+      <!--
+         <div style="height: 800px;width:1680px;background-color: blue;position: relative;overflow-x:auto;
+      overflow-y:auto;">
+      
+      </div>
+      <div style="width:1680px;height:1080px;overflow:auto;">
+    <img
+      width="1680"
+      height="1080"
+      src={trailheadLogoUrl}
+      class="screenshot"
+      draggable="false"
+    />
+    <svg
+      width="1680"
+      height="1080"
+      viewBox="0 0 1680 1080"
+      class="draw"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect class="marquee" x="450" y="420" width="150" height="150" />
+      <g class="boxes"></g>
+    </svg>
+  </div>-->
+    </div>
+  </div>
+  <div  class="main-container" style="display: flex;
+  text-align: center;
+  justify-content: center;
+  
+  font-size: 16px;" if:true={isStep4}>
+  <div class="sub-cointainer" style=" width: 100%;">
+    <div class="header">
+     App URL
+    </div>
+ 
+    <div  class="applink" style="width:50%;margin:0 auto;margin-top:70px">
+      <lightning-button  variant="brand"  label="Back Home" title="Navigate to Configuration Home" icon-name="utility:home" class="slds-m-left_x-small" onclick={backHome}></lightning-button>
+<div style="margin-top:20px;">
+      <lightning-textarea name="input1" label="" value=  {finalAppUrl} disabled ></lightning-textarea>
+    </div>
+    </div>
+     <div style="margin-top:20px;">
+     <a href={finalAppUrl} target="_blank">    <!--https://orgchartsdo31796.lightning.force.com/c/ProtoTypeBuilderConfig.app?templateId={configId}-->
+      <lightning-button  variant="brand-outline"  label="Launch Application" title="Navigate to Application Home" icon-name="utility:home" class="slds-m-left_x-small"></lightning-button>
+    </a>
+
+    <lightning-button  variant="brand-outline"  label="Copy URL to Clipboard" title="Copy URL to Clipboard" icon-name="utility:copy_to_clipboard" class="slds-m-left_x-small" onclick={handleCopyToClipboard}></lightning-button>
+    <lightning-button  variant="brand-outline"   label="Share URL" title="Share URL" icon-name="utility:internal_share" class="slds-m-left_x-small" onclick={handleShareClick}></lightning-button>
+
+  </div>
+  <template if:true={isShare}>
+  <div style="width:50%;margin:0 auto;margin-top:20px;text-align:left;">
+    <lightning-textarea name="emailAddress" label="Email" onchange={handleEmailChange} placeholder="Enter Email Ids seperated by comma(,)"   ></lightning-textarea>
+
+  </div>
+  <div>
+    <lightning-button  variant="brand"   label="Send Email" title="Send Email"  class="slds-m-left_x-small" onclick={sendEmailHandler}></lightning-button>
+
+  </div>
+</template>
+    </div>
+  </div>
+
+  <div class="modalpopup hide_modal">
+    <section
+      role="dialog"
+      tabindex="-1"
+      aria-labelledby="modal-heading-01"
+      aria-modal="true"
+      aria-describedby="modal-content-id-1"
+      class="slds-modal slds-fade-in-open"
+    >
+      <div class="slds-modal__container">
+       
+        <header class="slds-modal__header">
+          <button
+            class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+            title="Close"
+            onclick={closeModal}
+          >
+            <lightning-icon
+              icon-name="utility:close"
+              alternative-text="close"
+              variant="inverse"
+              size="small"
+            ></lightning-icon>
+            <span class="slds-assistive-text">Close</span>
+          </button>
+          <h2
+            id="modal-heading-01"
+            class="slds-text-heading_medium slds-hyphenate"
+          >
+            Delete Hotspots
+          </h2>
+        </header>
+        <div
+          class="slds-modal__content slds-p-around_medium"
+          id="modal-content-id-1"
+          style="height: 300px"
+        >
+        <table aria-multiselectable="true" class="slds-table slds-table_bordered slds-table_fixed-layout slds-table_resizable-cols" role="grid">
+          <thead>
+            <tr class="slds-line-height_reset">
+              <th class="slds-text-align_right" scope="col" style="width:3.25rem">
+                <span id="column-group-header" class="slds-assistive-text">Choose a row</span>
+                <div class="slds-th__action slds-th__action_form">
+                  <div class="slds-checkbox">
+
+                  </div>
+                </div>
+              </th>
+              <th aria-label="Name" aria-sort="none" class="slds-is-resizable slds-is-sortable" scope="col">
+                <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="0">
+                  <span class="slds-assistive-text">Sort by: </span>
+                  <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                    <span class="slds-truncate" title="Name">Hotspot Name</span>
+                  </div>
+                </a>
+                <div class="slds-resizable">
+                  <input type="range" aria-label="Name column width" class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-540" max="1000" min="20" tabindex="0" />
+                  <span class="slds-resizable__handle">
+                    <span class="slds-resizable__divider"></span>
+                  </span>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <template for:each={delHotspots} for:item="hot">
+              <tr key={hot.Id} aria-selected="false" class="slds-hint-parent">
+                <td class="slds-text-align_right" role="gridcell">
+                  <div class="slds-checkbox">
+                    <lightning-input data-value={hot.Id} type="checkbox"  name="input-desktop" onchange={handleChangeDeleteCheck}>></lightning-input>
+                  </div>
+                </td>
+                <th scope="row">
+                  <div class="slds-truncate" title="Acme - 1,200 Widgets">
+                  {hot.Name}
+                  </div>
+                </th>
+                </tr>
+            </template>
+            </tbody>
+            </table>
+        </div>
+        <footer class="slds-modal__footer">
+          <button
+          class="slds-button slds-button_neutral"
+          onclick={closeModal}
+          title="Cancel"
+        >
+          Cancel
+        </button>
+        <button
+          class="slds-button slds-button_brand"
+          onclick={fnDelHotspots}
+          title="Delete Selected Hotspots"
+        >
+          Delete
+        </button>
+        </footer>
+      </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+  </div>
+
+</template>

@@ -1,0 +1,55 @@
+<template>
+  <article class="slds-card">
+    <div class="slds-grid slds-einstein-header slds-card__header">
+      <header class="slds-media slds-media_center slds-has-flexi-truncate">
+        <div
+          class="slds-grid slds-grid_vertical-align-center slds-size_3-of-4 slds-medium-size_2-of-3"
+        >
+          <div class="slds-media__body">
+            <h2 class="slds-truncate" title={cardTitle}>
+              <a
+                href="javascript:void(0);"
+                class="slds-card__header-link"
+                title={cardTitle}
+              >
+                <span class="slds-text-heading_small">{cardTitle}</span>
+              </a>
+            </h2>
+          </div>
+        </div>
+        <div
+          class="slds-einstein-header__figure slds-size_1-of-4 slds-medium-size_1-of-3"
+        ></div>
+      </header>
+    </div>
+
+    <div class="slds-card__body slds-card__body_inner">
+      <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Processing"></lightning-spinner>
+      </template>
+      <div class="slds-form slds-form_compound">
+        <div class="slds-form-element__control">
+          <div class="slds-form-element__group">
+            <template if:true={productName}>
+              <div class="slds-text-align_center">
+                Recommended Product:
+                <p class="slds-text-title_bold">{productName}</p>
+              </div>
+            </template>
+            <div class="slds-grid slds-grid_align-space slds-p-top_small">
+              <div class="slds-col">
+                <lightning-button
+                  label={confirmationButtonLabel}
+                  icon-name="utility:cart"
+                  variant="brand"
+                  title={confirmationButtonLabel}
+                  onclick={handleConfirmation}
+                ></lightning-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</template>

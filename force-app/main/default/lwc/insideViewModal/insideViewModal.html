@@ -1,0 +1,14 @@
+<template>
+    <section role="dialog" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <header class="slds-modal__header slds-modal__header_empty modalContainer">
+                <lightning-button-icon icon-name="utility:close"  alternative-text="Settings" variant="bare" size="small" class="closeButton" onclick={closeModal}></lightning-button-icon>
+            </header>
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <img src={_insideSalesUpdateCRMURL} class="imageClass" if:true={showUpdateCRM}/>
+                <img src={_insideSalesPDFURL} class="imageClass" if:true={showPDF}/>
+            </div>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>

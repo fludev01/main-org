@@ -1,0 +1,38 @@
+:host {
+  --sds-c-textarea-sizing-max-height: 110px;
+  --slds-c-textarea-color-border: var(--lwc-colorBorder);
+}
+
+.spinner-container{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+}
+
+.spinner-container-knowledge{
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 370px;
+
+}
+
+.einstein-avatar{
+    border-radius: 4px;  
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+  
+  .avatar-column {
+    width: 32px !important;
+  }
+  
+  .response-column{
+    padding-top: 6px;
+    max-width: 90%;
+  }

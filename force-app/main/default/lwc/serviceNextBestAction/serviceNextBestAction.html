@@ -1,0 +1,43 @@
+<template>
+    <lightning-card>
+        <h3 slot="title">
+            <lightning-icon class="ribbon-icon slds-m-right_small" icon-name="standard:reward" size="small"></lightning-icon>
+            Next Best Action        
+        </h3>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-size_1-of-1 slds-p-right_medium slds-p-left_medium slds-p-bottom_xx-small">
+                <div class="slds-grid slds-wrap">
+                    <template if:true={loading}>
+                        <div class="slds-size_1-of-1">
+                            <div class="spinner-container">
+                                <lightning-spinner size="medium"></lightning-spinner>
+                            </div>
+                        </div>
+                    </template> 
+                    <template if:false={loading}>
+                        <div class="slds-size_1-of-1 content-container">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-size_1-of-1 slds-p-bottom_small">
+                                    <img src="https://res.cloudinary.com/btahub/image/upload/v1677201578/kqbuqknaihlifwc4b9cq.png"/>
+                                </div>
+                                <div class="slds-size_1-of-1 slds-p-bottom_small">
+                                    <p>We are currently running a 50% off flash sale on all NTO outdoor gear. This is a great opportunity to promote NTO products and help customers save on quality outdoor gear.</p>
+                                </div>
+                                <div class="slds-size_1-of-1">
+                                    <lightning-button-group>
+                                        <lightning-button label="Send Offer"></lightning-button>
+                                        <lightning-button-menu alternative-text="Show menu" variant="border-filled">
+                                            <lightning-menu-item label="Menu Item One" value="item1"></lightning-menu-item>
+                                            <lightning-menu-item label="Menu Item Two" value="item2"></lightning-menu-item>
+                                            <lightning-menu-item label="Menu Item Three" value="item3"></lightning-menu-item>
+                                        </lightning-button-menu>
+                                    </lightning-button-group>                
+                                </div>
+                            </div>
+                        </div>
+                    </template>               
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

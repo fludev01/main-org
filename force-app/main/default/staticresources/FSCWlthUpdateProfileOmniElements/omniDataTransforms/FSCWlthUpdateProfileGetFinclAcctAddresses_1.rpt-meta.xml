@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedOutputJson>{
+  &quot;AccountName&quot; : &quot;AccountName&quot;,
+  &quot;PermanentAddress&quot; : &quot;PermanentAddress&quot;,
+  &quot;CommunicationAddress&quot; : &quot;CommunicationAddress&quot;,
+  &quot;BillingStreet&quot; : &quot;BillingStreet&quot;,
+  &quot;BillingCity&quot; : &quot;BillingCity&quot;,
+  &quot;BillingState&quot; : &quot;BillingState&quot;,
+  &quot;BillingCountry&quot; : &quot;BillingCountry&quot;,
+  &quot;BillingPostalCode&quot; : &quot;BillingPostalCode&quot;,
+  &quot;ShippingStreet&quot; : &quot;ShippingStreet&quot;,
+  &quot;ShippingCity&quot; : &quot;ShippingCity&quot;,
+  &quot;ShippingState&quot; : &quot;Shippingtate&quot;,
+  &quot;ShippingCountry&quot; : &quot;ShippingCountry&quot;,
+  &quot;ShippingPostalCode&quot; : &quot;ShippingPostalCode&quot;,
+  &quot;Name&quot; : &quot;Name&quot;,
+  &quot;DocumentTypeId&quot; : &quot;DocumentTypeId&quot;,
+  &quot;ActionIdddd&quot; : &quot;ActionId&quot;,
+  &quot;VersionIddd&quot; : &quot;VersionIddd&quot;,
+  &quot;Value&quot; : &quot;Value&quot;
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>FSCWlthUpdateProfileGetFinclAcctAddresses</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthUpdateProfileGetFinclAcctAddresses045046981015764764</globalKey>
+        <inputFieldName>FinancialAccount:FinServ__City__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthUpdateProfileGetFinclAcctAddresses</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Accounts:City</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthUpdateProfileGetFinclAcctAddresses6889336275447828</globalKey>
+        <inputFieldName>FinancialAccount:FinServ__RecordTypeName__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthUpdateProfileGetFinclAcctAddresses</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Accounts:AccountType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>1.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>AccountId</filterValue>
+        <globalKey>FSCWlthUpdateProfileGetFinclAcctAddresses557251851740173</globalKey>
+        <inputFieldName>FinServ__JointOwner__c</inputFieldName>
+        <inputObjectName>FinServ__FinancialAccount__c</inputObjectName>
+        <inputObjectQuerySequence>2.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthUpdateProfileGetFinclAcctAddresses</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>FinancialAccount</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Account:BillingStreet var:Account:BillingStreet &apos;&apos; IF | var:Account:BillingCity | var:Account:BillingStreet | &apos;,/\/\/&apos; var:Account:BillingCity CONCAT var:Account:BillingCity IF &apos;&apos; IF | var:Account:BillingState | var:Account:BillingStreet var:Account:BillingCity OR | &apos;,/\/\/&apos; var:Account:BillingState CONCAT var:Account:BillingState IF &apos;&apos; IF | var:Account:BillingCountry | var:Account:BillingStreet var:Account:BillingCity var:Account:BillingState OR OR | &apos;,/\/\/&apos; var:Account:BillingCountry CONCAT var:Account:BillingCountry IF &apos;&apos; IF | var:Account:BillingPostalCode | var:Account:BillingStreet var:Account:BillingCity OR var:Account:BillingState var:Account:BillingCountry OR OR | &apos;,/\/\/&apos; var:Account:BillingPostalCode CONCAT var:Account:BillingPostalCode IF &apos;&apos; IF CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(IF(%Account:BillingStreet%,%Account:BillingStreet%,&apos;&apos;),IF(%Account:BillingCity%,IF(%Account:BillingStreet%,CONCAT(&apos;, &apos;,%Account:BillingCity%),%Account:BillingCity%),&apos;&apos;),IF(%Account:BillingState%,IF(OR(%Account:BillingStreet%,%Account:BillingCity%),CONCAT(&apos;, &apos;,%Account:BillingState%),%Account:BillingState%),&apos;&apos;),IF(%Account:BillingCountry%,IF(OR(%Account:BillingStreet%,OR(%Account:BillingCity%,%Account:BillingState%)),CONCAT(&apos;, &apos;,%Account:BillingCountry%),%Account:BillingCountry%),&apos;&apos;),IF(%Account:BillingPostalCode%,IF(OR(OR(%Account:BillingStreet%,%Account:BillingCity%),OR(%Account:BillingState%,%Account:BillingCountry%)),CONCAT(&apos;, &apos;,%Account:BillingPostalCode%),%Account:BillingPostalCode%),&apos;&apos;))</formulaExpression>
+        <formulaResultPath>CommunicationAddress</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>FSCWlthUpdateProfileGetFinclAcctAddresses3175681432288997</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthUpdateProfileGetFinclAcctAddresses</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthUpdateProfileGetFinclAcctAddresses0806947743604014</globalKey>
+        <inputFieldName>FinancialAccount:Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthUpdateProfileGetFinclAcctAddresses</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Accounts:FinancialAccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>AccountId</filterValue>
+        <globalKey>FSCWlthUpdateProfileGetFinclAcctAddresses45828070075636007</globalKey>
+        <inputFieldName>FinServ__PrimaryOwner__c</inputFieldName>
+        <inputObjectName>FinServ__FinancialAccount__c</inputObjectName>
+        <inputObjectQuerySequence>2.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthUpdateProfileGetFinclAcctAddresses</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>FinancialAccount</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>No address in record</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthUpdateProfileGetFinclAcctAddresses6062922376597457</globalKey>
+        <inputFieldName>CommunicationAddress</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthUpdateProfileGetFinclAcctAddresses</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>String</outputFieldFormat>
+        <outputFieldName>PersonAccount|1:Address</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthUpdateProfileGetFinclAcctAddresses414724886412732</globalKey>
+        <inputFieldName>FinancialAccount:FinServ__Country__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthUpdateProfileGetFinclAcctAddresses</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Accounts:Country</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthUpdateProfileGetFinclAcctAddresses9233323349548734</globalKey>
+        <inputFieldName>FinancialAccount:FinServ__Address2__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthUpdateProfileGetFinclAcctAddresses</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Accounts:Address2</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>AccountId</filterValue>
+        <globalKey>FSCWlthUpdateProfileGetFinclAcctAddresses6741869184407501</globalKey>
+        <inputFieldName>Id</inputFieldName>
+        <inputObjectName>Account</inputObjectName>
+        <inputObjectQuerySequence>1.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthUpdateProfileGetFinclAcctAddresses</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Account</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthUpdateProfileGetFinclAcctAddresses4593236321447203</globalKey>
+        <inputFieldName>FinancialAccount:FinServ__Address1__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthUpdateProfileGetFinclAcctAddresses</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Accounts:Address1</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthUpdateProfileGetFinclAcctAddresses6376113440281554</globalKey>
+        <inputFieldName>FinancialAccount:FinServ__PostalCode__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthUpdateProfileGetFinclAcctAddresses</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Accounts:PostalCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthUpdateProfileGetFinclAcctAddresses3360196540713527</globalKey>
+        <inputFieldName>FinancialAccount:Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthUpdateProfileGetFinclAcctAddresses</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Accounts:Type</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthUpdateProfileGetFinclAcctAddresses8369721544626965</globalKey>
+        <inputFieldName>FinancialAccount:FinServ__State__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthUpdateProfileGetFinclAcctAddresses</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Accounts:State</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>No address in record</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthUpdateProfileGetFinclAcctAddresses024946802931582246</globalKey>
+        <inputFieldName>PermanentAddress</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthUpdateProfileGetFinclAcctAddresses</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>String</outputFieldFormat>
+        <outputFieldName>PersonAccount|2:Address</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Billing Address</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthUpdateProfileGetFinclAcctAddresses005836196970264496</globalKey>
+        <inputFieldName>PersonAccount|1</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthUpdateProfileGetFinclAcctAddresses</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PersonAccount|1:Type</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Account:ShippingStreet var:Account:ShippingStreet &apos;&apos; IF | var:Account:ShippingCity | var:Account:ShippingStreet | &apos;,/\/\/&apos; var:Account:ShippingCity CONCAT var:Account:ShippingCity IF &apos;&apos; IF | var:Account:ShippingState | var:Account:ShippingStreet var:Account:ShippingCity OR | &apos;,/\/\/&apos; var:Account:ShippingState CONCAT var:Account:ShippingState IF &apos;&apos; IF | var:Account:ShippingCountry | var:Account:ShippingStreet var:Account:ShippingCity var:Account:ShippingState OR OR | &apos;,/\/\/&apos; var:Account:ShippingCountry CONCAT var:Account:ShippingCountry IF &apos;&apos; IF | var:Account:ShippingPostalCode | var:Account:ShippingStreet var:Account:ShippingCity OR var:Account:ShippingState var:Account:ShippingCountry OR OR | &apos;,/\/\/&apos; var:Account:ShippingPostalCode CONCAT var:Account:ShippingPostalCode IF &apos;&apos; IF CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(IF(%Account:ShippingStreet%,%Account:ShippingStreet%,&apos;&apos;),IF(%Account:ShippingCity%,IF(%Account:ShippingStreet%,CONCAT(&apos;, &apos;,%Account:ShippingCity%),%Account:ShippingCity%),&apos;&apos;),IF(%Account:ShippingState%,IF(OR(%Account:ShippingStreet%,%Account:ShippingCity%),CONCAT(&apos;, &apos;,%Account:ShippingState%),%Account:ShippingState%),&apos;&apos;),IF(%Account:ShippingCountry%,IF(OR(%Account:ShippingStreet%,OR(%Account:ShippingCity%,%Account:ShippingState%)),CONCAT(&apos;, &apos;,%Account:ShippingCountry%),%Account:ShippingCountry%),&apos;&apos;),IF(%Account:ShippingPostalCode%,IF(OR(OR(%Account:ShippingStreet%,%Account:ShippingCity%),OR(%Account:ShippingState%,%Account:ShippingCountry%)),CONCAT(&apos;, &apos;,%Account:ShippingPostalCode%),%Account:ShippingPostalCode%),&apos;&apos;))</formulaExpression>
+        <formulaResultPath>PermanentAddress</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>FSCWlthUpdateProfileGetFinclAcctAddresses7567968509851264</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthUpdateProfileGetFinclAcctAddresses</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthUpdateProfileGetFinclAcctAddresses4803067295245411</globalKey>
+        <inputFieldName>FinancialAccount:FinServ__FinancialAccountNumber__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthUpdateProfileGetFinclAcctAddresses</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Accounts:FinancialAccountNumber</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Shipping Address</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthUpdateProfileGetFinclAcctAddresses2721521257036794</globalKey>
+        <inputFieldName>PersonAccount|2</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthUpdateProfileGetFinclAcctAddresses</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PersonAccount|2:Type</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;AccountId&quot; : &quot;001B000001UZDhOIAX&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Extract</type>
+    <uniqueName>FSCWlthUpdateProfileGetFinclAcctAddresses_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

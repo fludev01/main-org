@@ -1,0 +1,4 @@
+<design:component label="Mock Marketing Journey Component">
+    <design:attribute name="Journey1Title" label="Journey 1 Title" description="Include the title of your journey here." placeholder="Lending Options" />
+    <design:attribute name="Journey2Title" label="Journey 2 Title" description="Include the title of your journey here." placeholder="Ways to Pre-Qualify" />
+</design:component>

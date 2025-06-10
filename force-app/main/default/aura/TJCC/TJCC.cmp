@@ -1,0 +1,149 @@
+<aura:component controller="FINS_Teller_DisputeTransation" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute name="flowType" type="String"/>
+    <aura:attribute name="trans" type="Object"/>
+    <aura:attribute name="filtered" type="Object"/>
+    <aura:attribute name="columns" type="Object"/>
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="container" type="Aura.Component[]"/>
+    <aura:attribute name="amountTo" type="String"/>
+    <aura:attribute name="amountFrom" type="String" default="0"/>
+    <aura:attribute name="timdoutId" type="String"/>
+    <aura:attribute name="filterIconName" type="String" default="utility:chevronright"/>
+    <aura:attribute name="toggleClass" type="String" default="slds-is-close"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    
+    
+    <div class=" ">
+        <lightning:card class="">
+            <aura:set attribute="title">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-size--1-of-2 ">
+                        <lightning:icon iconName="utility:money" size="small"/>
+                        Transaction History
+                    </div>
+                    <div class="slds-size--1-of-2 ">
+                        <lightning:buttonGroup class="right">
+                            <lightning:button label="Dispute Transactions" onclick="{!c.butt}" class="btn" />
+                            <lightning:button label="Reset" class="btn" />
+                            <lightning:button label="Submit" class="btn" />
+                        </lightning:buttonGroup>
+                    </div>
+                </div>
+            </aura:set>
+            
+            <aura:set attribute="footer">
+            </aura:set>
+            
+            <div class="">
+                <div class="{! 'slds-section slds-p-around_small ' +  v.toggleClass }" aura:id="filterSection">
+                    <h3 class="slds-section__title">
+                        <lightning:button onclick="{!c.toggleSection}" class="slds-section__title-action" iconPosition="left" label="Filter" iconName="{!v.filterIconName}"></lightning:button>
+                    </h3>
+                    <div class="slds-section__content"> 
+                        <lightning:layout >
+                            <lightning:layoutItem size="12">
+                                <lightning:input type="checkbox" class="slds-m-around_x-small slds-p-around_xx-small" label="Intraday" variant="standard"></lightning:input>
+                                <lightning:input type="checkbox" class="slds-m-around_x-small slds-p-around_xx-small" label="All Debits" variant="standard"></lightning:input>
+                                <lightning:input type="checkbox" class="slds-m-around_x-small slds-p-around_xx-small slds-border_bottom" label="All Credits" variant="standard"></lightning:input>
+                            </lightning:layoutItem>
+                        </lightning:layout>
+                        
+                        <lightning:layout>
+                            <lightning:layoutItem size="12">
+                                <lightning:layout class="slds-border_bottom">
+                                    <lightning:layoutItem size="3">
+                                        <div class="slds-form-element slds-m-around_x-small slds-p-around_xx-small "><lightning:input aura:id="" label="Last Number of Days" value="" placeholder="" variant="" class=""/>
+                                        </div>
+                                    </lightning:layoutItem>
+                                    <lightning:layoutItem size="3"></lightning:layoutItem>
+                                    <lightning:layoutItem size="3">
+                                        <div class="slds-form-element slds-m-around_x-small slds-p-around_xx-small  "><lightning:input type="date"  label="Post Date To" value=""/>
+                                        </div>
+                                    </lightning:layoutItem>
+                                    <lightning:layoutItem size="3">
+                                        <div class="slds-form-element slds-m-around_x-small slds-p-around_xx-small   "><lightning:input type="date"  label="Post Date From" value=""/>
+                                        </div>
+                                    </lightning:layoutItem>
+                                </lightning:layout>
+                            </lightning:layoutItem>
+                        </lightning:layout>
+                        <lightning:layout>
+                            <lightning:layoutItem size="12">
+                                <lightning:layout>
+                                    <lightning:layoutItem size="3">
+                                        <div class="slds-form-element slds-m-around_x-small slds-p-around_xx-small   "> <lightning:input aura:id="" label="Amount From" value="{!v.amountFrom}" placeholder="$0.00" variant="" class="" onchange="{!c.ammountChange}"/>
+                                        </div>
+                                        <div class="slds-form-element slds-m-around_x-small slds-p-around_xx-small  "><lightning:input aura:id="" label="Check Number From" value="" placeholder="" variant="" class=""/>
+                                        </div>
+                                        <div class="slds-form-element slds-m-around_x-small slds-p-around_x-small   "><lightning:input aura:id="" label="Merchant Category Code" value="" placeholder="" variant="" class=""/>
+                                        </div>
+                                    </lightning:layoutItem>
+                                    <lightning:layoutItem size="3">
+                                        <div class="slds-form-element slds-m-around_x-small slds-p-around_xx-small"> <lightning:input aura:id="" label="Amount To" value="{!v.amountTo}" placeholder="" variant="" class="" onchange="{!c.ammountChange}"/>
+                                        </div>
+                                        <div class="slds-form-element slds-m-around_x-small slds-p-around_xx-small  "><lightning:input aura:id="" label="Check Number To" value="" placeholder="" variant="" class=""/>
+                                        </div>
+                                    </lightning:layoutItem>
+                                    <lightning:layoutItem size="3">
+                                        <div class="slds-form-element slds-m-around_x-small slds-p-around_xx-small  "><lightning:input aura:id="" label="Transacation Code From" value="" placeholder="" variant="" class=""/>
+                                        </div>
+                                    </lightning:layoutItem>
+                                    <lightning:layoutItem size="3">
+                                        <div class="slds-form-element slds-m-around_x-small slds-p-around_xx-small  "><lightning:input aura:id="" label="Transacation Code To" value="" placeholder="" variant="" class=""/>
+                                        </div>
+                                        <lightning:select class="slds-p-around_x-small " label="Transaction Type" variant="standard">
+                                            <option value="">Please select</option>
+                                            <option value="ATM Rebate">ATM Rebate</option>
+                                            <option value="Bill Payment">Bill Payment</option>
+                                            <option value="Return of Unpaid Deposited Check">Return of Unpaid Deposited Check</option>
+                                        </lightning:select>
+                                    </lightning:layoutItem>
+                                </lightning:layout>
+                            </lightning:layoutItem>
+                        </lightning:layout>
+                    </div>
+                </div>
+                
+                <div class=" ">
+                    <lightning:datatable aura:id="table"
+                                         keyField="Id"
+                                         data="{! v.filtered }"
+                                         columns="{! v.columns }"
+                                         class="table"
+                                         onrowaction="{! c.action }"/>
+                </div>
+            </div>
+        </lightning:card>
+        
+        <div class="demo-only" >
+            <section aura:id="modal" role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-describedby="modal-content-id-1" class="slds-modal ">
+                <div class="slds-modal__container">
+                    
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick="{!c.toggleModal}">
+                            <lightning:icon iconName="utility:close" size="medium" />
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{!v.flowType}</h2>
+                    </header>
+                    
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        
+                        <div class="slds-p-around_medium ">
+                            {!v.container}
+                            <lightning:flow aura:id="flowData" />
+                        </div>
+                        
+                    </div>
+                    
+                    <footer class="slds-modal__footer">
+                        <button class="slds-button slds-button_neutral" onclick="{!c.toggleModal}">Cancel</button>
+                    </footer>
+                </div>
+            </section>
+            <div aura:id="backdrop" class="slds-backdrop "></div>
+        </div>
+    </div>
+    
+</aura:component>

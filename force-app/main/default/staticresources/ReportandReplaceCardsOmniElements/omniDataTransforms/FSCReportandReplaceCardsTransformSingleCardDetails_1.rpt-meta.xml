@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>FSCReportandReplaceCardsTransformSingleCardDetails</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:CardNumber var:CardNumberLength 4 - var:CardNumberLength SUBSTRING</formulaConverted>
+        <formulaExpression>SUBSTRING(CardNumber,CardNumberLength-4,CardNumberLength)</formulaExpression>
+        <formulaResultPath>CardNumberLast4</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>FSCReportandReplaceCardsTransformSingleCardDetails27490476053406376</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformSingleCardDetails</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:CardNumber &quot;&lt;EOS&gt;&quot; + &quot;&lt;EOS&gt;&quot; STRINGINDEXOF</formulaConverted>
+        <formulaExpression>STRINGINDEXOF(CardNumber+&quot;&lt;EOS&gt;&quot;,&quot;&lt;EOS&gt;&quot;)</formulaExpression>
+        <formulaResultPath>CardNumberLength</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>FSCReportandReplaceCardsTransformSingleCardDetails4903169165981067</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformSingleCardDetails</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardsTransformSingleCardDetails9460048853213814</globalKey>
+        <inputFieldName>CardId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformSingleCardDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>CardId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:PrimaryOwner ISNOTBLANK var:PrimaryOwner var:AccountId == AND &quot;Primary/\/\/Owner&quot; | | var:JointOwner ISNOTBLANK var:JointOwner var:AccountId == AND &quot;Joint/\/\/Owner&quot; &quot;&quot; IF IF</formulaConverted>
+        <formulaExpression>IF(ISNOTBLANK(PrimaryOwner) AND PrimaryOwner==AccountId, &quot;Primary Owner&quot;, IF(ISNOTBLANK(JointOwner) AND JointOwner==AccountId, &quot;Joint Owner&quot;, &quot;&quot;))</formulaExpression>
+        <formulaResultPath>Roles</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>FSCReportandReplaceCardsTransformSingleCardDetails4095806659324528</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformSingleCardDetails</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardsTransformSingleCardDetails992565989569226</globalKey>
+        <inputFieldName>CardName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformSingleCardDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>CardName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardsTransformSingleCardDetails16433936776785885</globalKey>
+        <inputFieldName>SourceSystemId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformSingleCardDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>SourceSystemId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardsTransformSingleCardDetails6376062177960282</globalKey>
+        <inputFieldName>Roles</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformSingleCardDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>String</outputFieldFormat>
+        <outputFieldName>Role</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardsTransformSingleCardDetails36345992271707384</globalKey>
+        <inputFieldName>CardExpiry</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformSingleCardDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>CardValidDate</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardsTransformSingleCardDetails7726131494179689</globalKey>
+        <inputFieldName>CardExpiryDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformSingleCardDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>CardValidDate</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardsTransformSingleCardDetails18184119267735732</globalKey>
+        <inputFieldName>CardSourceSystemId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformSingleCardDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>CardSourceSystemId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardsTransformSingleCardDetails07476152888341336</globalKey>
+        <inputFieldName>CardType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformSingleCardDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>CardType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardsTransformSingleCardDetails9981505101623043</globalKey>
+        <inputFieldName>Role</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformSingleCardDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Role</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardsTransformSingleCardDetails2793348437627525</globalKey>
+        <inputFieldName>CardNumberLast4</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformSingleCardDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>CardNumberLast4</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardsTransformSingleCardDetails8860762793888275</globalKey>
+        <inputFieldName>CardNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformSingleCardDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>CardNumber</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardsTransformSingleCardDetails9503164224108016</globalKey>
+        <inputFieldName>Selected</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformSingleCardDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Selected</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardsTransformSingleCardDetails20913507341408533</globalKey>
+        <inputFieldName>CardActive</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformSingleCardDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>CardActive</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:CardValidDate MONTH &apos;/&apos; | var:CardValidDate YEAR + CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(MONTH(CardValidDate),&apos;/&apos; + YEAR(CardValidDate))</formulaExpression>
+        <formulaResultPath>CardExpiry</formulaResultPath>
+        <formulaSequence>4.0</formulaSequence>
+        <globalKey>FSCReportandReplaceCardsTransformSingleCardDetails4917654683197925</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformSingleCardDetails</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardsTransformSingleCardDetails8776750494272658</globalKey>
+        <inputFieldName>RecordTypeName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformSingleCardDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecordTypeName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCReportandReplaceCardsTransformSingleCardDetails8843567643091108</globalKey>
+        <inputFieldName>Reissue</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCReportandReplaceCardsTransformSingleCardDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>Boolean</outputFieldFormat>
+        <outputFieldName>Reissue</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>[ {
+  &quot;SourceSystemId&quot; : &quot;&quot;,
+  &quot;Name&quot; : &quot;Auto Loan&quot;,
+  &quot;Id&quot; : &quot;a0FRO000000DTmO2AW&quot;,
+  &quot;FinancialAccountNumber&quot; : &quot;87125354&quot;,
+  &quot;RecordTypeName&quot; : &quot;Auto Loan&quot;,
+  &quot;PrimaryOwner&quot; : &quot;001RO000004adwaYAA&quot;,
+  &quot;AccountId&quot; : &quot;001RO000004adwaYAA&quot;
+}, {
+  &quot;SourceSystemId&quot; : &quot;&quot;,
+  &quot;Name&quot; : &quot;Savings&quot;,
+  &quot;Id&quot; : &quot;a0FRO000000DTm92AG&quot;,
+  &quot;FinancialAccountNumber&quot; : &quot;712451255&quot;,
+  &quot;RecordTypeName&quot; : &quot;Bank Account&quot;,
+  &quot;PrimaryOwner&quot; : &quot;001RO000004adwaYAA&quot;,
+  &quot;AccountId&quot; : &quot;001RO000004adwaYAA&quot;
+}, {
+  &quot;SourceSystemId&quot; : &quot;o&quot;,
+  &quot;Name&quot; : &quot;Pavan Kumar Kota&quot;,
+  &quot;Id&quot; : &quot;a0FRO000000DTj32AG&quot;,
+  &quot;FinancialAccountNumber&quot; : &quot;1211&quot;,
+  &quot;RecordTypeName&quot; : &quot;Checking Account&quot;,
+  &quot;JointOwner&quot; : &quot;001RO000004WMTJYA4&quot;,
+  &quot;PrimaryOwner&quot; : &quot;001RO000004adwaYAA&quot;,
+  &quot;CardNumber&quot; : 3425343534353435,
+  &quot;CardActive&quot; : true,
+  &quot;CardValidDate&quot; : &quot;2025-04-11&quot;,
+  &quot;CardName&quot; : &quot;Amex&quot;,
+  &quot;CardId&quot; : &quot;a06RO0000005K0NYAU&quot;,
+  &quot;AccountId&quot; : &quot;001RO000004adwaYAA&quot;
+}, {
+  &quot;SourceSystemId&quot; : &quot;&quot;,
+  &quot;Name&quot; : &quot;Test FA Account&quot;,
+  &quot;Id&quot; : &quot;a0FRO000000DUFK2A4&quot;,
+  &quot;FinancialAccountNumber&quot; : &quot;12114&quot;,
+  &quot;RecordTypeName&quot; : &quot;Checking Account&quot;,
+  &quot;JointOwner&quot; : &quot;001RO000004WMTJYA4&quot;,
+  &quot;PrimaryOwner&quot; : &quot;001RO000004adwaYAA&quot;,
+  &quot;AccountId&quot; : &quot;001RO000004adwaYAA&quot;
+}, {
+  &quot;SourceSystemId&quot; : &quot;&quot;,
+  &quot;Name&quot; : &quot;Credit Card&quot;,
+  &quot;Id&quot; : &quot;a0FRO000000DTmF2AW&quot;,
+  &quot;FinancialAccountNumber&quot; : &quot;81725465&quot;,
+  &quot;RecordTypeName&quot; : &quot;Credit Card&quot;,
+  &quot;PrimaryOwner&quot; : &quot;001RO000004adwaYAA&quot;,
+  &quot;CardNumber&quot; : 1324534556565656,
+  &quot;CardActive&quot; : true,
+  &quot;CardValidDate&quot; : &quot;2031-03-13&quot;,
+  &quot;CardName&quot; : &quot;test&quot;,
+  &quot;CardId&quot; : &quot;a06RO0000005JNsYAM&quot;,
+  &quot;AccountId&quot; : &quot;001RO000004adwaYAA&quot;
+}, {
+  &quot;SourceSystemId&quot; : &quot;&quot;,
+  &quot;Name&quot; : &quot;Credit Card&quot;,
+  &quot;Id&quot; : &quot;a0FRO000000DTmF2AW&quot;,
+  &quot;FinancialAccountNumber&quot; : &quot;81725465&quot;,
+  &quot;RecordTypeName&quot; : &quot;Credit Card&quot;,
+  &quot;PrimaryOwner&quot; : &quot;001RO000004adwaYAA&quot;,
+  &quot;CardNumber&quot; : 4354645364536453,
+  &quot;CardActive&quot; : true,
+  &quot;CardValidDate&quot; : &quot;2030-03-06&quot;,
+  &quot;CardName&quot; : &quot;test 2&quot;,
+  &quot;CardId&quot; : &quot;a06RO0000005JNxYAM&quot;,
+  &quot;AccountId&quot; : &quot;001RO000004adwaYAA&quot;
+}, {
+  &quot;SourceSystemId&quot; : &quot;1234&quot;,
+  &quot;Name&quot; : &quot;Mortgage Account&quot;,
+  &quot;Id&quot; : &quot;a0FRO000000DTmJ2AW&quot;,
+  &quot;FinancialAccountNumber&quot; : &quot;76152736&quot;,
+  &quot;RecordTypeName&quot; : &quot;Mortgage&quot;,
+  &quot;JointOwner&quot; : &quot;001RO000004adwaYAA&quot;,
+  &quot;PrimaryOwner&quot; : &quot;001RO000004adwVYAQ&quot;,
+  &quot;AccountId&quot; : &quot;001RO000004adwaYAA&quot;
+} ]</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>FSCReportandReplaceCardsTransformSingleCardDetails_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

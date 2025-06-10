@@ -1,0 +1,61 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<!-- Product 1 -->
+    <aura:attribute name="prod1Name" type="String" default="Current Account" />
+    <aura:attribute name="prod1Icon" type="String" default="custom:custom87" />
+    <aura:attribute name="prod1Status" type="String" default="inactive" />
+    <!-- Product 2 -->
+    <aura:attribute name="prod2Name" type="String" default="Loan" />
+    <aura:attribute name="prod2Icon" type="String" default="custom:custom16" />
+    <aura:attribute name="prod2Status" type="String" default="inactive" />
+    <!-- Product 3 -->
+    <aura:attribute name="prod3Name" type="String" default="Credit Card" />
+    <aura:attribute name="prod3Icon" type="String" default="custom:custom40" />
+    <aura:attribute name="prod3Status" type="String" default="inactive" />
+    <!-- Product 4 -->
+    <aura:attribute name="prod4Name" type="String" default="Savings Account" />
+    <aura:attribute name="prod4Icon" type="String" default="standard:investment_account" />
+    <aura:attribute name="prod4Status" type="String" default="inactive" />   
+    <!-- Product 5 -->
+    <aura:attribute name="prod5Name" type="String" default="Mortgage" />
+    <aura:attribute name="prod5Icon" type="String" default="custom:custom85" />
+    <aura:attribute name="prod5Status" type="String" default="inactive" />
+    <!-- Product 6 -->
+    <aura:attribute name="prod6Name" type="String" default="Insurance" />
+    <aura:attribute name="prod6Icon" type="String" default="custom:custom60" />
+    <aura:attribute name="prod6Status" type="String" default="inactive" />
+    
+
+    
+    <lightning:card title="Current Products" iconName="standard:product">
+        <div class="c-container">
+            <lightning:layout horizontalAlign="spread">
+                <lightning:layoutItem flexibility="auto" padding="around-small" size="2" class="slds-text-align_center">
+                    <div> <lightning:icon iconName="{!v.prod1Icon}" size="medium" alternativeText="Indicates approval" class="{!v.prod1Status}" /> </div>
+                    <div class="slds-text-body_small slds-text-align_center"> <span class="{! 'text-' + v.prod1Status}"> {!v.prod1Name}  </span></div>
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="auto" padding="around-small" size="2" class="slds-text-align_center">
+                    <div> <lightning:icon iconName="{!v.prod2Icon}" size="medium" alternativeText="Indicates approval" class="{!v.prod2Status}" /> </div>
+                    <div class="slds-text-body_small slds-text-align_center"> <span class="{! 'text-' + v.prod2Status}"> {!v.prod2Name}  </span></div>
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="auto" padding="around-small" size="2" class="slds-text-align_center">
+                    <div> <lightning:icon iconName="{!v.prod3Icon}" size="medium" alternativeText="Indicates approval" class="{!v.prod3Status}" /> </div>
+                    <div class="slds-text-body_small slds-text-align_center"> <span class="{! 'text-' + v.prod3Status}"> {!v.prod3Name}  </span></div>
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="auto" padding="around-small" size="2" class="slds-text-align_center">
+                    <div> <lightning:icon iconName="{!v.prod4Icon}" size="medium" alternativeText="Indicates approval" class="{!v.prod4Status}" /> </div>
+                    <div class="slds-text-body_small slds-text-align_center"> <span class="{! 'text-' + v.prod4Status}"> {!v.prod4Name}  </span></div>
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="auto" padding="around-small" size="2" class="slds-text-align_center">
+                    <div> <lightning:icon iconName="{!v.prod5Icon}" size="medium" alternativeText="Indicates approval" class="{!v.prod5Status}" /> </div>
+                    <div class="slds-text-body_small slds-text-align_center"> <span class="{! 'text-' + v.prod5Status}"> {!v.prod5Name}  </span></div>
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="auto" padding="around-small" size="2" class="slds-text-align_center">
+                    <div> <lightning:icon iconName="{!v.prod6Icon}" size="medium" alternativeText="Indicates approval" class="{!v.prod6Status}" /> </div>
+                    <div class="slds-text-body_small slds-text-align_center"> <span class="{! 'text-' + v.prod6Status}"> {!v.prod6Name}  </span></div>
+                </lightning:layoutItem>
+            </lightning:layout>
+        </div>
+    </lightning:card>
+    
+    
+</aura:component>

@@ -1,0 +1,33 @@
+.verticalAlign {
+	cursor: pointer;
+    padding-left: var(--lwc-spacingXxSmall) !important;
+}
+.recordListBox {
+	overflow-y: scroll;
+}
+.slds-listbox li {
+    padding: var(--lwc-spacingXSmall) var(--lwc-spacingSmall) !important;
+    display: flex;
+}
+.inputBox input {
+	padding-left: var(--lwc-spacingSmall);
+}
+.eachItem:hover {
+    background-color: var(--lwc-colorBackgroundRowActive);
+    cursor: pointer;
+}
+.combobox-spacing{
+    margin-left: var(--lwc-spacingLarge);
+}
+/* For Scrolling */
+::-webkit-scrollbar {
+    width: var(--lwc-spacingXSmall);
+    height: var(--lwc-spacingXSmall);
+}
+::-webkit-scrollbar-track {
+   display: none !important;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: var(--lwc-spacingSmall);
+    background: var(--lwc-colorBackgroundScrollbarTrack);
+}

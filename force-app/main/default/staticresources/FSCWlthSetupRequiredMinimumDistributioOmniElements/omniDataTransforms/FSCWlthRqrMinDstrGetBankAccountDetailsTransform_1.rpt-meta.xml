@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;AccountName&quot; : &quot;Salesforce.com&quot;,
+  &quot;AccountType&quot; : &quot;CreditCard&quot;,
+  &quot;errorMessage&quot; : &quot;OK&quot;,
+  &quot;Balances&quot; : [ {
+    &quot;BalanceType&quot; : &quot;MinimumPayment&quot;,
+    &quot;BalanceAmount&quot; : 234
+  }, {
+    &quot;BalanceType&quot; : &quot;Balance&quot;,
+    &quot;BalanceAmount&quot; : 78
+  }, {
+    &quot;BalanceType&quot; : &quot;AvailableCredit&quot;,
+    &quot;BalanceAmount&quot; : 9000
+  }, {
+    &quot;BalanceType&quot; : &quot;TotalCreditLimit&quot;,
+    &quot;BalanceAmount&quot; : 10000
+  } ],
+  &quot;AdditionalAttributes&quot; : { },
+  &quot;AccountCurrency&quot; : &quot;USD&quot;,
+  &quot;AccountId&quot; : &quot;01axx000003MLytAAGtest123&quot;,
+  &quot;hasErrors&quot; : &quot;false&quot;
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>FSCWlthRqrMinDstrGetBankAccountDetailsTransform</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthRqrMinDstrGetBankAccountDetailsTransform4121854439886292</globalKey>
+        <inputFieldName>errorMessage</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthRqrMinDstrGetBankAccountDetailsTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>errorMessage</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthRqrMinDstrGetBankAccountDetailsTransform4682559788408609</globalKey>
+        <inputFieldName>LinkedAccount:AccountHolderName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthRqrMinDstrGetBankAccountDetailsTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountOwner</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthRqrMinDstrGetBankAccountDetailsTransform33131828899439286</globalKey>
+        <inputFieldName>LinkedAccount:BankReference:BankName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthRqrMinDstrGetBankAccountDetailsTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BankFirmName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthRqrMinDstrGetBankAccountDetailsTransform2629607108077785</globalKey>
+        <inputFieldName>LinkedAccount:AccountType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthRqrMinDstrGetBankAccountDetailsTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthRqrMinDstrGetBankAccountDetailsTransform36943255978509426</globalKey>
+        <inputFieldName>LinkedAccount:BankReference:RoutingNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthRqrMinDstrGetBankAccountDetailsTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RoutingNumber</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthRqrMinDstrGetBankAccountDetailsTransform010552903635829836</globalKey>
+        <inputFieldName>hasErrors</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthRqrMinDstrGetBankAccountDetailsTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>hasErrors</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCWlthRqrMinDstrGetBankAccountDetailsTransform9411543100361868</globalKey>
+        <inputFieldName>LinkedAccount:AccountNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCWlthRqrMinDstrGetBankAccountDetailsTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountNumber</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;LinkedAccount&quot; : {
+    &quot;AccountNumber&quot; : &quot;AMZ10012&quot;,
+    &quot;AccountHolderName&quot; : &quot;Bob&quot;,
+    &quot;AccountType&quot; : &quot;Individual&quot;,
+    &quot;BankReference&quot; : {
+      &quot;BankName&quot; : &quot;HDFC&quot;,
+      &quot;RoutingNumber&quot; : &quot;2000123008&quot;,
+      &quot;Address&quot; : {
+        &quot;CountryCode&quot; : &quot;USA&quot;,
+        &quot;AddressLine2&quot; : &quot;Floor 61&quot;,
+        &quot;AddressType&quot; : &quot;Mailing Address&quot;,
+        &quot;State&quot; : &quot;CA&quot;,
+        &quot;AddressLine1&quot; : &quot;415 Mission St&quot;,
+        &quot;PostalCode&quot; : &quot;94105&quot;,
+        &quot;City&quot; : &quot;San Francisco&quot;
+      }
+    }
+  },
+  &quot;Beneficiaries&quot; : {
+    &quot;Primary&quot; : [ {
+      &quot;BeneficiaryName&quot; : &quot;Gabriel Basso&quot;,
+      &quot;BeneficiaryType&quot; : &quot;Institution&quot;,
+      &quot;IncorporationDate&quot; : &quot;04/06/1990&quot;,
+      &quot;EmailAddress&quot; : &quot;gabriel.basso@gmail.com&quot;,
+      &quot;MobileNumber&quot; : &quot;9835244324&quot;,
+      &quot;InstituionType&quot; : &quot;Trust&quot;,
+      &quot;Address&quot; : {
+        &quot;CountryCode&quot; : &quot;USA&quot;,
+        &quot;AddressLine2&quot; : &quot;Floor 61&quot;,
+        &quot;AddressType&quot; : &quot;Mailing Address&quot;,
+        &quot;State&quot; : &quot;CA&quot;,
+        &quot;AddressLine1&quot; : &quot;415 Mission St&quot;,
+        &quot;PostalCode&quot; : &quot;94105&quot;,
+        &quot;City&quot; : &quot;San Francisco&quot;
+      },
+      &quot;SharePercentage&quot; : &quot;40&quot;,
+      &quot;PerStirpes&quot; : &quot;yes&quot;,
+      &quot;BeneficiaryId&quot; : &quot;BFR-8066473&quot;
+    }, {
+      &quot;SharePercentage&quot; : &quot;60&quot;,
+      &quot;SSN&quot; : &quot;368-46-5302&quot;,
+      &quot;MobileNumber&quot; : &quot;9807671486&quot;,
+      &quot;RelationshipType&quot; : &quot;Mother&quot;,
+      &quot;EmailAddress&quot; : &quot;canute.gomes@gmail.com&quot;,
+      &quot;BeneficiaryId&quot; : &quot;BFR-6065227&quot;,
+      &quot;BeneficiaryType&quot; : &quot;Individual&quot;,
+      &quot;Address&quot; : {
+        &quot;CountryCode&quot; : &quot;USA&quot;,
+        &quot;AddressLine2&quot; : &quot;Floor 61&quot;,
+        &quot;AddressType&quot; : &quot;Mailing Address&quot;,
+        &quot;State&quot; : &quot;CA&quot;,
+        &quot;AddressLine1&quot; : &quot;415 Mission St&quot;,
+        &quot;PostalCode&quot; : &quot;94105&quot;,
+        &quot;City&quot; : &quot;San Francisco&quot;
+      },
+      &quot;BeneficiaryDob&quot; : &quot;04/06/1990&quot;,
+      &quot;PerStirpes&quot; : &quot;yes&quot;,
+      &quot;BeneficiaryName&quot; : &quot;Canute Gomes&quot;
+    } ],
+    &quot;Contingent&quot; : [ {
+      &quot;SharePercentage&quot; : &quot;40&quot;,
+      &quot;SSN&quot; : &quot;569-94-7728&quot;,
+      &quot;MobileNumber&quot; : &quot;9876541234&quot;,
+      &quot;RelationshipType&quot; : &quot;Grandson&quot;,
+      &quot;EmailAddress&quot; : &quot;ngela.bundalovic@gmail.com&quot;,
+      &quot;BeneficiaryId&quot; : &quot;BFR-6065228&quot;,
+      &quot;BeneficiaryType&quot; : &quot;Individual&quot;,
+      &quot;Address&quot; : {
+        &quot;CountryCode&quot; : &quot;USA&quot;,
+        &quot;AddressLine2&quot; : &quot;Floor 61&quot;,
+        &quot;AddressType&quot; : &quot;Mailing Address&quot;,
+        &quot;State&quot; : &quot;CA&quot;,
+        &quot;AddressLine1&quot; : &quot;415 Mission St&quot;,
+        &quot;PostalCode&quot; : &quot;94105&quot;,
+        &quot;City&quot; : &quot;San Francisco&quot;
+      },
+      &quot;BeneficiaryDob&quot; : &quot;04/06/1990&quot;,
+      &quot;PerStirpes&quot; : &quot;yes&quot;,
+      &quot;BeneficiaryName&quot; : &quot;Angela Bundalovic&quot;
+    }, {
+      &quot;SharePercentage&quot; : &quot;60&quot;,
+      &quot;SSN&quot; : &quot;617-10-7229&quot;,
+      &quot;MobileNumber&quot; : &quot;9862433885&quot;,
+      &quot;RelationshipType&quot; : &quot;Daughter&quot;,
+      &quot;EmailAddress&quot; : &quot;shailyn.pierre@gmail.com&quot;,
+      &quot;BeneficiaryId&quot; : &quot;BFR-6065229&quot;,
+      &quot;BeneficiaryType&quot; : &quot;Individual&quot;,
+      &quot;Address&quot; : {
+        &quot;CountryCode&quot; : &quot;USA&quot;,
+        &quot;AddressLine2&quot; : &quot;Floor 61&quot;,
+        &quot;AddressType&quot; : &quot;Mailing Address&quot;,
+        &quot;State&quot; : &quot;CA&quot;,
+        &quot;AddressLine1&quot; : &quot;415 Mission St&quot;,
+        &quot;PostalCode&quot; : &quot;94105&quot;,
+        &quot;City&quot; : &quot;San Francisco&quot;
+      },
+      &quot;BeneficiaryDob&quot; : &quot;04/06/1990&quot;,
+      &quot;PerStirpes&quot; : &quot;yes&quot;,
+      &quot;BeneficiaryName&quot; : &quot;Shailyn Pierre&quot;
+    } ]
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>FSCWlthRqrMinDstrGetBankAccountDetailsTransform_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

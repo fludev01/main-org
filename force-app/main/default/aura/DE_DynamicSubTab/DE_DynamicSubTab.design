@@ -1,0 +1,4 @@
+<design:component>
+	  <design:attribute name="childRecordId" label="Child Record Field API Name"/>
+    <design:attribute name="childObject" label="Child Object API Name"/>
+</design:component>

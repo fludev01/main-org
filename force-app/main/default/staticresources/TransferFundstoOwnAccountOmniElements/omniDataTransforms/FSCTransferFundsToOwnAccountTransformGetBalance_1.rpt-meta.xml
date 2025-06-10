@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;AccountName&quot; : &quot;Salesforce.com&quot;,
+  &quot;AccountType&quot; : &quot;CreditCard&quot;,
+  &quot;errorMessage&quot; : &quot;OK&quot;,
+  &quot;Balances&quot; : [ {
+    &quot;BalanceType&quot; : &quot;MinimumPayment&quot;,
+    &quot;BalanceAmount&quot; : 234
+  }, {
+    &quot;BalanceType&quot; : &quot;Balance&quot;,
+    &quot;BalanceAmount&quot; : 78
+  }, {
+    &quot;BalanceType&quot; : &quot;AvailableCredit&quot;,
+    &quot;BalanceAmount&quot; : 9000
+  }, {
+    &quot;BalanceType&quot; : &quot;TotalCreditLimit&quot;,
+    &quot;BalanceAmount&quot; : 10000
+  } ],
+  &quot;AdditionalAttributes&quot; : { },
+  &quot;AccountCurrency&quot; : &quot;USD&quot;,
+  &quot;AccountId&quot; : &quot;01axx000003MLytAAGtest123&quot;,
+  &quot;hasErrors&quot; : &quot;false&quot;
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>FSCTransferFundsToOwnAccountTransformGetBalance</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCTransferFundsToOwnAccountTransformGetBalance9922649282790625</globalKey>
+        <inputFieldName>AccountCurrency</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountTransformGetBalance</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountCurrency</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCTransferFundsToOwnAccountTransformGetBalance09126973852710663</globalKey>
+        <inputFieldName>FormatedPaymentDueDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountTransformGetBalance</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PaymentDueDate</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCTransferFundsToOwnAccountTransformGetBalance4167296343722582</globalKey>
+        <inputFieldName>Balances:Paired:BalanceLastStatement</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountTransformGetBalance</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BalanceLastStatement</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCTransferFundsToOwnAccountTransformGetBalance1354833751916522</globalKey>
+        <inputFieldName>Balances:Paired:PendingDeposits</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountTransformGetBalance</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PendingDeposits</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCTransferFundsToOwnAccountTransformGetBalance5330613779416993</globalKey>
+        <inputFieldName>Balances:Paired:CashBalance</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountTransformGetBalance</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>CashBalance</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCTransferFundsToOwnAccountTransformGetBalance35295255727311226</globalKey>
+        <inputFieldName>hasErrors</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountTransformGetBalance</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>hasErrors</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:Balances:BalanceType var:Balances:BalanceAmount PAIR</formulaConverted>
+        <formulaExpression>PAIR(Balances:BalanceType, Balances:BalanceAmount)</formulaExpression>
+        <formulaResultPath>Balances:Paired</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>FSCTransferFundsToOwnAccountTransformGetBalance4491102530123481</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountTransformGetBalance</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCTransferFundsToOwnAccountTransformGetBalance41846186037630084</globalKey>
+        <inputFieldName>AccountType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountTransformGetBalance</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCTransferFundsToOwnAccountTransformGetBalance46276159189433574</globalKey>
+        <inputFieldName>Balances:Paired:CurrentPostedBalance</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountTransformGetBalance</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>CurrentPostedBalance</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:AdditionalAttributes:PaymentDueDate 5 7 SUBSTRING &apos;/&apos; | var:AdditionalAttributes:PaymentDueDate 8 10 SUBSTRING &apos;/&apos; | var:AdditionalAttributes:PaymentDueDate 0 4 SUBSTRING CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(SUBSTRING(AdditionalAttributes:PaymentDueDate,5,7),&apos;/&apos;,SUBSTRING(AdditionalAttributes:PaymentDueDate,8,10),&apos;/&apos;,SUBSTRING(AdditionalAttributes:PaymentDueDate,0,4))</formulaExpression>
+        <formulaResultPath>FormatedPaymentDueDate</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>FSCTransferFundsToOwnAccountTransformGetBalance5747953404175374</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountTransformGetBalance</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCTransferFundsToOwnAccountTransformGetBalance5789899831247036</globalKey>
+        <inputFieldName>Balances:Paired:MinimumPayment</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountTransformGetBalance</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>MinimumPayment</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCTransferFundsToOwnAccountTransformGetBalance1154794235954435</globalKey>
+        <inputFieldName>errorMessage</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountTransformGetBalance</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>errorMessage</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCTransferFundsToOwnAccountTransformGetBalance9859017699754924</globalKey>
+        <inputFieldName>Balances:Paired:TotalCreditLimit</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountTransformGetBalance</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>TotalCreditLimit</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCTransferFundsToOwnAccountTransformGetBalance09448937254896883</globalKey>
+        <inputFieldName>Balances:Paired:PrincipalBalance</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountTransformGetBalance</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PrincipalBalance</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCTransferFundsToOwnAccountTransformGetBalance5956151542196515</globalKey>
+        <inputFieldName>Balances:Paired:PendingWithdrawals</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountTransformGetBalance</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PendingWithdrawals</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCTransferFundsToOwnAccountTransformGetBalance8525274325635732</globalKey>
+        <inputFieldName>Balances:Paired:AvailableCredit</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountTransformGetBalance</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AvailableCredit</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCTransferFundsToOwnAccountTransformGetBalance5487375102014742</globalKey>
+        <inputFieldName>Balances:Paired:Balance</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCTransferFundsToOwnAccountTransformGetBalance</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Balance</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;AccountName&quot; : &quot;Salesforce.com&quot;,
+  &quot;AccountType&quot; : &quot;CreditCard&quot;,
+  &quot;errorMessage&quot; : &quot;OK&quot;,
+  &quot;Balances&quot; : [ {
+    &quot;BalanceType&quot; : &quot;CurrentPostedBalance&quot;,
+    &quot;BalanceAmount&quot; : 222
+  }, {
+    &quot;BalanceType&quot; : &quot;Balance&quot;,
+    &quot;BalanceAmount&quot; : 787
+  }, {
+    &quot;BalanceType&quot; : &quot;PendingWithdrawals&quot;,
+    &quot;BalanceAmount&quot; : 90
+  }, {
+    &quot;BalanceType&quot; : &quot;PendingDeposits&quot;,
+    &quot;BalanceAmount&quot; : 9008
+  }, {
+    &quot;BalanceType&quot; : &quot;MinimumPayment&quot;,
+    &quot;BalanceAmount&quot; : 234
+  }, {
+    &quot;BalanceType&quot; : &quot;AvailableCredit&quot;,
+    &quot;BalanceAmount&quot; : 9000
+  }, {
+    &quot;BalanceType&quot; : &quot;TotalCreditLimit&quot;,
+    &quot;BalanceAmount&quot; : 10000
+  }, {
+    &quot;BalanceType&quot; : &quot;CashBalance&quot;,
+    &quot;BalanceAmount&quot; : 544
+  }, {
+    &quot;BalanceType&quot; : &quot;PrincipalBalance&quot;,
+    &quot;BalanceAmount&quot; : 1007
+  } ],
+  &quot;AdditionalAttributes&quot; : {
+    &quot;PaymentDueDate&quot; : &quot;2023-08-19&quot;
+  },
+  &quot;AccountCurrency&quot; : &quot;USD&quot;,
+  &quot;AccountId&quot; : &quot;01axx000003MLytAAGtest123&quot;,
+  &quot;hasErrors&quot; : &quot;false&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>FSCTransferFundsToOwnAccountTransformGetBalance_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

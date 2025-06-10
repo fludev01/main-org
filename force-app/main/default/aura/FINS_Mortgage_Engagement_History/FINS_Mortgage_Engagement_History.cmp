@@ -1,0 +1,208 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForAllPageTypes,force:appHostable,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="recordId" type="Id" default="" />
+   
+
+         <lightning:card >
+                    <aura:set attribute="title">
+                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                            <div class="slds-media__figure">
+                                <!-- ICON -->
+                                <img src="https://www.dropbox.com/s/kik9xlm9qwu4kxw/Engagement_History_medium.png?raw=1"/>
+                                
+                            </div>
+                            <!-- TITLE -->
+                            
+                                <div class="slds-media__body">Engagement History (25)</div>
+                           
+                        </header>
+                    </aura:set>
+             		 <aura:set attribute="footer">
+                        <ui:outputURL value="" label="View All"/>
+                    </aura:set>
+    			<ul class="slds-timeline slds-p-horizontal_small">
+                      <li>
+                        <div class="slds-timeline__item">
+                          <span class="slds-assistive-text">Task</span>
+                          <div class="slds-media">
+                            <div class="slds-media__body">
+                              <div class="slds-media slds-timeline__media slds-timeline__media_task">
+                                <div class="slds-media__figure">
+                                  <div class="slds-icon_container slds-icon-standard-task" title="task">
+                                    <lightning:icon iconName="standard:document" size="small" alternativeText="sss"/>
+                                  </div>
+                                </div>
+                                <div class="slds-media__body">
+                                  <div class="slds-media">
+                                    <div class="slds-media__body">
+                                      <h3 class="slds-truncate" title="Review proposals for EBC deck with larger team and have marketing review this">Landing Page View</h3>
+                                      <ul class="slds-list_horizontal slds-wrap">
+                                        <li class="slds-m-right_large">
+                                          <span class="slds-text-title">Item: </span>
+                                          <span class="slds-text-body_small"><a href="javascript:void(0);">Affordability Calculator</a></span>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="slds-media__figure slds-media__figure_reverse">
+                              <div class="slds-timeline__actions">
+                                <p class="slds-timeline__date">13 hrs 27 mins ago</p>
+                               
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="slds-timeline__item">
+                          <span class="slds-assistive-text">Task</span>
+                          <div class="slds-media">
+                            <div class="slds-media__body">
+                              <div class="slds-media slds-timeline__media slds-timeline__media_task">
+                                <div class="slds-media__figure">
+                                  <div class="slds-icon_container slds-icon-standard-task" title="task">
+                                    <lightning:icon iconName="custom:custom18" size="small" alternativeText="sss"/>
+                                  </div>
+                                </div>
+                                <div class="slds-media__body">
+                                  <div class="slds-media">
+                                    <div class="slds-media__body">
+                                      <h3 class="slds-truncate" title="Review proposals for EBC deck with larger team and have marketing review this">Form Success</h3>
+                                      <ul class="slds-list_horizontal slds-wrap">
+                                        <li class="slds-m-right_large">
+                                          <span class="slds-text-title">Item: </span>
+                                          <span class="slds-text-body_small"><a href="javascript:void(0);">Contact Information</a></span>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="slds-media__figure slds-media__figure_reverse">
+                              <div class="slds-timeline__actions">
+                                <p class="slds-timeline__date">16 hrs ago</p>
+                               
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="slds-timeline__item">
+                          <span class="slds-assistive-text">Task</span>
+                          <div class="slds-media">
+                            <div class="slds-media__body">
+                              <div class="slds-media slds-timeline__media slds-timeline__media_task">
+                                <div class="slds-media__figure">
+                                  <div class="slds-icon_container slds-icon-standard-task" title="task">
+                                    <lightning:icon iconName="standard:recent" size="small" alternativeText="sss"/>
+                                  </div>
+                                </div>
+                                <div class="slds-media__body">
+                                  <div class="slds-media">
+                                    <div class="slds-media__body">
+                                      <h3 class="slds-truncate" title="Review proposals for EBC deck with larger team and have marketing review this">Website Visit</h3>
+                                      <ul class="slds-list_horizontal slds-wrap">
+                                          <li class="slds-m-right_large">
+                                          <span class="slds-text-title">Duration: </span>
+                                          <span class="slds-text-body_small">43 sec</span>
+                                          </li>
+                                          <li class="slds-m-right_large">
+                                          <span class="slds-text-title">Page Views: </span>
+                                          <span class="slds-text-body_small"><a href="javascript:void(0);">1 (Show)</a></span>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="slds-media__figure slds-media__figure_reverse">
+                              <div class="slds-timeline__actions">
+                                <p class="slds-timeline__date">16 hrs ago</p>
+                               
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="slds-timeline__item">
+                          <span class="slds-assistive-text">Task</span>
+                          <div class="slds-media">
+                            <div class="slds-media__body">
+                              <div class="slds-media slds-timeline__media slds-timeline__media_task">
+                                <div class="slds-media__figure">
+                                  <div class="slds-icon_container slds-icon-standard-task" title="task">
+                                    <lightning:icon iconName="standard:document" size="small" alternativeText="sss"/>
+                                  </div>
+                                </div>
+                                <div class="slds-media__body">
+                                  <div class="slds-media">
+                                    <div class="slds-media__body">
+                                      <h3 class="slds-truncate" title="Review proposals for EBC deck with larger team and have marketing review this">Landing Page View</h3>
+                                      <ul class="slds-list_horizontal slds-wrap">
+                                        <li class="slds-m-right_large">
+                                          <span class="slds-text-title">Item: </span>
+                                          <span class="slds-text-body_small"><a href="javascript:void(0);">Webinar Registration</a></span>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="slds-media__figure slds-media__figure_reverse">
+                              <div class="slds-timeline__actions">
+                                <p class="slds-timeline__date">16 hrs ago</p>
+                               
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="slds-timeline__item">
+                          <span class="slds-assistive-text">Task</span>
+                          <div class="slds-media">
+                            <div class="slds-media__body">
+                              <div class="slds-media slds-timeline__media slds-timeline__media_task">
+                                <div class="slds-media__figure">
+                                  <div class="slds-icon_container slds-icon-standard-task" title="task">
+                                    <lightning:icon iconName="standard:recent" size="small" alternativeText="sss"/>
+                                  </div>
+                                </div>
+                                <div class="slds-media__body">
+                                  <div class="slds-media">
+                                    <div class="slds-media__body">
+                                      <h3 class="slds-truncate" title="Review proposals for EBC deck with larger team and have marketing review this">Website Visit</h3>
+                                      <ul class="slds-list_horizontal slds-wrap">
+                                        <li class="slds-m-right_large">
+                                          <span class="slds-text-title">Duration: </span>
+                                          <span class="slds-text-body_small">1 min 11 sec</span>
+                                        </li>
+                                        <li class="slds-m-right_large">
+                                          <span class="slds-text-title">Page Views: </span>
+                                          <span class="slds-text-body_small"><a href="javascript:void(0);">1 (Show)</a></span>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="slds-media__figure slds-media__figure_reverse">
+                              <div class="slds-timeline__actions">
+                                <p class="slds-timeline__date">16 hrs 1 min ago</p>
+                               
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+		</lightning:card>
+</aura:component>

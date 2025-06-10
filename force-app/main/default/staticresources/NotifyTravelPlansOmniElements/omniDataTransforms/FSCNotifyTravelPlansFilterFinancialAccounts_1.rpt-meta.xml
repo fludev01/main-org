@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>FSCNotifyTravelPlansFilterFinancialAccounts</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCNotifyTravelPlansFilterFinancialAccountsCustom0jIB0000000TeAAMA0Item7</globalKey>
+        <inputFieldName>CreditCards</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCNotifyTravelPlansFilterFinancialAccounts</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>List&lt;Map&gt;</outputFieldFormat>
+        <outputFieldName>CreditCards</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCNotifyTravelPlansFilterFinancialAccountsCustom0jIB0000000TeAAMA0Item8</globalKey>
+        <inputFieldName>CardSize</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCNotifyTravelPlansFilterFinancialAccounts</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>CardSize</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:MainCards LIST &apos;RecordTypeName==&quot;Checking/\/\/Account&quot;/\/\/OR/\/\/RecordTypeName==&quot;Savings/\/\/Account&quot;/\/\/AND/\/\/(ISNOTBLANK(CardId))&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(MainCards),&apos;RecordTypeName==&quot;Checking Account&quot; OR RecordTypeName==&quot;Savings Account&quot; AND (ISNOTBLANK(CardId))&apos;)</formulaExpression>
+        <formulaResultPath>DebitCards</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>FSCNotifyTravelPlansFilterFinancialAccountsCustom0jIB0000000TeAAMA0Item4</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCNotifyTravelPlansFilterFinancialAccounts</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSCNotifyTravelPlansFilterFinancialAccountsCustom0jIB0000000TeAAMA0Item6</globalKey>
+        <inputFieldName>DebitCards</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCNotifyTravelPlansFilterFinancialAccounts</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>List&lt;Map&gt;</outputFieldFormat>
+        <outputFieldName>DebitCards</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Cards LIST &apos;CardActive/\/\/=/\/\/true/\/\/AND/\/\/RecordTypeName==&quot;Checking/\/\/Account&quot;/\/\/OR/\/\/RecordTypeName==&quot;Savings/\/\/Account&quot;/\/\/OR/\/\/RecordTypeName==&quot;Credit/\/\/Card&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(Cards),&apos;CardActive = true AND RecordTypeName==&quot;Checking Account&quot; OR RecordTypeName==&quot;Savings Account&quot; OR RecordTypeName==&quot;Credit Card&quot;&apos;)</formulaExpression>
+        <formulaResultPath>MainCards</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>FSCNotifyTravelPlansFilterFinancialAccountsCustom0jIB0000000TeAAMA0Item2</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCNotifyTravelPlansFilterFinancialAccounts</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:MainCards ISBLANK 0 | var:MainCards LISTSIZE IF</formulaConverted>
+        <formulaExpression>IF(ISBLANK(MainCards),0,LISTSIZE(MainCards))</formulaExpression>
+        <formulaResultPath>CardSize</formulaResultPath>
+        <formulaSequence>4.0</formulaSequence>
+        <globalKey>FSCNotifyTravelPlansFilterFinancialAccountsCustom0jIB0000000TeAAMA0Item3</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCNotifyTravelPlansFilterFinancialAccounts</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:MainCards LIST &apos;RecordTypeName==&quot;Credit/\/\/Card&quot;/\/\/AND/\/\/(ISNOTBLANK(CardId))&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(MainCards),&apos;RecordTypeName==&quot;Credit Card&quot; AND (ISNOTBLANK(CardId))&apos;)</formulaExpression>
+        <formulaResultPath>CreditCards</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>FSCNotifyTravelPlansFilterFinancialAccountsCustom0jIB0000000TeAAMA0Item0</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSCNotifyTravelPlansFilterFinancialAccounts</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;Cards&quot; : [ {
+    &quot;CardValidDate&quot; : &quot;/&quot;,
+    &quot;RecordTypeName&quot; : &quot;Bank Account&quot;,
+    &quot;Reissue&quot; : false,
+    &quot;Role&quot; : &quot;Primary Owner&quot;
+  } ]
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>FSCNotifyTravelPlansFilterFinancialAccounts_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

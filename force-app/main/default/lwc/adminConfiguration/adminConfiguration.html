@@ -1,0 +1,26 @@
+<template>
+  <div class="lg-container">
+    <img
+      class="lg-image"
+      src={trailheadLogoUrl}
+      onclick={handleImageClick}
+    />
+    <template
+      for:each={hotspots}
+      for:item="hotspot"
+      for:index="index"
+    >
+      <div
+        class="lg-hotspot"
+        style={hotspot.Style_CSS__c}
+        key={hotspot.Style_CSS__c}
+        data-idx={index}
+        onmousedown={dragMouseDown}
+        onclick={handleHotspotClicked}
+      >
+        <div class="lg-hotspot-dot"></div>
+      </div>
+    </template>
+  </div>
+  
+</template>

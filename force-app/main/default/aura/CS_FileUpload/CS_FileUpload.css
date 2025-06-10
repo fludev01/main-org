@@ -1,0 +1,26 @@
+.THIS.CSClass .slds-file-selector__text.slds-medium-show{
+    display: none;
+}
+.THIS.CSClass .slds-file-selector.slds-file-selector_files{
+    width: 100%;
+}
+.THIS.CSClass .slds-file-selector__dropzone{
+    width: 100%;
+    height: 100px;
+    background: #f3f2f2;
+}
+.THIS.CSClass .slds-file-selector__body{
+    height: 100px;
+    position: relative;
+    width: 100%;
+}
+.THIS.CSClass .slds-file-selector__button{
+    background: #f3f2f2;
+    position: absolute;
+    left: calc(50% - 50px);
+    border-color: #f3f2f2 !important;
+}
+.THIS.CSClass .slds-file-selector__button:after{
+    content: 'or Drop';
+    margin-left: 4px;
+}

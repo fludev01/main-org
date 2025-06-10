@@ -1,0 +1,7 @@
+<design:component label="Flow Header">
+    <design:attribute name="icon" label="SLDS Icon" default="standard:default" />
+    <design:attribute name="iconSize" label="Icon Size" default="medium" />
+    <design:attribute name="heading" label="Heading" default="Heading" />
+    <design:attribute name="subHeading" label="Sub Heading" default="Sub heading" />
+    <design:attribute name="screenHelpText" label="Help Text" default="Help text" />
+</design:component>

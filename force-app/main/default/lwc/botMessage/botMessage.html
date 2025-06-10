@@ -1,0 +1,79 @@
+<template>
+    <template if:true={showQuestion}>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-size_1-of-1 slds-p-around_medium card-question">
+                <div class="slds-grid slds-wrap">
+                    <div class="avatar-column"><img class="avatar" src={_message.avatar}></div>
+                    <div class="response-column slds-p-left_medium">
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-size_1-of-1">
+                                <lightning-formatted-rich-text value={_message.question}></lightning-formatted-rich-text>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template if:true={showAnswer}>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-size_1-of-1 slds-p-around_medium card-answer">
+                <div class="slds-grid slds-wrap">
+                    <div class="avatar-column"><img class="avatar" src="/resource/1680717507000/demoEinsteinGPTImages/dtwcp8gof2srrat2yze7.png"></div>
+                    <div class="response-column slds-p-left_medium">
+                        <template if:false={unknown}>
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-size_1-of-1 slds-p-bottom_small">
+                                    <lightning-formatted-rich-text value={typedAnswer}></lightning-formatted-rich-text>
+                                </div>
+                                <template if:false={typing}>
+                                    <div class="slds-size_1-of-1">
+                                        <template if:true={_message.response.Bot_Cards__r}>
+                                            <template for:each={_message.response.Bot_Cards__r} for:item="card" for:index="i">
+                                                <div key={card.i} class="slds-grid slds-wrap slds-p-bottom_small">
+                                                    <div class="slds-size_1-of-1 message-card">
+                                                        <div class="slds-grid slds-wrap slds-p-around_small">
+                                                            <div class="slds-size_1-of-1">
+                                                                <lightning-formatted-rich-text value={card.Details__c}></lightning-formatted-rich-text>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </template>
+                                        </template>
+                                    </div>
+                                    <div class="slds-size_1-of-1">
+                                        <template if:true={_message.response.UseLWCOverride__c}>
+                                            <!-- Add Component -->
+                                            <template if:true={showBotMessageContactList}>
+                                                <c-bot-message-contact-list></c-bot-message-contact-list>
+                                            </template>
+                                        </template>
+                                    </div>
+                                    <div class="slds-size_1-of-1">
+                                        <template if:true={_message.response.Bot_Actions__r}>
+                                            <div class="slds-grid slds-wrap">
+                                                <template for:each={_message.response.Bot_Actions__r} for:item="action" for:index="i">
+                                                    <div key={action.i} class="slds-p-right_small">
+                                                        <lightning-button label={action.Name} variant={action.Variant__c} data-action={action.Name} icon-name={action.IconName__c} disabled={action.Disabled__c} onclick={handleAction}></lightning-button>
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </template>
+                            </div>
+                        </template>
+                        <template if:true={unknown}>
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-size_1-of-1">
+                                    <lightning-formatted-rich-text value={typedAnswer}></lightning-formatted-rich-text>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+</template>

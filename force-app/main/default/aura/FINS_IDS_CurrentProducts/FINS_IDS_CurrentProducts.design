@@ -1,0 +1,29 @@
+<design:component >
+    
+    <!-- Product 1 -->
+    <design:attribute name="prod1Name" label="Product 1 Name" default="Current Account" />
+    <design:attribute name="prod1Icon" label="Icon" default="custom:custom87" />
+    <design:attribute name="prod1Status" label="Status" default="inactive" datasource="inactive,active" />
+    <!-- Product 2 -->
+    <design:attribute name="prod2Name" label="Product 2 Name" default="Loan" />
+    <design:attribute name="prod2Icon" label="Icon" default="custom:custom16" />
+    <design:attribute name="prod2Status" label="Status" default="inactive" datasource="inactive,active" />
+    <!-- Product 3 -->
+    <design:attribute name="prod3Name" label="Product 3 Name" default="Credit Card" />
+    <design:attribute name="prod3Icon" label="Icon" default="custom:custom40" />
+    <design:attribute name="prod3Status" label="Status" default="inactive" datasource="inactive,active" />
+    <!-- Product 4 -->
+    <design:attribute name="prod4Name" label="Product 4 Name" default="Savings Account" />
+    <design:attribute name="prod4Icon" label="Icon" default="standard:investment_account" />
+    <design:attribute name="prod4Status" label="Status" default="inactive" datasource="inactive,active" />   
+    <!-- Product 5 -->
+    <design:attribute name="prod5Name" label="Product 5 Name" default="Mortgage" />
+    <design:attribute name="prod5Icon" label="Icon" default="custom:custom85" />
+    <design:attribute name="prod5Status" label="Status" default="inactive" datasource="inactive,active" />
+    <!-- Product 6 -->
+    <design:attribute name="prod6Name" label="Product 6 Name" default="Insurance" />
+    <design:attribute name="prod6Icon" label="Icon" default="custom:custom60" />
+    <design:attribute name="prod6Status" label="Status" default="inactive" datasource="inactive,active" />
+    
+    
+</design:component>

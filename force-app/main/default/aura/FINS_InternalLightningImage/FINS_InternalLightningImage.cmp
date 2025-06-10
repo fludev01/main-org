@@ -1,0 +1,76 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="height" type="Integer"></aura:attribute>
+    <aura:attribute name="width" type="Integer"></aura:attribute>
+    <aura:attribute name="url" type="String"></aura:attribute>
+    <aura:attribute name="panel" type="Boolean"></aura:attribute>
+    <aura:attribute name="title" type="String"></aura:attribute>
+    <aura:attribute name="showIcon" type="Boolean"></aura:attribute>
+    <aura:attribute name="fontSize" type="String"></aura:attribute>
+    <aura:attribute name="sldsRes" type="String"></aura:attribute>
+    <aura:attribute name="iconType" type="String"></aura:attribute>
+    <aura:attribute name="iconName" type="String"></aura:attribute>
+    <aura:attribute name="iconColor" type="String"></aura:attribute>
+    <aura:attribute name="circleIcon" type="Boolean"></aura:attribute>
+    
+    <div class="slds">
+        <aura:if isTrue="{!v.panel}">
+            <article class="slds-card">
+                <div class="slds-card__header">
+                    <aura:if isTrue="{!v.showIcon}">
+                        <header class="slds-media slds-media--center slds-has-flexi-truncate">
+                            <div class="slds-media__figure">
+                                <aura:if isTrue="{!v.circleIcon}">
+                                    <span class="slds-icon_container slds-icon_container--circle" style="{!'background-color: ' + v.iconColor}">
+                                        <c:FINS_svgIcon svgPath="{!'/resource/' + v.sldsRes + '/assets/icons/' + v.iconType + '-sprite/svg/symbols.svg#' + v.iconName}" class="slds-icon" />
+                                    </span>
+                                    <aura:set attribute="else">
+                                        <span class="slds-icon_container" style="{!'background-color: ' + v.iconColor}">
+                                            <c:FINS_svgIcon svgPath="{!'/resource/' + v.sldsRes + '/assets/icons/' + v.iconType + '-sprite/svg/symbols.svg#' + v.iconName}" class="slds-icon" />
+                                        </span>
+                                    </aura:set>
+                                </aura:if>
+                            </div>
+                            <div class="slds-media__body slds-truncate">
+                                <h2>
+                                    <aura:if isTrue="{!v.fontSize == ''}">
+                                        <span class="slds-text-heading--medium" style="font-size: 16px !important;">{!v.title}</span>
+                                        <aura:set attribute="else">
+                                            <span class="slds-text-heading--medium" style="{!'font-size: ' + v.fontSize + ' !important;'}">{!v.title}</span>
+                                        </aura:set>
+                                    </aura:if>
+                                </h2>
+                            </div>
+                        </header>
+                        <aura:set attribute="else">
+                            <h2>
+                                <aura:if isTrue="{!v.fontSize == ''}">
+                                    <span class="slds-text-heading--medium" style="font-size: 16px !important;">{!v.title}</span>
+                                    <aura:set attribute="else">
+                                        <span class="slds-text-heading--medium" style="{!'font-size: ' + v.fontSize + ' !important;'}">{!v.title}</span>
+                                    </aura:set>
+                                </aura:if>
+                            </h2>                        
+                        </aura:set>
+                    </aura:if>
+                </div>
+                <div class="slds-card__body">
+                    <table class="slds-table slds-table--bordered slds-no-row-hover slds-table--cell-buffer">
+                        <tbody>
+                            <tr class="slds-hint-parent">
+                                <th scope="row">
+                                    <img src="{!v.url}" height="{!v.height}" width="{!v.width}" />
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+            <aura:set attribute="else">
+                <div class="slds-text-heading--medium" style="margin-bottom: 5px;">{!v.title}</div>
+                <div class="slds-box slds-theme--default">
+                    <img src="{!v.url}" height="{!v.height}" width="{!v.width}" />
+                </div>
+            </aura:set>
+        </aura:if>
+    </div>
+</aura:component>
