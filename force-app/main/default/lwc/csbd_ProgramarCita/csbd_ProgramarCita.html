@@ -87,6 +87,26 @@
 						</div>
 					</div>
 
+					<!--Sección para el aviso por correo-->
+					<div lwc:ref="seccionAvisoCorreo" class="seccionAvisoCorreo slds-align_absolute-center">
+						<div class="slds-grid slds-grid_vertical-align-center slds-gutters_direct-x-small">
+							<div class="slds-col slds-grow-none">
+								<label class="slds-form-element__label slds-var-m-right_x-small"><abbr class="slds-required">*</abbr>Correo electrónico</label>
+							</div>
+							<div class="slds-col">
+								<lightning-input
+									lwc:ref="inputEmail"
+									type="email"
+									label="Correo electrónico"
+									variant="label-hidden"
+									required
+									style="width: 345px;"
+									placeholder="Introduce el correo electrónico del destinatario">
+								</lightning-input>
+							</div>
+						</div>
+					</div>
+
 					<!--Calendario de disponibilidad-->
 					<div lwc:ref="lwcDisponibilidadContainer" class="lwcDisponibilidadContainer slds-align_absolute-center">
 						<c-csbd_-disponibilidad-gestores

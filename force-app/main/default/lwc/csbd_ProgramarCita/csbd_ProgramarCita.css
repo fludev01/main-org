@@ -171,7 +171,7 @@ lightning-button-icon.botonOtrasOperativas {
 
 section.modalProgramarCita > div.slds-modal__container {
     /* max-width: min-content; */
-    width: 640px;
+    width: 728px;
     overflow: hidden;
     max-width: 960px;
     min-width: 160px;
@@ -270,4 +270,10 @@ div.lineaSeparacion {
         --slds-c-input-color-background: #21618678;
         --slds-c-input-text-color: white;
     }
+}
+
+.seccionAvisoCorreo {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
 }

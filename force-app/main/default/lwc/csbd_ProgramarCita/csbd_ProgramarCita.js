@@ -24,7 +24,8 @@ export default class csbdProgramarCita extends LightningElement {
 	tiposAsignacion = [
 		{label: 'A gestor específico', value: 'A gestor específico'},
 		{label: 'Según disponibilidad', value: 'Según disponibilidad'},
-		{label: 'Automática', value: 'Automática'}
+		{label: 'Automática', value: 'Automática'},
+		{label: 'Aviso por correo', value: 'Aviso por correo'}
 	];
 
 	idPropietarioSeleccionado;
@@ -120,7 +121,9 @@ export default class csbdProgramarCita extends LightningElement {
 
 	async programarCita() {
 		const asignacionAuto = this.tipoAsignacion === 'Automática';
-		if (!asignacionAuto && typeof this.idPropietarioSeleccionado !== 'string') {
+		const esAvisoCorreo = this.tipoAsignacion === 'Aviso por correo';
+
+		if (!asignacionAuto && !esAvisoCorreo && typeof this.idPropietarioSeleccionado !== 'string') {
 			this.refs.inputPropietario.reportValidity();
 			return;
 		}
@@ -131,26 +134,46 @@ export default class csbdProgramarCita extends LightningElement {
 			return;
 		}
 
+		if (esAvisoCorreo) {
+			const inputEmail = this.refs.inputEmail;
+			if (!inputEmail.checkValidity()) {
+				inputEmail.reportValidity();
+				return;
+			}
+		}
+
 		const fecha = new Date(inputFecha.value);
 		let fechaTexto = fecha.toLocaleDateString('es-ES', {weekday: 'long', month: 'long', day: 'numeric'});
 		fechaTexto += ` a las ${fecha.getHours().toString().padStart(2, '0')}:${fecha.getMinutes().toString().padStart(2, '0')}`;
 
-		let mensaje = `Cita para el gestor ${this.nombrePropietarioSeleccionado.toUpperCase()}`;
+		let mensaje = '';
+		if (esAvisoCorreo) {
+			mensaje = `Se enviará un aviso por correo a ${this.refs.inputEmail.value} para la cita el ${fechaTexto.toUpperCase()}. ¿Quieres continuar?`;
+		} else {
+			mensaje = `Cita para el gestor ${this.nombrePropietarioSeleccionado.toUpperCase()}`;
 		mensaje += ` el ${fechaTexto.toUpperCase()}. ¿Quieres continuar?`;
+		}
 
-		if (this.tipoAsignacion === 'Según disponibilidad' && !await LightningConfirm.open({
+		if ((this.tipoAsignacion === 'Según disponibilidad' || esAvisoCorreo) && !await LightningConfirm.open({
 			variant: 'header', theme: 'alt-inverse', label: 'Programar cita', message: mensaje})) {
 			return;
 		}
 
 		this.componente = {...this.componente, spinner: true};
 		programarCitaApex({
-			recordId: this.recordId, asignacionAuto,
+			recordId: this.recordId,
+			asignacionAuto,
 			comprobarContacto: this.refs.inputComprobarContacto.checked,
-			idPropietario: asignacionAuto ? null : this.idPropietarioSeleccionado,
-			startDateTime: inputFecha.value
+			idPropietario: asignacionAuto || esAvisoCorreo ? null : this.idPropietarioSeleccionado,
+			startDateTime: inputFecha.value,
+			esAvisoCorreo: esAvisoCorreo,
+			emailDestinatario: esAvisoCorreo ? this.refs.inputEmail.value : null
 		}).then(() => {
-			toast('success', 'Se programó cita', `Se programó una cita con el cliente para el ${fechaTexto.toUpperCase()}.`);
+			let mensajeToast = esAvisoCorreo
+				? `Se ha enviado un aviso por correo a ${this.refs.inputEmail.value} para la cita el ${fechaTexto.toUpperCase()}.`
+				: `Se programó una cita con el cliente para el ${fechaTexto.toUpperCase()}.`;
+
+			toast('success', 'Operación completada', mensajeToast);
 			notifyRecordUpdateAvailable([{recordId: this.recordId}]);
 			this.modalCerrar();
 		}).catch(error => {

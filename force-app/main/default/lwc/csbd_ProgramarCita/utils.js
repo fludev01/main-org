@@ -10,7 +10,9 @@ export const cambiarSeccion = async function(self, tipoAsignacionOrigen, tipoAsi
 			'Según disponibilidad': {
 				nombre: 'Según disponibilidad', display: 'block', elemento: self.refs.lwcDisponibilidadContainer},
 			'Automática': {
-				nombre: 'Automática', display: 'flex', elemento: self.refs.infoAsignacionAuto}
+				nombre: 'Automática', display: 'flex', elemento: self.refs.infoAsignacionAuto},
+			'Aviso por correo': {
+				nombre: 'Aviso por correo', display: 'flex', elemento: self.refs.seccionAvisoCorreo}
 		};
 		const seccionOrigen = SECCIONES[tipoAsignacionOrigen];
 		const seccionDestino = SECCIONES[tipoAsignacionDestino];
